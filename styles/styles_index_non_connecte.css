@@ -1,0 +1,633 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-black;
+    src: url(../font/Montserrat-Black.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-bold;
+    src: url(../font/Montserrat-Bold.ttf);
+}
+
+body {
+    font-family: Montserrat;
+    margin: 0;
+}
+
+.TitreHeader {
+    color: #914D1E;
+    font-family: Montserrat-bold;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.TitreHeader {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.ConteneurHeader {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    color: #914D1E;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.RucheHeader {
+    color: #3F221C;
+}
+.mail {
+    /* display: flex; */
+    width: 50px;
+}
+
+.BoutonHeader2 {
+    color: black;
+}
+
+.BoutonHeader {
+    color: white;
+    background-color: #914D1E;
+    padding: 8px;
+    border-radius: 4px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.HeaderPartieDroite {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: black;
+    flex: end;
+}
+
+.Partie1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 64px;
+    margin-bottom: 32px;
+}
+
+.Partie1Texte {
+    padding-right: 5%;
+}
+
+.Partie1Image {
+    padding-left: 5%;
+}
+
+.Partie1Bouton {
+    display: flex;
+    gap: 32px;
+    font-weight: bold;
+    width: 400px;
+}
+
+.TitrePrincipal {
+    line-height: 84%;
+    margin: 0px;
+    font-size: 96px;
+    color: #3F221C;
+    font-family: Montserrat-black;
+}
+
+.SousTitre {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: Montserrat-bold;
+}
+
+.Partie1Bouton1 {
+    background-color: #914D1E;
+    color: white;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.Partie1Bouton2 {
+    background-color: transparent;
+    color: #914D1E;
+    border: solid 1px #914D1E;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.ParentPartie2 {
+    background-color: #FAF0E3;
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.Partie2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+}
+
+.Partie2Titre {
+    color: #3F221C;
+    font-family: Montserrat-black;
+}
+
+.Partie2Image {
+    padding-right: 5%;
+}
+
+.Partie2Texte {
+    padding-left: 5%;
+}
+
+.Partie3 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr;
+    min-height: 400px;
+    width: 80%;
+    margin: auto;
+    gap: 8px;
+}
+
+.Partie3Image1 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    height: 100%;
+    background-image: url(../img/Ruche.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.Partie3Image2 {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 1;
+    background-image: url(../img/RucheChamp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.Partie3Image3 {
+    grid-column: 3 / span 2;
+    grid-row: 2 / span 1;
+    background-image: url(../img/Apiculteurs.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.Partie3Image4 {
+    grid-column: 5 / span 1;
+    grid-row: 1 / span 2;
+    background-image: url(../img/RucheForet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.Partie3Image5 {
+    grid-column: 6 / span 1;
+    grid-row: 1 / span 1;
+    background-image: url(../img/Abeille.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.Partie3Image6 {
+    grid-column: 6 / span 1;
+    grid-row: 2 / span 1;
+    background-image: url(../img/Fleur.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    background-color: #472B17;
+    color: white;
+}
+
+.FooterGlobal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.FooterPartie1 {
+    height: 100%;
+    padding-right: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+.BordureFooterGauche {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid white;
+    padding-left: 8px;
+    gap: 32px;
+}
+
+.FooterBouton1 {
+    color: white;
+    align-self: flex-start;
+    color: white;
+    font-weight: bold;
+}
+
+.FooterPartie2Parent {
+    padding-left: 10%;
+}
+
+.FooterPartie2 {
+    display: flex;
+    gap: 10%;
+}
+
+.FooterPartie2SousPartie1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-left: 1px solid white;
+    padding-left: 16px;
+    align-self: self-start;
+}
+
+.FooterPartie2SousPartie2 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-left: 1px solid white;
+    padding-left: 16px;
+    align-self: self-start;
+}
+
+.ArrangementDeLaPartie2DuFooter {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.LienRapides {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.ListeDesActions {
+    display: flex;
+    gap: 32px;
+}
+
+.FooterPartieBasse {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 16px;
+}
+
+.FooterPartieBasseBordure {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border-top: 1px solid white;
+}
+
+.ParentFooterLogo {
+    display: flex;
+    justify-content: start;
+    margin-top: 32px;
+    gap: 32px;
+}
+
+.FooterLogo {
+    width: 32px;
+    height: 32px;
+}
+
+.Actions {
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+
+.Actions::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: white;
+    width: 0%;
+    bottom: 0;
+    transition: 0.4s;
+}
+
+.Actions:hover::before {
+    width: 100%;
+}
+
+.ParentPartie4 {
+    background-color: #FAF0E3;
+    padding-bottom: 64px;
+    padding-top: 64px;
+}
+
+.MesRuches {
+    display: flex;
+    justify-content: space-around;
+}
+
+.ContourRuche {
+    border: dashed 1px #AE712A;
+    padding: 8px;
+    border-radius: 16px;
+    border-style: dashed;
+}
+
+.UneRuche {
+    border: dashed 1px #ae702aad;
+    border-radius: 8px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+.Partie4Titre {
+    color: #3F221C;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    font-family: Montserrat-black;
+}
+
+.ParentPartie4Bouton {
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    padding-top: 8px;
+}
+
+.Partie4Bouton {
+    background-color: #914D1E;
+    padding: 12px 18px 12px 18px;
+    margin-top: 16px;
+    border-radius: 8px;
+    color: white;
+}
+
+.Partie4 {
+    width: 80%;
+    margin: auto;
+}
+
+.ImageDeLaRuche {
+    border-radius: 8px 8px 0px 0px;
+}
+
+.MaRucheTitre {
+    font-weight: bolder;
+    padding-left: 4px;
+}
+
+.InfoRuche {
+    padding-left: 16px;
+}
+
+.MaRucheBouton {
+    background-color: #AE712A;
+    color: white;
+    border-radius: 0px 0px 8px 8px;
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+}
+
+.Partie5 {
+    width: 80%;
+    margin: auto;
+}
+
+.Partie5Titre {
+    color: #3F221C;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    font-family: Montserrat-black;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+}
+
+.ParentPartie6 {
+    background-color: #FAF0E3;
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.Partie6 {
+    width: 80%;
+    margin: auto;
+}
+
+.AbeilleDeco1 {
+    width: 1.7%;
+    position: fixed;
+    top: 5%;
+    left: 52%;
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+.AbeilleDeco2 {
+    width: 1.7%;
+    position: fixed;
+    top: 30%;
+    left: 95%;
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+.AbeilleDeco3 {
+    width: 1.7%;
+    position: fixed;
+    top: 87%;
+    left: 12%;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.SVG1 {
+    position: fixed;
+    transform: rotate(8deg);
+    top: 0%;
+    left: 0%;
+    z-index: -1;
+}
+
+.SVG2 {
+    position: fixed;
+    transform: rotate(200deg);
+    left: 0%;
+    top: 0%;
+    z-index: -1;
+}
+
+.ParentPartie3 {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.ParentPartie5 {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.ParentPartie1 {
+    padding-top: 32px;
+    min-height: 100vh;
+}
+
+/* partie administreurs style */
+
+.cache_fond{
+    position: fixed;
+    background: rgba(0, 0, 0, 0.697);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    display: none;
+    z-index: 10000;
+    transition: 0.4s;
+}
+
+.cache_plein{
+    display: block;
+    opacity: 1;
+}
+
+.pop_up_admin_demande{
+    position: fixed;
+    background: #F7F3F0;
+    border-radius: 24px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10001;
+    max-height: 420px;
+    width: 350px;
+    overflow-y: scroll;
+    scrollbar-color: rgb(245, 231, 214) rgba(125, 125, 125, 0);
+    scrollbar-width: thin;
+    display: none;
+    padding-inline: 20px;
+    transition: 0.4s;
+}
+.popupouverte{
+    display: block;
+}
+.topinfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: #F7F3F0;
+    padding: 20px;
+}
+
+.topinfo>img{
+    width: 50px;
+}
+
+.demande{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: dashed #914D1E 0.5px;
+    margin-bottom: 10px;
+    border-bottom: dashed #914D1E 0.5px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nom_user{
+    font-family: Montserrat-black;
+}
+
+.accept_ruche{
+    border-radius: 5px;
+    background: #914D1E;
+    font-family: Montserrat-bold;
+    color: white;
+    padding: 5px;
+    padding-inline: 15px;
+}
+
+.refus_ruche{
+    border-radius: 5px;
+    font-family: Montserrat-bold;
+    color: #914D1E;
+    border: solid 1px #914D1E;
+
+    padding: 5px;
+    padding-inline: 15px;
+}
+
+.boutons_Ajout_Ruche{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    text-align: center;
+}
+
+.informationdemande{
+    font-family: Montserrat-bold;
+    margin-top: 50px;
+    padding-inline: 20px;
+    margin-bottom: 50px;
+}

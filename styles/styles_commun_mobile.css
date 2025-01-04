@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    background-color: rgb(245, 181, 181);
+}
+
+img{
+    width: 100%;
+}
+.TitrePrincipal{  
+    font-size: 42px;  
+}
+.SousTitre{
+    margin-bottom: 12px;
+    font-size: 32px;
+    
+}
+.Partie1{
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 64px;
+    margin-bottom: 32px;
+    gap: 24px;
+}
+
+
+/* Partie2 en Grid */
+.Partie2 {
+    display: grid;
+    grid-template-rows: auto auto auto; /* Trois lignes : titre, texte, image */
+    grid-template-columns: 1fr; /* Une seule colonne */
+    gap: 15px; 
+    padding: 10px;
+}
+
+.Partie2Titre {
+    grid-row: 1; /* Titre en premier */
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.Partie2Texte {
+    grid-row: 2; /* Texte en deuxième */
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.Partie2Image {
+    grid-row: 3; /* Image en troisième */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 10px;
+}
+
+.Partie2Image img {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 8px; 
+}

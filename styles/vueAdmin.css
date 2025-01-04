@@ -1,0 +1,40 @@
+.titre_centre{
+    width: 80%;
+    margin: auto;
+    color: #3F221C;
+}
+
+/* mise en place du tableau de bord en vue administrateur  */
+
+.celulle_tableau_bord{
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+    border: solid 2px #CFCFCF;
+    border-radius: 20px;
+}
+
+.graph{
+    padding: 50px;
+    padding-top: 10px;
+}
+
+
+.icones_informations{
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 250px;
+}
+
+.icone_info_single{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info{
+    text-align: center;
+}
+.icone{
+    width: 60px;
+}
