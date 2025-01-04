@@ -122,6 +122,13 @@ if (!empty($usersingle)) {
     $ledexiemetrucquifaittoubuguer = "";
 }
 
+if(!empty($message)){
+    $infoaffiche = '';
+}
+else{
+    $infoaffiche = "";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -151,7 +158,16 @@ if (!empty($usersingle)) {
         <?= $demandes_ruches ?>
     </div>
     <main>
-        <?= $message ?>
+        <div class="informationerreur">
+            <div class="topinfo">
+                <h2>Information</h2>
+                <img src="../img/svgcroixrefus.svg" alt="croix de refus">
+            </div>
+            <?= $message ?>
+        </div>
+        <div class="cachetjrla">
+
+        </div>
         <?= $contentuser ?>
         <h2 class="Titre">Gestion des utilisateurs</h2>
         <h3 class="SousTitre">Tableau de bord</h3>
