@@ -30,8 +30,10 @@ if (count($demandes)) {
     foreach ($demandes as $ligne) {
         $demandes_ruches .= '<div class="demande"><div class="nom_user">' . $ligne['prenom_utilisateur'] . ' a envoyé une demande de validation de ruche.</div><div class="id_entre">ID entré par ' . $ligne['prenom_utilisateur'] . ' : ' . $ligne['ID_Ruches'] . '</div><div class="boutons_Ajout_Ruche"><a class="accept_ruche" href="index.php?page=accepter&IdRuche=' . $ligne['ID_Ruches'] . '&IdUtilisateur=' . $ligne['Id_utilisateur'] . '&NomRuche=' . $ligne['nom_ruche'] . '&idDemande=' . $ligne['ID_attente'] . '">Accepter</a><a class="refus_ruche" href="index.php?page=Refuser&idDemande=' . $ligne['ID_attente'] . '">Refuser</a></div></div>';
     }
+    $lenombre = "document.querySelector('.letxt').innerHTML = '".count($demandes)."'";
 } else {
     $demandes_ruches = "<div class='informationdemande'>Aucune demande n'a été transmise.</div>";
+    $lenombre = "document.querySelector('.ptsrouge').remove();";
 }
 
 if (!empty($usersingle)) {
@@ -122,11 +124,31 @@ if (!empty($usersingle)) {
     $ledexiemetrucquifaittoubuguer = "";
 }
 
-if(!empty($message)){
-    $infoaffiche = '';
-}
-else{
-    $infoaffiche = "";
+if ($message != "") {
+    $infoaffiche = '<div class="informationerreur">
+        <div class="topinfo">
+            <b>Information</b>
+            <img id="croixinfo" src="../img/svgcroixrefus.svg" alt="croix de refus">
+        </div>
+        <div class="messageuser">
+            '.$message.'
+        </div>
+    </div>
+    <div class="cachetjrla">
+
+    </div>';
+} else {
+    $infoaffiche = '<div class="informationerreur enlever">
+        <div class="topinfo">
+            <b>Information</b>
+            <img id="croixinfo" src="../img/svgcroixrefus.svg" alt="croix de refus">
+        </div>
+        <div class="messageuser">
+        </div>
+    </div>
+    <div class="cachetjrla enlever">
+
+    </div>';
 }
 
 ?>
@@ -153,21 +175,12 @@ else{
     <div class="pop_up_admin_demande">
         <div class="topinfo">
             <h2>Boite de récéption</h2>
-            <img src="../img/svgcroixrefus.svg" alt="croix fermeture">
+            <img id="croixboite" src="../img/svgcroixrefus.svg" alt="croix fermeture">
         </div>
         <?= $demandes_ruches ?>
     </div>
+    <?= $infoaffiche ?>
     <main>
-        <div class="informationerreur">
-            <div class="topinfo">
-                <h2>Information</h2>
-                <img src="../img/svgcroixrefus.svg" alt="croix de refus">
-            </div>
-            <?= $message ?>
-        </div>
-        <div class="cachetjrla">
-
-        </div>
         <?= $contentuser ?>
         <h2 class="Titre">Gestion des utilisateurs</h2>
         <h3 class="SousTitre">Tableau de bord</h3>
@@ -202,7 +215,6 @@ else{
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        console.log('allo')
         document.querySelector('.mail').addEventListener('click', notifopen)
 
         function notifopen() {
@@ -211,12 +223,19 @@ else{
         }
 
         document.querySelector('.cache_fond').addEventListener('click', fermerfenetre)
-        document.querySelector('.topinfo>img').addEventListener('click', fermerfenetre)
-        
+        document.querySelector('#croixboite').addEventListener('click', fermerfenetre)
 
-        function fermerfenetre(){
+
+        function fermerfenetre() {
             document.querySelector('.cache_fond').classList.remove('cache_plein')
             document.querySelector('.pop_up_admin_demande').classList.remove('popupouverte')
+        }
+
+        document.querySelector('#croixinfo').addEventListener('click', enlever)
+        document.querySelector(".cachetjrla").addEventListener('click', enlever)
+        function enlever(){
+            document.querySelector(".cachetjrla").classList.add('enlever')
+            document.querySelector('.informationerreur').classList.add('enlever')
         }
 
         const ctx = document.getElementById('myChart');
@@ -248,6 +267,9 @@ else{
         function changer() {
             document.querySelector('.infos').innerHTML = "<form action=index.php?page=resetpassword&iduser=<?= $letrucquifaittoubuguer ?>' method='post'><h2>Modifier le mot de passe de : <?= $ledexiemetrucquifaittoubuguer ?></h2><div class='mdpreset'><div class='mdpnew'><input placeholder='Entrez le nouveau mot de passe' required type='password' name='mdp'></div><div><div>Confirmez le mot de passe</div><input required placeholder='Confirmer le mot de passe' type='password' name='confirmation'></div></div><button>Envoyer</button></form>"
         }
+
+
+        <?= $lenombre ?>
     </script>
     <!-- <script src="../js/Utilisateurs.js"></script> -->
 </body>

@@ -580,7 +580,7 @@ h3 {
 }
 
 .topinfo>img{
-    width: 50px;
+    width: 30px;
 }
 
 .demande{
@@ -630,3 +630,26 @@ h3 {
     padding-inline: 20px;
     margin-bottom: 50px;
 }
+
+.mail{
+    position: relative;
+}
+
+.ptsrouge{
+    width: 20px;
+    background: red;
+    border-radius: 100%;
+    color: white;
+    position: absolute;
+    height: 20px;
+    right: -3px;
+    top: -3px;
+}
+
+.letxt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+

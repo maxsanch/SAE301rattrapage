@@ -176,13 +176,9 @@ if (count($mesruches)) {
             e.querySelector('.bout:last-child').addEventListener('click', () => {
                 document.startViewTransition(() => {
                     e.style.transform = 'translateY(-100%)';
-                    e.style.animation = 'test 0.7s linear'
-                    e.style.transition = 'transform 0.7s';
+                    e.style.animation = 'test 14s linear'
 
-                    setTimeout(() => e.remove(), 700);
-
-                    e.nextElementSibling.style.transform = 'translateX(-100%) translateX(-20px)'
-                    setTimeout(() => e.nextElementSibling.style.transform = 'translate(0)', 700);
+                    setTimeout(() => e.remove(), 14000);
 
                 });
             });
