@@ -128,3 +128,5 @@ try {
 } catch (Exception $e) {
     erreur($e->getMessage());
 }
+
+var_dump('test');
