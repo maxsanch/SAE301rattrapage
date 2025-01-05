@@ -1,10 +1,9 @@
 <?php
 
-if($user[0]['Statut'] == 'admin'){
-    
+if ($user[0]['Statut'] == 'admin') {
+
     $header = HEADER_admin;
-}
-else{
+} else {
     $header = HEADER_connecté;
 }
 
@@ -14,10 +13,10 @@ $contenu = '';
 
 if (count($mesruches)) {
     // Affichage des lignes du tableau
-        foreach ($mesruches as $ligne) {
-            var_dump($ligne);
-            $contenu .= '<div class="case"><div class="photo"><img src="../img/Ruches.jpg" alt=""></div><b>'.$ligne['nom'].'</b><a class="bout" href="index.php?page=Ruches&jsruche=Ruche N°'.$ligne['ID_Ruches'].'">Informations</a><a href="index.php?page=modif&ruche='.$ligne['ID_Ruches'].'" class="bout">Modifier</a><a href="index.php?page=suppression&ruche='.$ligne['ID_Ruches'].'" class="bout">Supprimer</a></div>';
-        }
+    foreach ($mesruches as $ligne) {
+        var_dump($ligne);
+        $contenu .= '<div class="case"><div class="photo"><img src="../img/Ruches.jpg" alt=""></div><b>' . $ligne['nom'] . '</b><a class="bout" href="index.php?page=Ruches&jsruche=Ruche N°' . $ligne['ID_Ruches'] . '">Informations</a><a href="index.php?page=modif&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Modifier</a><a href="index.php?page=suppression&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Supprimer</a></div>';
+    }
 } else
     echo "<div class='reponse'>Aucune ruche enregistrée.</div>";
 
@@ -47,12 +46,23 @@ if (count($mesruches)) {
         <?= $header ?>
     </header>
 
+    <div class="cache_fond">
+
+    </div>
+    <div class="pop_up_admin_demande">
+        <div class="topinfo">
+            <h2>Boite de récéption</h2>
+            <img id="croixboite" src="../img/svgcroixrefus.svg" alt="croix fermeture">
+        </div>
+        <?= $demandes_ruches ?>
+    </div>
+
     <div class="titre_top_centre">
         <h1 class="titre_normal">Modification de la ruche n°<?= $_GET['ruche'] ?></h1>
     </div>
 
     <div class="grid_ajout_ruche">
-        <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifier&ruche=' .$_GET['ruche']  ?>" method="post">
+        <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifier&ruche=' . $_GET['ruche'] ?>" method="post">
             <h2>Modification de ruche</h2>
             <div class="ajout_ruches">
                 <div class="nom_ruche">
@@ -123,6 +133,10 @@ if (count($mesruches)) {
     </footer>
 
     <script>
+        
+         <?= $fonctionadmin ?>
+         <?= $lenombre ?>
+
         var map = L.map('map').setView([51.505, -0.09], 13);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

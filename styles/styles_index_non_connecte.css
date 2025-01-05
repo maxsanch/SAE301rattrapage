@@ -546,7 +546,7 @@ h3 {
 }
 
 .cache_plein{
-    display: block;
+    display: block !important;
     opacity: 1;
 }
 

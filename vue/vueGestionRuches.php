@@ -1,7 +1,6 @@
 <?php
 
 if ($user[0]['Statut'] == 'admin') {
-
     $header = HEADER_admin;
 } else {
     $header = HEADER_connecté;
@@ -13,10 +12,10 @@ $footer = Footer_déconnecté;
 $contenu = '';
 
 if (file_exists('img/imported/' . $user[0]['Id_utilisateur'] . '.jpg')) {
-    $photo = 'img/imported/' .$user[0]['Id_utilisateur']. '.jpg';
+    $photo = 'img/imported/' . $user[0]['Id_utilisateur'] . '.jpg';
     // Si l'image existe, l'affiche
-} else if (file_exists('img/imported/' .$user[0]['Id_utilisateur']. '.png')) {
-    $photo = 'img/imported/' .$user[0]['Id_utilisateur']. '.png';
+} else if (file_exists('img/imported/' . $user[0]['Id_utilisateur'] . '.png')) {
+    $photo = 'img/imported/' . $user[0]['Id_utilisateur'] . '.png';
 } else {
     // Sinon, affiche une image par défaut
     $photo = 'img/imported/no-user-image.jpg';
@@ -36,7 +35,7 @@ if (count($mesruches)) {
             // Sinon, affiche une image par défaut
             $phototest = 'img/imported/no_image_ruche.png';
         }
-        $contenu .= '<div class="case"><a href="index.php?page=Photo_ruche&idRuche=' . $ligne['ID_Ruches'] . '" class="photo"><img src="../' . $phototest . '" alt=""></a><b>' . $ligne['nom'] . '</b><a class="bout" href="index.php?page=Ruches&jsruche=Ruche N°'.$ligne['ID_Ruches'].'">Informations</a><a href="index.php?page=modif&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Modifier</a><a href="index.php?page=suppression&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Supprimer</a></div>';
+        $contenu .= '<div class="case"><a href="index.php?page=Photo_ruche&idRuche=' . $ligne['ID_Ruches'] . '" class="photo"><img src="../' . $phototest . '" alt=""></a><b>' . $ligne['nom'] . '</b><a class="bout" href="index.php?page=Ruches&jsruche=Ruche N°' . $ligne['ID_Ruches'] . '">Informations</a><a href="index.php?page=modif&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Modifier</a><a href="index.php?page=suppression&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Supprimer</a></div>';
     }
 } else
     echo "<div class='reponse'>Aucune ruche enregistrée.</div>";
@@ -66,6 +65,17 @@ if (count($mesruches)) {
     <header>
         <?= $header ?>
     </header>
+
+    <div class="cache_fond">
+
+    </div>
+    <div class="pop_up_admin_demande">
+        <div class="topinfo">
+            <h2>Boite de récéption</h2>
+            <img id="croixboite" src="../img/svgcroixrefus.svg" alt="croix fermeture">
+        </div>
+        <?= $demandes_ruches ?>
+    </div>
 
     <div class="titre_top_centre">
         <h1 class="titre_normal">Gestion des ruches</h1>
@@ -112,7 +122,9 @@ if (count($mesruches)) {
         <div class="parentdoubleFormulaire">
             <div class="profile_picture">
                 <img src="../<?= $photo ?>" alt="photo de profile">
-                <form method="post" action="index.php?page=changeprofilepicture&idUser=<?= $user[0]['Id_utilisateur'] ?>" enctype="multipart/form-data">
+                <form method="post"
+                    action="index.php?page=changeprofilepicture&idUser=<?= $user[0]['Id_utilisateur'] ?>"
+                    enctype="multipart/form-data">
                     <h2>Photo de profile</h2>
                     <div class="form_elt">
                         <input type="hidden" name="MAX_FILE_SIZE" value="500000">
@@ -123,7 +135,8 @@ if (count($mesruches)) {
                 </form>
             </div>
 
-            <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifprofil&idUser='.$user[0]['Id_utilisateur'] ?>" method="post">
+            <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifprofil&idUser=' . $user[0]['Id_utilisateur'] ?>"
+                method="post">
                 <h2>Mes informations</h2>
                 <div class="ajout_ruches">
                     <div class="nom_ruche">
@@ -165,6 +178,10 @@ if (count($mesruches)) {
     </footer>
 
     <script>
+
+        <?= $fonctionadmin ?>
+        <?= $lenombre ?>
+
         var map = L.map('map').setView([51.505, -0.09], 13);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

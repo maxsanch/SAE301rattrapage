@@ -1,6 +1,7 @@
 <?php
 
-$header = HEADER_connecté;
+$header = HEADER_admin;
+
 $footer = Footer_déconnecté;
 
 ?>
@@ -16,10 +17,22 @@ $footer = Footer_déconnecté;
     <link rel="stylesheet" media="(min-width: 620px)" href="../styles/styles_index_non_connecte.css">
 </head>
 
-<header>
-    <?= $header ?>
-</header>
 <body>
+    <header>
+        <?= $header ?>
+    </header>
+
+    <div class="cache_fond">
+
+    </div>
+    <div class="pop_up_admin_demande">
+        <div class="topinfo">
+            <h2>Boite de récéption</h2>
+            <img id="croixboite" src="../img/svgcroixrefus.svg" alt="croix fermeture">
+        </div>
+        <?= $demandes_ruches ?>
+    </div>
+
     <form method="post" action="index.php?page=enregUserPhoto&idUser=<?= $_GET['idUser'] ?>"
         enctype="multipart/form-data">
         <div class="form_elt">
@@ -28,8 +41,17 @@ $footer = Footer_déconnecté;
         </div>
         <input type="submit" class="valid" name="ok" value="Valider">
     </form>
+
+    <footer>
+        <?= $footer ?>
+    </footer>
+
+    <script>
+         <?= $fonctionadmin ?>
+         <?= $lenombre ?>
+    </script>
 </body>
-<footer>
-    <?= $footer ?>
-</footer>
+
+
+
 </html>

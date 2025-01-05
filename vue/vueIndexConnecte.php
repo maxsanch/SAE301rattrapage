@@ -1,9 +1,12 @@
 <?php
+
 $footer = Footer_connecté;
 
 
 $contenu2 = '';
 $markers = '';
+
+$mapcenter = "var map = L.map('map').setView([50, 50], 13);";
 
 if (count($getruche)) {
 
@@ -37,12 +40,12 @@ if (count($getruche)) {
 
     $i = $getruche[0]["ID_Ruches"];
 
-    if(isset($ruches->$i)){
-        $mapcenter = "var map = L.map('map').setView([".$ruches->$i->gps[0].", ".$ruches->$i->gps[1]."], 13);";
+    if (isset($ruches->$i)) {
+        $mapcenter = "var map = L.map('map').setView([" . $ruches->$i->gps[0] . ", " . $ruches->$i->gps[1] . "], 13);";
+    } else {
+        $mapcenter = "var map = L.map('map').setView([50, 50], 13);";
     }
-    else{
-        $mapcenter = "";
-    }
+
     
 
         foreach ($getruche as $r) {

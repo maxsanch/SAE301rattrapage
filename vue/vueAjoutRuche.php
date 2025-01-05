@@ -1,9 +1,8 @@
 <?php
 
-if($user[0]['Statut'] == 'admin'){
+if ($user[0]['Statut'] == 'admin') {
     $header = HEADER_admin;
-}
-else{
+} else {
     $header = HEADER_connecté;
 }
 
@@ -27,6 +26,17 @@ $footer = Footer_déconnecté;
     <header>
         <?= $header ?>
     </header>
+
+    <div class="cache_fond">
+
+    </div>
+    <div class="pop_up_admin_demande">
+        <div class="topinfo">
+            <h2>Boite de récéption</h2>
+            <img id="croixboite" src="../img/svgcroixrefus.svg" alt="croix fermeture">
+        </div>
+        <?= $demandes_ruches ?>
+    </div>
     <form method="post" action="index.php?page=enregRuchePhoto&idRuche=<?= $_GET['idRuche'] ?>"
         enctype="multipart/form-data">
         <div class="form_elt">
@@ -38,6 +48,12 @@ $footer = Footer_déconnecté;
     <footer>
         <?= $footer ?>
     </footer>
+
+
+    <script>
+         <?= $fonctionadmin ?>
+         <?= $lenombre ?>
+    </script>
 </body>
 
 </html>

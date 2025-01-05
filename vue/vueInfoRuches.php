@@ -6,6 +6,8 @@ if ($utilisateur[0]['Statut'] == 'admin') {
 } else {
     $header = HEADER_connecté;
 }
+
+
 $footer = Footer_connecté;
 
 $content = "";
@@ -19,6 +21,7 @@ $graphhtemp = "";
 
 $markers = "";
 $choixruche = "";
+$mapcenter = "var map = L.map('map').setView([50, 50], 13);";
 
 if (count($getruche)) {
     $i = $getruche[0]["ID_Ruches"];
@@ -26,7 +29,7 @@ if (count($getruche)) {
     if (isset($ruches->$i)) {
         $mapcenter = "var map = L.map('map').setView([" . $ruches->$i->gps[0] . ", " . $ruches->$i->gps[1] . "], 13);";
     } else {
-        $mapcenter = "";
+        $mapcenter = "var map = L.map('map').setView([50, 50], 13);";
     }
 
     foreach ($getruche as $r) {
@@ -42,15 +45,16 @@ if (count($getruche)) {
         $notesingle = afficher_notes($i);
         $compter_note = 0;
         $bouton_note = "";
-
-        if (file_exists('img/imported/' . $r['ID_Ruches'] . '.jpg')) {
-            $phototest = 'img/imported/' . $r['ID_Ruches'] . '.jpg';
-            // Si l'image existe, l'affiche
-        } else if (file_exists('img/imported/' . $ligne['ID_Ruches'] . '.png')) {
-            $phototest = 'img/imported/' . $r['ID_Ruches'] . '.png';
-        } else {
-            // Sinon, affiche une image par défaut
-            $phototest = 'img/imported/no_image_ruche.png';
+        if (isset($ruches->$i)) {
+            if (file_exists('img/imported/' . $r['ID_Ruches'] . '.jpg')) {
+                $phototest = 'img/imported/' . $r['ID_Ruches'] . '.jpg';
+                // Si l'image existe, l'affiche
+            } else if (file_exists('img/imported/' . $ligne['ID_Ruches'] . '.png')) {
+                $phototest = 'img/imported/' . $r['ID_Ruches'] . '.png';
+            } else {
+                // Sinon, affiche une image par défaut
+                $phototest = 'img/imported/no_image_ruche.png';
+            }
         }
 
         if (!empty($notesingle)) {
@@ -211,13 +215,7 @@ if (count($getruche)) {
                 </div>
             </div>";
 
-        } else {
-            $content .= "Nous avons sans le vouloir accepté une ruche qui n'existe pas, nous nous en excusons, pouvez vous supprimer cette dernière ou contacter un administrateur ?";
-        }
-
-
-
-        $graphhumid .= "const humid" . $i . " = document.getElementById('" . $i . "_1');
+            $graphhumid .= "const humid" . $i . " = document.getElementById('" . $i . "_1');
     
             new Chart(humid" . $i . ", {
                 type: 'line',
@@ -262,6 +260,13 @@ if (count($getruche)) {
                     }
                 }
             });";
+
+
+        } else {
+            $content .= "Nous avons sans le vouloir accepté une ruche qui n'existe pas, nous nous en excusons, pouvez vous supprimer cette dernière ou contacter un administrateur ?";
+            $graphhtemp .= "";
+            $graphhumid .= "";
+        }
     }
 } else {
     $content .= "Vous n'avez aucune ruche.";
@@ -280,7 +285,7 @@ if (count($getruche)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information ruches</title>
-    <link rel="stylesheet" media="(min-width: 620px)" href="../styles/styles_index_non_connecte.css">
+    <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
     <link rel="stylesheet" href="../styles/styles_commun_mobile.css">
     <link rel="stylesheet" href="../styles/inforuches.css">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
@@ -296,6 +301,14 @@ if (count($getruche)) {
     <header>
         <?= $header ?>
     </header>
+
+    <div class="pop_up_admin_demande">
+        <div class="topinfo">
+            <h2>Boite de récéption</h2>
+            <img id="croixboite" src="../img/svgcroixrefus.svg" alt="croix fermeture">
+        </div>
+        <?= $demandes_ruches ?>
+    </div>
 
     <div class="fixed_carte">
         <div id="map"></div>
@@ -515,6 +528,8 @@ if (count($getruche)) {
             });
 
             <?= $mapcenter ?>
+
+            
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -694,6 +709,9 @@ if (count($getruche)) {
                     document.querySelector('#editor>.ql-editor').innerHTML = document.querySelector('#contenu' + splited).innerHTML
                 }
             })
+
+            <?= $fonctionadmin ?>
+            <?= $lenombre ?>
 
         </script>
 </body>

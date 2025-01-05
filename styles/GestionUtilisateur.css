@@ -275,5 +275,128 @@ h3 {
 }
 
 .enlever{
-    display: none;
+    display: none !important;
+}
+
+.pop_up_fixed_info_users{
+    position: fixed;
+    background: #F7F3F0;
+    display: grid;
+    grid-template-columns: 1.5fr 3.5fr;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    border-radius: 24px;
+    gap: 50px;
+    padding: 10px;
+    min-height: 550px;
+    z-index: 100001;
+}
+
+.photo_left{
+    background-image: url(../img/appiculteur_admin.jpg);
+    background-size: cover;
+    background-position: 35%;
+    border-radius: 14px;
+}
+
+.informations_and_icones{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.grasuser{
+    font-family: Montserrat-bold;
+}
+
+.casejaune{
+    padding: 10px;
+    border: solid 2px #D38932;
+    border-radius: 14px;
+}
+input{
+    background: transparent;
+    width: 100%;
+    padding: 5px;
+    border: none;
+}
+.casejaune{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.enleverstpp:focus{
+    outline: none;
+    border: none;  /* Supprime la bordure si nécessaire */
+}
+
+.boutons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.reset_password{
+    background: #EBA942;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.532);
+}
+
+.reset_password:active{
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.532);
+}
+.delet_account:active{
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.532);
+}
+.delet_account{
+    border-radius: 14px;
+    background: #D38932;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.532);
+}
+
+
+.icone>img{
+    width: 30px;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.infos>form>button{
+    text-align: center;
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    color: white;
+    padding: 10px;
+    background: #EBA942;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.532);
+}
+.infos>form>button:active{
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.532);
+}
+
+
+#croixuserchoose{
+    width: 30px;
+    cursor: pointer;
+}
+
+.user_name{
+    display: flex;
+    justify-content: space-between;
 }

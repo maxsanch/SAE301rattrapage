@@ -24,18 +24,6 @@ if (count($GetAllUser)) {
     echo "<div class='reponse'>Aucun Utilisateur n'est enregistré</div>";
 
 
-$demandes_ruches = "";
-
-if (count($demandes)) {
-    foreach ($demandes as $ligne) {
-        $demandes_ruches .= '<div class="demande"><div class="nom_user">' . $ligne['prenom_utilisateur'] . ' a envoyé une demande de validation de ruche.</div><div class="id_entre">ID entré par ' . $ligne['prenom_utilisateur'] . ' : ' . $ligne['ID_Ruches'] . '</div><div class="boutons_Ajout_Ruche"><a class="accept_ruche" href="index.php?page=accepter&IdRuche=' . $ligne['ID_Ruches'] . '&IdUtilisateur=' . $ligne['Id_utilisateur'] . '&NomRuche=' . $ligne['nom_ruche'] . '&idDemande=' . $ligne['ID_attente'] . '">Accepter</a><a class="refus_ruche" href="index.php?page=Refuser&idDemande=' . $ligne['ID_attente'] . '">Refuser</a></div></div>';
-    }
-    $lenombre = "document.querySelector('.letxt').innerHTML = '".count($demandes)."'";
-} else {
-    $demandes_ruches = "<div class='informationdemande'>Aucune demande n'a été transmise.</div>";
-    $lenombre = "document.querySelector('.ptsrouge').remove();";
-}
-
 if (!empty($usersingle)) {
     $nom = $usersingle[0]['Nom'] . " " . $usersingle[0]['Prenom'];
     $statut = $usersingle[0]['Statut'];
@@ -46,24 +34,28 @@ if (!empty($usersingle)) {
     $nbrruche = count($ruchesingleuser);
     $datebis = $usersingle[0]["inscription"];
     $nombrenote = count($count);
-    $contentuser = "<div class='pop_up_fixed_info_users'><div class='photo_left'>
-                    </div>
+    $contentuser = "<div class='cachetjrla' id='celuiuser'></div>
+                    <div class='pop_up_fixed_info_users'>
+                        <div class='photo_left'>
+                        </div>
                     <div class='infos'>
-                        <div class='user_name'><h3>" . $nom . "</h3>
-                    </div>
+                        <div class='user_name'>
+                        <h2>" . $nom . "</h2>
+                        <img src='../img/svgcroixrefus.svg' id='croixuserchoose'>
+                        </div>
                     <div class='informations_and_icones'>
                         <div class='info'>
                             <div class='icone'>
-
+                            <img src='../img/inscriptionUser.svg'>
                         </div>
                         <div class='texte_info'>
                                 <p>Date d'inscription</p>
-                                <p>$date</p>
+                                <p>$datebis</p>
                             </div>
                     </div>
                     <div class='info'>
                         <div class='icone'>
-
+                            <img src='../img/nombre_notes.svg'>
                         </div>
                         <div class='texte_info'>
                             <p>Nombre de notes</p>
@@ -72,7 +64,7 @@ if (!empty($usersingle)) {
                     </div>
                     <div class='info'>
                         <div class='icone'>
-
+                            <img src='../img/nombre_ruche.svg'>
                         </div>
                         <div class='texte_info'>
                             <p>Nombre de ruches</p>
@@ -81,7 +73,7 @@ if (!empty($usersingle)) {
                     </div>
                     <div class='info'>
                         <div class='icone'>
-
+                            <img src='../img/connexion.svg'>
                         </div>
                         <div class='texte_info'>
                             <p>Dernière connexion</p>
@@ -91,16 +83,18 @@ if (!empty($usersingle)) {
                 </div>
                 <div class='champs_perso'>
                     <div class='NOM'>
-                        <p>Statut de l'utilisateur</p>
-                        $statut
+                        <p class='grasuser'>Statut</p>
+                        <p class='casejaune'>$statut</p>
                     </div>  
-                    <div class='mail'>
-                        <p>Email de l'utilisateur</p>
-                        <p>$mail</p>  
+                    <div class='mailuserspecifique'>
+                        <p class='grasuser'>E-mail</p>
+                        <p class='casejaune'>$mail</p>  
                     </div>
                     <div class='mdp'>
-                        <p>Mot de passe de l'utilisateur</p>
-                        <input type='password' disabled value='$mdp'> 
+                        <p class='grasuser'>Mot de passe</p>
+                        <div class='casejaune'>
+                            <input type='password' disabled value='$mdp'> 
+                        </div>
                     </div>
                 </div>
                 <div class='boutons'>
@@ -215,27 +209,20 @@ if ($message != "") {
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        document.querySelector('.mail').addEventListener('click', notifopen)
-
-        function notifopen() {
-            document.querySelector('.cache_fond').classList.add('cache_plein')
-            document.querySelector('.pop_up_admin_demande').classList.add('popupouverte')
-        }
-
-        document.querySelector('.cache_fond').addEventListener('click', fermerfenetre)
-        document.querySelector('#croixboite').addEventListener('click', fermerfenetre)
-
-
-        function fermerfenetre() {
-            document.querySelector('.cache_fond').classList.remove('cache_plein')
-            document.querySelector('.pop_up_admin_demande').classList.remove('popupouverte')
-        }
-
         document.querySelector('#croixinfo').addEventListener('click', enlever)
         document.querySelector(".cachetjrla").addEventListener('click', enlever)
         function enlever(){
+            console.log('FKDPSHJFD')
             document.querySelector(".cachetjrla").classList.add('enlever')
             document.querySelector('.informationerreur').classList.add('enlever')
+        }
+
+        document.querySelector('#celuiuser').addEventListener('click', enleveruser)
+        document.querySelector('#croixuserchoose').addEventListener('click', enleveruser)
+
+        function enleveruser(){
+            document.querySelector('#celuiuser').classList.add('enlever')
+            document.querySelector('.pop_up_fixed_info_users').classList.add('enlever')
         }
 
         const ctx = document.getElementById('myChart');
@@ -265,10 +252,10 @@ if ($message != "") {
         <?= $function ?>
 
         function changer() {
-            document.querySelector('.infos').innerHTML = "<form action=index.php?page=resetpassword&iduser=<?= $letrucquifaittoubuguer ?>' method='post'><h2>Modifier le mot de passe de : <?= $ledexiemetrucquifaittoubuguer ?></h2><div class='mdpreset'><div class='mdpnew'><input placeholder='Entrez le nouveau mot de passe' required type='password' name='mdp'></div><div><div>Confirmez le mot de passe</div><input required placeholder='Confirmer le mot de passe' type='password' name='confirmation'></div></div><button>Envoyer</button></form>"
+            document.querySelector('.infos').innerHTML = "<form action=index.php?page=resetpassword&iduser=<?= $letrucquifaittoubuguer ?>' method='post'><h2>Modifier le mot de passe de : <?= $ledexiemetrucquifaittoubuguer ?></h2><div class='mdpreset'><div class='casejaune'><input class='enleverstpp' placeholder='Entrez le nouveau mot de passe' required type='password' name='mdp'></div><div><div class='grasuser'>Confirmez le mot de passe</div><div class='casejaune'><input class='enleverstpp' required placeholder='Confirmer le mot de passe' type='password' name='confirmation'></div></div></div><button>Changer le mot de passe.</button></form>"
         }
 
-
+        <?= $fonctionadmin ?>
         <?= $lenombre ?>
     </script>
     <!-- <script src="../js/Utilisateurs.js"></script> -->

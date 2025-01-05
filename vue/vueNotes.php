@@ -1,6 +1,11 @@
 <?php
 
-$header = HEADER_connecté;
+if ($utilisateur[0]['Statut'] == 'admin') {
+    $header = HEADER_admin;
+} else {
+    $header = HEADER_connecté;
+}
+
 $footer = Footer_déconnecté;
 
 ?>
@@ -12,6 +17,7 @@ $footer = Footer_déconnecté;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
     <link rel="stylesheet" href="../styles/Note.css">
 </head>
 
@@ -19,6 +25,17 @@ $footer = Footer_déconnecté;
     <header>
         <?= $header ?>
     </header>
+
+    <div class="cache_fond">
+
+    </div>
+    <div class="pop_up_admin_demande">
+        <div class="topinfo">
+            <h2>Boite de récéption</h2>
+            <img id="croixboite" src="../img/svgcroixrefus.svg" alt="croix fermeture">
+        </div>
+        <?= $demandes_ruches ?>
+    </div>
 
     <div class="Decoration">
         <img class="AbeilleDeco1" src="../img/abeille_fond.svg" alt="une petite abeille qui décore la page">
@@ -48,6 +65,11 @@ $footer = Footer_déconnecté;
     <footer>
         <?= $footer ?>
     </footer>
+
+    <script>
+         <?= $fonctionadmin ?>
+         <?= $lenombre ?>
+    </script>
 </body>
 
 </html>

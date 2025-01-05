@@ -59,9 +59,11 @@ if (count($GetAllUser)) {
     echo "<div class='reponse'>Aucun Utilisateur n'est enregistré</div>";
 
 
-
 $contenu2 = '';
 $markers = '';
+
+$mapcenter = "var map = L.map('map').setView([50, 50], 13);";
+
 if (count($getruche)) {
 
     if (count($getruche) > 3) {
@@ -97,9 +99,8 @@ if (count($getruche)) {
     if (isset($ruches->$i)) {
         $mapcenter = "var map = L.map('map').setView([" . $ruches->$i->gps[0] . ", " . $ruches->$i->gps[1] . "], 13);";
     } else {
-        $mapcenter = "";
+        $mapcenter = "var map = L.map('map').setView([50, 50], 13);";
     }
-
 
 
     foreach ($getruche as $r) {
@@ -148,7 +149,7 @@ if (count($getruche)) {
         </div>
         <?= $demandes_ruches ?>
     </div>
-    
+
     <div class="Decoration">
         <img class="AbeilleDeco1" src="../img/abeille_fond.svg" alt="une petite abeille qui décore la page">
         <img class="AbeilleDeco2" src="../img/abeille_fond.svg" alt="une petite abeille qui décore la page">
@@ -281,6 +282,10 @@ if (count($getruche)) {
     </footer>
 
     <script>
+
+        <?= $fonctionadmin ?>
+        <?= $lenombre ?>
+
         <?= $mapcenter ?>
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -289,6 +294,8 @@ if (count($getruche)) {
         }).addTo(map);
 
         <?= $markers ?>
+
+
     </script>
 </body>
 
