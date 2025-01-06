@@ -257,6 +257,10 @@ h3 {
     width: 80%;
     margin: auto;
 }
+.center2{
+    width: 80%;
+    margin: auto;
+}
 
 
 .boutonajout{
@@ -321,4 +325,27 @@ h3 {
     background: #914D1E;
     padding-inline: 10px;
     border-radius: 6px;
+}
+
+.deroulantruche{
+    position: relative;
+    background: #914D1E;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    padding-inline: 15px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.deroulantruche>p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.choixruche{
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }

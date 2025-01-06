@@ -57,106 +57,131 @@ $footer = Footer_déconnecté;
     </div>
 
     <main>
-        <h1>Mes notes</h1>
 
-        <div class="choixruche">
-            <p>Choisissez une ruche</p>
-            <div class="deroulantruche">
-                <p>Ruche N° 1</p>
+        <div class="center">
+            <h1>Mes notes</h1>
+        </div>
+        <div class="center">
+            <div class="choixruche">
+                <p>Choisissez une ruche</p>
+                <div class="deroulantruche">
+                    <p>Ruche N° 1</p>
+                    <div class="iconefleche">
+                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.75 7.125L9.5 11.875L14.25 7.125" stroke="white" stroke-width="1.6"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="ruche_all_notes">
+            <div class="center">
+                <div class="titre">
+                    <h2>Notes de la ruche n°1</h2>
+                    <button class="boutonajout">
+                        Ajouter
+                    </button>
+                </div>
+                <div class="gridnotesall">
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="ruche_all_notes">
-            <div class="center">
-                <div class="titre">
-                    <h2>Notes de la ruche n°1</h2>
-                    <button class="boutonajout">
-                        Ajouter
-                    </button>
-                </div>
-                <div class="gridnotesall">
-                    <div class="contournote">
-                        <div class="top">
-                            <h3>Notes</h3>
-                        </div>
-                        <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                        </div>
-                        <div class="continuer">
-                            <p>...</p>
-                        </div>
-                        <div class="boutons">
-                            <div class="voirnote">
-                                Voir la note
-                            </div>
-                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
-                                Supprimer
-                            </a>
-                        </div>
-                    </div>
-                    <div class="contournote">
-                        <div class="top">
-                            <h3>Notes</h3>
-                        </div>
-                        <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                        </div>
-                        <div class="continuer">
-                            <p>...</p>
-                        </div>
-                        <div class="boutons">
-                            <div class="voirnote">
-                                Voir la note
-                            </div>
-                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
-                                Supprimer
-                            </a>
-                        </div>
-                    </div>
-                    <div class="contournote">
-                        <div class="top">
-                            <h3>Notes</h3>
-                        </div>
-                        <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                        </div>
-                        <div class="continuer">
-                            <p>...</p>
-                        </div>
-                        <div class="boutons">
-                            <div class="voirnote">
-                                Voir la note
-                            </div>
-                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
-                                Supprimer
-                            </a>
-                        </div>
-                    </div>
-                    <div class="contournote">
-                        <div class="top">
-                            <h3>Notes</h3>
-                        </div>
-                        <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                        </div>
-                        <div class="continuer">
-                            <p>...</p>
-                        </div>
-                        <div class="boutons">
-                            <div class="voirnote">
-                                Voir la note
-                            </div>
-                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
-                                Supprimer
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
         </div>
         <div class="ruche_all_notes">
@@ -173,8 +198,12 @@ $footer = Footer_déconnecté;
                             <h3>Notes</h3>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
                         </div>
                         <div class="continuer">
                             <p>...</p>
@@ -193,8 +222,12 @@ $footer = Footer_déconnecté;
                             <h3>Notes</h3>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
                         </div>
                         <div class="continuer">
                             <p>...</p>
@@ -213,8 +246,12 @@ $footer = Footer_déconnecté;
                             <h3>Notes</h3>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
                         </div>
                         <div class="continuer">
                             <p>...</p>
@@ -233,8 +270,12 @@ $footer = Footer_déconnecté;
                             <h3>Notes</h3>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
                         </div>
                         <div class="continuer">
                             <p>...</p>
@@ -249,7 +290,7 @@ $footer = Footer_déconnecté;
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
         <div class="ruche_all_notes">
@@ -266,8 +307,12 @@ $footer = Footer_déconnecté;
                             <h3>Notes</h3>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
                         </div>
                         <div class="continuer">
                             <p>...</p>
@@ -286,8 +331,12 @@ $footer = Footer_déconnecté;
                             <h3>Notes</h3>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
                         </div>
                         <div class="continuer">
                             <p>...</p>
@@ -306,8 +355,12 @@ $footer = Footer_déconnecté;
                             <h3>Notes</h3>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
                         </div>
                         <div class="continuer">
                             <p>...</p>
@@ -326,8 +379,12 @@ $footer = Footer_déconnecté;
                             <h3>Notes</h3>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
                         </div>
                         <div class="continuer">
                             <p>...</p>
@@ -342,7 +399,7 @@ $footer = Footer_déconnecté;
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
         <div class="ruche_all_notes">
@@ -359,8 +416,12 @@ $footer = Footer_déconnecté;
                             <h3>Notes</h3>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
                         </div>
                         <div class="continuer">
                             <p>...</p>
@@ -379,8 +440,12 @@ $footer = Footer_déconnecté;
                             <h3>Notes</h3>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
                         </div>
                         <div class="continuer">
                             <p>...</p>
@@ -399,8 +464,12 @@ $footer = Footer_déconnecté;
                             <h3>Notes</h3>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
                         </div>
                         <div class="continuer">
                             <p>...</p>
@@ -419,8 +488,12 @@ $footer = Footer_déconnecté;
                             <h3>Notes</h3>
                         </div>
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt
+                                temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium
+                                at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
                         </div>
                         <div class="continuer">
                             <p>...</p>
@@ -435,7 +508,7 @@ $footer = Footer_déconnecté;
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </main>
@@ -445,8 +518,8 @@ $footer = Footer_déconnecté;
     </footer>
 
     <script>
-         <?= $fonctionadmin ?>
-         <?= $lenombre ?>
+        <?= $fonctionadmin ?>
+        <?= $lenombre ?>
     </script>
 </body>
 
