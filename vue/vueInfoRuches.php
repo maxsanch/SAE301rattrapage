@@ -1,6 +1,6 @@
 <?php
 
-
+var_dump($message);
 if ($utilisateur[0]['Statut'] == 'admin') {
     $header = HEADER_admin;
 } else {
@@ -238,7 +238,7 @@ if (count($getruche)) {
                 }
             });";
 
-        $graphhtemp .= "const temp" . $i . " = document.getElementById('" . $i . "_2');
+            $graphhtemp .= "const temp" . $i . " = document.getElementById('" . $i . "_2');
     
             new Chart(temp" . $i . ", {
                 type: 'line',
@@ -478,20 +478,25 @@ if (count($getruche)) {
             const ajout = url.get('page');
             const suppression = url.get('idnote')
 
-            if (ajout == 'ajoutNote' || suppression != null) {
+            if (ajout == 'ajoutNote' && suppression != null) {
+                console.log('test');
                 document.querySelector('.confirmation').classList.add('ouvert2')
                 document.querySelector('.cache_fond').classList.add('ouvert2')
             }
 
+
             document.querySelector('.croix').addEventListener('click', fermerlaconf)
 
             function fermerlaconf() {
+
                 document.querySelector('.confirmation').classList.remove('ouvert2')
                 document.querySelector('.cache_fond').classList.remove('ouvert2')
             }
 
             if (jsruche != "null") {
+
                 document.querySelector('#rchoisi').innerHTML = jsruche.split('0')[0] + ' ' + jsruche.split('0')[jsruche.split('0').length - 1]
+
                 document.querySelectorAll('.recup').forEach(element => {
                     element.parentElement.parentElement.classList.remove('disparu4')
                     if (element.innerHTML == jsruche) {
@@ -509,7 +514,6 @@ if (count($getruche)) {
             <?= $graphhtemp ?>
 
             document.querySelectorAll('.recup').forEach(e => {
-                console.log(e.innerHTML.split('0'))
                 e.innerHTML = e.innerHTML.split('0')[0] + " " + e.innerHTML.split('0')[e.innerHTML.split('0').length - 1]
             })
 
@@ -519,7 +523,6 @@ if (count($getruche)) {
             function actualiser() {
                 let carote = document.querySelector('#editor>.ql-editor').innerHTML
                 document.querySelector('.inclusion').value = carote
-                console.log(document.querySelector('.inclusion').value)
             }
 
             const quill = new Quill('#editor', {
@@ -529,7 +532,7 @@ if (count($getruche)) {
 
             <?= $mapcenter ?>
 
-            
+
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -668,12 +671,21 @@ if (count($getruche)) {
 
 
             document.querySelectorAll('.grid_notes').forEach(e => {
-                e.querySelector('.note').classList.remove('disabled')
-                e.querySelector('.bouton_note').classList.add('bouton_note_select')
-                e.querySelector('.modifier').id = 'modifier' + e.querySelector('.bouton_note').id
+                if (e.querySelector('.note') && e.querySelector('.bouton_note:first-child') && e.querySelector('.modifier')) {
+
+                    e.querySelector('.note').classList.remove('disabled')
+
+                    e.querySelector('.bouton_note:first-child').classList.add('bouton_note_select')
+
+                    e.querySelector('.modifier').id = 'modifier' + e.querySelector('.bouton_note').id
+                }
+                else{
+                    e.querySelector('.modifier').remove()
+                }
             })
 
             document.querySelectorAll('.bouton_note').forEach(element => {
+
                 element.addEventListener('click', delet)
                 let parent = element.parentElement.parentElement.parentElement
                 function delet() {

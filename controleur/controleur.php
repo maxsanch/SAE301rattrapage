@@ -33,10 +33,10 @@ function demandesruches()
     $getUser = new utilisateurs();
     $utilisateur = $getUser->GetUser($_SESSION['acces']);
 
-    if($utilisateur[0]['Statut'] == 'admin'){
+    if ($utilisateur[0]['Statut'] == 'admin') {
         $ruche = new ruches();
         $demandes = $ruche->getdemandes();
-    
+
         // demande de ruches
         $demandes_ruches = "";
         $fonctionadmin = "document.querySelector('.mail').addEventListener('click', notifopen)
@@ -54,7 +54,7 @@ function demandesruches()
             document.querySelector('.cache_fond').classList.remove('cache_plein')
             document.querySelector('.pop_up_admin_demande').classList.remove('popupouverte')
         }";
-    
+
         if (count($demandes)) {
             foreach ($demandes as $ligne) {
                 $demandes_ruches .= '<div class="demande"><div class="nom_user">' . $ligne['prenom_utilisateur'] . ' a envoyé une demande de validation de ruche.</div><div class="id_entre">ID entré par ' . $ligne['prenom_utilisateur'] . ' : ' . $ligne['ID_Ruches'] . '</div><div class="boutons_Ajout_Ruche"><a class="accept_ruche" href="index.php?page=accepter&IdRuche=' . $ligne['ID_Ruches'] . '&IdUtilisateur=' . $ligne['Id_utilisateur'] . '&NomRuche=' . $ligne['nom_ruche'] . '&idDemande=' . $ligne['ID_attente'] . '">Accepter</a><a class="refus_ruche" href="index.php?page=Refuser&idDemande=' . $ligne['ID_attente'] . '">Refuser</a></div></div>';
@@ -64,8 +64,7 @@ function demandesruches()
             $demandes_ruches = "<div class='informationdemande'>Aucune demande n'a été transmise.</div>";
             $lenombre = "document.querySelector('.ptsrouge').remove();";
         }
-    }
-    else{
+    } else {
         $demandes_ruches = "<div class='informationdemande'>Vous ne devriez pas avoir accès à ce type d'informations.</div>";
         $lenombre = '';
         $fonctionadmin = '';
@@ -220,15 +219,20 @@ function modification_ruches($erreur)
 
 function notes()
 {
+    $getuser = new utilisateurs();
+    $utilisateur = $getuser->GetUser($_SESSION['acces']);
+    $ruche = new ruches();
+    $getruche = $ruche->getruches($utilisateur[0]['Id_utilisateur']);
+
+    $fichier = file_get_contents("js/data_ruche.json");
+    $ruches = json_decode($fichier);
+
     // pour chercher les ruches
 
     $demandes_ruches = demandesruches()[0];
     $lenombre = demandesruches()[1];
     $fonctionadmin = demandesruches()[2];
 
-    $getuser = new utilisateurs();
-    $utilisateur = $getuser->GetUser($_SESSION['acces']);
-    
     require "vue/vueNotes.php";
 }
 
@@ -421,16 +425,38 @@ function ajoutnote($ruches, $notecontent)
 
             $message = 'La note à bien été enregistrée';
 
-            ruches($message);
+            if (isset($_GET['prevpage'])) {
+                if ($_GET['prevpage'] == 'ajouternote') {
+                    notes();
+                } else {
+                    ruches($message);
+                }
+            } else {
+                ruches($message);
+            }
         } else {
             $message = 'Une erreur est survenue';
-            ruches($message);
+            if (isset($_GET['prevpage'])) {
+                if ($_GET['prevpage'] == 'ajouternote') {
+                    notes();
+                } else {
+                    ruches($message);
+                }
+            } else {
+                ruches($message);
+            }
         }
-
-
     } else {
         $message = 'Une erreur est survenue';
-        ruches($message);
+        if (isset($_GET['prevpage'])) {
+            if ($_GET['prevpage'] == 'ajouternote') {
+                notes();
+            } else {
+                ruches($message);
+            }
+        } else {
+            ruches($message);
+        }
     }
     ;
 }
@@ -599,15 +625,33 @@ function supprimernote($id)
 
     $note = new notes();
     $note->supprimer($id);
-    ruches($message);
+
+    if (isset($_GET['prevpage'])) {
+        if ($_GET['prevpage'] == 'note') {
+            notes();
+        } else {
+            ruches($message);
+        }
+    } else {
+        ruches($message);
+    }
 }
 
 function modifnote($id, $content)
 {
     $message = "la note à bien été modifiée.";
     $note = new notes();
+    $content = htmlspecialchars($content);
     $note->modifier($id, $content);
-    ruches($message);
+    if (isset($_GET['prevpage'])) {
+        if ($_GET['prevpage'] == 'modif') {
+            notes();
+        } else {
+            ruches($message);
+        }
+    } else {
+        ruches($message);
+    }
 }
 
 function deletaccount($id)

@@ -349,3 +349,112 @@ h3 {
     align-items: center;
     gap: 20px;
 }
+
+.absolute_deroulant{
+    position: absolute;
+    width: 100%;
+    top: 110%;
+    left: 0;
+    background-color: #f1a100;
+    border-radius: 3px;
+    max-height: 500px;
+    overflow-y: scroll;
+    scrollbar-color: rgb(245, 231, 214) rgba(125, 125, 125, 0);
+    scrollbar-width: thin;
+    transition: 0.4s;
+    transform-origin: top center;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.493);
+    transform: scaleY(0);
+}
+.ouvert{
+    transform: scaleY(1);
+}
+.choix{
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.choix::after{
+    content : "";
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    bottom: 0;
+    width: 0;
+    transition: 0.4s;
+    left: 0;
+    background: #F2BF00;
+}
+
+.choix:hover::after{
+    width: 100%;
+}
+
+a{
+    color: #2c2c2c;
+}
+
+.formbouton{
+    background: #914D1E;
+    color: #2c2c2c;
+    padding: 5px;
+    padding-inline: 10px;
+    border: none;
+    margin: 20px;
+    margin-left: auto;
+    display: flex;
+    cursor: pointer;
+}
+.disparu4{
+    display: none;
+}
+
+
+
+.formulairetest{
+    z-index: 1000000;
+    position: fixed;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFFFFA;
+    border-radius: 20px;
+    display: none;
+}
+
+#editor{
+    height: 250px;
+    background: url(../img/feuille.jpg);
+    background-size: cover;
+    border: none;
+}
+
+.ql-toolbar {
+    
+    border: 1px solid #FFFFFA;
+    border-radius: 20px 20px 0 0 ;
+}
+
+#toolbar{
+    background: white;
+}
+.formopen{
+    display: block;
+}
+
+.ouvert2{
+    display: block;
+    animation: forwards apparaitre 0.4s;
+}
+
+@keyframes apparaitre{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
