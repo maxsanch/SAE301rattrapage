@@ -62,7 +62,380 @@ $footer = Footer_déconnecté;
         <div class="choixruche">
             <p>Choisissez une ruche</p>
             <div class="deroulantruche">
-                <p>Ruche N°1</p>
+                <p>Ruche N° 1</p>
+            </div>
+        </div>
+
+        <div class="ruche_all_notes">
+            <div class="center">
+                <div class="titre">
+                    <h2>Notes de la ruche n°1</h2>
+                    <button class="boutonajout">
+                        Ajouter
+                    </button>
+                </div>
+                <div class="gridnotesall">
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="ruche_all_notes">
+            <div class="center">
+                <div class="titre">
+                    <h2>Notes de la ruche n°1</h2>
+                    <button class="boutonajout">
+                        Ajouter
+                    </button>
+                </div>
+                <div class="gridnotesall">
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="ruche_all_notes">
+            <div class="center">
+                <div class="titre">
+                    <h2>Notes de la ruche n°1</h2>
+                    <button class="boutonajout">
+                        Ajouter
+                    </button>
+                </div>
+                <div class="gridnotesall">
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="ruche_all_notes">
+            <div class="center">
+                <div class="titre">
+                    <h2>Notes de la ruche n°1</h2>
+                    <button class="boutonajout">
+                        Ajouter
+                    </button>
+                </div>
+                <div class="gridnotesall">
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contournote">
+                        <div class="top">
+                            <h3>Notes</h3>
+                        </div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi praesentium deserunt temporibus delectus obcaecati tempore. Voluptate sapiente suscipit voluptates laudantium at quod ullam fugit? Minima eum ipsa ipsam quos saepe.</p>
+                        </div>
+                        <div class="continuer">
+                            <p>...</p>
+                        </div>
+                        <div class="boutons">
+                            <div class="voirnote">
+                                Voir la note
+                            </div>
+                            <a href="index.php?page=supprnote&idnote='dsq'" class="supprimernote">
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </main>

@@ -244,3 +244,81 @@ h3 {
 .Actions:hover::before {
     width: 100%;
 }
+
+.ruche_all_notes{
+    padding: 40px;
+}
+
+.ruche_all_notes:nth-child(even){
+    background: #FAF0E3;
+}
+
+.center{
+    width: 80%;
+    margin: auto;
+}
+
+
+.boutonajout{
+    padding: 5px;
+    background: #914D1E;
+    color: white;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.249);
+    border: none;
+    padding-inline: 20px;
+    border: none;
+    transition: 0.4s;
+    border-radius: 3px;
+}
+
+.boutonajout:active{
+    transform: scale(0.9);
+    box-shadow: none;
+}
+
+.gridnotesall{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 50px;
+    gap: 30px;
+}
+
+.contournote{
+    padding: 10px;
+    background: #F2E4CE;
+    border-radius: 16px;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.249);
+}
+
+.top{
+    border-bottom: 1px #914D1E solid;
+}
+
+.content{
+    height: 75px;
+    overflow-y: hidden;
+}
+
+.boutons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.voirnote{
+    color: #914D1E;
+    border: solid 1px #914D1E;
+    padding: 5px;
+    padding-inline: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.supprimernote{
+    color: white;
+    padding: 5px;
+    background: #914D1E;
+    padding-inline: 10px;
+    border-radius: 6px;
+}
