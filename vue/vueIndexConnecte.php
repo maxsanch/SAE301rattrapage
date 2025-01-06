@@ -9,36 +9,41 @@ $markers = '';
 $mapcenter = "var map = L.map('map').setView([50, 50], 13);";
 
 if (count($getruche)) {
+    
+    $i = $getruche[0]["ID_Ruches"];
 
-    if (count($getruche) > 3) {
-        $i = $getruche[count($getruche) - 1]["ID_Ruches"];
-        $i2 = $getruche[count($getruche) - 2]["ID_Ruches"];
-        $i3 = $getruche[count($getruche) - 3]["ID_Ruches"];
-        $contenu2 .= '<div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../img/TesRuches.png" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 1]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i->data[count($ruches->$i->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$getruche[count($getruche) - 1]["ID_Ruches"].'" class="MaRucheBouton">Consulter</a></div></div><div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../img/TesRuches.png" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 2]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i2->data[count($ruches->$i2->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$getruche[count($getruche) - 2]["ID_Ruches"].'" class="MaRucheBouton">Consulter</a></div></div><div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../img/TesRuches.png" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 3]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i3->data[count($ruches->$i3->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$getruche[count($getruche) - 3]["ID_Ruches"].'" class="MaRucheBouton">Consulter</a></div></div>';
-    } else {
-        // Affichage des lignes du tableau
-        foreach ($getruche as $r) {
-            $i = $r["ID_Ruches"];
-            if(isset($ruches->$i)){
-                if (file_exists('img/imported/' . $r['ID_Ruches'] . '.jpg')) {
-                    $phototest = 'img/imported/' . $r['ID_Ruches'] . '.jpg';
-                    // Si l'image existe, l'affiche
-                } else if(file_exists('img/imported/' . $r['ID_Ruches'] . '.png')){
-                    $phototest = 'img/imported/' . $r['ID_Ruches'] . '.png';
+    if (isset($ruches->$i)) {
+        if (count($getruche) > 3) {
+            $i = $getruche[count($getruche) - 1]["ID_Ruches"];
+            $i2 = $getruche[count($getruche) - 2]["ID_Ruches"];
+            $i3 = $getruche[count($getruche) - 3]["ID_Ruches"];
+            $contenu2 .= '<div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../img/TesRuches.png" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 1]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i->data[count($ruches->$i->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$getruche[count($getruche) - 1]["ID_Ruches"].'" class="MaRucheBouton">Consulter</a></div></div><div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../img/TesRuches.png" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 2]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i2->data[count($ruches->$i2->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$getruche[count($getruche) - 2]["ID_Ruches"].'" class="MaRucheBouton">Consulter</a></div></div><div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../img/TesRuches.png" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 3]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i3->data[count($ruches->$i3->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$getruche[count($getruche) - 3]["ID_Ruches"].'" class="MaRucheBouton">Consulter</a></div></div>';
+        } else {
+            // Affichage des lignes du tableau
+            foreach ($getruche as $r) {
+                $i = $r["ID_Ruches"];
+                if(isset($ruches->$i)){
+                    if (file_exists('img/imported/' . $r['ID_Ruches'] . '.jpg')) {
+                        $phototest = 'img/imported/' . $r['ID_Ruches'] . '.jpg';
+                        // Si l'image existe, l'affiche
+                    } else if(file_exists('img/imported/' . $r['ID_Ruches'] . '.png')){
+                        $phototest = 'img/imported/' . $r['ID_Ruches'] . '.png';
+                    }
+                    else {
+                        // Sinon, affiche une image par défaut
+                        $phototest = 'img/imported/no_image_ruche.png';
+                    }
+                    $contenu2 .= '<div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../'.$phototest.'" alt="Tes ruches"><div class="MaRucheTitre">' . $r['nom'] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i->data[count($ruches->$i->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$r['ID_Ruches'].'" class="MaRucheBouton">Consulter</a></div></div>';
                 }
-                else {
-                    // Sinon, affiche une image par défaut
-                    $phototest = 'img/imported/no_image_ruche.png';
+                else{
+                    $contenu2 .= 'ruche innexistante, veuillez la supprimer.';
                 }
-                $contenu2 .= '<div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../'.$phototest.'" alt="Tes ruches"><div class="MaRucheTitre">' . $r['nom'] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i->data[count($ruches->$i->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$r['ID_Ruches'].'" class="MaRucheBouton">Consulter</a></div></div>';
-            }
-            else{
-                $contenu2 .= 'ruche innexistante, veuillez la supprimer.';
             }
         }
     }
-
-    $i = $getruche[0]["ID_Ruches"];
+    else{
+        $contenu2 .= 'ruche(s) innexistante, veuillez la/les supprimer.';
+    }
 
     if (isset($ruches->$i)) {
         $mapcenter = "var map = L.map('map').setView([" . $ruches->$i->gps[0] . ", " . $ruches->$i->gps[1] . "], 13);";

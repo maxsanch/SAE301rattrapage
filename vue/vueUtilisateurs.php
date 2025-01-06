@@ -211,19 +211,27 @@ if ($message != "") {
     <script>
         document.querySelector('#croixinfo').addEventListener('click', enlever)
         document.querySelector(".cachetjrla").addEventListener('click', enlever)
+
         function enlever(){
-            console.log('FKDPSHJFD')
             document.querySelector(".cachetjrla").classList.add('enlever')
             document.querySelector('.informationerreur').classList.add('enlever')
         }
 
-        document.querySelector('#celuiuser').addEventListener('click', enleveruser)
-        document.querySelector('#croixuserchoose').addEventListener('click', enleveruser)
+
+        if(document.querySelector('#celuiuser') && document.querySelector('#croixuserchoose')){
+            document.querySelector('#celuiuser').addEventListener('click', enleveruser)
+            document.querySelector('#croixuserchoose').addEventListener('click', enleveruser)
+
+        }
+        
+        
 
         function enleveruser(){
             document.querySelector('#celuiuser').classList.add('enlever')
             document.querySelector('.pop_up_fixed_info_users').classList.add('enlever')
         }
+
+
 
         const ctx = document.getElementById('myChart');
 

@@ -29,6 +29,7 @@ $footer = Footer_déconnecté;
     <div class="cache_fond">
 
     </div>
+    <!-- pour l'admin quand il doit répondre au demandes de ruches : ne pas enlever -->
     <div class="pop_up_admin_demande">
         <div class="topinfo">
             <h2>Boite de récéption</h2>
@@ -55,12 +56,16 @@ $footer = Footer_déconnecté;
         </svg>
     </div>
 
-    <div class="ParentPartie1">
-        <div class="Partie1">
-            <div class="Partie1Titre">Note de la ruche n°1</div>
+    <main>
+        <h1>Mes notes</h1>
+
+        <div class="choixruche">
+            <p>Choisissez une ruche</p>
+            <div class="deroulantruche">
+                <p>Ruche N°1</p>
+            </div>
         </div>
-        <div class="AjouterNote">Ajouter</div>
-    </div>
+    </main>
 
     <footer>
         <?= $footer ?>

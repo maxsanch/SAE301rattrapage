@@ -190,14 +190,15 @@ if (count($mesruches)) {
         }).addTo(map);
 
         document.querySelectorAll('.case').forEach(e => {
-            e.querySelector('.bout:last-child').addEventListener('click', () => {
-                document.startViewTransition(() => {
-                    e.style.transform = 'translateY(-100%)';
-                    e.style.animation = 'test 14s linear'
+            e.querySelector('.bout:last-child').addEventListener('click', (event) => {
+                event.preventDefault()
+                e.classList.add('deletruche')
 
-                    setTimeout(() => e.remove(), 14000);
+                setTimeout(removecase, 550)
 
-                });
+                function removecase(){
+                    window.location = e.querySelector('.bout:last-child').href
+                }
             });
         });
     </script>
