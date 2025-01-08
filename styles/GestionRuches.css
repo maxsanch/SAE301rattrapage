@@ -238,3 +238,11 @@ form{
 .form_elt>input:nth-child(2){
     width: 500px;
 }
+.form_elt>label{
+    border: #B95E06 dashed 0.3px;
+    padding: 20px;
+    padding-inline: 100px;
+}
+.orange{
+    color: #B95E06;
+}

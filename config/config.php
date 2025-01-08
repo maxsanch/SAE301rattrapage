@@ -38,7 +38,7 @@ define("Footer_déconnecté", '<div class="FooterGlobal">
                         le
                         projet ruche connecté est né et permet au apiculteurs de facilement obtenir toute les
                         informations
-                        nécéssaires facilement, avec une simle conneion sur le site !</div>
+                        nécéssaires facilement, avec une simple connexion sur le site !</div>
                     <div>Facilitez vous la vie avec le projet ruches connectées.</div>
                     <a href="index.php#Information" class="FooterBouton1">Découvrir ></a>
                 </div>
@@ -120,7 +120,7 @@ define("Footer_connecté", '<div class="FooterGlobal">
                         le
                         projet ruche connecté est né et permet au apiculteurs de facilement obtenir toute les
                         informations
-                        nécéssaires facilement, avec une simle conneion sur le site !</div>
+                        nécéssaires facilement, avec une simple connexion sur le site !</div>
                     <div>Facilitez vous la vie avec le projet ruches connectées.</div>
                     <a href="index.php#Information" class="FooterBouton1">Découvrir ></a>
                 </div>

@@ -86,19 +86,50 @@ class utilisateurs extends database
                             return $erreur;
                         }
                     } else {
-                        $erreur = "extension incompatible";
+                        if (isset($_GET['prevpage'])) {
+                            if ($_GET['prevpage'] == 'gestionruche') {
+                                return "extension incompatible";
+                            } else {
+                                $erreur = "extension incompatible";
+                                $usersingle = "";
+                                utilisateurs($erreur, $usersingle);
+                            }
+                        } else {
+                            $erreur = "extension incompatible";
+                            $usersingle = "";
+                            utilisateurs($erreur, $usersingle);
+                        }
+
+                    }
+                } else {
+                    if (isset($_GET['prevpage'])) {
+                        if ($_GET['prevpage'] == 'gestionruche') {
+                            return "fichier trop volumineux";
+                        } else {
+                            $erreur = "fichier trop volumineux";
+                            $usersingle = "";
+                            utilisateurs($erreur, $usersingle);
+                        }
+                    } else {
+                        $erreur = "fichier trop volumineux";
+                        $usersingle = "";
+                        utilisateurs($erreur, $usersingle);
+                    }
+                }
+            } else {
+                if (isset($_GET['prevpage'])) {
+                    if ($_GET['prevpage'] == 'gestionruche') {
+                        return "Une erreur est survenue";
+                    } else {
+                        $erreur = "Une erreur est survenue";
                         $usersingle = "";
                         utilisateurs($erreur, $usersingle);
                     }
                 } else {
-                    $erreur = "fichier trop volumineux";
+                    $erreur = "Une erreur est survenue";
                     $usersingle = "";
                     utilisateurs($erreur, $usersingle);
                 }
-            } else {
-                $erreur = "Une erreur est survenue";
-                $usersingle = "";
-                utilisateurs($erreur, $usersingle);
             }
         }
     }

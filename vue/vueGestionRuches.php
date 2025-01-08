@@ -127,13 +127,13 @@ if (count($mesruches)) {
         <div class="parentdoubleFormulaire">
             <div class="profile_picture">
                 <form method="post" class="photoprofil"
-                    action="index.php?page=changeprofilepicture&idUser=<?= $user[0]['Id_utilisateur'] ?>"
+                    action="index.php?page=changeprofilepicture&prevpage=gestionruche&idUser=<?= $user[0]['Id_utilisateur'] ?>"
                     enctype="multipart/form-data">
                     <h2>Photo de profile</h2>
                     <div class="form_elt">
                         <input type="hidden" name="MAX_FILE_SIZE" value="500000">
-                        <label for="photoUser" class="file-upload">
-                            <span>Choose file or drop here</span>
+                        <label class="file-upload">
+                            <span class="orange">Ajoutez</span><span> votre fichier ici</span>
                             <input id="photoUser" type="file" name="photoUser" accept="image/jpeg, image/png" hidden>
                         </label>
                         <input type="submit" class="valid" name="ok" value="Valider">
@@ -141,6 +141,9 @@ if (count($mesruches)) {
                     <?= $erreur2 ?>
                 </form>
             </div>
+            <main>
+                
+            </main>
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifprofil&idUser=' . $user[0]['Id_utilisateur'] ?>"
                 method="post">
                 <h2>Mes informations</h2>

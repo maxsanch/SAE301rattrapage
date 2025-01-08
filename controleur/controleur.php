@@ -518,7 +518,7 @@ function changepdp($idUser)
     $user = new utilisateurs();
     $user->updateUserPhoto($idUser);
     $erreur1 = '';
-    $erreur2 = '';
+    $erreur2 = $user->updateUserPhoto($idUser);
     $erreur3 = '';
 
     gestion_ruches($erreur1, $erreur2, $erreur3);

@@ -1,0 +1,35 @@
+main{
+    min-height: 60vh;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.orange{
+    color: #B95E06;
+    margin-right: 5px;
+}
+
+.boutbout{
+    border: none;
+    background: #B95E06;
+    color: white;
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.612);
+}
+
+.form_elt>label{
+    border: dashed #B95E06 0.3px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    height: 200px;
+}
