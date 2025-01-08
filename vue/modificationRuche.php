@@ -14,7 +14,6 @@ $contenu = '';
 if (count($mesruches)) {
     // Affichage des lignes du tableau
     foreach ($mesruches as $ligne) {
-        var_dump($ligne);
         $contenu .= '<div class="case"><div class="photo"><img src="../img/Ruches.jpg" alt=""></div><b>' . $ligne['nom'] . '</b><a class="bout" href="index.php?page=Ruches&jsruche=Ruche N°' . $ligne['ID_Ruches'] . '">Informations</a><a href="index.php?page=modif&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Modifier</a><a href="index.php?page=suppression&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Supprimer</a></div>';
     }
 } else
@@ -30,15 +29,9 @@ if (count($mesruches)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion ruches</title>
 
-    <link rel="stylesheet" media="(min-width: 620px)" href="../styles/styles_index_non_connecte.css">
-    <link rel="stylesheet" href="../styles/styles_commun_mobile.css">
+    <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
+    <link rel="stylesheet" media="(max-width: 620px)"  href="../styles/styles_commun_mobile.css">
     <link rel="stylesheet" href="../styles/GestionRuches.css">
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 
 <body>
@@ -74,44 +67,13 @@ if (count($mesruches)) {
                     <input type="number" name="id_ruche">
                 </div>
             </div>
-            <div class="infosuite">
-                <p>Localisation de la ruche (cliquez sur la carte pour placer)</p>
-                <div class="minigrid">
-                    <div class="long">
-                        <label class="longitude">
-                            Longitude
-                        </label>
-                        <input type="text" name="longitude">
-                    </div>
-                    <div class="lat">
-                        <label class="longitude">
-                            Latitude
-                        </label>
-                        <input type="text" name="latitude">
-                    </div>
-                    <div class="espace">
-
-                    </div>
-                </div>
-                <?= $erreur ?>
-            </div>
-
-            <div class="localisation">
-                <p>Vous possédez un traceur GPS ? Localisez la ruche !</p>
-                <div class="boutons">
-                    <a class="loc">
-                        Localiser
-                    </a>
-                    <input type="submit" value="Ajouter">
-                    </input>
-                </div>
-            </div>
+            <?= $erreur ?>
         </form>
         <div class="espace">
 
         </div>
         <div class="carte_ruche">
-            <div id="map"></div>
+            
         </div>
         </form>
     </div>

@@ -13,8 +13,16 @@
     display: grid;
     grid-template-columns: 5fr 1fr 6fr;
     gap: 20px;
-}
 
+}
+.grid_ajout_user {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 20px;
+    margin-bottom: 50px;
+}
 .nom_ruches {
     display: flex;
     flex-direction: column;
@@ -25,15 +33,20 @@
     border-radius: 20px;
 }
 
-/* #914D1E */
-
-
 .ajout_ruches{
     display: grid;
-    grid-template-columns: 3fr 2fr;
     gap: 20px;
 }
 
+button{
+    background: #B95E06;
+    color: white;
+    padding: 5px;
+    padding-inline: 20px;
+    border: none;
+    margin-top: 40px;
+    border-radius: 6px;
+}
 
 .nom_ruche{
     display: flex;
@@ -50,7 +63,7 @@
 input{
     padding: 5px;
     border-radius: 5px;
-    border: solid 2px #914D1E;
+    border: solid 2px #B95E06;
 }
 
 .minigrid{
@@ -77,14 +90,14 @@ input{
 }
 
 .boutons>input{
-    background-color: #914D1E;
+    background-color: #B95E06;
     color: white;
     grid-row: 2;
 }
 
 .loc{
     text-align: center;
-    border: solid 2px #914D1E;
+    border: solid 2px #B95E06;
     padding: 5px;
     border-radius: 5px;
 }
@@ -109,7 +122,7 @@ input{
 
 .case{
     padding: 10px;
-    border: dashed #914D1E 2px;
+    border: dashed #B95E06 2px;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -122,7 +135,7 @@ input{
 .bout{
     text-align: center;
     padding: 5px;
-    background: #914D1E;
+    background: #B95E06;
     color: white;
     border-radius: 11px;
 }
@@ -151,4 +164,77 @@ input{
         opacity: 0;
         width: 0;
     }
+}
+
+.case>b{
+    margin-top: auto;
+}
+
+.carte_ruche{
+    display: flex;
+    align-items: center;
+}
+
+.carte_ruche>img{
+    border-radius: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.parentdoubleFormulaire{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mdp>label{
+    display: flex;
+    align-items: center;
+}
+
+.mdp>label>input{
+    margin-left: auto;
+    width: 500px;
+}
+
+
+.nom_ruche>label{
+    display: flex;
+    align-items: center;
+}
+
+.nom_ruche>label>input{
+    margin-left: auto;
+    width: 500px;
+}
+
+.validation>label{
+    display: flex;
+    align-items: center;
+}
+
+
+.validation>label>input{
+    margin-left: auto;
+}
+
+.valid{
+    margin-left: auto;
+    border: none;
+    background: #B95E06;
+    color: white;
+    cursor: pointer;
+    padding-inline: 20px;
+}
+
+.form_elt{
+    display: flex;
+}
+
+.form_elt>input:nth-child(2){
+    width: 500px;
 }

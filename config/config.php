@@ -40,7 +40,7 @@ define("Footer_déconnecté", '<div class="FooterGlobal">
                         informations
                         nécéssaires facilement, avec une simle conneion sur le site !</div>
                     <div>Facilitez vous la vie avec le projet ruches connectées.</div>
-                    <a href="#Information" class="FooterBouton1">Découvrir ></a>
+                    <a href="index.php#Information" class="FooterBouton1">Découvrir ></a>
                 </div>
                 <div class="ParentFooterLogo">
                     <!-- Logo de youtube -->
@@ -122,7 +122,7 @@ define("Footer_connecté", '<div class="FooterGlobal">
                         informations
                         nécéssaires facilement, avec une simle conneion sur le site !</div>
                     <div>Facilitez vous la vie avec le projet ruches connectées.</div>
-                    <a href="#Information" class="FooterBouton1">Découvrir ></a>
+                    <a href="index.php#Information" class="FooterBouton1">Découvrir ></a>
                 </div>
                 <div class="ParentFooterLogo">
                     <!-- Logo de youtube -->

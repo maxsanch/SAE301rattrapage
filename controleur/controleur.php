@@ -489,9 +489,7 @@ function AjoutPhotoUser()
 {
     $checkuser = new utilisateurs();
     $user = $checkuser->GetUser($_SESSION['acces']);
-
     // pour chercher les ruches
-
     $demandes_ruches = demandesruches()[0];
     $lenombre = demandesruches()[1];
     $fonctionadmin = demandesruches()[2];
@@ -501,8 +499,7 @@ function AjoutPhotoUser()
 function EnregPhotoRuche($idRuche)
 {
     $ruches = new ruches();
-    $ruches->updateRuchePhoto($idRuche);
-    $erreur2 = "Photo importée avec succès";
+    $erreur2 = $ruches->updateRuchePhoto($idRuche);
     $erreur3 = '';
     $erreur1 = '';
     gestion_ruches($erreur1, $erreur2, $erreur3);
@@ -511,8 +508,7 @@ function EnregPhotoRuche($idRuche)
 function EnregPhotoUser($idUser)
 {
     $ruches = new utilisateurs();
-    $ruches->updateUserPhoto($idUser);
-    $erreur = '';
+    $erreur = $ruches->updateUserPhoto($idUser);
     $usersingle = "";
     utilisateurs($erreur, $usersingle);
 }

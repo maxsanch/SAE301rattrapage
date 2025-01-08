@@ -34,11 +34,6 @@
                     <input type="password" name="MDP2" required placeholder="Confirmer le mot de passe">
                 </label>
             </div>
-
-            <label class="cookie">
-                <input type="Checkbox" name="accepter" value="oui">
-                <span>Accepter les conditions d'utilisation</span>
-            </label>
             <?= $erreur ?>
             <button>Créer mon compte</button>
             <hr>

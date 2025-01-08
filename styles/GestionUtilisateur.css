@@ -27,114 +27,6 @@ img {
     width: 100%;
 }
 
-
-footer {
-    background-color: #472B17;
-    color: white;
-}
-
-.FooterGlobal {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    width: 80%;
-    margin: auto;
-}
-
-.FooterPartie1 {
-    height: 100%;
-    padding-right: 35%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-h3 {
-    font-weight: bold;
-}
-
-.BordureFooterGauche {
-    display: flex;
-    flex-direction: column;
-    border-left: 1px solid white;
-    padding-left: 8px;
-    gap: 32px;
-}
-
-.FooterBouton1 {
-    color: white;
-    align-self: flex-start;
-    color: white;
-    font-weight: bold;
-}
-
-.FooterPartie2Parent {
-    padding-left: 10%;
-}
-
-.FooterPartie2 {
-    display: flex;
-    gap: 10%;
-}
-
-.FooterPartie2SousPartie1 {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    border-left: 1px solid white;
-    padding-left: 16px;
-    align-self: self-start;
-}
-
-.FooterPartie2SousPartie2 {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    border-left: 1px solid white;
-    padding-left: 16px;
-    align-self: self-start;
-}
-
-.ArrangementDeLaPartie2DuFooter {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.LienRapides {
-    margin-top: 32px;
-    margin-bottom: 32px;
-}
-
-.ListeDesActions {
-    display: flex;
-    gap: 32px;
-}
-
-.FooterPartieBasse {
-    width: 80%;
-    margin: auto;
-    padding-bottom: 16px;
-}
-
-.FooterPartieBasseBordure {
-    margin-top: 16px;
-    margin-bottom: 16px;
-    border-top: 1px solid white;
-}
-
-.ParentFooterLogo {
-    display: flex;
-    justify-content: start;
-    margin-top: 32px;
-    gap: 32px;
-}
-
-.FooterLogo {
-    width: 32px;
-    height: 32px;
-}
-
 .Actions {
     text-decoration: none;
     color: white;
@@ -184,7 +76,7 @@ h3 {
 }
 
 .Chiffre {
-    color: #914D1E;
+    color: #B95E06;
     font-family: Montserrat-black;
 }
 
@@ -202,7 +94,7 @@ h3 {
 }
 
 .GrandeCase {
-    border: dashed 1px #AE712A;
+    border: dashed 1px #B95E06;
     padding: 8px;
     border-radius: 16px;
     border-style: dashed;
@@ -211,12 +103,17 @@ h3 {
 }
 
 .PetiteCase {
-    border: dashed 1px #ae702aad;
+    border: dashed 1px #B95E06;
     border-radius: 8px;
     gap: 16px;
     display: flex;
     flex-direction: column;
     width: 250px;
+    height: 100%;
+}
+
+.PetiteCase>b{
+    margin-top: auto;
 }
 
 .photo {
@@ -224,7 +121,7 @@ h3 {
 }
 
 .Information {
-    background-color: #914D1E;
+    background-color: #B95E06;
     color: white;
     display: flex;
     justify-content: center;

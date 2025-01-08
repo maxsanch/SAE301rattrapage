@@ -1,7 +1,7 @@
 .titre_centre{
     width: 80%;
     margin: auto;
-    color: #3F221C;
+    color: #212121;
 }
 
 /* mise en place du tableau de bord en vue administrateur  */
@@ -10,7 +10,7 @@
     width: 80%;
     margin: auto;
     margin-top: 60px;
-    border: solid 2px #CFCFCF;
+    border: solid 2px #B0BEC5;
     border-radius: 20px;
 }
 

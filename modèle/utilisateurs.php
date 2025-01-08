@@ -73,7 +73,8 @@ class utilisateurs extends database
                                 $_FILES['photoUser']['tmp_name'],
                                 'img/imported/' . $idArt . "." . $extension_upload
                             );
-                            echo "Transfert du fichier <b>" . $_FILES['photoUser']['name'] . "</b> effectué !";
+                            $erreur = "Transfert du fichier <b> " . $_FILES['photoUser']['name'] . " </b> effectué !";
+                            return $erreur;
                         } else {
                             mkdir('img/imported');
                             // Stockage définitif du fichier photo dans le dossier "uploads"
@@ -81,26 +82,23 @@ class utilisateurs extends database
                                 $_FILES['photoUser']['tmp_name'],
                                 'img/imported/' . $idArt . "." . $extension_upload
                             );
-                            echo "Transfert du fichier <b>" . $_FILES['photoUser']['name'] . "</b> effectué !";
+                            $erreur = "Transfert du fichier <b> " . $_FILES['photoUser']['name'] . " </b> effectué !";
+                            return $erreur;
                         }
-
                     } else {
-                        $erreur2 = "extension incompatible";
-                        $erreur3 = '';
-                        $erreur1 = '';
-                        gestion_ruches($erreur1, $erreur2, $erreur3);
+                        $erreur = "extension incompatible";
+                        $usersingle = "";
+                        utilisateurs($erreur, $usersingle);
                     }
                 } else {
-                    $erreur2 = "fichier trop volumineux";
-                    $erreur3 = '';
-                    $erreur1 = '';
-                    gestion_ruches($erreur1, $erreur2, $erreur3);
+                    $erreur = "fichier trop volumineux";
+                    $usersingle = "";
+                    utilisateurs($erreur, $usersingle);
                 }
             } else {
-                $erreur2 = "Une erreur est survenue";
-                $erreur3 = '';
-                $erreur1 = '';
-                gestion_ruches($erreur1, $erreur2, $erreur3);
+                $erreur = "Une erreur est survenue";
+                $usersingle = "";
+                utilisateurs($erreur, $usersingle);
             }
         }
     }
@@ -116,12 +114,14 @@ class utilisateurs extends database
         $this->execReq($req);
     }
 
-    public function changepasswordadmin($id, $mdp1){
+    public function changepasswordadmin($id, $mdp1)
+    {
         $req = "UPDATE `utilisateurs` SET `MotDePasse` = '$mdp1' WHERE `utilisateurs`.`Id_utilisateur` = $id;";
         $this->execReq($req);
     }
 
-    public function deletuser($id){
+    public function deletuser($id)
+    {
         $data = array($id);
 
         $req = 'DELETE FROM utilisateurs WHERE `utilisateurs`.`Id_utilisateur` = ?';

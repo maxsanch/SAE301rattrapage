@@ -50,8 +50,8 @@ if (count($mesruches)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion ruches</title>
 
-    <link rel="stylesheet" media="(min-width: 620px)" href="../styles/styles_index_non_connecte.css">
-    <link rel="stylesheet" href="../styles/styles_commun_mobile.css">
+    <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
     <link rel="stylesheet" href="../styles/GestionRuches.css">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -101,7 +101,13 @@ if (count($mesruches)) {
 
         </div>
         <div class="carte_ruche">
-            <div id="map"></div>
+            <img sizes="(max-width: 1400px) 100vw, 1400px" srcset="
+../img/sandy-millar-7O7xz_hOsjc-unsplash_qwr0ib_c_scale,w_200.jpg 200w,
+../img/sandy-millar-7O7xz_hOsjc-unsplash_qwr0ib_c_scale,w_713.jpg 713w,
+../img/sandy-millar-7O7xz_hOsjc-unsplash_qwr0ib_c_scale,w_1035.jpg 1035w,
+../img/sandy-millar-7O7xz_hOsjc-unsplash_qwr0ib_c_scale,w_1342.jpg 1342w,
+../img/sandy-millar-7O7xz_hOsjc-unsplash_qwr0ib_c_scale,w_1400.jpg 1400w"
+                src="../img/sandy-millar-7O7xz_hOsjc-unsplash_qwr0ib_c_scale,w_1400.jpg" alt="fleure illustration">
         </div>
     </div>
     <div class="partie2">
@@ -114,62 +120,53 @@ if (count($mesruches)) {
         </div>
     </div>
 
-    <div class="grid_ajout_ruche">
-        <div class="carte_ruche">
-            <!-- mettre une image ici -->
-            <div></div>
+    <div class="grid_ajout_user">
+        <div class="photo">
+            <img src="../<?= $photo ?>" alt="photo de profile">
         </div>
         <div class="parentdoubleFormulaire">
             <div class="profile_picture">
-                <img src="../<?= $photo ?>" alt="photo de profile">
-                <form method="post"
+                <form method="post" class="photoprofil"
                     action="index.php?page=changeprofilepicture&idUser=<?= $user[0]['Id_utilisateur'] ?>"
                     enctype="multipart/form-data">
                     <h2>Photo de profile</h2>
                     <div class="form_elt">
                         <input type="hidden" name="MAX_FILE_SIZE" value="500000">
                         <input type="file" class="texte" name="photoUser" accept="image/jpeg, image/png">
+                        <input type="submit" class="valid" name="ok" value="Valider">
                     </div>
                     <?= $erreur2 ?>
-                    <input type="submit" class="valid" name="ok" value="Valider">
                 </form>
             </div>
-
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifprofil&idUser=' . $user[0]['Id_utilisateur'] ?>"
                 method="post">
                 <h2>Mes informations</h2>
                 <div class="ajout_ruches">
                     <div class="nom_ruche">
-                        <label>Nom</label>
-                        <input type="text" name="nomuser" value="<?= $user[0]['Nom'] ?>" required>
-                        <label>Prenom</label>
-                        <input type="text" name="prenomuser" value="<?= $user[0]['Prenom'] ?>" required>
-                    </div>
-                    <div class="email">
-                        <div>Mon adresse mail : <?= $user[0]['Mail'] ?> </div>
+                        <label><p>Nom</p><input type="text" name="nomuser" value="<?= $user[0]['Nom'] ?>" required></label>
+                        <label><p>Prenom</p><input type="text" name="prenomuser" value="<?= $user[0]['Prenom'] ?>" required></label>
+                        <label><p>E-mail</p><input type="text" name="prenomuser" value="<?= $user[0]['Mail'] ?>" required disabled></label>
                     </div>
                     <div class="mdp">
-                        <div>Changer de mot de passe</div>
-                        <label>Nouveau mot de passe</label>
-                        <input type="password" name="NewPassword" placeholder="entrez votre nouveau mot de passe">
-                        <label>Confirmez le mot de passe</label>
-                        <input type="password" name="ConfirmationNewPassword"
-                            placeholder="confirmez votre mot de passe">
+                        <div><b>Changer de mot de passe</b></div>
+                        <label>
+                            <p>Nouveau mot de passe</p> <input type="password" name="NewPassword"
+                                placeholder="entrez votre nouveau mot de passe">
+                        </label>
+
+                        <label>
+                            <p>Confirmez le mot de passe</p><input type="password" name="ConfirmationNewPassword" placeholder="confirmez votre mot de passe">
+                        </label>
+
                     </div>
                     <div class="validation">
-                        <div>Pour enregistrer les modifications, vous devez entrer votre mot de passe</div>
-                        <input type="password" name="ancienmdp" placeholder="entrez votre mot de passe">
-                    </div>
+                        <label><p>Pour enregistrer les modifications, vous devez entrer votre mot de passe</p><input type="password" name="ancienmdp" placeholder="entrez votre mot de passe"> </label>  
+                    </div>          
                 </div>
                 <?= $erreur3 ?>
                 <button>Modifier</button>
             </form>
         </div>
-
-        <div class="espace">
-
-        </div>
-
     </div>
 
 
@@ -196,7 +193,7 @@ if (count($mesruches)) {
 
                 setTimeout(removecase, 550)
 
-                function removecase(){
+                function removecase() {
                     window.location = e.querySelector('.bout:last-child').href
                 }
             });

@@ -1,6 +1,5 @@
 <?php
 
-var_dump($message);
 if ($utilisateur[0]['Statut'] == 'admin') {
     $header = HEADER_admin;
 } else {
@@ -224,7 +223,7 @@ if (count($getruche)) {
                     datasets: [{
                         label: 'Humidité en %',
                         data: [" . $variable2 . "],
-                        borderColor: '#c24500',
+                        borderColor: '#B95E06',
                         backgroundColor: 'transparent',
                         borderWidth: 1
                     }]
@@ -247,7 +246,7 @@ if (count($getruche)) {
                     datasets: [{
                         label: 'Température en degré',
                         data: [" . $variable . "],
-                        borderColor: '#c24500',
+                        borderColor: '#B95E06',
                         backgroundColor: 'transparent',
                         borderWidth: 1
                     }]
@@ -692,7 +691,6 @@ if (count($getruche)) {
                     console.log(parent)
                     document.querySelectorAll('.bouton_note').forEach(note => {
                         note.classList.remove('bouton_note_select')
-
                     })
 
                     parent.querySelectorAll('.note').forEach(e => {

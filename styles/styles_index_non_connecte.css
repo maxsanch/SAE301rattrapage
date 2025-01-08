@@ -16,10 +16,12 @@
 body {
     font-family: Montserrat;
     margin: 0;
+    color: #212121;
+    background: #F7F3F0;
 }
 
 .TitreHeader {
-    color: #914D1E;
+    color: #B95E06;
     font-family: Montserrat-bold;
 }
 
@@ -45,13 +47,13 @@ html {
     display: flex;
     justify-content: space-between;
     margin: auto;
-    color: #914D1E;
+    color: #B95E06;
     align-items: center;
     margin-top: 16px;
 }
 
 .RucheHeader {
-    color: #3F221C;
+    color: #212121;
 }
 .mail {
     /* display: flex; */
@@ -59,12 +61,12 @@ html {
 }
 
 .BoutonHeader2 {
-    color: black;
+    color: #212121;
 }
 
 .BoutonHeader {
     color: white;
-    background-color: #914D1E;
+    background-color: #B95E06;
     padding: 8px;
     border-radius: 4px;
     padding-left: 32px;
@@ -76,7 +78,6 @@ html {
     align-items: center;
     gap: 16px;
     color: black;
-    flex: end;
 }
 
 .Partie1 {
@@ -102,13 +103,14 @@ html {
     gap: 32px;
     font-weight: bold;
     width: 400px;
+
 }
 
 .TitrePrincipal {
     line-height: 84%;
     margin: 0px;
     font-size: 96px;
-    color: #3F221C;
+    color: #212121;
     font-family: Montserrat-black;
 }
 
@@ -119,20 +121,22 @@ html {
 }
 
 .Partie1Bouton1 {
-    background-color: #914D1E;
+    background-color: #B95E06;
     color: white;
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 32px;
     padding-right: 32px;
     display: flex;
+    border-radius: 4px;
     justify-content: center;
 }
 
 .Partie1Bouton2 {
+    border-radius: 4px;
     background-color: transparent;
-    color: #914D1E;
-    border: solid 1px #914D1E;
+    color: #B95E06;
+    border: solid 1px #B95E06;
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 32px;
@@ -156,7 +160,7 @@ html {
 }
 
 .Partie2Titre {
-    color: #3F221C;
+    color: #212121;
     font-family: Montserrat-black;
 }
 
@@ -240,7 +244,7 @@ html {
 }
 
 footer {
-    background-color: #472B17;
+    background-color: #2D170E;
     color: white;
 }
 
@@ -378,7 +382,7 @@ h3 {
 }
 
 .ContourRuche {
-    border: dashed 1px #AE712A;
+    border: dashed 1px #B95E06;
     padding: 8px;
     border-radius: 16px;
     border-style: dashed;
@@ -391,10 +395,11 @@ h3 {
     display: flex;
     flex-direction: column;
     width: 250px;
+    height: 100%;
 }
 
 .Partie4Titre {
-    color: #3F221C;
+    color: #212121;
     display: flex;
     justify-content: center;
     margin-top: 0px;
@@ -409,7 +414,7 @@ h3 {
 }
 
 .Partie4Bouton {
-    background-color: #914D1E;
+    background-color: #B95E06;
     padding: 12px 18px 12px 18px;
     margin-top: 16px;
     border-radius: 8px;
@@ -428,6 +433,7 @@ h3 {
 .MaRucheTitre {
     font-weight: bolder;
     padding-left: 4px;
+    margin-top: auto;
 }
 
 .InfoRuche {
@@ -435,7 +441,7 @@ h3 {
 }
 
 .MaRucheBouton {
-    background-color: #AE712A;
+    background-color: #B95E06;
     color: white;
     border-radius: 0px 0px 8px 8px;
     display: flex;
@@ -449,7 +455,7 @@ h3 {
 }
 
 .Partie5Titre {
-    color: #3F221C;
+    color: #212121;
     margin-top: 0px;
     display: flex;
     justify-content: center;
@@ -586,9 +592,9 @@ h3 {
 .demande{
     padding-top: 5px;
     padding-bottom: 5px;
-    border-top: dashed #914D1E 0.5px;
+    border-top: dashed #B95E06 0.5px;
     margin-bottom: 10px;
-    border-bottom: dashed #914D1E 0.5px;
+    border-bottom: dashed #B95E06 0.5px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -600,7 +606,7 @@ h3 {
 
 .accept_ruche{
     border-radius: 5px;
-    background: #914D1E;
+    background: #B95E06;
     font-family: Montserrat-bold;
     color: white;
     padding: 5px;
@@ -610,8 +616,8 @@ h3 {
 .refus_ruche{
     border-radius: 5px;
     font-family: Montserrat-bold;
-    color: #914D1E;
-    border: solid 1px #914D1E;
+    color: #B95E06;
+    border: solid 1px #B95E06;
 
     padding: 5px;
     padding-inline: 15px;

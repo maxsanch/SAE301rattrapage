@@ -18,7 +18,7 @@ if (count($GetAllUser)) {
             $phototest = 'img/imported/no-user-image.jpg';
         }
         $lesruches = rucheSingleUser($ligne['Id_utilisateur']);
-        $contenu .= "<div class='GrandeCase'><div class='PetiteCase'><a href='index.php?page=PhotoUser&idUser=" . $ligne['Id_utilisateur'] . "'><img class='photo' src='../" . $phototest . "' alt=''></a><b>" . $ligne['Prenom'] . "</b><div>Dernière connexion : " . $ligne['connexion'] . "</div><div>Nombre de ruches : " . count($lesruches) . "</div><a class='Information' href='index.php?page=informationsUser&idUser=" . $ligne['Id_utilisateur'] . "'>Information</a></div></div>";
+        $contenu .= "<div class='GrandeCase'><div class='PetiteCase'><a href='index.php?page=PhotoUser&idUser=" . $ligne['Id_utilisateur'] . "'><img class='photo' src='../" . $phototest . "' alt='photo'></a><b>" . $ligne['Prenom'] . "</b><div>Dernière connexion : " . $ligne['connexion'] . "</div><div>Nombre de ruches : " . count($lesruches) . "</div><a class='Information' href='index.php?page=informationsUser&idUser=" . $ligne['Id_utilisateur'] . "'>Information</a></div></div>";
     }
 } else
     echo "<div class='reponse'>Aucun Utilisateur n'est enregistré</div>";
@@ -244,7 +244,7 @@ if ($message != "") {
                     data: [21, 30, 30, 15, 35, 34, 9, 37, 22, 31, 20, 12],
                     borderWidth: 1,
                     backgroundColor: [
-                        'rgb(145, 70, 30)'
+                        '#B95E06'
                     ]
                 }]
             },
