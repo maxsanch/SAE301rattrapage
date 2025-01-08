@@ -132,7 +132,10 @@ if (count($mesruches)) {
                     <h2>Photo de profile</h2>
                     <div class="form_elt">
                         <input type="hidden" name="MAX_FILE_SIZE" value="500000">
-                        <input type="file" class="texte" name="photoUser" accept="image/jpeg, image/png">
+                        <label for="photoUser" class="file-upload">
+                            <span>Choose file or drop here</span>
+                            <input id="photoUser" type="file" name="photoUser" accept="image/jpeg, image/png" hidden>
+                        </label>
                         <input type="submit" class="valid" name="ok" value="Valider">
                     </div>
                     <?= $erreur2 ?>
@@ -143,9 +146,17 @@ if (count($mesruches)) {
                 <h2>Mes informations</h2>
                 <div class="ajout_ruches">
                     <div class="nom_ruche">
-                        <label><p>Nom</p><input type="text" name="nomuser" value="<?= $user[0]['Nom'] ?>" required></label>
-                        <label><p>Prenom</p><input type="text" name="prenomuser" value="<?= $user[0]['Prenom'] ?>" required></label>
-                        <label><p>E-mail</p><input type="text" name="prenomuser" value="<?= $user[0]['Mail'] ?>" required disabled></label>
+                        <label>
+                            <p>Nom</p><input type="text" name="nomuser" value="<?= $user[0]['Nom'] ?>" required>
+                        </label>
+                        <label>
+                            <p>Prenom</p><input type="text" name="prenomuser" value="<?= $user[0]['Prenom'] ?>"
+                                required>
+                        </label>
+                        <label>
+                            <p>E-mail</p><input type="text" name="prenomuser" value="<?= $user[0]['Mail'] ?>" required
+                                disabled>
+                        </label>
                     </div>
                     <div class="mdp">
                         <div><b>Changer de mot de passe</b></div>
@@ -155,13 +166,17 @@ if (count($mesruches)) {
                         </label>
 
                         <label>
-                            <p>Confirmez le mot de passe</p><input type="password" name="ConfirmationNewPassword" placeholder="confirmez votre mot de passe">
+                            <p>Confirmez le mot de passe</p><input type="password" name="ConfirmationNewPassword"
+                                placeholder="confirmez votre mot de passe">
                         </label>
 
                     </div>
                     <div class="validation">
-                        <label><p>Pour enregistrer les modifications, vous devez entrer votre mot de passe</p><input type="password" name="ancienmdp" placeholder="entrez votre mot de passe"> </label>  
-                    </div>          
+                        <label>
+                            <p>Pour enregistrer les modifications, vous devez entrer votre mot de passe</p><input
+                                type="password" name="ancienmdp" placeholder="entrez votre mot de passe">
+                        </label>
+                    </div>
                 </div>
                 <?= $erreur3 ?>
                 <button>Modifier</button>
