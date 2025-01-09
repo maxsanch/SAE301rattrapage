@@ -27,11 +27,17 @@
                 <label>
                     <input type="email" name="email" required placeholder="Email">
                 </label>
-                <label>
-                    <input type="password" name="MDP" required placeholder="Mot de passe">
+                <label class="mdpconnex">
+                    <input type="password" name="MDP" class="motdepasse" required placeholder="Mot de passe">
+                    <div class="oeil oeilferme">
+                        <img id="fermé" src="../img/oeilfermé.svg" alt="icone d'oeil">
+                    </div>
                 </label>
-                <label>
-                    <input type="password" name="MDP2" required placeholder="Confirmer le mot de passe">
+                <label class="mdpconnex">
+                    <input type="password" name="MDP2" class="motdepasse" required placeholder="Confirmer le mot de passe">
+                    <div class="oeil oeilferme">
+                        <img id="fermé" src="../img/oeilfermé.svg" alt="icone d'oeil">
+                    </div>
                 </label>
             </div>
             <?= $erreur ?>
@@ -42,7 +48,26 @@
             </div>
         </form>
     </div>
+    <script>
+        document.querySelectorAll('.oeil').forEach(e => {
+            e.addEventListener('click', show)
+            function show() {
+                if (this.querySelector('img').id == "fermé") {
+                    e.parentElement.querySelector('.motdepasse').type = 'text'
+                    this.querySelector('img').id = 'ouvert'
+                    this.querySelector('img').src = "../img/oeilouvert.svg";
+                }
+                else {
+                    e.parentElement.querySelector('.motdepasse').type = 'password'
+                    this.querySelector('img').id = 'fermé'
+                    this.querySelector('img').src = "../img/oeilfermé.svg";
+                }
 
+                this.classList.toggle('oeilferme')
+                this.classList.toggle('oeilouvert')
+            }
+        })
+    </script>
 </body>
 
 </html>

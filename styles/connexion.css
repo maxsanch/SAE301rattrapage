@@ -14,7 +14,9 @@ body {
 a {
     text-decoration: none;
 }
-
+img{
+    width: 100%;
+}
 /* Organisation des colonnes du PopUp */
 .back {
     display: grid;
@@ -132,4 +134,16 @@ hr {
 }
 b{
     color: rgb(129, 0, 0);
+}
+
+.mdpconnex{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+}
+
+.oeil{
+    width: 40px;
+    cursor: pointer;
 }

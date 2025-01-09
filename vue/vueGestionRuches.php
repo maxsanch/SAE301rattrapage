@@ -142,7 +142,7 @@ if (count($mesruches)) {
                 </form>
             </div>
             <main>
-                
+
             </main>
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifprofil&idUser=' . $user[0]['Id_utilisateur'] ?>"
                 method="post">
@@ -164,20 +164,29 @@ if (count($mesruches)) {
                     <div class="mdp">
                         <div><b>Changer de mot de passe</b></div>
                         <label>
-                            <p>Nouveau mot de passe</p> <input type="password" name="NewPassword"
+                            <p>Nouveau mot de passe</p> <input type="password" class="motdepasse" name="NewPassword"
                                 placeholder="entrez votre nouveau mot de passe">
+                            <div class="oeil oeilferme">
+                                <img id="fermé" src="../img/oeilfermé.svg" alt="icone d'oeil">
+                            </div>
                         </label>
 
                         <label>
-                            <p>Confirmez le mot de passe</p><input type="password" name="ConfirmationNewPassword"
+                            <p>Confirmez le mot de passe</p><input type="password" class="motdepasse" name="ConfirmationNewPassword"
                                 placeholder="confirmez votre mot de passe">
+                            <div class="oeil oeilferme">
+                                <img id="fermé" src="../img/oeilfermé.svg" alt="icone d'oeil">
+                            </div>
                         </label>
 
                     </div>
                     <div class="validation">
                         <label>
                             <p>Pour enregistrer les modifications, vous devez entrer votre mot de passe</p><input
-                                type="password" name="ancienmdp" placeholder="entrez votre mot de passe">
+                                type="password" name="ancienmdp" class="motdepasse" placeholder="entrez votre mot de passe">
+                            <div class="oeil oeilferme">
+                                <img id="fermé" src="../img/oeilfermé.svg" alt="icone d'oeil">
+                            </div>
                         </label>
                     </div>
                 </div>
@@ -197,13 +206,6 @@ if (count($mesruches)) {
         <?= $fonctionadmin ?>
         <?= $lenombre ?>
 
-        var map = L.map('map').setView([51.505, -0.09], 13);
-
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-
         document.querySelectorAll('.case').forEach(e => {
             e.querySelector('.bout:last-child').addEventListener('click', (event) => {
                 event.preventDefault()
@@ -216,6 +218,25 @@ if (count($mesruches)) {
                 }
             });
         });
+
+        document.querySelectorAll('.oeil').forEach(e => {
+            e.addEventListener('click', show)
+            function show() {
+                if (this.querySelector('img').id == "fermé") {
+                    e.parentElement.querySelector('.motdepasse').type = 'text'
+                    this.querySelector('img').id = 'ouvert'
+                    this.querySelector('img').src = "../img/oeilouvert.svg";
+                }
+                else {
+                    e.parentElement.querySelector('.motdepasse').type = 'password'
+                    this.querySelector('img').id = 'fermé'
+                    this.querySelector('img').src = "../img/oeilfermé.svg";
+                }
+
+                this.classList.toggle('oeilferme')
+                this.classList.toggle('oeilouvert')
+            }
+        })
     </script>
 </body>
 

@@ -198,7 +198,8 @@ form{
 
 .mdp>label>input{
     margin-left: auto;
-    width: 500px;
+    width: 400px;
+    margin-right: 10px;
 }
 
 
@@ -220,6 +221,7 @@ form{
 
 .validation>label>input{
     margin-left: auto;
+    margin-right: 10px;
 }
 
 .valid{
@@ -236,7 +238,7 @@ form{
 }
 
 .form_elt>input:nth-child(2){
-    width: 500px;
+    width: 400px;
 }
 .form_elt>label{
     border: #B95E06 dashed 0.3px;
@@ -245,4 +247,12 @@ form{
 }
 .orange{
     color: #B95E06;
+}
+
+.mdpconnex{
+    position: relative;
+}
+
+.oeil{
+    width: 40px;
 }

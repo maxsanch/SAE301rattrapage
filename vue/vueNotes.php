@@ -52,7 +52,7 @@ if (count($getruche)) {
             $content .= '<div class="ruche_all_notes" id="ruche' . $i . '">
             <div class="center">
                 <div class="titre">
-                    <h2>Notes de la ruche n°' . $r["ID_Ruches"] . '</h2>
+                    <h2 class="selected">Ruche N°' . $r["ID_Ruches"] . '</h2>
                     <button id=' . $r["ID_Ruches"] . ' class="boutonajout">
                         Ajouter
                     </button>
@@ -111,7 +111,10 @@ if (count($getruche)) {
                 <input type="hidden" class="inclusion" name="contenu" required>
             </div>
             <div class="valider">
-                <input type="submit" value="Enregistrer" class="formbouton" name="ok">
+                <div class="exit"><img src="../img/svgcroixrefus.svg" alt="croix de refus svg"></div>
+                <div class="stuck">
+                    <input type="submit" value="Enregistrer" class="formbouton" name="ok">
+                </div>
             </div>
         </form>
     </div>
@@ -192,6 +195,15 @@ if (count($getruche)) {
             }
         })
 
+        document.querySelector('.cache_fond').addEventListener('click', enleverform)
+        document.querySelector('.exit').addEventListener('click', enleverform)
+
+
+        function enleverform(){
+            document.querySelector('.cache_fond').classList.remove('ouvert2')
+            document.querySelector('.formulairetest').classList.remove('ouvert2')
+        }
+
         setInterval(actualiser, 1000);
 
         document.querySelectorAll('.voirnote').forEach(e => {
@@ -231,18 +243,19 @@ if (count($getruche)) {
 
             function filtrer() {
                 document.querySelector('#rchoisi').innerHTML = e.innerHTML
-                document.querySelectorAll('.ruche_all_notes').forEach(element => {
-                    element.remove('disparu4')
+                document.querySelectorAll('.selected').forEach(element => {
+                    element.parentElement.parentElement.parentElement.classList.remove('disparu4')
                     if (element.innerHTML == e.innerHTML) {
                         console.log('good')
                     }
                     else {
-                        console.log(element.innerHTML);
                         if (e.innerHTML == 'Pas de filtre.') {
-                            element.parentElement.parentElement.classList.remove('disparu4')
+                            document.querySelectorAll('.ruche_all_notes').forEach(reset =>{
+                                reset.classList.remove('disparu4')
+                            })
                         }
                         else {
-                            element.parentElement.parentElement.classList.add('disparu4')
+                            element.parentElement.parentElement.parentElement.classList.add('disparu4')
                         }
                     }
                 });
