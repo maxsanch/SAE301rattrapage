@@ -124,7 +124,6 @@ try {
             accueil();
         }
     }
-
 } catch (Exception $e) {
     erreur($e->getMessage());
 }

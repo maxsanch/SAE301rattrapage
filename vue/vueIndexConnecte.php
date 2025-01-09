@@ -64,7 +64,7 @@ if (count($getruche)) {
         }
 
 } else
-    echo "<div class='reponse'>Aucune ruche enregistrée.</div>";
+    $contenu2 = "<div class='reponse'>Aucune ruche enregistrée.</div>";
 
 ?>
 

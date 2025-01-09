@@ -188,10 +188,6 @@ if ($message != "") {
                     <div>Nombre de ruches enregistrées</div>
                     <div class="Chiffre"><?= count($ruches); ?></div>
                 </div>
-                <div class="Element"><img class="SVG" src="../img/UtilisateursCo.svg" alt="">
-                    <div>Utilisateurs actifs</div>
-                    <div class="Chiffre">2</div>
-                </div>
             </div>
             <!-- graphique ici -->
             <div class="LeGraph"><canvas id="myChart"></canvas></div>
@@ -240,7 +236,7 @@ if ($message != "") {
             data: {
                 labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Decembre'],
                 datasets: [{
-                    label: '# of Votes',
+                    label: 'nombre de connexions',
                     data: [21, 30, 30, 15, 35, 34, 9, 37, 22, 31, 20, 12],
                     borderWidth: 1,
                     backgroundColor: [

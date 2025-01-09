@@ -8,10 +8,32 @@
 require_once "modèle/utilisateurs.php";
 require_once "modèle/ruches.php";
 require_once "modèle/notes.php";
+require_once "modèle/connexions.php";
 
 function accueil()
 {
     require "vue/vueIndex.php";
+}
+
+function testetresetannée(){
+    $connexion = new connexion();
+    $currentyear = $connexion->getannee();
+    if($currentyear != date('Y')){
+        var_dump('reset');
+        $ajouterun = $currentyear + 1;
+        $connexion->maj($ajouterun);
+        $connexion->resetmois();
+    }
+    else{
+        var_dump('pas de reset');
+
+        $mois = date('m');
+
+        $currentnombre = $connexion->getcountmois($mois);
+        $nb =  (int) $currentnombre + 1;
+
+        var_dump($nb);
+    }
 }
 
 function accueil_connecté()
@@ -29,7 +51,6 @@ function accueil_connecté()
 
 function demandesruches()
 {
-
     $getUser = new utilisateurs();
     $utilisateur = $getUser->GetUser($_SESSION['acces']);
 
@@ -116,53 +137,55 @@ function quitter()
 }
 function login($nom, $mdp)
 {
-    $nom_user = new utilisateurs();
-    $user = $nom_user->GetUser($nom);
-    if (!empty($user)) {
-        if (password_verify($mdp, $user[0]['MotDePasse'])) {
-            $_SESSION['acces'] = $user[0]['Mail'];
-            updateco($user[0]['Id_utilisateur']);
-            if ($user[0]['Statut'] == 'admin') {
-                accueil_admin();
-            } else {
-                accueil_connecté();
-            }
-        } else {
-            $erreur = '<b>mot de passe incorrecte.</b>';
-            connexion($erreur);
-        }
-    } else {
-        $erreur = '<b>Identifiant invalide</b>';
-        connexion($erreur);
-    }
+    // $nom_user = new utilisateurs();
+    // $user = $nom_user->GetUser($nom);
+    // if (!empty($user)) {
+    //     if (password_verify($mdp, $user[0]['MotDePasse'])) {
+    //         $_SESSION['acces'] = $user[0]['Mail'];
+    //         updateco($user[0]['Id_utilisateur']);
+    //         if ($user[0]['Statut'] == 'admin') {
+    //             accueil_admin();
+    //         } else {
+    //             accueil_connecté();
+    //         }
+    //     } else {
+    //         $erreur = '<b>mot de passe incorrecte.</b>';
+    //         connexion($erreur);
+    //     }
+    // } else {
+    //     $erreur = '<b>Identifiant invalide</b>';
+    //     connexion($erreur);
+    // }
+    testetresetannée();
 }
 function signin($prenom, $nom, $email, $mdp, $mdp2)
 {
-    $nom_user = new utilisateurs();
-    $user = $nom_user->GetUser($email);
-    $insc = new utilisateurs();
-    if (empty($user)) {
-        if (!empty($prenom) && !empty($nom) && !empty($email) && !empty($mdp) && !empty($mdp2)) {
-            if ($mdp == $mdp2) {
-                $mdpgood = password_hash($mdp, PASSWORD_DEFAULT);
-                $insc->inscrire($prenom, $nom, $email, $mdpgood);
-                $user = $insc->GetUser($email);
-                $_SESSION['acces'] = $user[0]['Mail'];
-                accueil_connecté();
+    // $nom_user = new utilisateurs();
+    // $user = $nom_user->GetUser($email);
+    // $insc = new utilisateurs();
 
-            } else {
-                $erreur = "<b>Les mots de passe ne correspondent pas.</b>";
-                inscription($erreur);
-            }
-        } else {
-            $erreur = "<b>Veillez à remplir tout les champs</b>";
-            inscription($erreur);
-        }
-    } else {
-        $erreur = "<b>Un compte avec la même adresse e-mail existe déjà.</b>";
-        inscription($erreur);
-    }
+    // if (empty($user)) {
+    //     if (!empty($prenom) && !empty($nom) && !empty($email) && !empty($mdp) && !empty($mdp2)) {
+    //         if ($mdp == $mdp2) {
+    //             $mdpgood = password_hash($mdp, PASSWORD_DEFAULT);
+    //             $insc->inscrire($prenom, $nom, $email, $mdpgood);
+    //             $user = $insc->GetUser($email);
+    //             $_SESSION['acces'] = $user[0]['Mail'];
+    //             accueil_connecté();
 
+    //         } else {
+    //             $erreur = "<b>Les mots de passe ne correspondent pas.</b>";
+    //             inscription($erreur);
+    //         }
+    //     } else {
+    //         $erreur = "<b>Veillez à remplir tout les champs</b>";
+    //         inscription($erreur);
+    //     }
+    // } else {
+    //     $erreur = "<b>Un compte avec la même adresse e-mail existe déjà.</b>";
+    //     inscription($erreur);
+    // }
+    testetresetannée();
 }
 
 function ruches($message)
