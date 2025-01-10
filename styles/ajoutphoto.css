@@ -2,6 +2,8 @@ main{
     min-height: 60vh;
 }
 
+/* styles du formulaire */
+
 form{
     display: flex;
     flex-direction: column;
@@ -9,6 +11,8 @@ form{
     margin: auto;
     margin-top: 150px;
 }
+
+/* la partie "ajoutez" */
 
 .orange{
     color: #B95E06;
@@ -23,6 +27,7 @@ form{
     padding: 10px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.612);
 }
+/* style du label du formulaire */
 
 .form_elt>label{
     border: dashed #B95E06 0.3px;

@@ -25,6 +25,7 @@ if (count($GetAllUser)) {
 
 
 if (!empty($usersingle)) {
+    // informations mises en variables
     $nom = $usersingle[0]['Nom'] . " " . $usersingle[0]['Prenom'];
     $statut = $usersingle[0]['Statut'];
     $mail = $usersingle[0]['Mail'];
@@ -34,6 +35,7 @@ if (!empty($usersingle)) {
     $nbrruche = count($ruchesingleuser);
     $datebis = $usersingle[0]["inscription"];
     $nombrenote = count($count);
+    // informations de l'utilisateur
     $contentuser = "<div class='cachetjrla' id='celuiuser'></div>
                     <div class='pop_up_fixed_info_users'>
                         <div class='photo_left'>
@@ -107,7 +109,7 @@ if (!empty($usersingle)) {
                 </div>
             </div>
         </div>";
-
+    // scripts javascripts liés au informations
     $function = "document.querySelector('.reset_password').addEventListener('click', changer)";
     $letrucquifaittoubuguer = $usersingle[0]['Id_utilisateur'];
     $ledexiemetrucquifaittoubuguer = $usersingle[0]['Prenom'];
@@ -119,6 +121,7 @@ if (!empty($usersingle)) {
 }
 
 if ($message != "") {
+    // message si existant dans une pop up
     $infoaffiche = '<div class="informationerreur">
         <div class="topinfo">
             <b>Information</b>
@@ -132,6 +135,7 @@ if ($message != "") {
 
     </div>';
 } else {
+    // sinon il est pas la
     $infoaffiche = '<div class="informationerreur enlever">
         <div class="topinfo">
             <b>Information</b>
@@ -144,7 +148,7 @@ if ($message != "") {
 
     </div>';
 }
-
+// tableau pour le graphique
 $tableau = [];
 foreach($nombreparmois as $cle){
     $tableau[] = $cle['nombreConnexion'].' ';
@@ -168,6 +172,8 @@ $final = join(',',$tableau);
     <header>
         <?= $header ?>
     </header>
+
+    <!-- cache et pop up des demandes de ruche pour l'admin -->
     <div class="cache_fond">
 
     </div>
@@ -178,10 +184,12 @@ $final = join(',',$tableau);
         </div>
         <?= $demandes_ruches ?>
     </div>
+    <!-- pop up info -->
     <?= $infoaffiche ?>
     <main>
         <?= $contentuser ?>
         <h2 class="Titre">Gestion des utilisateurs</h2>
+        <!-- tableau de brod avec graphique -->
         <h3 class="SousTitre">Tableau de bord</h3>
         <div class="Contour">
             <div class="LesElements">
@@ -198,6 +206,7 @@ $final = join(',',$tableau);
             <div class="LeGraph"><canvas id="myChart"></canvas></div>
         </div>
         <h3 class="SousTitre">Utilisateurs</h3>
+        <!-- tout les utilisateurs dans un flex -->
         <div class="LesUtilisateurs">
             <?= $contenu ?>
         </div>
@@ -210,6 +219,7 @@ $final = join(',',$tableau);
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        // enlever les pop ups
         document.querySelector('#croixinfo').addEventListener('click', enlever)
         document.querySelector(".cachetjrla").addEventListener('click', enlever)
 
@@ -218,14 +228,13 @@ $final = join(',',$tableau);
             document.querySelector('.informationerreur').classList.add('enlever')
         }
 
-
         if(document.querySelector('#celuiuser') && document.querySelector('#croixuserchoose')){
             document.querySelector('#celuiuser').addEventListener('click', enleveruser)
             document.querySelector('#croixuserchoose').addEventListener('click', enleveruser)
 
         }
-        
-        
+
+        // enlever les infos de l'utilisateur
 
         function enleveruser(){
             document.querySelector('#celuiuser').classList.add('enlever')
@@ -233,7 +242,7 @@ $final = join(',',$tableau);
         }
 
 
-
+        // grapique chart js
         const ctx = document.getElementById('myChart');
 
         new Chart(ctx, {
@@ -258,7 +267,10 @@ $final = join(',',$tableau);
             }
         });
 
+        // fonctions pour les admins uniquement
         <?= $function ?>
+
+        // changement du formulaire
 
         function changer() {
             document.querySelector('.infos').innerHTML = "<form action=index.php?page=resetpassword&iduser=<?= $letrucquifaittoubuguer ?>' method='post'><h2>Modifier le mot de passe de : <?= $ledexiemetrucquifaittoubuguer ?></h2><div class='mdpreset'><div class='casejaune'><input class='enleverstpp' placeholder='Entrez le nouveau mot de passe' required type='password' name='mdp'></div><div><div class='grasuser'>Confirmez le mot de passe</div><div class='casejaune'><input class='enleverstpp' required placeholder='Confirmer le mot de passe' type='password' name='confirmation'></div></div></div><button>Changer le mot de passe.</button></form>"

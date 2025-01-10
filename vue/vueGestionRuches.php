@@ -1,44 +1,47 @@
 <?php
 
+// Vérifie si l'utilisateur a le statut 'admin' pour afficher l'en-tête correspondant
 if ($user[0]['Statut'] == 'admin') {
     $header = HEADER_admin;
 } else {
     $header = HEADER_connecté;
 }
 
-
+// Définition du pied de page (footer) pour un utilisateur déconnecté
 $footer = Footer_déconnecté;
 
 $contenu = '';
 
+// Vérifie si l'image de l'utilisateur existe et l'affiche, sinon utilise une image par défaut
 if (file_exists('img/imported/' . $user[0]['Id_utilisateur'] . '.jpg')) {
     $photo = 'img/imported/' . $user[0]['Id_utilisateur'] . '.jpg';
-    // Si l'image existe, l'affiche
 } else if (file_exists('img/imported/' . $user[0]['Id_utilisateur'] . '.png')) {
     $photo = 'img/imported/' . $user[0]['Id_utilisateur'] . '.png';
 } else {
-    // Sinon, affiche une image par défaut
+    // Si aucune image n'est trouvée, une image par défaut est utilisée
     $photo = 'img/imported/no-user-image.jpg';
 }
 
+// Vérifie s'il y a des ruches enregistrées
 if (count($mesruches)) {
-    // Affichage des lignes du tableau
-
-
+    // Si des ruches existent, on génère le contenu pour chaque ruche
     foreach ($mesruches as $ligne) {
         if (file_exists('img/imported/' . $ligne['ID_Ruches'] . '.jpg')) {
             $phototest = 'img/imported/' . $ligne['ID_Ruches'] . '.jpg';
-            // Si l'image existe, l'affiche
         } else if (file_exists('img/imported/' . $ligne['ID_Ruches'] . '.png')) {
             $phototest = 'img/imported/' . $ligne['ID_Ruches'] . '.png';
         } else {
-            // Sinon, affiche une image par défaut
+            // Image par défaut si aucune image spécifique n'est trouvée
             $phototest = 'img/imported/no_image_ruche.png';
         }
+        // Construction du contenu à afficher pour chaque ruche
         $contenu .= '<div class="case"><a href="index.php?page=Photo_ruche&idRuche=' . $ligne['ID_Ruches'] . '" class="photo"><img src="../' . $phototest . '" alt=""></a><b>' . $ligne['nom'] . '</b><a class="bout" href="index.php?page=Ruches&jsruche=Ruche N°' . $ligne['ID_Ruches'] . '">Informations</a><a href="index.php?page=modif&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Modifier</a><a href="index.php?page=suppression&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Supprimer</a></div>';
     }
-} else
+} else {
+    // Affichage d'un message si aucune ruche n'est enregistrée
     echo "<div class='reponse'>Aucune ruche enregistrée.</div>";
+}
+
 
 ?>
 
@@ -56,7 +59,6 @@ if (count($mesruches)) {
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
@@ -69,6 +71,8 @@ if (count($mesruches)) {
     <div class="cache_fond">
 
     </div>
+
+    <!-- Boîte de réception des demandes de ruche -->
     <div class="pop_up_admin_demande">
         <div class="topinfo">
             <h2>Boite de récéption</h2>
@@ -80,6 +84,8 @@ if (count($mesruches)) {
     <div class="titre_top_centre">
         <h1 class="titre_normal">Gestion des ruches</h1>
     </div>
+
+    <!-- grid d'ajout de ruches -->
 
     <div class="grid_ajout_ruche">
         <form action="<?= $_SERVER['PHP_SELF'] . '?page=ajoutRuche' ?>" method="post">
@@ -100,6 +106,7 @@ if (count($mesruches)) {
         <div class="espace">
 
         </div>
+        <!-- photo responsiv -->
         <div class="carte_ruche">
             <img sizes="(max-width: 1400px) 100vw, 1400px" srcset="
 ../img/sandy-millar-7O7xz_hOsjc-unsplash_qwr0ib_c_scale,w_200.jpg 200w,
@@ -114,16 +121,19 @@ if (count($mesruches)) {
         <div class="titre_top_centre">
             <h2>Gérer mes ruches</h2>
         </div>
-
+        <!-- flex avec toute les ruches de l'utilisateur -->
         <div class="gridcentre">
             <?= $contenu ?>
         </div>
     </div>
-
+    <!-- grid pour la mise a jours du profil de l'utilisateur -->
     <div class="grid_ajout_user">
         <div class="photo">
             <img src="../<?= $photo ?>" alt="photo de profile">
         </div>
+
+        <!-- formulaires pour la photo de profile ou la modification des informations liées au compte -->
+         <!-- formulaire pour le changement de photo de profile -->
         <div class="parentdoubleFormulaire">
             <div class="profile_picture">
                 <form method="post" class="photoprofil"
@@ -141,9 +151,8 @@ if (count($mesruches)) {
                     <?= $erreur2 ?>
                 </form>
             </div>
-            <main>
 
-            </main>
+            <!-- formuaire pour le changement d'informations -->
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifprofil&idUser=' . $user[0]['Id_utilisateur'] ?>"
                 method="post">
                 <h2>Mes informations</h2>
@@ -202,10 +211,11 @@ if (count($mesruches)) {
     </footer>
 
     <script>
-
+        // affichages de fonctions poru ouvrir la pop up des mails admin
         <?= $fonctionadmin ?>
         <?= $lenombre ?>
 
+        // supression des ruches animation
         document.querySelectorAll('.case').forEach(e => {
             e.querySelector('.bout:last-child').addEventListener('click', (event) => {
                 event.preventDefault()
@@ -218,6 +228,8 @@ if (count($mesruches)) {
                 }
             });
         });
+
+        // affichage ou non de ce qu'on ecrit dans le input du password
 
         document.querySelectorAll('.oeil').forEach(e => {
             e.addEventListener('click', show)
@@ -232,12 +244,10 @@ if (count($mesruches)) {
                     this.querySelector('img').id = 'fermé'
                     this.querySelector('img').src = "../img/oeilfermé.svg";
                 }
-
                 this.classList.toggle('oeilferme')
                 this.classList.toggle('oeilouvert')
             }
         })
     </script>
 </body>
-
 </html>

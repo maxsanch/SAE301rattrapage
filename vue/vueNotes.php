@@ -1,5 +1,7 @@
 <?php
 
+
+// affichage du bon header
 if ($utilisateur[0]['Statut'] == 'admin') {
     $header = HEADER_admin;
 } else {
@@ -10,13 +12,15 @@ $footer = Footer_déconnecté;
 $content = "";
 $choixruche = "";
 
+
+// regarder si on a des ruches
 if (count($getruche)) {
     foreach ($getruche as $r) {
         $i = $r["ID_Ruches"];
 
         $notesingle = afficher_notes($i);
         $compter_note = 0;
-
+        // afficher les notes si il y en a plus que 0
         if (count($notesingle) > 0) {
             $noteexist = '';
             foreach ($notesingle as $test) {
@@ -46,7 +50,7 @@ if (count($getruche)) {
         }
 
         if (isset($ruches->$i)) {
-
+            // affichages des ruches et des rubriques pour chaques ruches
             $choixruche .= "<div class='choix' id='choixruche'>Ruche N°" . $i . "</div>";
 
             $content .= '<div class="ruche_all_notes" id="ruche' . $i . '">
@@ -96,7 +100,7 @@ if (count($getruche)) {
     <div class="cache_fond">
 
     </div>
-
+    <!-- formulaire pour l'ajout de notes ou la modification de notes -->
     <div class="formulairetest">
         <form action="<?= $_SERVER['PHP_SELF'] . '?page=ajoutNote&jsruche=null' ?>" method="post">
             <div class="ajout_ruches">
@@ -127,7 +131,7 @@ if (count($getruche)) {
         </div>
         <?= $demandes_ruches ?>
     </div>
-
+    <!-- décorations -->
     <div class="Decoration">
         <img class="AbeilleDeco1" src="../img/abeille_fond.svg" alt="une petite abeille qui décore la page">
         <img class="AbeilleDeco2" src="../img/abeille_fond.svg" alt="une petite abeille qui décore la page">
@@ -152,6 +156,7 @@ if (count($getruche)) {
             <h1>Mes notes</h1>
         </div>
         <div class="center">
+            <!-- choix de la ruche -->
             <div class="choixruche">
                 <p>Choisissez une ruche</p>
                 <div class="deroulantruche">
@@ -169,7 +174,7 @@ if (count($getruche)) {
                 </div>
             </div>
         </div>
-
+        <!-- toute les ruches et leurs notes -->
         <?= $content ?>
     </main>
 
@@ -181,7 +186,8 @@ if (count($getruche)) {
     <script>
         <?= $fonctionadmin ?>
         <?= $lenombre ?>
-
+        
+        // modification du chemin du formulaire a l'ajout
         document.querySelectorAll('.boutonajout').forEach(e => {
 
             e.addEventListener('click', ouvrir)
@@ -194,7 +200,7 @@ if (count($getruche)) {
                 document.querySelector('#numeroruche').value = e.id
             }
         })
-
+        // sortir des pop ups
         document.querySelector('.cache_fond').addEventListener('click', enleverform)
         document.querySelector('.exit').addEventListener('click', enleverform)
 
@@ -206,6 +212,8 @@ if (count($getruche)) {
 
         setInterval(actualiser, 1000);
 
+
+        // changer le formulaire pour la modification de notes
         document.querySelectorAll('.voirnote').forEach(e => {
             e.addEventListener('click', changer)
 
@@ -218,7 +226,7 @@ if (count($getruche)) {
                 document.querySelector('#editor>.ql-editor').innerHTML = document.querySelector('#contenu' + splited).innerHTML
             }
         })
-
+        // actualiser pour avoir les notes en permanence dans le input hidden
         function actualiser() {
             let carote = document.querySelector('#editor>.ql-editor').innerHTML
             document.querySelector('.inclusion').value = carote
@@ -237,6 +245,7 @@ if (count($getruche)) {
             document.querySelector('.absolute_deroulant').classList.toggle('ouvert')
         }
 
+        // choix de laruche qui enlève les autres
 
         document.querySelectorAll('.choix').forEach(e => {
             e.addEventListener('click', filtrer)

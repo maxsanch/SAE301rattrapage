@@ -1,3 +1,5 @@
+
+
 .titre_top_centre {
     width: 80%;
     margin: auto;
@@ -7,14 +9,18 @@
     font-size: 36px;
 }
 
+/* Grid des ruches */
+
 .grid_ajout_ruche {
     width: 80%;
     margin: auto;
     display: grid;
     grid-template-columns: 5fr 1fr 6fr;
     gap: 20px;
-
 }
+
+/* grid pour lutilisateur quand il edit son profil */
+
 .grid_ajout_user {
     width: 80%;
     margin: auto;
@@ -28,10 +34,14 @@
     flex-direction: column;
 }
 
+/* taille de la map */
+
 #map {
     height: 100%;
     border-radius: 20px;
 }
+
+/* page ajout ruche */
 
 .ajout_ruches{
     display: grid;
@@ -66,6 +76,8 @@ input{
     border: solid 2px #B95E06;
 }
 
+/* grid a l'interieur de l'editeur de profil */
+
 .minigrid{
     display: grid;
     grid-template-columns: 2fr 2fr 1fr;
@@ -82,6 +94,8 @@ input{
     gap: 20px;
     align-items: center;
 }
+
+/* style des boutons */
 
 .boutons{
     display: grid;
@@ -106,6 +120,8 @@ input{
     margin-top: 40px;
     margin-bottom: 60px;
 }
+
+/* centrer la page */
 .gridcentre{
     width: 60%;
     margin: auto;
@@ -140,7 +156,7 @@ input{
     border-radius: 11px;
 }
 
-
+/* suppression de la ruche et animation */
 .deletruche{
     animation: forwards 0.7s enlever;
 }
@@ -185,6 +201,8 @@ form{
     justify-content: center;
 }
 
+
+/* parent des deux formulaires et styles de formulaires */
 .parentdoubleFormulaire{
     display: flex;
     justify-content: center;
@@ -213,6 +231,8 @@ form{
     width: 500px;
 }
 
+/* partie de la validation */
+
 .validation>label{
     display: flex;
     align-items: center;
@@ -233,6 +253,8 @@ form{
     padding-inline: 20px;
 }
 
+
+/* style des parties remplissables par l'utilisateur */
 .form_elt{
     display: flex;
 }
@@ -247,10 +269,6 @@ form{
 }
 .orange{
     color: #B95E06;
-}
-
-.mdpconnex{
-    position: relative;
 }
 
 .oeil{

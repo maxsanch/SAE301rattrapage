@@ -1,16 +1,9 @@
-body {
-    background: #F7F3F0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-img{
-    width: 100%;
-}
-
 .centre_haut_titre {
     width: 80%;
     margin: auto;
 }
+
+/* styles du filtre des ruches */
 
 .filtre {
     width: 75%;
@@ -22,11 +15,7 @@ img{
     border-bottom: 1px #999999 solid;
 }
 
-.recolte {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
+/* menus deroulants */
 
 .menus_deroulant {
     display: flex;
@@ -48,10 +37,14 @@ img{
     position: relative;
 }
 
+/* fleches vers le bas */
+
 .fleche {
     display: flex;
     align-items: center;
 }
+
+/* informations sur les ruches */
 
 .ruche_informations {
     width: 80%;
@@ -60,13 +53,15 @@ img{
     grid-template-columns: 6fr 1fr 5fr;
 }
 
-
+/* titre ruche */
 h2 {
     width: 80%;
     margin: auto;
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
+/* infos de base ruche */
 
 .image_ruche {
     width: 500px;
@@ -75,6 +70,8 @@ h2 {
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
+/* changements une fois sur deux */
 .ruche_informations_contour:nth-child(even){
     background: #FAF0E3 !important;
 }
@@ -96,10 +93,14 @@ h2 {
     grid-column: 2;
 }
 
+
+
 .flex_image_info {
     display: flex;
     gap: 20px;
 }
+
+/* boutons des notes */
 
 .boutons_note {
     display: flex;
@@ -109,10 +110,12 @@ h2 {
     color: #fff;
 
 }
-
+/* espace pour le grid */
 .espace{
     width: 100%;
 }
+
+/* boutons ajout note ou gestion notes */
 
 .left_button {
     background-color: #B95E06;
@@ -133,6 +136,8 @@ h2 {
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.459);
     transition: 0.4s;
 }
+
+/* boutons lors-ce que l'on clique dessus */
 .left_button:active{
     transform: scale(0.9);
 }
@@ -144,6 +149,8 @@ h2 {
     grid-template-columns: 1fr 5fr;
     gap: 20px;
 }
+
+/* grid des notes */
 
 .grid_notes {
     display: grid;
@@ -159,6 +166,8 @@ h2 {
     cursor: pointer;
 }
 
+/* boutons de la note lors-ce qu'elle est choisie */
+
 .bouton_note_select {
     background: #B95E06;
     font-weight: bold;
@@ -166,6 +175,8 @@ h2 {
     border: #B95E06 solid 1px !important;
 }
 
+
+/* style par défaut du bouton */
 .bouton_note {
     padding: 5px;
     padding-inline: 10px;
@@ -189,6 +200,8 @@ h2 {
     overflow-y: scroll;
 }
 
+/* style du bouton voir plus */
+
 .bouton_voir_plus {
     padding: 5px;
     padding-inline: 10px;
@@ -197,6 +210,7 @@ h2 {
     background: #B95E06;
 }
 
+/* modification et suppression */
 .modifier {
     padding: 5px;
     padding-inline: 10px;
@@ -215,14 +229,13 @@ h2 {
     border: #B95E06 solid 1px;
 }
 
-.taille_police {
-    font-size: var(--taille);
-}
-
 #map {
+    border-radius: 14px;
     height: 550px;
 }
 
+
+/* menu deroulant caché */
 .absolute_deroulant{
     position: absolute;
     width: 100%;
@@ -239,9 +252,13 @@ h2 {
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.493);
     transform: scaleY(0);
 }
+
+/* déroulé */
 .ouvert{
     transform: scaleY(1);
 }
+
+/* choix dans le menu déroulant  */
 .choix{
     padding: 15px;
     margin-top: 10px;
@@ -269,6 +286,8 @@ a{
     color: #fff;
 }
 
+
+/* fermeture des divs en fonction du filtre choisi */
 .disparu{
     display: none;
 }
@@ -284,6 +303,8 @@ a{
 }
 
 
+/* créateur de notes */
+
 .formulairetest{
     z-index: 1000000;
     position: fixed;
@@ -295,6 +316,8 @@ a{
     border-radius: 20px;
     display: none;
 }
+
+/* editeur de text de quill */
 
 #editor{
     height: 250px;
@@ -317,6 +340,8 @@ a{
 }
 
 
+/* carte en position fixed */
+
 .fixed_carte{
     position: fixed;
     width: 1200px;
@@ -331,6 +356,8 @@ a{
     display: none;
 }
 
+/* croix de fermeture */
+
 .croixfixed{
     z-index: 1000001;
     position: fixed;
@@ -343,9 +370,8 @@ a{
     border-radius:  0px 14px 0 14px;
 }
 
-#map{
-    border-radius: 14px;
-}
+/* fond foncé */
+
 
 .cache_fond{
     position: fixed;
@@ -357,6 +383,8 @@ a{
     z-index: 10000;
     display: none;
 }
+
+/* boutons et icones du formulaire et de la carte */
 
 .formbouton{
     background: #914D1E;
@@ -384,6 +412,8 @@ a{
     transform: scale(0.9);
 }
 
+/* page de confirmation d'une action précédente*/
+
 .confirmation{
     position: fixed;
     top: 50%;
@@ -397,12 +427,12 @@ a{
     display: none;
 }
 
-
+/* ouverture de la confirmation */
 .ouvert2{
     display: block;
     animation: forwards apparaitre 0.4s;
 }
-
+/* animation pour une aparition smooth */
 @keyframes apparaitre{
     from{
         opacity: 0;
@@ -411,6 +441,8 @@ a{
         opacity: 1;
     }
 }
+
+/* interieur de la cellule de confirmation */
 .titresec{
     padding: 10px;
     display: flex;

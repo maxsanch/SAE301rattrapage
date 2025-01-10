@@ -24,8 +24,8 @@ $mapcenter = "var map = L.map('map').setView([50, 50], 13);";
 
 if (count($getruche)) {
     $i = $getruche[0]["ID_Ruches"];
-
-    if (isset($ruches->$i)) {
+    // centre de la carte
+    if (isset($ruches->$i)) {   
         $mapcenter = "var map = L.map('map').setView([" . $ruches->$i->gps[0] . ", " . $ruches->$i->gps[1] . "], 13);";
     } else {
         $mapcenter = "var map = L.map('map').setView([50, 50], 13);";
@@ -33,7 +33,7 @@ if (count($getruche)) {
 
     foreach ($getruche as $r) {
         $i = $r["ID_Ruches"];
-
+        // mise en place des marker si des ruches sont disponibles
         if (isset($ruches->$i)) {
 
             $markers .= 'var marker' . $i . ' = L.marker([' . $ruches->$i->gps[0] . ', ' . $ruches->$i->gps[1] . ']).addTo(map);';
@@ -61,6 +61,9 @@ if (count($getruche)) {
         } else {
             $liensuppr = "#";
         }
+
+
+        // regroupes les informations pour les graphiques d'humidité et de temérature dans un tableau
 
         $total = [];
         $dates = [];
@@ -104,18 +107,19 @@ if (count($getruche)) {
         $heurestemp = join(",", $dates2);
 
         if (count($notesingle) > 0) {
-            //     
-            //
+
+            // verification de l'existence et affichage des notes
 
             $noteexist = '';
             if (count($notesingle) > 3) {
                 $first_note = $notesingle[0];
                 $sec_note = $notesingle[1];
                 $trois_note = $notesingle[2];
+                // html entity decode permet de retranscrire un vrai code html au lieu d'une chaine de caractère
                 $contenunote1 = html_entity_decode($notesingle[0]['Contenu']);
                 $contenunote2 = html_entity_decode($notesingle[1]['Contenu']);
                 $contenunote3 = html_entity_decode($notesingle[2]['Contenu']);
-
+                // boutons des notes
                 $bouton_note .= "<div id='" . $first_note['ID_note'] . "' class='bouton_note'>Note n°1</div><div id='" . $sec_note['ID_note'] . "' class='bouton_note'>Note n°2</div><div id='" . $trois_note['ID_note'] . "' class='bouton_note'>Note n°3</div>";
                 $noteexist = '<div class="note" id="note' . $first_note['ID_note'] . '"><p>Note n°' . $first_note['ID_note'] . ' : note du ' . $first_note['Date'] . '</p><div id="contenu' . $first_note['ID_note'] . '">' . $contenunote1 . '</div></div><div class="note disabled" id="note' . $sec_note['ID_note'] . '"><p>Note n°' . $sec_note['ID_note'] . ' : note du ' . $sec_note['Date'] . '</p><div id="contenu' . $sec_note['ID_note'] . '">' . $contenunote2 . '</div></div><div class="note disabled" id="note' . $trois_note['ID_note'] . '"><p>Note n°' . $trois_note['ID_note'] . ' : note du ' . $trois_note['Date'] . '</p><div id="contenu' . $trois_note['ID_note'] . '">' . $contenunote3 . '</div></div>';
 
@@ -126,15 +130,14 @@ if (count($getruche)) {
                     $noteexist .= '<div class="note disabled" id="note' . $test['ID_note'] . '"><p>Note n°' . $compter_note . ' : note du ' . $test['Date'] . '</p><div id="contenu' . $test['ID_note'] . '">' . html_entity_decode($test['Contenu']) . '</div></div>';
                 }
             }
-
-
-
         } else {
             $noteexist = "<div class='reponse'>Aucune note pour cette ruche</div>";
         }
         if (isset($ruches->$i)) {
 
             $choixruche .= "<div class='choix' id='choixruche'>Ruche N°" . $i . "</div>";
+            
+            // informations générales des ruches
 
             $content .= "<div class='ruche_informations_contour'>
             <h2><span class='recup'>Ruche N°" . $i . "</span> : " . $r['nom'] . " </h2>
@@ -214,6 +217,8 @@ if (count($getruche)) {
                 </div>
             </div>";
 
+            // informations pour chaques graphiques
+
             $graphhumid .= "const humid" . $i . " = document.getElementById('" . $i . "_1');
     
             new Chart(humid" . $i . ", {
@@ -236,6 +241,8 @@ if (count($getruche)) {
                     }
                 }
             });";
+
+            // informations our le graphique sur la température
 
             $graphhtemp .= "const temp" . $i . " = document.getElementById('" . $i . "_2');
     
@@ -262,6 +269,7 @@ if (count($getruche)) {
 
 
         } else {
+            // au cas ou une ruche est mal acceptée
             $content .= "Nous avons sans le vouloir accepté une ruche qui n'existe pas, nous nous en excusons, pouvez vous supprimer cette dernière ou contacter un administrateur ?";
             $graphhtemp .= "";
             $graphhumid .= "";
@@ -285,7 +293,7 @@ if (count($getruche)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information ruches</title>
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
-    <link rel="stylesheet" href="../styles/styles_commun_mobile.css">
+    <link rel="stylesheet" media="(max-width: 620px)"  href="../styles/styles_commun_mobile.css">
     <link rel="stylesheet" href="../styles/inforuches.css">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.bubble.css" rel="stylesheet" />

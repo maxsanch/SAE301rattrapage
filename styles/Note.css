@@ -1,3 +1,5 @@
+/* décorations générales */
+
 .AbeilleDeco1 {
     width: 1.7%;
     position: fixed;
@@ -41,124 +43,32 @@
     z-index: -1;
 }
 
+/* taille minimum du main */
+
 main{
     min-height: 70vh;
 }
+
+/* titres notes */
 
 h3 {
     font-weight: bold;
 }
 
-.BordureFooterGauche {
-    display: flex;
-    flex-direction: column;
-    border-left: 1px solid white;
-    padding-left: 8px;
-    gap: 32px;
-}
-
-.FooterBouton1 {
-    color: white;
-    align-self: flex-start;
-    color: white;
-    font-weight: bold;
-}
-
-.FooterPartie2Parent {
-    padding-left: 10%;
-}
-
-.FooterPartie2 {
-    display: flex;
-    gap: 10%;
-}
-
-.FooterPartie2SousPartie1 {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    border-left: 1px solid white;
-    padding-left: 16px;
-    align-self: self-start;
-}
-
-.FooterPartie2SousPartie2 {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    border-left: 1px solid white;
-    padding-left: 16px;
-    align-self: self-start;
-}
-
-.ArrangementDeLaPartie2DuFooter {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.LienRapides {
-    margin-top: 32px;
-    margin-bottom: 32px;
-}
-
-.ListeDesActions {
-    display: flex;
-    gap: 32px;
-}
-
-.FooterPartieBasse {
-    width: 80%;
-    margin: auto;
-    padding-bottom: 16px;
-}
-
-.FooterPartieBasseBordure {
-    margin-top: 16px;
-    margin-bottom: 16px;
-    border-top: 1px solid white;
-}
-
-.ParentFooterLogo {
-    display: flex;
-    justify-content: start;
-    margin-top: 32px;
-    gap: 32px;
-}
-
-.FooterLogo {
-    width: 32px;
-    height: 32px;
-}
-
-.Actions {
-    text-decoration: none;
-    color: white;
-    position: relative;
-}
-
-.Actions::before {
-    content: "";
-    position: absolute;
-    height: 1px;
-    background: white;
-    width: 0%;
-    bottom: 0;
-    transition: 0.4s;
-}
-
-.Actions:hover::before {
-    width: 100%;
-}
+/* infos pour chaque notes */
 
 .ruche_all_notes{
     padding: 40px;
 }
 
+/* style différents pour les lignes paires */
+
 .ruche_all_notes:nth-child(even){
     background: #FAF0E3;
 }
 
+
+/* centrer le tout */
 .center{
     width: 80%;
     margin: auto;
@@ -168,7 +78,7 @@ h3 {
     margin: auto;
 }
 
-
+/* bouton ajout notes */
 .boutonajout{
     padding: 5px;
     background: #B95E06;
@@ -181,10 +91,14 @@ h3 {
     border-radius: 3px;
 }
 
+/* bouton préssé */
+
 .boutonajout:active{
     transform: scale(0.9);
     box-shadow: none;
 }
+
+/* grid de toute les notes par ruches */
 
 .gridnotesall{
     display: grid;
@@ -192,6 +106,8 @@ h3 {
     margin-top: 50px;
     gap: 30px;
 }
+
+/* contour et contenu des notes */
 
 .contournote{
     padding: 10px;
@@ -215,6 +131,7 @@ h3 {
     justify-content: space-between;
 }
 
+/* boutons notes */
 
 .voirnote{
     color: #B95E06;
@@ -233,6 +150,8 @@ h3 {
     border-radius: 6px;
 }
 
+
+/* deroulant filtre ruches */
 .deroulantruche{
     position: relative;
     background: #B95E06;
@@ -250,11 +169,15 @@ h3 {
     margin-bottom: 10px;
 }
 
+/* choix des ruches */
+
 .choixruche{
     display: flex;
     align-items: center;
     gap: 20px;
 }
+
+/* deroulant caché */
 
 .absolute_deroulant{
     position: absolute;
@@ -272,9 +195,13 @@ h3 {
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.493);
     transform: scaleY(0);
 }
+
+/* déroulant ouvert */
 .ouvert{
     transform: scaleY(1);
 }
+
+/* choix et animation au hover */
 .choix{
     padding: 15px;
     margin-top: 10px;
@@ -302,6 +229,7 @@ a{
     color: #212121;
 }
 
+/* formulaire des notes et éditeur */
 .formbouton{
     background: #B95E06;
     color: white;
@@ -330,7 +258,7 @@ a{
     border-radius: 20px;
     display: none;
 }
-
+/* styles de l'éditeur quill.js */
 #editor{
     height: 250px;
     background: url(../img/feuille.jpg);
@@ -355,7 +283,7 @@ a{
     display: block;
     animation: forwards apparaitre 0.4s;
 }
-
+/* anmiation pour l'ouverture */
 @keyframes apparaitre{
     from{
         opacity: 0;
@@ -365,6 +293,8 @@ a{
     }
 }
 
+
+/* bouton de validation du changement ou ajout de notes */
 .valider{
     display: flex;
     align-items: center;

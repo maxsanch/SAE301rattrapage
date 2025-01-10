@@ -68,6 +68,7 @@ if (count($getruche)) {
     
     $i = $getruche[0]["ID_Ruches"];
     if (isset($ruches->$i)) {
+        // affichage quand il y a plus de 3 utilisateurs
         if (count($getruche) > 3) {
             $i = $getruche[count($getruche) - 1]["ID_Ruches"];
             $i2 = $getruche[count($getruche) - 2]["ID_Ruches"];
@@ -99,14 +100,14 @@ if (count($getruche)) {
         $contenu2 .= 'ruche(s) innexistante, veuillez la/les supprimer.';
     }
 
-
+// définition du centre de la map
 
     if (isset($ruches->$i)) {
         $mapcenter = "var map = L.map('map').setView([" . $ruches->$i->gps[0] . ", " . $ruches->$i->gps[1] . "], 13);";
     } else {
         $mapcenter = "var map = L.map('map').setView([50, 50], 13);";
     }
-
+// affichage des markers si des ruches sont présentes
 
     foreach ($getruche as $r) {
         $i = $r["ID_Ruches"];

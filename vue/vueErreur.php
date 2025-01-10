@@ -9,7 +9,6 @@
 
 <body>
     <?php
-    echo "hey";
     echo $message; ?>
 </body>
 
