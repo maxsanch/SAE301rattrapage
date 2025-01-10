@@ -1,10 +1,12 @@
 <?php
-
+// définition du header deconnecté du site dans une variable afin de faciliter sa réutilsiation
 define("HEADER_Déconnecté", "<div class='ConteneurHeader'>
             <div class='TitreHeader>'<span class='RucheHeader'>R</span>uches connectées</div>
             <div class='BoutonHeader'>Se connecter</div>
             </div>");
 
+
+            // définition du header connecté du site afin de faciliter sa réutilisation
 define('HEADER_connecté', '<div class="ConteneurHeader">
             <a href="index.php" class="TitreHeader"><span class="RucheHeader">R</span>uches connectées</a>
             <div class="HeaderPartieDroite">
@@ -15,6 +17,7 @@ define('HEADER_connecté', '<div class="ConteneurHeader">
             </div>
             </div>');
 
+            // définition du header admin du site
 define('HEADER_admin', '<div class="ConteneurHeader">
             <a href="index.php" class="TitreHeader"><span class="RucheHeader">R</span>uches connectées</a>
             <div class="HeaderPartieDroite">
@@ -28,7 +31,7 @@ define('HEADER_admin', '<div class="ConteneurHeader">
             </div>
             </div>');
 
-
+    // définition du footer deconnecté du site
 define("Footer_déconnecté", '<div class="FooterGlobal">
             <div class="FooterPartie1">
                 <h3>RUCHES CONNECTEES</h3>
@@ -109,7 +112,7 @@ define("Footer_déconnecté", '<div class="FooterGlobal">
             <div>Projet ruches connectées</div>
         </div>');
 
-
+// définition du footer connecté et admin du site
 
 define("Footer_connecté", '<div class="FooterGlobal">
             <div class="FooterPartie1">
@@ -193,6 +196,9 @@ define("Footer_connecté", '<div class="FooterGlobal">
         <div class="FooterPartieBasse">
             <div>Projet ruches connectées</div>
         </div>');
+
+
+// informations de connextion à la base de données pour faciliter les modifications lors de la mise en ligne du site
 
 define("DBHOST", "localhost");
 define("DBNAME", "rucheconnectes");

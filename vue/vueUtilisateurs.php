@@ -145,6 +145,11 @@ if ($message != "") {
     </div>';
 }
 
+$tableau = [];
+foreach($nombreparmois as $cle){
+    $tableau[] = $cle['nombreConnexion'].' ';
+}
+$final = join(',',$tableau);
 ?>
 
 <!DOCTYPE html>
@@ -237,7 +242,7 @@ if ($message != "") {
                 labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Decembre'],
                 datasets: [{
                     label: 'nombre de connexions',
-                    data: [21, 30, 30, 15, 35, 34, 9, 37, 22, 31, 20, 12],
+                    data: [<?= $final ?>],
                     borderWidth: 1,
                     backgroundColor: [
                         '#B95E06'
