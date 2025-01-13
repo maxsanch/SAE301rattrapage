@@ -39,7 +39,7 @@ if (count($mesruches)) {
     }
 } else {
     // Affichage d'un message si aucune ruche n'est enregistrée
-    echo "<div class='reponse'>Aucune ruche enregistrée.</div>";
+    $contenu .= "<div class='reponse'>Aucune ruche enregistrée.</div>";
 }
 
 

@@ -165,6 +165,7 @@ $final = join(',',$tableau);
     <title>Gestion des utilisateurs</title>
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
     <link rel="stylesheet" href="../styles/GestionUtilisateur.css">
+    <link rel="stylesheet" href="../styles/GestionUtilisateurs">
 
 </head>
 
@@ -279,7 +280,6 @@ $final = join(',',$tableau);
         <?= $fonctionadmin ?>
         <?= $lenombre ?>
     </script>
-    <!-- <script src="../js/Utilisateurs.js"></script> -->
 </body>
 
 </html>
