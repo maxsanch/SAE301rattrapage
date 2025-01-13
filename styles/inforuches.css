@@ -466,3 +466,7 @@ a{
 .disabled{
     display: none;
 }
+
+#ruchesfiltre{
+    display: block;
+}

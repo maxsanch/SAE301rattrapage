@@ -405,7 +405,7 @@ function ajout($nom, $id)
 }
 
 // fonction pour changer des informatiosn sur la ruche (fonction liée à la bdd)
-function change($nom, $id, $idancien)
+function change($nom, $idancien)
 {
 
     $checkuser = new utilisateurs();
@@ -414,11 +414,9 @@ function change($nom, $id, $idancien)
 
 
     if (!empty($user)) {
-        if ($id == $idancien) {
             // si tout est défini, changement des informations de la ruche
-            if (!empty($nom) && !empty($id)) {
-                $addruche->update($nom, $id, $idancien);
-                $addruche->updategerant($idancien, $id, $user[0]['Id_utilisateur']);
+            if (!empty($nom)) {
+                $addruche->update($nom,$idancien);
                 $erreur = 'La ruche à bien été modifiée.';
                 modification_ruches($erreur);
             } else {
@@ -426,25 +424,6 @@ function change($nom, $id, $idancien)
                 $erreur = 'veuillez remplir les champs obligatoires';
                 modification_ruches($erreur);
             }
-        } else {
-            // sinon : mettre une erreur
-            $verif = $addruche->checkruche($id);
-            if (!empty($verif)) {
-                $erreur = 'Cet ID est déjà utilisé pour une autre ruche.';
-                modification_ruches($erreur);
-            } else {
-                if (!empty($nom) && !empty($id)) {
-                    $addruche->update($nom, $id, $idancien);
-                    $addruche->updategerant($idancien, $id, $user[0]['Id_utilisateur']);
-                    $erreur = 'La ruche à bien été modifiée.';
-                    modification_ruches($erreur);
-                } else {
-                    $erreur = 'veuillez remplir les champs obligatoires';
-                    modification_ruches($erreur);
-                }
-            }
-        }
-
     } else {
         // erreur globale
         $erreur = 'modification échouée';

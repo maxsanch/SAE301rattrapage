@@ -52,7 +52,7 @@ try {
                 ajout($_POST['nomruche'], $_POST['id_ruche']);
             } else if ($_GET['page'] == 'modifier') {
                 // modification d'une ruche dans la base de données
-                change($_POST['nomruche'], $_POST['id_ruche'], $_GET['ruche']);
+                change($_POST['nomruche'], $_GET['ruche']);
             } else if ($_GET['page'] == 'suppression') {
                 // suppression d'une ruche de la base de données
                 supprimer($_GET['ruche']);

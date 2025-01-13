@@ -55,19 +55,9 @@ class ruches extends database
     Met à jour le nom d'une ruche et son ID
     Entrée : $nom : Le nouveau nom de la ruche, $newidruche : Le nouvel ID de la ruche, $ancienid : L'ancien ID de la ruche
     *******************************************************/
-    public function update($nom, $newidruche, $ancienid)
+    public function update($nom, $ancienid)
     {
-        $req = "UPDATE `ruches` SET `ID_Ruches` = '" . $newidruche . "', `nom` = '" . $nom . "' WHERE `ruches`.`ID_Ruches` = " . $ancienid . ";"; // Requête SQL pour mettre à jour une ruche.
-        $this->execReq($req); // Exécute la requête.
-    }
-
-    /*******************************************************
-    Met à jour le gestionnaire d'une ruche
-    Entrée : $idancien : Ancien ID de la ruche, $newid : Nouveau ID de la ruche, $user : ID de l'utilisateur à associer
-    *******************************************************/
-    public function updategerant($idancien, $newid, $user)
-    {
-        $req = "UPDATE `gérer` SET `ID_Ruches` = '" . $newid . "' WHERE `gérer`.`Id_utilisateur` = " . $user . " AND `gérer`.`ID_Ruches` = " . $idancien . ";"; // Requête SQL pour mettre à jour le gestionnaire d'une ruche.
+        $req = "UPDATE `ruches` SET `nom` = '" . $nom . "' WHERE `ruches`.`ID_Ruches` = " . $ancienid . ";"; // Requête SQL pour mettre à jour une ruche.
         $this->execReq($req); // Exécute la requête.
     }
 
