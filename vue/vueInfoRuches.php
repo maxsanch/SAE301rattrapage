@@ -25,7 +25,7 @@ $mapcenter = "var map = L.map('map').setView([50, 50], 13);";
 if (count($getruche)) {
     $i = $getruche[0]["ID_Ruches"];
     // centre de la carte
-    if (isset($ruches->$i)) {   
+    if (isset($ruches->$i)) {
         $mapcenter = "var map = L.map('map').setView([" . $ruches->$i->gps[0] . ", " . $ruches->$i->gps[1] . "], 13);";
     } else {
         $mapcenter = "var map = L.map('map').setView([50, 50], 13);";
@@ -136,7 +136,7 @@ if (count($getruche)) {
         if (isset($ruches->$i)) {
 
             $choixruche .= "<div class='choix' id='choixruche'>Ruche N°" . $i . "</div>";
-            
+
             // informations générales des ruches
 
             $content .= "<div class='ruche_informations_contour'>
@@ -292,8 +292,9 @@ if (count($getruche)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information ruches</title>
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
-    <link rel="stylesheet" media="(max-width: 620px)"  href="../styles/styles_commun_mobile.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
     <link rel="stylesheet" href="../styles/inforuches.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/stylesinforuchemobile.css">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.bubble.css" rel="stylesheet" />
 
@@ -451,6 +452,7 @@ if (count($getruche)) {
                 </div>
                 <!-- div contenant les menus et leurs titre -->
                 <div class="menus_deroulant">
+                    <p id="ruchesfiltre">Ruche</p>
                     <!-- le menu déroulant -->
                     <div class="menu_deroulant">
                         <div class="information" id="rchoisi">
@@ -685,7 +687,7 @@ if (count($getruche)) {
 
                     e.querySelector('.modifier').id = 'modifier' + e.querySelector('.bouton_note').id
                 }
-                else{
+                else {
                     e.querySelector('.modifier').remove()
                 }
             })

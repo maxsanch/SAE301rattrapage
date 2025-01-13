@@ -1,0 +1,48 @@
+.ruche_informations{
+    display: block;
+}
+
+.flex_image_info{
+    display: block;
+}
+
+.grid_notes{
+    grid-template-columns: 1fr;
+}
+
+.note{
+    grid-row: 1;
+}
+.void{
+    display: none;
+}
+
+.grid_placement_titre{
+    grid-template-columns: 1fr;
+}
+
+.grid_notes{
+    margin-bottom: 50px;
+}
+
+.g1{
+    margin-bottom: 50px;
+}
+
+
+.filtre{
+    display: block;
+}
+
+.menus_deroulant{
+    display: block;
+}
+
+
+.absolute_deroulant{
+    z-index: 999;
+}
+
+#ruchesfiltre{
+    display: block;
+}
