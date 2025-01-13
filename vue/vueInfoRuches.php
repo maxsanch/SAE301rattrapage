@@ -152,7 +152,6 @@ if (count($getruche)) {
                             <p>Température interne : <b class='temp'>" . $ruches->$i->data[count($ruches->$i->data) - 1]->temperature . " °</b></p>
                             <p>Poid du miel : <b class='pounds'>" . $ruches->$i->data[count($ruches->$i->data) - 1]->poids . " kg</b></p>
                             <p>Frequence de battement des ailes: <b class='batps'>" . $ruches->$i->data[count($ruches->$i->data) - 1]->frequence . " bps</b></p>
-                            <p>Statut : <b>prêt pour la récolte</b></p>
                         </div>
                     </div>
                     <div class='boutons_note'>
