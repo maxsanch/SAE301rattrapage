@@ -13,16 +13,18 @@ $contenu = ''; // Initialisation de la variable pour stocker le contenu dynamiqu
 
 // Vérifie s'il existe des ruches dans la variable $mesruches.
 if (count($mesruches)) {
-    // Parcours des ruches et création des éléments HTML pour chaque ruche.
+    // Si des ruches existent, on génère le contenu pour chaque ruche
     foreach ($mesruches as $ligne) {
-        // Génère le HTML pour afficher chaque ruche avec ses informations.
-        $contenu .= '<div class="case">
-                        <div class="photo"><img src="../img/Ruches.jpg" alt=""></div>
-                        <b>' . $ligne['nom'] . '</b>
-                        <a class="bout" href="index.php?page=Ruches&jsruche=Ruche N°' . $ligne['ID_Ruches'] . '">Informations</a>
-                        <a href="index.php?page=modif&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Modifier</a>
-                        <a href="index.php?page=suppression&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Supprimer</a>
-                      </div>';
+        if (file_exists('img/imported/' . $ligne['ID_Ruches'] . '.jpg')) {
+            $phototest = 'img/imported/' . $ligne['ID_Ruches'] . '.jpg';
+        } else if (file_exists('img/imported/' . $ligne['ID_Ruches'] . '.png')) {
+            $phototest = 'img/imported/' . $ligne['ID_Ruches'] . '.png';
+        } else {
+            // Image par défaut si aucune image spécifique n'est trouvée
+            $phototest = 'img/imported/no_image_ruche.png';
+        }
+        // Construction du contenu à afficher pour chaque ruche
+        $contenu .= '<div class="case"><a href="index.php?page=Photo_ruche&idRuche=' . $ligne['ID_Ruches'] . '" class="photo"><img src="../' . $phototest . '" alt=""></a><b>' . $ligne['nom'] . '</b><a class="bout" href="index.php?page=Ruches&jsruche=Ruche N°' . $ligne['ID_Ruches'] . '">Informations</a><a href="index.php?page=modif&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Modifier</a><a href="index.php?page=suppression&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Supprimer</a></div>';
     }
 } else {
     // Si aucune ruche n'est enregistrée, un message est affiché.
@@ -41,7 +43,7 @@ if (count($mesruches)) {
 
     <!-- Inclusion des fichiers CSS pour la mise en page, selon la taille de l'écran. -->
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
-    <link rel="stylesheet" media="(max-width: 620px)"  href="../styles/styles_commun_mobile.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
     <link rel="stylesheet" href="../styles/GestionRuches.css">
 </head>
 
@@ -73,17 +75,23 @@ if (count($mesruches)) {
                     <div>Nom de la ruche</div>
                     <input type="text" name="nomruche">
                 </div>
-                <div class="ID_appareil">
-                    <div>ID de l'appareil</div>
-                    <input type="number" name="id_ruche">
-                </div>
             </div>
             <!-- Affichage des erreurs éventuelles lors de la modification. -->
             <?= $erreur ?>
+            <button>Envoyer</button>
         </form>
 
         <div class="espace"></div>
-        <div class="carte_ruche"></div>
+        <!-- photo responsiv -->
+        <div class="carte_ruche">
+            <img sizes="(max-width: 1400px) 100vw, 1400px" srcset="
+../img/sandy-millar-7O7xz_hOsjc-unsplash_qwr0ib_c_scale,w_200.jpg 200w,
+../img/sandy-millar-7O7xz_hOsjc-unsplash_qwr0ib_c_scale,w_713.jpg 713w,
+../img/sandy-millar-7O7xz_hOsjc-unsplash_qwr0ib_c_scale,w_1035.jpg 1035w,
+../img/sandy-millar-7O7xz_hOsjc-unsplash_qwr0ib_c_scale,w_1342.jpg 1342w,
+../img/sandy-millar-7O7xz_hOsjc-unsplash_qwr0ib_c_scale,w_1400.jpg 1400w"
+                src="../img/sandy-millar-7O7xz_hOsjc-unsplash_qwr0ib_c_scale,w_1400.jpg" alt="fleure illustration">
+        </div>
     </div>
 
     <div class="partie2">
