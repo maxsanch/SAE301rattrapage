@@ -28,6 +28,8 @@ body {
 }
 header{
     position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 /* images et liens généraux du site */

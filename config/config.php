@@ -15,6 +15,7 @@ define('HEADER_connecté', '<div class="ConteneurHeader">
                 <a href="index.php?page=quitter" class="BoutonHeader2">Se déconnecter</a>
                 <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader">Mes ruches</a>
             </div>
+            <div class="tribarres"><div class="barresingle"></div><div class="barresingle"></div><div class="barresingle"></div></div>
             </div>
             <div class="liensdéroulant">
                 <a href="index.php?page=Gestion" class="BoutonHeader2">Gestion</a>
