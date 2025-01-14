@@ -15,6 +15,12 @@ define('HEADER_connecté', '<div class="ConteneurHeader">
                 <a href="index.php?page=quitter" class="BoutonHeader2">Se déconnecter</a>
                 <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader">Mes ruches</a>
             </div>
+            </div>
+            <div class="liensdéroulant">
+                <a href="index.php?page=Gestion" class="BoutonHeader2">Gestion</a>
+                <a href="index.php?page=Notes" class="BoutonHeader2">Mes notes</a>
+                <a href="index.php?page=quitter" class="BoutonHeader2">Se déconnecter</a>
+                <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader2">Mes ruches</a>
             </div>');
 
             // définition du header admin du site
@@ -29,6 +35,17 @@ define('HEADER_admin', '<div class="ConteneurHeader">
                 <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader">Mes ruches</a>
                 <div class="mail"><div class="ptsrouge"><div class="letxt"></div></div><img class="notif" src="../img/mail.svg" alt="Une icone de mail"></img></div>
             </div>
+            <div class="tribarres"><div class="barresingle"></div><div class="barresingle"></div><div class="barresingle"></div></div>
+            </div>
+            <div class="liensdéroulant">
+                <a href="index.php" class="BoutonHeader2">Accueil</a>
+                <a href="index.php?page=Gestion" class="BoutonHeader2">Gestions des ruches</a>
+                <a href="index.php?page=Notes" class="BoutonHeader2">Mes notes</a>
+                <a href="index.php?page=Utilisateurs" class="BoutonHeader2">Utilisateurs</a>
+                <a href="index.php?page=quitter" class="BoutonHeader2">Se déconnecter</a>
+                <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader2">Mes ruches</a>
+                <div class="ptsrouge"></div>
+                <div class="mail2 BoutonHeader2">Boite de récéption</div>
             </div>');
 
     // définition du footer deconnecté du site

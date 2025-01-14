@@ -1,6 +1,7 @@
 <?php
 
 // Définition du footer pour un utilisateur connecté
+$header = HEADER_connecté;
 $footer = Footer_connecté;
 
 $contenu2 = '';
@@ -101,15 +102,7 @@ if (count($getruche)) {
 
 <body>
     <header>
-        <div class="ConteneurHeader">
-            <div class="TitreHeader"><span class="RucheHeader">R</span>uches connectées</div>
-            <div class="HeaderPartieDroite">
-                <a href="index.php?page=Gestion" class="BoutonHeader2">Gestion des ruches</a>
-                <a href="index.php?page=Notes" class="BoutonHeader2">Mes notes</a>
-                <a href="index.php?page=quitter" class="BoutonHeader2">Se déconnecter</a>
-                <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader">Mes ruches</a>
-            </div>
-        </div>
+        <?= $header ?>
     </header>
 
     <div class="Decoration">
@@ -230,7 +223,7 @@ if (count($getruche)) {
     <footer>
         <?= $footer ?>
     </footer>
-
+    <script src="../js/script_commun_header.js"></script>
     <script>
         <?= $mapcenter ?>
 

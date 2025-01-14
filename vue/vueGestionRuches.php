@@ -209,7 +209,7 @@ if (count($mesruches)) {
     <footer>
         <?= $footer ?>
     </footer>
-
+    <script src="../js/script_commun_header.js"></script>
     <script>
         // affichages de fonctions poru ouvrir la pop up des mails admin
         <?= $fonctionadmin ?>

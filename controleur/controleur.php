@@ -75,6 +75,7 @@ function demandesruches()
 
         // Script JavaScript pour gérer l'affichage des notifications et fenêtres pop-up.
         $fonctionadmin = "document.querySelector('.mail').addEventListener('click', notifopen)
+                          document.querySelector('.mail2').addEventListener('click', notifopen)
 
         function notifopen() {
             document.querySelector('.cache_fond').classList.add('cache_plein')

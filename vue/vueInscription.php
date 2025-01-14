@@ -71,8 +71,9 @@
             </div>
         </form>
     </div>
-
+    <script src="../js/script_commun_header.js"></script>
     <!-- Script JavaScript pour gérer l'affichage/masquage des mots de passe -->
+     
     <script>
         // Sélectionner tous les éléments avec la classe 'oeil' et ajouter un événement au clic
         document.querySelectorAll('.oeil').forEach(e => {

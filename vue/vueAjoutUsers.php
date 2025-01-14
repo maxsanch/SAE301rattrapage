@@ -62,7 +62,7 @@ $footer = Footer_déconnecté;
         <!-- Affiche le footer pour les utilisateurs non connectés -->
         <?= $footer ?>
     </footer>
-
+    <script src="../js/script_commun_header.js"></script>
     <script>
         // Exécution de fonctions spécifiques à l'admin (et autres)
         <?= $fonctionadmin ?>

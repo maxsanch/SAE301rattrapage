@@ -26,6 +26,9 @@ body {
     color: #B95E06;
     font-family: Montserrat-bold;
 }
+header{
+    position: relative;
+}
 
 /* images et liens généraux du site */
 img {
@@ -684,7 +687,7 @@ h3 {
 
 .ptsrouge{
     width: 20px;
-    background: red;
+    background: rgb(255, 115, 0);
     border-radius: 100%;
     color: white;
     position: absolute;
@@ -700,3 +703,12 @@ h3 {
     transform: translate(-50%, -50%);
 }
 
+/* menus du header sur mobile */
+
+.tribarres{
+    display: none;
+}
+
+.liensdéroulant{
+    display: none;
+}

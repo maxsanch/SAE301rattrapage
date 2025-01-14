@@ -118,3 +118,97 @@ img {
     height: auto;
     border-radius: 8px;
 }
+
+
+
+/* footer du site sur mobile */
+
+
+.BordureFooterGauche{
+    display: none;
+}
+
+.FooterGlobal{
+    grid-template-columns: 1fr;
+}
+
+.FooterPartie2{
+    display: block;
+}
+
+.FooterPartie2Parent{
+    padding-left: 0;
+}
+
+.ListeDesActions{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    font-size: 14px;
+}
+
+
+/* header du site */
+
+header{
+    background: #F7F3F0;
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+}
+
+.tribarres{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.HeaderPartieDroite{
+    display: none;
+}
+
+.barresingle{
+    width: 40px;
+    height: 4px;
+    background: #B95E06;
+}
+
+
+.liensdéroulant{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    background: #F7F3F0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.4s;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.199);
+}
+
+.ouvertmenu{
+    transform: scaleY(1);
+}
+
+.liensdéroulant>.BoutonHeader2{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-inline: 40px;
+
+}
+
+.liensdéroulant>.BoutonHeader2:hover{
+    background-color: #FAF0E3;
+}
+
+.mail2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ptsrouge{
+    display: none;
+}

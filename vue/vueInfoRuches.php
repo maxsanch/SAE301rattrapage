@@ -476,6 +476,7 @@ if (count($getruche)) {
         <footer>
             <?= $footer ?>
         </footer>
+        <script src="../js/script_commun_header.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
         <script>

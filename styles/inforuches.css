@@ -63,9 +63,6 @@ h2 {
 
 /* infos de base ruche */
 
-.image_ruche {
-    width: 500px;
-}
 .ruche_informations_contour{
     padding-top: 50px;
     padding-bottom: 50px;
@@ -469,4 +466,10 @@ a{
 
 #ruchesfiltre{
     display: block;
+}
+
+
+/* stats des ruches pour la dernière mesure */
+.informations_ruche{
+    flex: none;
 }

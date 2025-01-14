@@ -109,7 +109,8 @@ if (count($mesruches)) {
         <!-- Affichage du pied de page dynamique. -->
         <?= $footer ?>
     </footer>
-
+    
+    <script src="../js/script_commun_header.js"></script>
     <script>
         // Fonction JavaScript pour gérer des actions spécifiques sur les demandes d'administration et les éléments interactifs.
 

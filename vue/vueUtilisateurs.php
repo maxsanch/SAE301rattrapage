@@ -216,7 +216,7 @@ $final = join(',',$tableau);
         <?= $footer ?>
     </footer>
 
-
+    <script src="../js/script_commun_header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         // enlever les pop ups

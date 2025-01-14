@@ -48,7 +48,7 @@
             </div>
         </form>
     </div>
-
+    <script src="../js/script_commun_header.js"></script>
     <script>
         // Fonction pour afficher ou masquer le mot de passe
         document.querySelector('.oeil').addEventListener('click', show)

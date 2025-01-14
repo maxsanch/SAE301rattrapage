@@ -65,9 +65,9 @@ $footer = Footer_déconnecté;
         <!-- Affiche le footer en fonction du statut de l'utilisateur -->
         <?= $footer ?>
     </footer>
-
+    <script src="../js/script_commun_header.js"></script>
     <script>
-        // Scripts spécifiques au fonctionnement de la page
+        // Scripts spécifiques pour les admins
         <?= $fonctionadmin ?>
         <?= $lenombre ?>
     </script>

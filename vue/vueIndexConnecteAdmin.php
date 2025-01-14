@@ -174,7 +174,7 @@ if (count($getruche)) {
         </svg>
 
     </div>
-
+    <script src="../js/script_commun_header.js"></script>
     <main>
         <div class="ParentPartie1">
             <div class="Partie1">
