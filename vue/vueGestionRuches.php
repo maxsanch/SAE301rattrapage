@@ -171,6 +171,7 @@ if (count($mesruches)) {
                         </label>
                     </div>
                     <div class="mdp">
+                        <!-- pour changer le mot de passe de l'utilisteur -->
                         <div><b>Changer de mot de passe</b></div>
                         <label>
                             <p>Nouveau mot de passe</p> <input type="password" class="motdepasse" name="NewPassword"

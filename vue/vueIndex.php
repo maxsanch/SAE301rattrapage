@@ -14,6 +14,7 @@ $footer=Footer_déconnecté
 </head>
 
 <body>
+    <!-- header du site -->
     <header>
         <div class="ConteneurHeader">
             <div class="TitreHeader"><span class="RucheHeader">R</span>uches connectées</div>
@@ -21,7 +22,7 @@ $footer=Footer_déconnecté
         </div>
     </header>
 
-
+    <!-- décorations en fond du site -->
     <div class="Decoration">
         <img class="AbeilleDeco1" src="../img/abeille_fond.svg" alt="une petite abeille qui décore la page">
         <img class="AbeilleDeco2" src="../img/abeille_fond.svg" alt="une petite abeille qui décore la page">
@@ -42,6 +43,7 @@ $footer=Footer_déconnecté
     </div>
     <main>
         <div class="ParentPartie1">
+            <!-- accueil avec image et texte d'accroche -->
             <div class="Partie1">
                 <div class="Partie1Texte">
                     <div class="SousTitre">Optimisez votre apiculture</div>
@@ -71,6 +73,7 @@ $footer=Footer_déconnecté
         </div>
 
         <div class="ParentPartie2">
+            <!-- informations sur le projet -->
             <div class="Partie2" id="Information">
                 <div class="Partie2Image">
                     <img src="img/GEII.jpg" alt="Les GEII qui ont fait la ruches connectées">
@@ -104,6 +107,7 @@ $footer=Footer_déconnecté
             </div>
         </div>
 
+        <!-- grid d'images pour faire joli -->
         <div class="ParentPartie3">
             <div class="Partie3">
                 <div class="Partie3Image1"></div>
@@ -116,13 +120,11 @@ $footer=Footer_déconnecté
         </div>
     </main>
 
+    <!-- footer du site -->
+
     <footer>
         <?= $footer ?>
     </footer>
-
-
-    <script src="js/commun.js"></script>
-    <script src="js/index.js"></script>
 </body>
 
 </html>

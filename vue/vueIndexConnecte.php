@@ -101,10 +101,13 @@ if (count($getruche)) {
 </head>
 
 <body>
+    <!-- header du site -->
     <header>
         <?= $header ?>
     </header>
 
+
+    <!-- décorations en fond du site -->
     <div class="Decoration">
         <img class="AbeilleDeco1" src="../img/abeille_fond.svg" alt="une petite abeille qui décore la page">
         <img class="AbeilleDeco2" src="../img/abeille_fond.svg" alt="une petite abeille qui décore la page">
@@ -125,6 +128,7 @@ if (count($getruche)) {
     </div>
 
     <main>
+        <!-- présentation globale et image d'accroche -->
         <div class="ParentPartie1">
             <div class="Partie1">
                 <div class="Partie1Texte">
@@ -144,6 +148,7 @@ if (count($getruche)) {
                             retrouvera. Ainsi, <b>vous ne pourrez jamais les égarer.</b>
                         </p>
                     </div>
+                    <!-- boutons -->
                     <div class="Partie1Bouton">
                         <a href="#Information" class="Partie1Bouton1">Découvrir plus</a>
                         <a href="index.php?page=Ruches&jsruche=null" class="Partie1Bouton2">Mes ruches</a>
@@ -154,6 +159,8 @@ if (count($getruche)) {
                 </div>
             </div>
         </div>
+
+        <!-- ruches de l'utilisateur -->
 
         <div class="ParentPartie4">
             <div class="Partie4">
@@ -166,7 +173,7 @@ if (count($getruche)) {
                 </div>
             </div>
         </div>
-
+    <!-- carte des ruches pour faciliter le visionnement de leur emplacement -->
         <div class="ParentPartie5">
             <div class="Partie5">
                 <h2 class="Partie5Titre">Trouve tes ruches</h2>
@@ -174,6 +181,7 @@ if (count($getruche)) {
             </div>
         </div>
 
+        <!-- présentation du projet ruches connectées -->
         <div class="ParentPartie2">
             <div class="Partie2" id="Information">
                 <div class="Partie2Image">
@@ -208,6 +216,7 @@ if (count($getruche)) {
             </div>
         </div>
 
+        <!-- images accrocheuses -->
         <div class="ParentPartie3">
             <div class="Partie3">
                 <div class="Partie3Image1"></div>

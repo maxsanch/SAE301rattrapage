@@ -1,37 +1,26 @@
+/* corp global de la page */
+
 main {
     width: 80%;
     margin: auto;
 }
 
-.Actions {
-    text-decoration: none;
-    color: white;
-    position: relative;
-}
 
-.Actions::before {
-    content: "";
-    position: absolute;
-    height: 1px;
-    background: white;
-    width: 0%;
-    bottom: 0;
-    transition: 0.4s;
-}
-
-.Actions:hover::before {
-    width: 100%;
-}
+/* titres de la page de gestion des utilisateurs */
 
 .Titre {
     font-family: Montserrat-black;
-    color: #3F221C;
+    color: #212121;
 }
 
 .SousTitre {
-    color: #3F221C;
+    color: #212121;
     font-family: Montserrat-bold;
 }
+
+/* tableau de bord */
+
+/* contour du tableau de bord */
 
 .Contour {
     border: solid #CFCFCF 1px;
@@ -39,6 +28,8 @@ main {
     padding-top: 32px;
     padding-bottom: 32px;
 }
+
+/* elements du tableau de bord */
 
 .LesElements {
     display: flex;
@@ -51,14 +42,21 @@ main {
     align-items: center;
 }
 
+
+/* données */
+
 .Chiffre {
     color: #B95E06;
     font-family: Montserrat-black;
 }
 
+/* taille du svg par dessus la donnée */
+
 .SVG {
     width: 20%;
 }
+
+/* flex de tous les utilisateurs du site */
 
 .LesUtilisateurs {
     display: flex;
@@ -69,6 +67,10 @@ main {
     gap: 16px;
 }
 
+
+/* contour des cases des utilisateurs */
+
+
 .GrandeCase {
     border: dashed 1px #B95E06;
     padding: 8px;
@@ -77,6 +79,9 @@ main {
     display: flex;
     flex-direction: column;
 }
+
+
+/* interieur des cases des utilisateurs */
 
 .PetiteCase {
     border: dashed 1px #B95E06;
@@ -92,9 +97,13 @@ main {
     margin-top: auto;
 }
 
+/* border radius des photos */
+
 .photo {
     border-radius: 8px 8px 0px 0px;
 }
+
+/* informations utilisateurs */
 
 .Information {
     background-color: #B95E06;
@@ -106,15 +115,21 @@ main {
     padding-bottom: 4px;
 }
 
+/* taille du chart js au centre */
+
 #myChart {
     height: 300px;
     display: flex;
     margin: auto;
 }
 
+/* graph */
+
 .LeGraph {
     margin-top: 32px;
 }
+
+/* cache pour les annonces en pop up */
 
 .cachetjrla {
     position: fixed;
@@ -125,6 +140,8 @@ main {
     bottom: 0;
     z-index: 10000;
 }
+
+/* div pour les informations erreur */
 
 .informationerreur {
     position: fixed;
@@ -140,6 +157,9 @@ main {
 
 }
 
+
+/* message pour l'admin */
+
 .messageuser {
     display: flex;
     align-items: center;
@@ -147,9 +167,14 @@ main {
     height: 100px;
 }
 
+
+/* class lors ce qu'on l'enlève */
+
 .enlever{
     display: none !important;
 }
+
+/* pop up pour les informations de l'utilisateur choisi */
 
 .pop_up_fixed_info_users{
     position: fixed;
@@ -167,12 +192,15 @@ main {
     z-index: 100001;
 }
 
+/* photo a gauche */
 .photo_left{
     background-image: url(../img/appiculteur_admin.jpg);
     background-size: cover;
     background-position: 35%;
     border-radius: 14px;
 }
+
+/* informations de l'utilisateur */
 
 .informations_and_icones{
     display: flex;
@@ -185,11 +213,15 @@ main {
     font-family: Montserrat-bold;
 }
 
+/* cases avec les infos de l'utilisateur */
+
 .casejaune{
     padding: 10px;
     border: solid 2px #D38932;
     border-radius: 14px;
 }
+
+/* input pour le changement de mot de passe */
 input{
     background: transparent;
     width: 100%;
@@ -200,11 +232,15 @@ input{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+/* enlever la bordure du input pour être plus joli */
 .enleverstpp:focus{
     outline: none;
-    border: none;  /* Supprime la bordure si nécessaire */
+    border: none;
 }
 
+
+/* boutons d'envoie */
 .boutons{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -212,6 +248,8 @@ input{
     margin-top: 30px;
     margin-bottom: 40px;
 }
+
+/* bouton pour reset le mot de passe */
 
 .reset_password{
     background: #EBA942;
@@ -223,12 +261,17 @@ input{
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.532);
 }
 
+/* quand on le presse, le style change */
 .reset_password:active{
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.532);
 }
+
 .delet_account:active{
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.532);
 }
+
+
+/* bouton de suppression du compte */
 .delet_account{
     border-radius: 14px;
     background: #D38932;
@@ -263,6 +306,7 @@ input{
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.532);
 }
 
+/* fermer le panneau */
 
 #croixuserchoose{
     width: 30px;

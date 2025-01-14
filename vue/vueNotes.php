@@ -93,6 +93,7 @@ if (count($getruche)) {
 </head>
 
 <body>
+    <!-- header du site -->
     <header>
         <?= $header ?>
     </header>

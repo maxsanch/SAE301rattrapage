@@ -1,3 +1,5 @@
+/* site général */
+
 body {
     margin: 0;
 }
@@ -5,6 +7,8 @@ body {
 img {
     width: 100%;
 }
+
+/* titre et header */
 
 .TitrePrincipal {
     font-size: 42px;

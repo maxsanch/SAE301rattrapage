@@ -305,9 +305,12 @@ if (count($getruche)) {
 </head>
 
 <body>
+    <!-- header du site -->
     <header>
         <?= $header ?>
     </header>
+
+    <!-- pop up demandes admin -->
 
     <div class="pop_up_admin_demande">
         <div class="topinfo">
@@ -317,16 +320,24 @@ if (count($getruche)) {
         <?= $demandes_ruches ?>
     </div>
 
+    <!-- carte en position fixed -->
+
     <div class="fixed_carte">
         <div id="map"></div>
         <div class="croixfixed">
             <img src="img/svgcroixrefus.svg" alt="">
         </div>
     </div>
+
+    <!-- icone pour ouvrir la carte  -->
     <div class="iconcarte"><img src="img/clacarte.svg" alt="icone de la carte"></div>
+
+    <!-- cache de fond -->
+
     <div class="cache_fond">
 
     </div>
+    <!-- pour enregistrer une note -->
     <div class="confirmation">
         <div class="titresec">
             <h4>Enregistrement de la note</h4>
@@ -338,6 +349,7 @@ if (count($getruche)) {
             <?= $message ?>
         </div>
     </div>
+    <!-- formulaire d'ajout de note  -->
     <div class="formulairetest">
         <form action="<?= $_SERVER['PHP_SELF'] . '?page=ajoutNote&jsruche=null' ?>" method="post">
             <div class="ajout_ruches">

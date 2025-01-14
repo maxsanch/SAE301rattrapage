@@ -141,13 +141,15 @@ if (count($getruche)) {
 </head>
 
 <body>
+    <!-- header du site -->
     <header>
         <?= $header ?>
     </header>
-
+    <!-- cache de fond pour les demandes de ruche -->
     <div class="cache_fond">
 
     </div>
+    <!-- pop up demandes admins -->
     <div class="pop_up_admin_demande">
         <div class="topinfo">
             <h2>Boite de récéption</h2>
@@ -155,7 +157,7 @@ if (count($getruche)) {
         </div>
         <?= $demandes_ruches ?>
     </div>
-
+    <!-- décorations en fond du site -->
     <div class="Decoration">
         <img class="AbeilleDeco1" src="../img/abeille_fond.svg" alt="une petite abeille qui décore la page">
         <img class="AbeilleDeco2" src="../img/abeille_fond.svg" alt="une petite abeille qui décore la page">
@@ -174,8 +176,9 @@ if (count($getruche)) {
         </svg>
 
     </div>
-    <script src="../js/script_commun_header.js"></script>
     <main>
+
+    <!-- présentation globale et phrases accrocheuses -->
         <div class="ParentPartie1">
             <div class="Partie1">
                 <div class="Partie1Texte">
@@ -204,7 +207,9 @@ if (count($getruche)) {
                     <img src="../img/RucheEtAbeille.png" alt="Des abeille et du miel">
                 </div>
             </div>
-        </div>
+        </div> 
+
+        <!-- utilisateurs visibles pour l'admin -->
 
         <div class="ParentPartie6">
             <div class="Partie6">
@@ -218,6 +223,7 @@ if (count($getruche)) {
             </div>
         </div>
 
+        <!-- ruches de l'utilisateur -->
         <div class="ParentPartie4">
             <div class="Partie4">
                 <h2 class="Partie4Titre">Mes Ruches</h2>
@@ -229,7 +235,7 @@ if (count($getruche)) {
                 </div>
             </div>
         </div>
-
+    <!-- ruches utilisateur carte -->
         <div class="ParentPartie5">
             <div class="Partie5">
                 <h2 class="Partie5Titre">Trouve tes ruches</h2>
@@ -237,6 +243,7 @@ if (count($getruche)) {
             </div>
         </div>
 
+        <!-- présentation du projet -->
         <div class="ParentPartie2">
             <div class="Partie2" id="Information">
                 <div class="Partie2Image">
@@ -270,7 +277,7 @@ if (count($getruche)) {
                 </div>
             </div>
         </div>
-
+    <!-- images grid -->
         <div class="ParentPartie3">
             <div class="Partie3">
                 <div class="Partie3Image1"></div>
@@ -283,10 +290,12 @@ if (count($getruche)) {
         </div>
     </main>
 
+    <!-- footer du site -->
+
     <footer>
         <?= $footer ?>
     </footer>
-
+    <script src="../js/script_commun_header.js"></script>
     <script>
 
         <?= $fonctionadmin ?>

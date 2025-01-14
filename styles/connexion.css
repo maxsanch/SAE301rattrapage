@@ -136,6 +136,8 @@ b{
     color: rgb(129, 0, 0);
 }
 
+/* pour cibler le mot de masse et l'oeil */
+
 .mdpconnex{
     display: flex;
     gap: 20px;
