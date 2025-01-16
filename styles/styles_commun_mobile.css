@@ -279,3 +279,8 @@ header{
     gap: 8px;
     justify-content: space-around;
 }
+
+.pop_up_admin_demande{
+    width: 90%;
+    margin: auto;
+}
