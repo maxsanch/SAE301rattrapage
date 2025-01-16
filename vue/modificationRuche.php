@@ -43,8 +43,8 @@ if (count($mesruches)) {
 
     <!-- Inclusion des fichiers CSS pour la mise en page, selon la taille de l'écran. -->
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
-    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
     <link rel="stylesheet" href="../styles/GestionRuches.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
 </head>
 
 <body>

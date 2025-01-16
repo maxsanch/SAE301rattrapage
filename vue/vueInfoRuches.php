@@ -292,9 +292,9 @@ if (count($getruche)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information ruches</title>
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
-    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
     <link rel="stylesheet" href="../styles/inforuches.css">
     <link rel="stylesheet" media="(max-width: 620px)" href="../styles/stylesinforuchemobile.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.bubble.css" rel="stylesheet" />
 
