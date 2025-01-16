@@ -16,7 +16,7 @@ $footer = Footer_déconnecté;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajout de photo pour les utilisateurs</title>
     <link rel="stylesheet" href="../styles/ajoutphoto.css">
-    <link rel="stylesheet" media="(min-width: 620px)" href="../styles/styles_index_non_connecte.css">
+    <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
 </head>
 
 <body>
