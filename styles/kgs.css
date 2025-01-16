@@ -1,0 +1,42 @@
+
+ .back {
+        grid-template-columns: 1fr ; /* Supprime la disposition en deux colonnes */
+        padding: 20px;
+        box-shadow: none; /* Optionnel : supprimer les ombres */
+    }
+
+    .photo {
+        display: none; /* Cache l'image */
+    }
+
+    form {
+        
+        gap: 16px; /* Ajuste l'écart entre les éléments */
+    }
+
+    .connectez {
+        font-size: 24px; /* Réduit la taille de la police du titre */
+    }
+
+ 
+
+    button {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .inscription {
+        font-size: 14px; /* Réduit la taille du texte */
+    }
+
+    .mdpconnex {
+        flex-direction: column; /* Arrange les éléments verticalement */
+        gap: 10px;
+    }
+
+    .oeil {
+        width: 30px; /* Réduit la taille de l'icône de l'œil */
+        align-self: flex-end; /* Aligne l'œil à droite */
+    }
+    
+

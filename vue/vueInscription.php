@@ -9,6 +9,7 @@
     <title>Page d'inscription</title>
     <!-- Lien vers la feuille de style CSS pour la mise en forme de la page -->
     <link rel="stylesheet" href="../styles/connexion.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/kgs.css">
 </head>
 
 <body>
