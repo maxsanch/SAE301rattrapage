@@ -8,7 +8,7 @@ if ($user[0]['Statut'] == 'admin') {
 }
 
 // Définition du pied de page (footer) pour un utilisateur déconnecté
-$footer = Footer_déconnecté;
+$footer = Footer_connecté;
 
 $contenu = '';
 

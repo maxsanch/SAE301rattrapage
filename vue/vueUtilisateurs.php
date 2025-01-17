@@ -1,7 +1,7 @@
 <?php
 
 $header = HEADER_admin;
-$footer = Footer_déconnecté;
+$footer = Footer_connecté;
 
 $contenu = '';
 

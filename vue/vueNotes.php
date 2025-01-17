@@ -8,7 +8,7 @@ if ($utilisateur[0]['Statut'] == 'admin') {
     $header = HEADER_connecté;
 }
 
-$footer = Footer_déconnecté;
+$footer = Footer_connecté;
 $content = "";
 $choixruche = "";
 

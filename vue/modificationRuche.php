@@ -7,7 +7,7 @@ if ($user[0]['Statut'] == 'admin') {
     $header = HEADER_connecté; // Sinon, on affiche l'en-tête pour un utilisateur connecté.
 }
 
-$footer = Footer_déconnecté; // Le pied de page par défaut est celui pour un utilisateur déconnecté.
+$footer = Footer_connecté; // Le pied de page par défaut est celui pour un utilisateur déconnecté.
 
 $contenu = ''; // Initialisation de la variable pour stocker le contenu dynamique des ruches.
 

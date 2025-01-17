@@ -8,7 +8,7 @@ if ($user[0]['Statut'] == 'admin') {
 }
 
 // Déclare le footer pour les utilisateurs non connectés
-$footer = Footer_déconnecté;
+$footer = Footer_connecté;
 
 ?>
 

@@ -4,7 +4,7 @@
 $header = HEADER_admin;
 
 // Définition du footer pour les utilisateurs non connectés
-$footer = Footer_déconnecté;
+$footer = Footer_connecté;
 
 ?>
 
