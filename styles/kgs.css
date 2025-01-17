@@ -3,6 +3,8 @@
         grid-template-columns: 1fr ; /* Supprime la disposition en deux colonnes */
         padding: 20px;
         box-shadow: none; /* Optionnel : supprimer les ombres */
+        width: 85%;
+        margin: auto;
     }
 
     .photo {
