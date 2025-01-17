@@ -297,3 +297,49 @@ header {
     width: 100%;
 }
 
+.form_elt>input:nth-child(2) {
+    width: 100%;
+}
+
+.form_elt>label {
+    border: #B95E06 dashed 0.3px;
+    padding: 20px;
+    padding-inline: 16px;
+}
+
+.nom_ruche>label {
+    flex-direction: column;
+    align-items: start;
+}
+
+.nom_ruche>label>input {
+    width: 100%;
+    margin-left: 0px;
+}
+
+.mdp>label {
+    flex-direction: column;
+    align-items: start;
+}
+
+.mdp>label>input {
+    margin-left: 0px;
+    width: 100%;
+}
+
+.validation>label{
+    flex-direction: column;
+    align-items: start;
+}
+
+.validation>label>input{
+    margin-left: 0px;
+}
+
+.grid_ajout_user{
+    display: block;
+}
+
+.motdepasse{
+    width: 100%;
+}
