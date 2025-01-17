@@ -17,6 +17,7 @@ $footer = Footer_déconnecté;
     <title>Ajout de photo pour les utilisateurs</title>
     <link rel="stylesheet" href="../styles/ajoutphoto.css">
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
 </head>
 
 <body>

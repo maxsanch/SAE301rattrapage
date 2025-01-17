@@ -54,8 +54,8 @@ if (count($mesruches)) {
     <title>Gestion ruches</title>
 
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
-    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
     <link rel="stylesheet" href="../styles/GestionRuches.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
