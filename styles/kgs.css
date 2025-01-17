@@ -29,14 +29,14 @@
         font-size: 14px; /* Réduit la taille du texte */
     }
 
-    .mdpconnex {
-        flex-direction: column; /* Arrange les éléments verticalement */
-        gap: 10px;
-    }
+   
 
     .oeil {
         width: 30px; /* Réduit la taille de l'icône de l'œil */
-        align-self: flex-end; /* Aligne l'œil à droite */
-    }
+        align-items: center;
+}
+        /* align-self: flex-end; /* Aligne l'œil à droite */
+
+    
     
 
