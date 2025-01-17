@@ -300,7 +300,7 @@ function ruches($message)
     $ruches = json_decode($fichier);
 
 
-    var_dump($ruches);
+    // var_dump($ruches);
     // Gestion des demandes de ruches pour un utilisateur administrateur.
 
     // Appel à la fonction `demandesruches` pour récupérer :
