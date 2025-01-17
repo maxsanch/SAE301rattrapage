@@ -9,11 +9,14 @@ define("HEADER_Déconnecté", "<div class='ConteneurHeader'>
 // définition du header connecté du site afin de faciliter sa réutilisation
 define('HEADER_connecté', '<div class="ConteneurHeader">
             <a href="index.php" class="TitreHeader"><span class="RucheHeader">R</span>uches connectées</a>
-            <div class="HeaderPartieDroite">
-                <a href="index.php?page=Gestion" class="BoutonHeader2">Gestion</a>
-                <a href="index.php?page=Notes" class="BoutonHeader2">Mes notes</a>
-                <a href="index.php?page=quitter" class="BoutonHeader2">Se déconnecter</a>
-                <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader">Mes ruches</a>
+            <div class="BarreSousHeader">
+                <div class="HeaderPartieDroite">
+                    <a href="index.php?page=Gestion" class="BoutonHeader2">Gestion</a>
+                    <a href="index.php?page=Notes" class="BoutonHeader2">Mes notes</a>
+                    <a href="index.php?page=quitter" class="BoutonHeader2">Se déconnecter</a>
+                    <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader">Mes ruches</a>
+                </div>
+            <div class="LaBarre"></div>
             </div>
             <div class="tribarres"><div class="barresingle"></div><div class="barresingle"></div><div class="barresingle"></div></div>
             </div>

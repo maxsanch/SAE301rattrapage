@@ -343,3 +343,7 @@ header {
 .motdepasse{
     width: 100%;
 }
+
+.LaBarre{
+    display: none;
+}

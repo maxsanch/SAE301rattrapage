@@ -102,6 +102,15 @@ html {
     height: 8px;
     width: 32px;
     transform: translateY(-200%);
+    transition: 0.4s;
+}
+
+.LaBarre2{
+    background-color: #B95E06;
+    height: 8px;
+    width: 32px;
+    transform: translateY(-100%);
+    transition: 0.4s;
 }
 
 .Partie1 {
