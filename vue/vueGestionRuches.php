@@ -216,6 +216,8 @@ if (count($mesruches)) {
         <?= $fonctionadmin ?>
         <?= $lenombre ?>
 
+        // utiliser fetch
+
         // supression des ruches animation
         document.querySelectorAll('.case').forEach(e => {
             e.querySelector('.bout:last-child').addEventListener('click', (event) => {

@@ -297,8 +297,6 @@ function ruches($message)
     // Décodage des données JSON en tableau PHP pour pouvoir les manipuler.
     $ruches = json_decode($fichier);
 
-
-    // var_dump($ruches);
     // Gestion des demandes de ruches pour un utilisateur administrateur.
 
     // Appel à la fonction `demandesruches` pour récupérer :
@@ -438,7 +436,6 @@ function supprimer($id)
 {
     // suppression d'une ruche
     $spr = new ruches();
-    $spr->supprimer($id);
     $spr->deletuser($id);
     $erreur1 = "La ruche à bien été supprimée.";
     $erreur2 = '';
