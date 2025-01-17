@@ -100,7 +100,10 @@ if (count($mesruches)) {
                     <input type="number" name="id_ruche">
                 </div>
             </div>
-            <?= $erreur1 ?>
+
+            <div class="erreurfull">
+                <?= $erreur1 ?>
+            </div>
             <button>Envoyer</button>
         </form>
         <div class="espace">
@@ -133,7 +136,7 @@ if (count($mesruches)) {
         </div>
 
         <!-- formulaires pour la photo de profile ou la modification des informations liées au compte -->
-         <!-- formulaire pour le changement de photo de profile -->
+        <!-- formulaire pour le changement de photo de profile -->
         <div class="parentdoubleFormulaire">
             <div class="profile_picture">
                 <form method="post" class="photoprofil"
@@ -148,7 +151,9 @@ if (count($mesruches)) {
                         </label>
                         <input type="submit" class="valid" name="ok" value="Valider">
                     </div>
-                    <?= $erreur2 ?>
+                    <div class="erreurfull">
+                        <?= $erreur2 ?>
+                    </div>
                 </form>
             </div>
 
@@ -182,8 +187,8 @@ if (count($mesruches)) {
                         </label>
 
                         <label>
-                            <p>Confirmez le mot de passe</p><input type="password" class="motdepasse" name="ConfirmationNewPassword"
-                                placeholder="confirmez votre mot de passe">
+                            <p>Confirmez le mot de passe</p><input type="password" class="motdepasse"
+                                name="ConfirmationNewPassword" placeholder="confirmez votre mot de passe">
                             <div class="oeil oeilferme">
                                 <img id="fermé" src="../img/oeilfermé.svg" alt="icone d'oeil">
                             </div>
@@ -193,14 +198,17 @@ if (count($mesruches)) {
                     <div class="validation">
                         <label>
                             <p>Pour enregistrer les modifications, vous devez entrer votre mot de passe</p><input
-                                type="password" name="ancienmdp" class="motdepasse" placeholder="entrez votre mot de passe">
+                                type="password" name="ancienmdp" class="motdepasse"
+                                placeholder="entrez votre mot de passe">
                             <div class="oeil oeilferme">
                                 <img id="fermé" src="../img/oeilfermé.svg" alt="icone d'oeil">
                             </div>
                         </label>
                     </div>
                 </div>
-                <?= $erreur3 ?>
+                <div class="erreurfull">
+                    <?= $erreur3 ?>
+                </div>
                 <button>Modifier</button>
             </form>
         </div>
@@ -253,4 +261,5 @@ if (count($mesruches)) {
         })
     </script>
 </body>
+
 </html>

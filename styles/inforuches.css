@@ -473,3 +473,9 @@ a{
 .informations_ruche{
     flex: none;
 }
+
+
+.centrenoruche{
+    text-align: center;
+    padding: 130px;
+}

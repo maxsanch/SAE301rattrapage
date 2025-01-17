@@ -275,7 +275,7 @@ if (count($getruche)) {
         }
     }
 } else {
-    $content .= "Vous n'avez aucune ruche.";
+    $content .= "<div class='centrenoruche'>Vous n'avez aucune ruche.</div>";
 }
 
 
