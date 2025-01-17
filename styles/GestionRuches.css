@@ -188,7 +188,7 @@ input{
 
 .carte_ruche{
     display: flex;
-    align-items: center;
+    align-items: end;
 }
 
 .carte_ruche>img{
