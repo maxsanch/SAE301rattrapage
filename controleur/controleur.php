@@ -22,21 +22,21 @@ function accueil()
 }
 
 // réinitialisation ou ajout d'un nombre dans la base de données en fonction de la connexion, le premier de l'an, la première connexion reinitialsie les connextion afin d'être en accord avec le graphique du tableau de bord de la page gestion utilisateurs
-function testetresetannée(){
+function testetresetannée()
+{
     $connexion = new connexion(); // Création d'une instance de la classe "connexion".
     $currentyear = $connexion->getannee(); // Récupération de l'année actuelle depuis la base de données.
 
     // Vérifie si l'année actuelle en base est différente de l'année actuelle du système.
-    if($currentyear != date('Y')){
+    if ($currentyear != date('Y')) {
         $ajouterun = $currentyear + 1; // Incrémente l'année.
         $connexion->maj($ajouterun); // Met à jour l'année dans la base de données.
         $connexion->resetmois(); // Réinitialise les données mensuelles.
-    }
-    else{
+    } else {
         $mois = date('m'); // Récupère le mois actuel.
 
         $currentnombre = $connexion->getcountmois($mois); // Récupère le nombre de connexions pour le mois actuel.
-        $nb =  (int) $currentnombre + 1; // Incrémente le nombre de connexions.
+        $nb = (int) $currentnombre + 1; // Incrémente le nombre de connexions.
         $connexion->ajouter($nb, (int) $mois); // Met à jour le nombre de connexions pour le mois actuel.
     }
 }
@@ -144,8 +144,8 @@ function accueil_admin()
     $ruches = json_decode($fichier); // Décodage du JSON en un objet PHP.
 
     // Appel de la fonction "demandesruches" pour gérer les demandes de ruches.
-    $demandes_ruches = demandesruches()[0]; 
-    $lenombre = demandesruches()[1]; 
+    $demandes_ruches = demandesruches()[0];
+    $lenombre = demandesruches()[1];
     $fonctionadmin = demandesruches()[2];
 
     // Inclusion de la vue "vueIndexConnecteAdmin" pour afficher l'interface administrateur.
@@ -227,14 +227,12 @@ function login($nom, $mdp)
 
 function signin($prenom, $nom, $email, $mdp, $mdp2)
 {
-    // Création d'une instance de la classe "utilisateurs" pour interagir avec les données des utilisateurs.
-    $nom_user = new utilisateurs();
-
-    // Vérification si un utilisateur avec le même email existe déjà dans la base de données.
-    $user = $nom_user->GetUser($email);
 
     // Nouvelle instance de la classe "utilisateurs" pour effectuer l'inscription.
     $insc = new utilisateurs();
+
+    // Vérification si un utilisateur avec le même email existe déjà dans la base de données.
+    $user = $insc->GetUser($email);
 
     // Si aucun utilisateur avec cet email n'est trouvé, on peut continuer l'inscription.
     if (empty($user)) {
@@ -417,16 +415,16 @@ function change($nom, $idancien)
 
 
     if (!empty($user)) {
-            // si tout est défini, changement des informations de la ruche
-            if (!empty($nom)) {
-                $addruche->update($nom,$idancien);
-                $erreur = 'La ruche à bien été modifiée.';
-                modification_ruches($erreur);
-            } else {
-                // erreur
-                $erreur = 'veuillez remplir les champs obligatoires';
-                modification_ruches($erreur);
-            }
+        // si tout est défini, changement des informations de la ruche
+        if (!empty($nom)) {
+            $addruche->update($nom, $idancien);
+            $erreur = 'La ruche à bien été modifiée.';
+            modification_ruches($erreur);
+        } else {
+            // erreur
+            $erreur = 'veuillez remplir les champs obligatoires';
+            modification_ruches($erreur);
+        }
     } else {
         // erreur globale
         $erreur = 'modification échouée';
