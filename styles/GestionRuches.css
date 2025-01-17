@@ -274,3 +274,11 @@ form{
 .oeil{
     width: 40px;
 }
+
+
+
+.erreurfull{
+    padding-top: 5px;
+    font-weight: bold;
+    color: #B95E06;
+}

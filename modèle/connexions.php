@@ -14,9 +14,12 @@ class connexion extends database { // Définition de la classe "connexion" qui h
 
     // Méthode pour mettre à jour l'année dans la table "annee".
     public function maj($ajout){
+
+        $data = array($ajout);
+
         // Requête SQL pour mettre à jour la colonne "annee" de la table "annee".
-        $req = "UPDATE `annee` SET `annee` = '$ajout' WHERE `annee`.`1` = 1;";
-        $this->execReq($req); 
+        $req = "UPDATE `annee` SET `annee` = ? WHERE `annee`.`1` = 1;";
+        $this->execReqPrep($req, $data);
     }
 
     // Méthode pour réinitialiser le nombre de connexions dans la table "mois".
@@ -50,9 +53,12 @@ class connexion extends database { // Définition de la classe "connexion" qui h
 
 
     public function ajouter($nb, $mois){
+
+        $data = array($nb, $mois);
+
         // Requête SQL pour mettre à jour le mois avec le bon nombre.".
-        $req = "UPDATE `mois` SET `nombreConnexion` = $nb WHERE `id_mois` = $mois;";
-        $this->execReq($req);
+        $req = "UPDATE `mois` SET `nombreConnexion` = ? WHERE `id_mois` = ?;";
+        $this->execReqPrep($req, $data);
     }
 
     public function getallmois(){

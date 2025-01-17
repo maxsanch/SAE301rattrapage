@@ -6,12 +6,12 @@ class notes extends database { // Déclaration de la classe "notes", qui étend 
     
     // Méthode pour ajouter une note pour une ruche spécifique.
     public function addnote($ruche, $contenu) {
-        // Requête SQL pour insérer une nouvelle note dans la table "note".
-        // La date de la note est automatiquement définie comme la date actuelle.
-        $req = "INSERT INTO `note` (`ID_note`, `Contenu`, `ID_Ruches`, `Date`) VALUES (NULL, '".$contenu."', '".$ruche."', '".date('Y-m-d')."');";
-        
+
+        $data = array("contenu" => $contenu, "blabla" => $ruche);
+        $req = "INSERT INTO `note` (`ID_note`, `Contenu`, `ID_Ruches`, `Date`) VALUES (NULL, :contenu, :blabla, '".date('Y-m-d')."');";
+
         // Exécution de la requête SQL.
-        $this->execReq($req);
+        $this->execReqPrep($req, $data);
     }
 
     // Méthode pour afficher les notes d'une ruche en particulier.
@@ -58,10 +58,13 @@ class notes extends database { // Déclaration de la classe "notes", qui étend 
 
     // Méthode pour modifier le contenu d'une note existante.
     public function modifier($id, $content) {
+
+        $data = array($content, $id);
+
         // Requête SQL pour mettre à jour le contenu de la note spécifiée par son ID.
-        $req = "UPDATE `note` SET `Contenu` = '$content' WHERE `note`.`ID_note` = $id;";
+        $req = "UPDATE `note` SET `Contenu` = ? WHERE `note`.`ID_note` = ?;";
         
         // Exécution de la requête SQL.
-        $this->execReq($req);
+        $this->execReqPrep($req, $data);
     }
 }

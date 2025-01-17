@@ -658,10 +658,10 @@ function AjoutPhotoUser()
 function EnregPhotoRuche($idRuche)
 {
     $ruches = new ruches();
-    // enregistremetn de la photo
-    $erreur2 = $ruches->updateRuchePhoto($idRuche);
+    // enregistrement de la photo
+    $erreur1 = $ruches->updateRuchePhoto($idRuche);
     $erreur3 = '';
-    $erreur1 = '';
+    $erreur2 = '';
     gestion_ruches($erreur1, $erreur2, $erreur3);
 }
 
