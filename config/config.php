@@ -6,7 +6,7 @@ define("HEADER_Déconnecté", "<div class='ConteneurHeader'>
             </div>");
 
 
-            // définition du header connecté du site afin de faciliter sa réutilisation
+// définition du header connecté du site afin de faciliter sa réutilisation
 define('HEADER_connecté', '<div class="ConteneurHeader">
             <a href="index.php" class="TitreHeader"><span class="RucheHeader">R</span>uches connectées</a>
             <div class="HeaderPartieDroite">
@@ -24,17 +24,20 @@ define('HEADER_connecté', '<div class="ConteneurHeader">
                 <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader2">Mes ruches</a>
             </div>');
 
-            // définition du header admin du site
+// définition du header admin du site
 define('HEADER_admin', '<div class="ConteneurHeader">
             <a href="index.php" class="TitreHeader"><span class="RucheHeader">R</span>uches connectées</a>
-            <div class="HeaderPartieDroite">
-                <a href="index.php" class="BoutonHeader2">Accueil</a>
-                <a href="index.php?page=Gestion" class="BoutonHeader2">Gestions des ruches</a>
-                <a href="index.php?page=Notes" class="BoutonHeader2">Mes notes</a>
-                <a href="index.php?page=Utilisateurs" class="BoutonHeader2">Utilisateurs</a>
-                <a href="index.php?page=quitter" class="BoutonHeader2">Se déconnecter</a>
-                <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader">Mes ruches</a>
-                <div class="mail"><div class="ptsrouge"><div class="letxt"></div></div><img class="notif" src="../img/mail.svg" alt="Une icone de mail"></img></div>
+            <div class="BarreSousHeader">
+                <div class="HeaderPartieDroite">
+                    <a href="index.php" class="BoutonHeader2">Accueil</a>
+                    <a href="index.php?page=Gestion" class="BoutonHeader2">Gestions des ruches</a>
+                    <a href="index.php?page=Notes" class="BoutonHeader2">Mes notes</a>
+                    <a href="index.php?page=Utilisateurs" class="BoutonHeader2">Utilisateurs</a>
+                    <a href="index.php?page=quitter" class="BoutonHeader2">Se déconnecter</a>
+                    <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader">Mes ruches</a>
+                    <div class="mail"><div class="ptsrouge"><div class="letxt"></div></div><img class="notif" src="../img/mail.svg" alt="Une icone de mail"></img></div>
+                </div>
+                <div class="LaBarre"></div>
             </div>
             <div class="tribarres"><div class="barresingle"></div><div class="barresingle"></div><div class="barresingle"></div></div>
             </div>
@@ -49,7 +52,7 @@ define('HEADER_admin', '<div class="ConteneurHeader">
                 <div class="mail2 BoutonHeader2">Boite de récéption</div>
             </div>');
 
-    // définition du footer deconnecté du site
+// définition du footer deconnecté du site
 define("Footer_déconnecté", '<div class="FooterGlobal">
             <div class="FooterPartie1">
                 <h3>RUCHES CONNECTEES</h3>
