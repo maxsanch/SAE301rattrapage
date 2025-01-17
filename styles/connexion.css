@@ -148,4 +148,5 @@ b{
 .oeil{
     width: 40px;
     cursor: pointer;
+    align-items: center;
 }
