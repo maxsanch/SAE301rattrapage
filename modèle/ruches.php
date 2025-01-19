@@ -158,7 +158,7 @@ class ruches extends database
             if ($_FILES['photoRuche']["error"] == 0) {
 
                 // Vérification si la taille du fichier est inférieure à 20 Mo
-                if ($_FILES['photoRuche']["size"] <= 20000000) {
+                if ($_FILES['photoRuche']["size"] <= 500000) {
 
                     // Récupération de l'extension du fichier
                     $infosfichier = new SplFileInfo($_FILES['photoRuche']['name']);

@@ -274,7 +274,7 @@ $final = join(',',$tableau);
         // changement du formulaire
 
         function changer() {
-            document.querySelector('.infos').innerHTML = "<form action=index.php?page=resetpassword&iduser=<?= $letrucquifaittoubuguer ?>' method='post'><h2>Modifier le mot de passe de : <?= $ledexiemetrucquifaittoubuguer ?></h2><div class='mdpreset'><div class='casejaune'><input class='enleverstpp' placeholder='Entrez le nouveau mot de passe' required type='password' name='mdp'></div><div><div class='grasuser'>Confirmez le mot de passe</div><div class='casejaune'><input class='enleverstpp' required placeholder='Confirmer le mot de passe' type='password' name='confirmation'></div></div></div><button>Changer le mot de passe.</button></form>"
+            document.querySelector('.infos').innerHTML = "<form action=index.php?page=resetpassword&iduser=<?= $letrucquifaittoubuguer ?> method='post'><h2>Modifier le mot de passe de : <?= $ledexiemetrucquifaittoubuguer ?></h2><div class='mdpreset'><div class='casejaune'><input class='enleverstpp' placeholder='Entrez le nouveau mot de passe' required type='password' name='mdp'></div><div><div class='grasuser'>Confirmez le mot de passe</div><div class='casejaune'><input class='enleverstpp' required placeholder='Confirmer le mot de passe' type='password' name='confirmation'></div></div></div><button>Changer le mot de passe.</button></form>"
         }
 
         <?= $fonctionadmin ?>

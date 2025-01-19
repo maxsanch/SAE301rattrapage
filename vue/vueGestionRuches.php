@@ -145,9 +145,11 @@ if (count($mesruches)) {
                     <h2>Photo de profile</h2>
                     <div class="form_elt">
                         <input type="hidden" name="MAX_FILE_SIZE" value="500000">
-                        <label class="file-upload">
-                            <span class="orange">Ajoutez</span><span> votre fichier ici</span>
-                            <input id="photoUser" type="file" name="photoUser" accept="image/jpeg, image/png" hidden>
+                        <label class="file-upload" id="lelabel">
+                            <span id="changertext" class="orange">Ajoutez</span><span id="autre"> votre fichier ici.
+                                (max 500ko)</span>
+                            <input id="fichiers" id="photoUser" type="file" name="photoUser"
+                                accept="image/jpeg, image/png" hidden>
                         </label>
                         <input type="submit" class="valid" name="ok" value="Valider">
                     </div>
@@ -259,6 +261,7 @@ if (count($mesruches)) {
                 this.classList.toggle('oeilouvert')
             }
         })
+
     </script>
 </body>
 

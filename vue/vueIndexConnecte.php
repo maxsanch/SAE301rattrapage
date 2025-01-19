@@ -71,7 +71,7 @@ if (count($getruche)) {
         
         if (isset($ruches->$i)) {
             // Création d'un marqueur pour chaque ruche valide sur la carte
-            $markers .= 'var marker'.$i.' = L.marker(['.$ruches->$i->gps[0].', '.$ruches->$i->gps[1].']).addTo(map);';
+            $markers .= 'var marker'.$i.' = L.marker(['.$ruches->$i->gps[0].', '.$ruches->$i->gps[1].']).addTo(map); marker'. $i .'.bindPopup("Ruche : '.$r['nom'].'");';
         } else {
             $markers .= "";
         }

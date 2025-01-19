@@ -49,10 +49,10 @@ $footer = Footer_connecté;
             enctype="multipart/form-data">
             <div class="form_elt">
                 <!-- Limite la taille maximale de fichier téléchargé -->
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000000">
+                <input type="hidden" name="MAX_FILE_SIZE" value="500000">
                 <!-- Label pour l'input du fichier -->
                 <label>
-                    <span class="orange">Ajoutez </span> <span> Une photo.</span>
+                    <span class="orange">Ajoutez </span> <span> Une photo. (max 500ko)</span>
                     <!-- Champ de téléchargement de photo -->
                     <input type="file" class="texte" name="photoRuche" accept="image/jpeg, image/png" hidden>
                 </label>

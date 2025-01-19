@@ -49,7 +49,7 @@ $footer = Footer_connecté;
                 <input type="hidden" name="MAX_FILE_SIZE" value="500000">
                 <!-- Label pour l'input de téléchargement de photo -->
                 <label>
-                    <span class="orange">Ajoutez </span> <span> Une photo.</span>
+                    <span class="orange">Ajoutez </span> <span> Une photo. (max 500ko)</span>
                     <!-- Champ pour sélectionner le fichier image (acceptant JPEG et PNG uniquement) -->
                     <input type="file" class="texte" name="photoUser" accept="image/jpeg, image/png" hidden>
                 </label>

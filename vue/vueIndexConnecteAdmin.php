@@ -112,7 +112,7 @@ if (count($getruche)) {
     foreach ($getruche as $r) {
         $i = $r["ID_Ruches"];
         if (isset($ruches->$i)) {
-            $markers .= 'var marker' . $i . ' = L.marker([' . $ruches->$i->gps[0] . ', ' . $ruches->$i->gps[1] . ']).addTo(map);';
+            $markers .= 'var marker' . $i . ' = L.marker([' . $ruches->$i->gps[0] . ', ' . $ruches->$i->gps[1] . ']).addTo(map); marker'. $i .'.bindPopup("Ruche : '.$r['nom'].'");';
         } else {
             $markers .= "";
         }

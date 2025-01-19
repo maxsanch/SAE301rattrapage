@@ -35,8 +35,7 @@ if (count($getruche)) {
         $i = $r["ID_Ruches"];
         // mise en place des marker si des ruches sont disponibles
         if (isset($ruches->$i)) {
-
-            $markers .= 'var marker' . $i . ' = L.marker([' . $ruches->$i->gps[0] . ', ' . $ruches->$i->gps[1] . ']).addTo(map);';
+            $markers .= 'var marker' . $i . ' = L.marker([' . $ruches->$i->gps[0] . ', ' . $ruches->$i->gps[1] . ']).addTo(map); marker'. $i .'.bindPopup("Ruche : '.$r['nom'].'");';
         } else {
             $markers .= "";
         }
@@ -678,6 +677,7 @@ if (count($getruche)) {
 
             function opencarte() {
                 document.querySelector('.fixed_carte').classList.add('ouvert2')
+                document.querySelector('.fixed_carte').classList.add('carteouverture')
                 document.querySelector('.cache_fond').classList.add('ouvert2')
             }
 
@@ -685,6 +685,7 @@ if (count($getruche)) {
             document.querySelector('.cache_fond').addEventListener('click', fermermap)
             function fermermap() {
                 document.querySelector('.confirmation').classList.remove('ouvert2')
+                document.querySelector('.fixed_carte').classList.remove('carteouverture')
                 document.querySelector('.fixed_carte').classList.remove('ouvert2')
                 document.querySelector('.cache_fond').classList.remove('ouvert2')
                 document.querySelector('.formulairetest').classList.remove('ouvert2')

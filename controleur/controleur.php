@@ -765,7 +765,7 @@ function infoUser($id)
     utilisateurs($message, $usersingle);
 }
 
-// chanegr le mot de passe
+// changer le mot de passe
 
 function resetpdw($id, $mdp1, $mdp2)
 {

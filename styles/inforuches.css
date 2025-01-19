@@ -347,10 +347,9 @@ a{
     top: 50%;
     border: solid 10px white;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
     z-index: 1000000;
     transition: 0.4s;
-    display: none;
 }
 
 /* croix de fermeture */
@@ -427,10 +426,14 @@ a{
 /* ouverture de la confirmation */
 .ouvert2{
     display: block;
-    animation: forwards apparaitre 0.4s;
+    animation: opa 0.4s forwards;
+}
+.carteouverture{
+    transform: translate(-50%, -50%) scale(1);
 }
 /* animation pour une aparition smooth */
-@keyframes apparaitre{
+
+@keyframes opa{
     from{
         opacity: 0;
     }
