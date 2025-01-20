@@ -110,7 +110,7 @@ class utilisateurs extends database
                                 $_FILES['photoUser']['tmp_name'],
                                 'img/imported/' . $idArt . "." . $extension_upload
                             );
-                            $erreur = "Transfert du fichier : ". ' ' . $_FILES['photoUser']['name'] . ' '. " effectué !";
+                            $erreur = "Transfert du fichier : " . ' ' . $_FILES['photoUser']['name'] . ' ' . " effectué !";
                             return $erreur;
                         } else {
                             // Si le dossier n'existe pas, le créer et déplacer le fichier
@@ -123,58 +123,70 @@ class utilisateurs extends database
                             return $erreur;
                         }
                     } else {
-                        if(isset($_GET['prevpage'])){
-                            if($_GET['prevpage'] == 'gestionruche'){
+                        if (isset($_GET['prevpage'])) {
+                            if ($_GET['prevpage'] == 'gestionruche') {
                                 $erreur1 = '';
                                 $erreur3 = '';
                                 $erreur2 = "Extension incompatible";
                                 gestion_ruches($erreur1, $erreur2, $erreur3);
-                            }
-                            else{
+                            } else {
                                 $erreur = "Extension incompatible";
                                 utilisateurs($erreur, "");
                             }
-                        }
-                        else{
+                        } else {
                             $erreur = "Extension incompatible";
                             utilisateurs($erreur, "");
                         }
                     }
                 } else {
-                    if(isset($_GET['prevpage'])){
-                        if($_GET['prevpage'] == 'gestionruche'){
+                    if (isset($_GET['prevpage'])) {
+                        if ($_GET['prevpage'] == 'gestionruche') {
                             $erreur1 = '';
                             $erreur3 = '';
                             $erreur2 = "Fichier trop volumineux";
                             gestion_ruches($erreur1, $erreur2, $erreur3);
-                        }
-                        else{
+                        } else {
                             $erreur = "Fichier trop volumineux";
                             utilisateurs($erreur, "");
                         }
-                    }
-                    else{
+                    } else {
                         $erreur = "Fichier trop volumineux";
                         utilisateurs($erreur, "");
                     }
                 }
             } else {
-                // Si une erreur est survenue lors du transfert
-                if(isset($_GET['prevpage'])){
-                    if($_GET['prevpage'] == 'gestionruche'){
-                        $erreur1 = '';
-                        $erreur3 = '';
-                        $erreur2 = "Une erreur est survenue";
-                        gestion_ruches($erreur1, $erreur2, $erreur3);
+                if ($_FILES['photoUser']["size"] <= 500000) {
+                    // Si une erreur est survenue lors du transfert
+                    if (isset($_GET['prevpage'])) {
+                        if ($_GET['prevpage'] == 'gestionruche') {
+                            $erreur1 = '';
+                            $erreur3 = '';
+                            $erreur2 = "Fichier trop volumineux";
+                            gestion_ruches($erreur1, $erreur2, $erreur3);
+                        } else {
+                            $erreur = "Fichier trop volumineux";
+                            utilisateurs($erreur, "");
+                        }
+                    } else {
+                        $erreur = "Fichier trop volumineux";
+                        utilisateurs($erreur, "");
                     }
-                    else{
+                } else {
+                    // Si une erreur est survenue lors du transfert
+                    if (isset($_GET['prevpage'])) {
+                        if ($_GET['prevpage'] == 'gestionruche') {
+                            $erreur1 = '';
+                            $erreur3 = '';
+                            $erreur2 = "Une erreur est survenue";
+                            gestion_ruches($erreur1, $erreur2, $erreur3);
+                        } else {
+                            $erreur = "Une erreur est survenue";
+                            utilisateurs($erreur, "");
+                        }
+                    } else {
                         $erreur = "Une erreur est survenue";
                         utilisateurs($erreur, "");
                     }
-                }
-                else{
-                    $erreur = "Une erreur est survenue";
-                    utilisateurs($erreur, "");
                 }
             }
         }
@@ -194,7 +206,7 @@ class utilisateurs extends database
     // Fonction pour modifier les informations d'un utilisateur sans changer le mot de passe
     public function editusernopdw($nom, $prenom, $iduser)
     {
-        
+
         $data = array($prenom, $nom, $iduser);
         // Requête SQL pour mettre à jour les informations d'un utilisateur
         $req = "UPDATE `utilisateurs` SET `Prenom` = ?, `Nom` = ? WHERE `utilisateurs`.`Id_utilisateur` = ?;";

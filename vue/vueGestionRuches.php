@@ -35,7 +35,7 @@ if (count($mesruches)) {
             $phototest = 'img/imported/no_image_ruche.png';
         }
         // Construction du contenu à afficher pour chaque ruche
-        $contenu .= '<div class="case"><a href="index.php?page=Photo_ruche&idRuche=' . $ligne['ID_Ruches'] . '" class="photo"><img src="../' . $phototest . '" alt=""></a><b>' . $ligne['nom'] . '</b><a class="bout" href="index.php?page=Ruches&jsruche=Ruche N°' . $ligne['ID_Ruches'] . '">Informations</a><a href="index.php?page=modif&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Modifier</a><a href="index.php?page=suppression&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Supprimer</a></div>';
+        $contenu .= '<div class="case"><a href="index.php?page=Photo_ruche&idRuche=' . $ligne['ID_Ruches'] . '" class="photo"><img src="../' . $phototest . '" alt="image de la ruche" style="height: 200px; object-fit: cover;"></a><b>' . $ligne['nom'] . '</b><a class="bout" href="index.php?page=Ruches&jsruche=Ruche N°' . $ligne['ID_Ruches'] . '">Informations</a><a href="index.php?page=modif&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Modifier</a><a href="index.php?page=suppression&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Supprimer</a></div>';
     }
 } else {
     // Affichage d'un message si aucune ruche n'est enregistrée
@@ -131,13 +131,11 @@ if (count($mesruches)) {
     </div>
     <!-- grid pour la mise a jours du profil de l'utilisateur -->
     <div class="grid_ajout_user">
-        <div class="photo">
-            <img src="../<?= $photo ?>" alt="photo de profile">
-        </div>
-
-        <!-- formulaires pour la photo de profile ou la modification des informations liées au compte -->
-        <!-- formulaire pour le changement de photo de profile -->
-        <div class="parentdoubleFormulaire">
+        <div class="photo" id="leftphoto">
+            <img src="../<?= $photo ?>" alt="photo de profile" style="height: 350px; object-fit: cover;">
+            <div class="erreurfull">
+                <?= $erreur2 ?>
+            </div>
             <div class="profile_picture">
                 <form method="post" class="photoprofil"
                     action="index.php?page=changeprofilepicture&prevpage=gestionruche&idUser=<?= $user[0]['Id_utilisateur'] ?>"
@@ -153,12 +151,13 @@ if (count($mesruches)) {
                         </label>
                         <input type="submit" class="valid" name="ok" value="Valider">
                     </div>
-                    <div class="erreurfull">
-                        <?= $erreur2 ?>
-                    </div>
                 </form>
             </div>
+        </div>
 
+        <!-- formulaires pour la photo de profile ou la modification des informations liées au compte -->
+        <!-- formulaire pour le changement de photo de profile -->
+        <div class="parentdoubleFormulaire">
             <!-- formuaire pour le changement d'informations -->
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifprofil&idUser=' . $user[0]['Id_utilisateur'] ?>"
                 method="post">
