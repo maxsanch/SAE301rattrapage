@@ -19,26 +19,6 @@ img {
     font-size: 16px;
 }
 
-.ParentPartie1 {
-    width: 80%;
-    margin: auto;
-}
-
-.ParentPartie1 {
-    padding-top: 32px;
-    min-height: 100vh;
-}
-
-.Partie1 {
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    margin-bottom: 0px;
-    gap: 24px;
-}
-
 .Partie1Bouton {
     display: flex;
     gap: 8px;
@@ -59,22 +39,6 @@ img {
     padding-bottom: 8px;
     padding-left: 16px;
     padding-right: 16px;
-}
-
-.Partie1Image {
-    padding-left: 0%;
-    margin: auto;
-}
-
-.BoutonHeader {
-    padding: 8px;
-    border-radius: 4px;
-    padding-left: 4px;
-    padding-right: 4px;
-}
-
-.TitreHeader {
-    font-size: 16px;
 }
 
 /* Partie2 en Grid */
@@ -150,59 +114,6 @@ img {
 
 /* header du site */
 
-header {
-    background: #F7F3F0;
-    z-index: 1000;
-    position: sticky;
-    top: 0;
-}
-
-.tribarres {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.HeaderPartieDroite {
-    display: none;
-}
-
-.barresingle {
-    width: 40px;
-    height: 4px;
-    background: #B95E06;
-}
-
-
-.liensdéroulant {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: 100%;
-    background: #F7F3F0;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: 0.4s;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.199);
-}
-
-.ouvertmenu {
-    transform: scaleY(1);
-}
-
-.liensdéroulant>.BoutonHeader2 {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding-inline: 40px;
-
-}
-
-.liensdéroulant>.BoutonHeader2:hover {
-    background-color: #FAF0E3;
-}
-
 .mail2 {
     display: flex;
     align-items: center;
@@ -211,16 +122,6 @@ header {
 
 .ptsrouge {
     display: none;
-}
-
-.ParentPartie2 {
-    padding-top: 32px;
-    padding-bottom: 32px;
-}
-
-.ParentPartie3 {
-    padding-top: 32px;
-    padding-bottom: 32px;
 }
 
 .Partie3 {
@@ -256,21 +157,6 @@ header {
 .Partie3Image6 {
     grid-column: 3 / span 1;
     grid-row: 2 / span 1;
-}
-
-.ParentPartie4 {
-    padding-top: 32px;
-    padding-bottom: 32px;
-}
-
-.ParentPartie5 {
-    padding-top: 32px;
-    padding-bottom: 32px;
-}
-
-.ParentPartie6 {
-    padding-top: 32px;
-    padding-bottom: 32px;
 }
 
 .MesRuches {
