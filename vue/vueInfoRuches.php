@@ -47,7 +47,7 @@ if (count($getruche)) {
             if (file_exists('img/imported/' . $r['ID_Ruches'] . '.jpg')) {
                 $phototest = 'img/imported/' . $r['ID_Ruches'] . '.jpg';
                 // Si l'image existe, l'affiche
-            } else if (file_exists('img/imported/' . $ligne['ID_Ruches'] . '.png')) {
+            } else if (file_exists('img/imported/' . $r['ID_Ruches'] . '.png')) {
                 $phototest = 'img/imported/' . $r['ID_Ruches'] . '.png';
             } else {
                 // Sinon, affiche une image par défaut
