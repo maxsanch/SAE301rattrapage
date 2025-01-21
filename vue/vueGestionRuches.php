@@ -96,7 +96,7 @@ if (count($mesruches)) {
                     <input type="text" name="nomruche">
                 </div>
                 <div class="ID_appareil">
-                    <div>ID de l'appareil</div>
+                    <div>ID de l'appareil (ce dernier vous à été transmis lors de l'achat de l'appareil)</div>
                     <input type="number" name="id_ruche">
                 </div>
             </div>
