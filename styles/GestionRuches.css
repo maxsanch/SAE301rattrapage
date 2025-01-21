@@ -297,3 +297,11 @@ form{
     font-weight: bold;
     color: #B95E06;
 }
+
+.LaBarre2{
+    transform: translate(235%, -100%);
+}
+
+.LaBarre{
+    transform: translate(235%, -200%);
+}

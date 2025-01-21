@@ -9,12 +9,13 @@ function openmenu() {
 // document.querySelector(".HeaderPartieDroite").addEventListener('mouseover', DeplacerBarreHeader)
 // console.log(document.querySelector(".HeaderPartieDroite").children[2])
 // console.log(document.querySelector(".HeaderPartieDroite").childElementCount)
-if (document.querySelector(".HeaderPartieDroite").childElementCount == 4) {
+if (document.querySelector(".HeaderPartieDroite").childElementCount == 5) {
     document.querySelector(".LaBarre").classList.add("LaBarre2")
     document.querySelector(".LaBarre2").classList.remove("LaBarre")
     document.querySelector(".HeaderPartieDroite").children[0].addEventListener('mouseover', DeplacerBarreHeader6)
     document.querySelector(".HeaderPartieDroite").children[1].addEventListener('mouseover', DeplacerBarreHeader7)
     document.querySelector(".HeaderPartieDroite").children[2].addEventListener('mouseover', DeplacerBarreHeader8)
+    document.querySelector(".HeaderPartieDroite").children[3].addEventListener('mouseover', DeplacerBarreHeader9)
     document.querySelector(".HeaderPartieDroite").addEventListener('mouseleave', ReplacerBarreHeader2)
 }
 else if (document.querySelector(".HeaderPartieDroite").childElementCount == 7) {
@@ -48,7 +49,7 @@ function DeplacerBarreHeader5() {
 }
 
 function ReplacerBarreHeader() {
-    document.querySelector(".LaBarre").style = "transform: translate(0%, -200%);";
+    document.querySelector(".LaBarre").style = "";
 }
 
 function DeplacerBarreHeader6() {
@@ -56,15 +57,19 @@ function DeplacerBarreHeader6() {
 }
 
 function DeplacerBarreHeader7() {
-    document.querySelector(".LaBarre2").style = "transform: translate(245%, -100%);";
+    document.querySelector(".LaBarre2").style = "transform: translate(235%, -100%);";
 }
 
 function DeplacerBarreHeader8() {
-    document.querySelector(".LaBarre2").style = "transform: translate(550%, -100%);";
+    document.querySelector(".LaBarre2").style = "transform: translate(480%, -100%);";
+}
+
+function DeplacerBarreHeader9() {
+    document.querySelector(".LaBarre2").style = "transform: translate(780%, -100%);";
 }
 
 function ReplacerBarreHeader2() {
-    document.querySelector(".LaBarre2").style = "transform: translate(0%, -100%);";
+    document.querySelector(".LaBarre2").style = "";
 }
 // FAIRE LA SEPARATION DE LA BARRE POUR ADMIN ET CELLE POUR GENS NORMAUX
 // ASTUCE : FAIRE UN IF() AVEC LE NOMBRE D'ENFANT DU HEADER DEDANS CAR IL CHANGE ENTRE LES DEUX
