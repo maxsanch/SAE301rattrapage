@@ -246,7 +246,6 @@ a{
 }
 
 
-
 .formulairetest{
     z-index: 1000000;
     position: fixed;
@@ -313,4 +312,23 @@ a{
 
 .LaBarre{
     transform: translate(785%, -200%);
+}
+
+
+/* message erreur */
+
+.centrenoruche{
+    text-align: center;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    color: #B95E06;
+    font-weight: bold;
+}
+
+.reponse{
+    border: #B95E06 dashed 0.5px;
+    padding: 30px;
+    width: 100%;
+    font-weight: bold;
+    color: #B95E06;
 }
