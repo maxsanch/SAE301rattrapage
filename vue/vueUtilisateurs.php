@@ -103,14 +103,33 @@ if (!empty($usersingle)) {
                     <div class='reset_password'>
                         Reinitialiser le mot de passe
                     </div>
-                    <a class='delet_account' href='index.php?page=deletaccount&IDUser=$idUser'>
+                    <a class='delet_account' href='#'>
                         Supprimer le compte
                     </a>
                 </div>
             </div>
+        </div>
+        <div class='fixeddanslefixed'>
+                <p>Voulez vous vraiment supprimer cet utilisateur ?</p>
+                <div class='ledarondufixe'>
+                 <a><div class='nonjesuppr'>Non</div></a><a href='index.php?page=deletaccount&IDUser=$idUser'><div class='ouijesuppr'>Oui</div></a>
+                </div>
         </div>";
     // scripts javascripts liés au informations
-    $function = "document.querySelector('.reset_password').addEventListener('click', changer)";
+    $function = "document.querySelector('.reset_password').addEventListener('click', changer)
+            document.querySelector('.nonjesuppr').addEventListener('click', ouvrirlafenetre)
+
+        function ouvrirlafenetre(){
+            document.querySelector('.pop_up_fixed_info_users').style = 'z-index: 100001;';
+            document.querySelector('.fixeddanslefixed').classList.remove('ouverturepopoup');
+        }
+        
+        document.querySelector('.delet_account').addEventListener('click', fermerlafenetre)
+
+        function fermerlafenetre(){
+            document.querySelector('.pop_up_fixed_info_users').style = 'z-index: 1000;';
+            document.querySelector('.fixeddanslefixed').classList.add('ouverturepopoup');   
+        }";
     $letrucquifaittoubuguer = $usersingle[0]['Id_utilisateur'];
     $ledexiemetrucquifaittoubuguer = $usersingle[0]['Prenom'];
 } else {
@@ -227,12 +246,12 @@ $final = join(',',$tableau);
         function enlever(){
             document.querySelector(".cachetjrla").classList.add('enlever')
             document.querySelector('.informationerreur').classList.add('enlever')
+            
         }
 
         if(document.querySelector('#celuiuser') && document.querySelector('#croixuserchoose')){
             document.querySelector('#celuiuser').addEventListener('click', enleveruser)
             document.querySelector('#croixuserchoose').addEventListener('click', enleveruser)
-
         }
 
         // enlever les infos de l'utilisateur
@@ -240,8 +259,8 @@ $final = join(',',$tableau);
         function enleveruser(){
             document.querySelector('#celuiuser').classList.add('enlever')
             document.querySelector('.pop_up_fixed_info_users').classList.add('enlever')
+            document.querySelector('.fixeddanslefixed').classList.remove('ouverturepopoup');
         }
-
 
         // grapique chart js
         const ctx = document.getElementById('myChart');
@@ -268,7 +287,7 @@ $final = join(',',$tableau);
             }
         });
 
-        // fonctions pour les admins uniquement
+        // fonctions
         <?= $function ?>
 
         // changement du formulaire
@@ -276,6 +295,7 @@ $final = join(',',$tableau);
         function changer() {
             document.querySelector('.infos').innerHTML = "<form action=index.php?page=resetpassword&iduser=<?= $letrucquifaittoubuguer ?> method='post'><h2>Modifier le mot de passe de : <?= $ledexiemetrucquifaittoubuguer ?></h2><div class='mdpreset'><div class='casejaune'><input class='enleverstpp' placeholder='Entrez le nouveau mot de passe' required type='password' name='mdp'></div><div><div class='grasuser'>Confirmez le mot de passe</div><div class='casejaune'><input class='enleverstpp' required placeholder='Confirmer le mot de passe' type='password' name='confirmation'></div></div></div><button>Changer le mot de passe.</button></form>"
         }
+
 
         <?= $fonctionadmin ?>
         <?= $lenombre ?>
