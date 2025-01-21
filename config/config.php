@@ -122,7 +122,6 @@ define("Footer_déconnecté", '<div class="FooterGlobal">
                             <div>retrouvez nous !</div>
                             <div>61 Rue Albert Camus, 68200 Mulhouse</div>
                         </div>
-                        <div class="FooterPartie2SousPartie2">Plan du site</div>
                     </div>
                 </div>
                 <div class="LienRapides">Liens rapides</div>
@@ -204,7 +203,6 @@ define("Footer_connecté", '<div class="FooterGlobal">
                             <div>retrouvez nous !</div>
                             <div>61 Rue Albert Camus, 68200 Mulhouse</div>
                         </div>
-                        <div class="FooterPartie2SousPartie2">Plan du site</div>
                     </div>
                 </div>
                 <div class="LienRapides">Lien rapides</div>
