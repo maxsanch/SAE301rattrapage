@@ -76,6 +76,8 @@
     width: 30px;
 }
 
-/* taile max qu'on enlè ve sur mobile */
+/* taille max qu'on enlève sur mobile */
 
-
+.image_ruche>img{
+    max-height: none;
+}
