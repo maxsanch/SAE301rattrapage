@@ -383,7 +383,7 @@ a{
 /* boutons et icones du formulaire et de la carte */
 
 .formbouton{
-    background: #914D1E;
+    background: #B95E06;
     color: #fff;
     padding: 5px;
     padding-inline: 10px;
@@ -480,5 +480,15 @@ a{
 
 .centrenoruche{
     text-align: center;
-    padding: 200px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    color: #B95E06;
+    font-weight: bold;
+}
+
+/* image */
+
+.image_ruche>img{
+    max-height: 300px;
+    object-fit: content;
 }

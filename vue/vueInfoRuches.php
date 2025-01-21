@@ -268,7 +268,7 @@ if (count($getruche)) {
 
         } else {
             // au cas ou une ruche est mal acceptée
-            $content .= "Nous avons sans le vouloir accepté une ruche qui n'existe pas, nous nous en excusons, pouvez vous supprimer cette dernière ou contacter un administrateur ?";
+            $content .= "<div class='centrenoruche'>Nous avons sans le vouloir accepté une ruche qui n'existe pas, nous nous en excusons, pouvez vous supprimer cette dernière ou contacter un administrateur ?</div>";
             $graphhtemp .= "";
             $graphhumid .= "";
         }
