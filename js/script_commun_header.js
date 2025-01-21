@@ -7,13 +7,24 @@ function openmenu() {
 }
 
 // document.querySelector(".HeaderPartieDroite").addEventListener('mouseover', DeplacerBarreHeader)
-document.querySelector(".HeaderPartieDroite").addEventListener('mouseleave', ReplacerBarreHeader)
 // console.log(document.querySelector(".HeaderPartieDroite").children[2])
-document.querySelector(".HeaderPartieDroite").children[0].addEventListener('mouseover', DeplacerBarreHeader1)
-document.querySelector(".HeaderPartieDroite").children[1].addEventListener('mouseover', DeplacerBarreHeader2)
-document.querySelector(".HeaderPartieDroite").children[2].addEventListener('mouseover', DeplacerBarreHeader3)
-document.querySelector(".HeaderPartieDroite").children[3].addEventListener('mouseover', DeplacerBarreHeader4)
-document.querySelector(".HeaderPartieDroite").children[4].addEventListener('mouseover', DeplacerBarreHeader5)
+// console.log(document.querySelector(".HeaderPartieDroite").childElementCount)
+if (document.querySelector(".HeaderPartieDroite").childElementCount == 4) {
+    document.querySelector(".LaBarre").classList.add("LaBarre2")
+    document.querySelector(".LaBarre2").classList.remove("LaBarre")
+    document.querySelector(".HeaderPartieDroite").children[0].addEventListener('mouseover', DeplacerBarreHeader6)
+    document.querySelector(".HeaderPartieDroite").children[1].addEventListener('mouseover', DeplacerBarreHeader7)
+    document.querySelector(".HeaderPartieDroite").children[2].addEventListener('mouseover', DeplacerBarreHeader8)
+    document.querySelector(".HeaderPartieDroite").addEventListener('mouseleave', ReplacerBarreHeader2)
+}
+else if (document.querySelector(".HeaderPartieDroite").childElementCount == 7) {
+    document.querySelector(".HeaderPartieDroite").children[0].addEventListener('mouseover', DeplacerBarreHeader1)
+    document.querySelector(".HeaderPartieDroite").children[1].addEventListener('mouseover', DeplacerBarreHeader2)
+    document.querySelector(".HeaderPartieDroite").children[2].addEventListener('mouseover', DeplacerBarreHeader3)
+    document.querySelector(".HeaderPartieDroite").children[3].addEventListener('mouseover', DeplacerBarreHeader4)
+    document.querySelector(".HeaderPartieDroite").children[4].addEventListener('mouseover', DeplacerBarreHeader5)
+    document.querySelector(".HeaderPartieDroite").addEventListener('mouseleave', ReplacerBarreHeader)
+}
 
 
 function DeplacerBarreHeader1() {
@@ -40,5 +51,20 @@ function ReplacerBarreHeader() {
     document.querySelector(".LaBarre").style = "transform: translate(0%, -200%);";
 }
 
-// FAIRE LA SEPARATION DE LA BARRE POUR ADMIN ET CELLE POUR GENS NORMAUX 
+function DeplacerBarreHeader6() {
+    document.querySelector(".LaBarre2").style = "transform: translate(0%, -100%);";
+}
+
+function DeplacerBarreHeader7() {
+    document.querySelector(".LaBarre2").style = "transform: translate(245%, -100%);";
+}
+
+function DeplacerBarreHeader8() {
+    document.querySelector(".LaBarre2").style = "transform: translate(550%, -100%);";
+}
+
+function ReplacerBarreHeader2() {
+    document.querySelector(".LaBarre2").style = "transform: translate(0%, -100%);";
+}
+// FAIRE LA SEPARATION DE LA BARRE POUR ADMIN ET CELLE POUR GENS NORMAUX
 // ASTUCE : FAIRE UN IF() AVEC LE NOMBRE D'ENFANT DU HEADER DEDANS CAR IL CHANGE ENTRE LES DEUX
