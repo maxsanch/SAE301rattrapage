@@ -1,9 +1,5 @@
 /* site général */
 
-body {
-    margin: 0;
-}
-
 img {
     width: 100%;
 }
@@ -84,87 +80,8 @@ img {
 }
 
 
-
-/* footer du site sur mobile */
-
-
-.BordureFooterGauche {
-    display: none;
-}
-
-.FooterGlobal {
-    grid-template-columns: 1fr;
-}
-
-.FooterPartie2 {
-    display: block;
-}
-
-.FooterPartie2Parent {
-    padding-left: 0;
-}
-
-.ListeDesActions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    font-size: 14px;
-}
-
-
 /* header du site */
 
-.mail2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.ptsrouge {
-    display: none;
-}
-
-.Partie3 {
-    min-height: 200px;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.Partie3Image1 {
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 1;
-}
-
-.Partie3Image2 {
-    grid-column: 1 / span 1;
-    grid-row: 2 / span 1;
-}
-
-.Partie3Image3 {
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 1;
-}
-
-.Partie3Image4 {
-    grid-column: 2 / span 1;
-    grid-row: 2 / span 1;
-}
-
-.Partie3Image5 {
-    grid-column: 3 / span 1;
-    grid-row: 1 / span 1;
-}
-
-.Partie3Image6 {
-    grid-column: 3 / span 1;
-    grid-row: 2 / span 1;
-}
-
-.MesRuches {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 8px;
-    justify-content: space-around;
-}
 
 .pop_up_admin_demande {
     width: 80%;
@@ -173,24 +90,6 @@ img {
 
 .carte_ruche {
     display: none;
-}
-
-.grid_ajout_ruche {
-    display: flex;
-}
-
-.grid_ajout_ruche>form {
-    width: 100%;
-}
-
-.form_elt>input:nth-child(2) {
-    width: 100%;
-}
-
-.form_elt>label {
-    border: #B95E06 dashed 0.3px;
-    padding: 20px;
-    padding-inline: 16px;
 }
 
 .nom_ruche>label {
@@ -222,14 +121,6 @@ img {
     margin-left: 0px;
 }
 
-.grid_ajout_user{
-    display: block;
-}
-
 .motdepasse{
     width: 100%;
-}
-
-.LaBarre{
-    display: none;
 }

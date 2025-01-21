@@ -84,7 +84,7 @@ if (count($getruche)) {
                     // Sinon, affiche une image par défaut
                     $phototest1 = 'img/imported/no_image_ruche.png';
                 }
-                $contenu2 .= '<div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../'.$phototest1.'" alt="Tes ruches" style="height: 250px; object-fit: cover;"><div class="MaRucheTitre">' . $getruche[count($getruche) - 1]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i->data[count($ruches->$i->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°' . $getruche[count($getruche) - 1]["ID_Ruches"] . '" class="MaRucheBouton">Consulter</a></div></div>';
+                $contenu2 .= '<div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../' . $phototest1 . '" alt="Tes ruches" style="height: 250px; object-fit: cover;"><div class="MaRucheTitre">' . $getruche[count($getruche) - 1]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i->data[count($ruches->$i->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°' . $getruche[count($getruche) - 1]["ID_Ruches"] . '" class="MaRucheBouton">Consulter</a></div></div>';
             } else {
                 $contenu2 .= 'ruche innexistante, veuillez la supprimer.';
             }
@@ -98,7 +98,7 @@ if (count($getruche)) {
                     // Sinon, affiche une image par défaut
                     $phototest2 = 'img/imported/no_image_ruche.png';
                 }
-                $contenu2 .= '<div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../'.$phototest2.'" style="height: 250px; object-fit: cover;" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 2]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i2->data[count($ruches->$i2->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°' . $getruche[count($getruche) - 2]["ID_Ruches"] . '" class="MaRucheBouton">Consulter</a></div></div>';
+                $contenu2 .= '<div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../' . $phototest2 . '" style="height: 250px; object-fit: cover;" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 2]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i2->data[count($ruches->$i2->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°' . $getruche[count($getruche) - 2]["ID_Ruches"] . '" class="MaRucheBouton">Consulter</a></div></div>';
             } else {
                 $contenu2 .= 'ruche innexistante, veuillez la supprimer.';
             }
@@ -112,7 +112,7 @@ if (count($getruche)) {
                     // Sinon, affiche une image par défaut
                     $phototest3 = 'img/imported/no_image_ruche.png';
                 }
-                $contenu2 .= '<div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" style="height: 250px; object-fit: cover;" src="../'.$phototest3.'" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 3]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i3->data[count($ruches->$i3->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°' . $getruche[count($getruche) - 3]["ID_Ruches"] . '" class="MaRucheBouton">Consulter</a></div></div>';
+                $contenu2 .= '<div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" style="height: 250px; object-fit: cover;" src="../' . $phototest3 . '" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 3]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i3->data[count($ruches->$i3->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°' . $getruche[count($getruche) - 3]["ID_Ruches"] . '" class="MaRucheBouton">Consulter</a></div></div>';
             } else {
                 $contenu2 .= 'ruche innexistante, veuillez la supprimer.';
             }
@@ -181,6 +181,7 @@ if (count($getruche)) {
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
     <link rel="stylesheet" href="../styles/style_admin.css">
+    <link rel="stylesheet" media="(max-width: 1200px" href="../styles/Tablette.css">
     <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
 </head>
 
