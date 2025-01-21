@@ -306,3 +306,11 @@ a{
     width: 30px;
     cursor: pointer;
 }
+
+.LaBarre2{
+    transform: translate(480%, -100%);
+}
+
+.LaBarre{
+    transform: translate(785%, -200%);
+}
