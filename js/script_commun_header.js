@@ -16,6 +16,7 @@ if (document.querySelector(".HeaderPartieDroite").childElementCount == 5) {
     document.querySelector(".HeaderPartieDroite").children[1].addEventListener('mouseover', DeplacerBarreHeader7)
     document.querySelector(".HeaderPartieDroite").children[2].addEventListener('mouseover', DeplacerBarreHeader8)
     document.querySelector(".HeaderPartieDroite").children[3].addEventListener('mouseover', DeplacerBarreHeader9)
+    document.querySelector(".HeaderPartieDroite").children[4].addEventListener('mouseover', DeplacerBarreHeader11)
     document.querySelector(".HeaderPartieDroite").addEventListener('mouseleave', ReplacerBarreHeader2)
 }
 else if (document.querySelector(".HeaderPartieDroite").childElementCount == 7) {
@@ -24,6 +25,7 @@ else if (document.querySelector(".HeaderPartieDroite").childElementCount == 7) {
     document.querySelector(".HeaderPartieDroite").children[2].addEventListener('mouseover', DeplacerBarreHeader3)
     document.querySelector(".HeaderPartieDroite").children[3].addEventListener('mouseover', DeplacerBarreHeader4)
     document.querySelector(".HeaderPartieDroite").children[4].addEventListener('mouseover', DeplacerBarreHeader5)
+    document.querySelector(".HeaderPartieDroite").children[5].addEventListener('mouseover', DeplacerBarreHeader10)
     document.querySelector(".HeaderPartieDroite").addEventListener('mouseleave', ReplacerBarreHeader)
 }
 
@@ -48,6 +50,10 @@ function DeplacerBarreHeader5() {
     document.querySelector(".LaBarre").style = "transform: translate(1420%, -200%);";
 }
 
+function DeplacerBarreHeader10() {
+    document.querySelector(".LaBarre").style = "transform: translate(1920%, -220%);";
+}
+
 function ReplacerBarreHeader() {
     document.querySelector(".LaBarre").style = "";
 }
@@ -66,6 +72,10 @@ function DeplacerBarreHeader8() {
 
 function DeplacerBarreHeader9() {
     document.querySelector(".LaBarre2").style = "transform: translate(780%, -100%);";
+}
+
+function DeplacerBarreHeader11() {
+    document.querySelector(".LaBarre2").style = "transform: translate(1420%, -100%);";
 }
 
 function ReplacerBarreHeader2() {

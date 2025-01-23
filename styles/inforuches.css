@@ -492,3 +492,11 @@ a{
     max-height: 300px;
     object-fit: content;
 }
+
+.LaBarre2{
+    transform: translate(1420%, -100%);
+}
+
+.LaBarre{
+    transform: translate(1920%, -220%);
+}
