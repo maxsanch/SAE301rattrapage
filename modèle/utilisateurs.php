@@ -40,11 +40,13 @@ class utilisateurs extends database
     // Fonction pour inscrire un nouvel utilisateur
     public function inscrire($prenom, $nom, $email, $mdpgood)
     {
+
+        $data = array($nom, $prenom, $mdpgood, $email);
         // Requête SQL pour insérer un nouvel utilisateur dans la base de données
-        $req = "INSERT INTO `utilisateurs` (`Id_utilisateur`, `Nom`, `Prenom`, `MotDePasse`, `Mail`, `Statut`, `connexion`, `inscription`) VALUES (NULL, '" . $nom . "', '" . $prenom . "', '" . $mdpgood . "', '" . $email . "', 'utilisateur', '" . date('Y-m-d') . "', '" . date('Y-m-d') . "');)";
+        $req = "INSERT INTO `utilisateurs` (`Id_utilisateur`, `Nom`, `Prenom`, `MotDePasse`, `Mail`, `Statut`, `connexion`, `inscription`) VALUES (NULL, ?, ?, ?, ?, 'utilisateur', '" . date('Y-m-d') . "', '" . date('Y-m-d') . "');)";
 
         // Exécution de la requête
-        $this->execReq($req);
+        $this->execReqPrep($req, $data);
     }
 
     // Fonction pour récupérer tous les utilisateurs
@@ -91,7 +93,7 @@ class utilisateurs extends database
             // Vérification si le fichier n'a pas d'erreur
             if ($_FILES['photoUser']["error"] == 0) {
                 // Vérification si la taille du fichier est inférieure à 20 Mo
-                if ($_FILES['photoUser']["size"] <= 20000000) {
+                if ($_FILES['photoUser']["size"] <= 500000) {
                     // Récupération de l'extension du fichier
                     $infosfichier = new SplFileInfo($_FILES['photoUser']['name']);
                     $extension_upload = $infosfichier->getExtension();
@@ -108,7 +110,7 @@ class utilisateurs extends database
                                 $_FILES['photoUser']['tmp_name'],
                                 'img/imported/' . $idArt . "." . $extension_upload
                             );
-                            $erreur = "Transfert du fichier <b> " . $_FILES['photoUser']['name'] . " </b> effectué !";
+                            $erreur = "Transfert du fichier : " . ' ' . $_FILES['photoUser']['name'] . ' ' . " effectué !";
                             return $erreur;
                         } else {
                             // Si le dossier n'existe pas, le créer et déplacer le fichier
@@ -117,23 +119,75 @@ class utilisateurs extends database
                                 $_FILES['photoUser']['tmp_name'],
                                 'img/imported/' . $idArt . "." . $extension_upload
                             );
-                            $erreur = "Transfert du fichier <b> " . $_FILES['photoUser']['name'] . " </b> effectué !";
+                            $erreur = "Transfert du fichier " . $_FILES['photoUser']['name'] . " effectué !";
                             return $erreur;
                         }
                     } else {
-                        // Si l'extension du fichier n'est pas autorisée
-                        $erreur = "extension incompatible";
+                        if (isset($_GET['prevpage'])) {
+                            if ($_GET['prevpage'] == 'gestionruche') {
+                                $erreur1 = '';
+                                $erreur3 = '';
+                                $erreur2 = "Extension incompatible";
+                                gestion_ruches($erreur1, $erreur2, $erreur3);
+                            } else {
+                                $erreur = "Extension incompatible";
+                                utilisateurs($erreur, "");
+                            }
+                        } else {
+                            $erreur = "Extension incompatible";
+                            utilisateurs($erreur, "");
+                        }
+                    }
+                } else {
+                    if (isset($_GET['prevpage'])) {
+                        if ($_GET['prevpage'] == 'gestionruche') {
+                            $erreur1 = '';
+                            $erreur3 = '';
+                            $erreur2 = "Fichier trop volumineux";
+                            gestion_ruches($erreur1, $erreur2, $erreur3);
+                        } else {
+                            $erreur = "Fichier trop volumineux";
+                            utilisateurs($erreur, "");
+                        }
+                    } else {
+                        $erreur = "Fichier trop volumineux";
+                        utilisateurs($erreur, "");
+                    }
+                }
+            } else {
+                if ($_FILES['photoUser']["size"] <= 500000) {
+                    // Si une erreur est survenue lors du transfert
+                    if (isset($_GET['prevpage'])) {
+                        if ($_GET['prevpage'] == 'gestionruche') {
+                            $erreur1 = '';
+                            $erreur3 = '';
+                            $erreur2 = "Fichier trop volumineux";
+                            gestion_ruches($erreur1, $erreur2, $erreur3);
+                        } else {
+                            $erreur = "Fichier trop volumineux";
+                            utilisateurs($erreur, "");
+                        }
+                    } else {
+                        $erreur = "Fichier trop volumineux";
                         utilisateurs($erreur, "");
                     }
                 } else {
-                    // Si le fichier est trop volumineux
-                    $erreur = "fichier trop volumineux";
-                    utilisateurs($erreur, "");
+                    // Si une erreur est survenue lors du transfert
+                    if (isset($_GET['prevpage'])) {
+                        if ($_GET['prevpage'] == 'gestionruche') {
+                            $erreur1 = '';
+                            $erreur3 = '';
+                            $erreur2 = "Une erreur est survenue";
+                            gestion_ruches($erreur1, $erreur2, $erreur3);
+                        } else {
+                            $erreur = "Une erreur est survenue";
+                            utilisateurs($erreur, "");
+                        }
+                    } else {
+                        $erreur = "Une erreur est survenue";
+                        utilisateurs($erreur, "");
+                    }
                 }
-            } else {
-                // Si une erreur est survenue lors du transfert
-                $erreur = "Une erreur est survenue";
-                utilisateurs($erreur, "");
             }
         }
     }
@@ -141,31 +195,35 @@ class utilisateurs extends database
     // Fonction pour modifier les informations d'un utilisateur avec changement de mot de passe
     public function edituserwithpdw($nom, $prenom, $mdpgood, $iduser)
     {
+        $data = array($prenom, $nom, $mdpgood, $iduser);
         // Requête SQL pour mettre à jour les informations d'un utilisateur
-        $req = "UPDATE `utilisateurs` SET `Prenom` = '" . $prenom . "', `Nom` = '" . $nom . "', `MotDePasse` = '" . $mdpgood . "' WHERE `utilisateurs`.`Id_utilisateur` = " . $iduser . ";";
+        $req = "UPDATE `utilisateurs` SET `Prenom` = ?, `Nom` = ?, `MotDePasse` = ? WHERE `utilisateurs`.`Id_utilisateur` = ?;";
 
         // Exécution de la requête
-        $this->execReq($req);
+        $this->execReqPrep($req, $data);
     }
 
     // Fonction pour modifier les informations d'un utilisateur sans changer le mot de passe
     public function editusernopdw($nom, $prenom, $iduser)
     {
+
+        $data = array($prenom, $nom, $iduser);
         // Requête SQL pour mettre à jour les informations d'un utilisateur
-        $req = "UPDATE `utilisateurs` SET `Prenom` = '" . $prenom . "', `Nom` = '" . $nom . "' WHERE `utilisateurs`.`Id_utilisateur` = " . $iduser . ";";
+        $req = "UPDATE `utilisateurs` SET `Prenom` = ?, `Nom` = ? WHERE `utilisateurs`.`Id_utilisateur` = ?;";
 
         // Exécution de la requête
-        $this->execReq($req);
+        $this->execReqPrep($req, $data);
     }
 
     // Fonction pour changer le mot de passe d'un utilisateur administrateur
     public function changepasswordadmin($id, $mdp1)
     {
+        $data = array($mdp1, $id);
         // Requête SQL pour mettre à jour le mot de passe d'un utilisateur
-        $req = "UPDATE `utilisateurs` SET `MotDePasse` = '$mdp1' WHERE `utilisateurs`.`Id_utilisateur` = $id;";
+        $req = "UPDATE `utilisateurs` SET `MotDePasse` = ? WHERE `utilisateurs`.`Id_utilisateur` = ?;";
 
         // Exécution de la requête
-        $this->execReq($req);
+        $this->execReqPrep($req, $data);
     }
 
     // Fonction pour supprimer un utilisateur de la base de données

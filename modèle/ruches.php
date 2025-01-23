@@ -25,9 +25,10 @@ class ruches extends database
     *******************************************************/
     public function checkgerer($iduser, $idruche)
     {
+        $data = array($iduser, $idruche);
         // Requête SQL pour vérifier si l'utilisateur gère la ruche donnée.
-        $req = 'SELECT * FROM `gérer` WHERE Id_utilisateur = ' . $iduser . ' AND ID_Ruches = ' . $idruche . ';';
-        $user = $this->execReq($req); // Exécute la requête et retourne le résultat.
+        $req = 'SELECT * FROM `gérer` WHERE Id_utilisateur = ? AND ID_Ruches = ?;';
+        $user = $this->execReqPrep($req, $data); // Exécute la requête et retourne le résultat.
         return $user; // Retourne les informations de gestion.
     }
 
@@ -36,19 +37,26 @@ class ruches extends database
     Entrée : $nom : Le nom de la ruche, $id : L'ID de la ruche
     *******************************************************/
     public function ajouter($nom, $id)
-    {
-        $req = "INSERT INTO `ruches` (`ID_Ruches`, `nom`) VALUES ('" . $id . "', '" . $nom . "');"; // Requête SQL pour ajouter une ruche.
-        $this->execReq($req); // Exécute la requête.
+    {   
+        $data = array($id, $nom);
+
+        $req = "INSERT INTO `ruches` (`ID_Ruches`, `nom`) VALUES (?, ?);"; // Requête SQL pour ajouter une ruche.
+
+        $this->execReqPrep($req, $data); // Exécute la requête.
     }
 
     /*******************************************************
     Associe un utilisateur à une ruche (gestionnaire)
     Entrée : $gerant : ID de l'utilisateur, $ruche : ID de la ruche
     *******************************************************/
+
     public function gerant($gerant, $ruche)
     {
-        $req = "INSERT INTO `gérer` (`Id_utilisateur`, `ID_Ruches`, `gérer`) VALUES ('" . $gerant . "', '" . $ruche . "', NULL);"; // Requête SQL pour associer un utilisateur à une ruche.
-        $this->execReq($req); // Exécute la requête.
+        $data = array($gerant, $ruche);
+
+        $req = "INSERT INTO `gérer` (`Id_utilisateur`, `ID_Ruches`, `gérer`) VALUES (?, ?, NULL);"; // Requête SQL pour associer un utilisateur à une ruche.
+
+        $this->execReqPrep($req, $data); // Exécute la requête.
     }
 
     /*******************************************************
@@ -57,8 +65,9 @@ class ruches extends database
     *******************************************************/
     public function update($nom, $ancienid)
     {
-        $req = "UPDATE `ruches` SET `nom` = '" . $nom . "' WHERE `ruches`.`ID_Ruches` = " . $ancienid . ";"; // Requête SQL pour mettre à jour une ruche.
-        $this->execReq($req); // Exécute la requête.
+        $data = array($nom, $ancienid);
+        $req = "UPDATE `ruches` SET `nom` = ? WHERE `ruches`.`ID_Ruches` = ?;"; // Requête SQL pour mettre à jour une ruche.
+        $this->execReqPrep($req, $data); // Exécute la requête.
     }
 
     /*******************************************************
@@ -105,8 +114,10 @@ class ruches extends database
     *******************************************************/
     public function fileattente($id_user, $id_ruche, $nom_ruche, $prenom_user)
     {
-        $req = "INSERT INTO `attente` (`ID_attente`, `Id_utilisateur`, `ID_Ruches`, `nom_ruche`, `prenom_utilisateur`) VALUES (NULL, '" . $id_user . "', '" . $id_ruche . "', '" . $nom_ruche . "', '" . $prenom_user . "');"; // Requête SQL pour ajouter une demande d'attente.
-        $this->execReq($req); // Exécute la requête.
+
+        $data = array($id_user, $id_ruche, $nom_ruche, $prenom_user);
+        $req = "INSERT INTO `attente` (`ID_attente`, `Id_utilisateur`, `ID_Ruches`, `nom_ruche`, `prenom_utilisateur`) VALUES (NULL, ?, ?, ?, ?);"; // Requête SQL pour ajouter une demande d'attente.
+        $this->execReqPrep($req, $data); // Exécute la requête.
     }
 
     /*******************************************************
@@ -147,7 +158,7 @@ class ruches extends database
             if ($_FILES['photoRuche']["error"] == 0) {
 
                 // Vérification si la taille du fichier est inférieure à 20 Mo
-                if ($_FILES['photoRuche']["size"] <= 20000000) {
+                if ($_FILES['photoRuche']["size"] <= 500000) {
 
                     // Récupération de l'extension du fichier
                     $infosfichier = new SplFileInfo($_FILES['photoRuche']['name']);

@@ -6,14 +6,18 @@ define("HEADER_Déconnecté", "<div class='ConteneurHeader'>
             </div>");
 
 
-            // définition du header connecté du site afin de faciliter sa réutilisation
+// définition du header connecté du site afin de faciliter sa réutilisation
 define('HEADER_connecté', '<div class="ConteneurHeader">
             <a href="index.php" class="TitreHeader"><span class="RucheHeader">R</span>uches connectées</a>
-            <div class="HeaderPartieDroite">
-                <a href="index.php?page=Gestion" class="BoutonHeader2">Gestion</a>
-                <a href="index.php?page=Notes" class="BoutonHeader2">Mes notes</a>
-                <a href="index.php?page=quitter" class="BoutonHeader2">Se déconnecter</a>
-                <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader">Mes ruches</a>
+            <div class="BarreSousHeader">
+                <div class="HeaderPartieDroite">
+                    <a href="index.php" class="BoutonHeader2">Accueil</a>
+                    <a href="index.php?page=Gestion" class="BoutonHeader2">Gestion</a>
+                    <a href="index.php?page=Notes" class="BoutonHeader2">Mes notes</a>
+                    <a href="index.php?page=quitter" class="BoutonHeader2">Se déconnecter</a>
+                    <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader">Mes ruches</a>
+                </div>
+            <div class="LaBarre"></div>
             </div>
             <div class="tribarres"><div class="barresingle"></div><div class="barresingle"></div><div class="barresingle"></div></div>
             </div>
@@ -24,17 +28,20 @@ define('HEADER_connecté', '<div class="ConteneurHeader">
                 <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader2">Mes ruches</a>
             </div>');
 
-            // définition du header admin du site
+// définition du header admin du site
 define('HEADER_admin', '<div class="ConteneurHeader">
             <a href="index.php" class="TitreHeader"><span class="RucheHeader">R</span>uches connectées</a>
-            <div class="HeaderPartieDroite">
-                <a href="index.php" class="BoutonHeader2">Accueil</a>
-                <a href="index.php?page=Gestion" class="BoutonHeader2">Gestions des ruches</a>
-                <a href="index.php?page=Notes" class="BoutonHeader2">Mes notes</a>
-                <a href="index.php?page=Utilisateurs" class="BoutonHeader2">Utilisateurs</a>
-                <a href="index.php?page=quitter" class="BoutonHeader2">Se déconnecter</a>
-                <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader">Mes ruches</a>
-                <div class="mail"><div class="ptsrouge"><div class="letxt"></div></div><img class="notif" src="../img/mail.svg" alt="Une icone de mail"></img></div>
+            <div class="BarreSousHeader">
+                <div class="HeaderPartieDroite">
+                    <a href="index.php" class="BoutonHeader2">Accueil</a>
+                    <a href="index.php?page=Gestion" class="BoutonHeader2">Gestions des ruches</a>
+                    <a href="index.php?page=Notes" class="BoutonHeader2">Mes notes</a>
+                    <a href="index.php?page=Utilisateurs" class="BoutonHeader2">Utilisateurs</a>
+                    <a href="index.php?page=quitter" class="BoutonHeader2">Se déconnecter</a>
+                    <a href="index.php?page=Ruches&jsruche=null" class="BoutonHeader">Mes ruches</a>
+                    <div class="mail"><div class="ptsrouge"><div class="letxt"></div></div><img class="notif" src="../img/mail.svg" alt="Une icone de mail"></img></div>
+                </div>
+                <div class="LaBarre"></div>
             </div>
             <div class="tribarres"><div class="barresingle"></div><div class="barresingle"></div><div class="barresingle"></div></div>
             </div>
@@ -49,7 +56,7 @@ define('HEADER_admin', '<div class="ConteneurHeader">
                 <div class="mail2 BoutonHeader2">Boite de récéption</div>
             </div>');
 
-    // définition du footer deconnecté du site
+// définition du footer deconnecté du site
 define("Footer_déconnecté", '<div class="FooterGlobal">
             <div class="FooterPartie1">
                 <h3>RUCHES CONNECTEES</h3>
@@ -65,11 +72,13 @@ define("Footer_déconnecté", '<div class="FooterGlobal">
                 </div>
                 <div class="ParentFooterLogo">
                     <!-- Logo de youtube -->
+                    <a href="https://www.youtube.com/watch?v=0NhKJKOuFbo">
                     <svg class="FooterLogo" width="808" height="574" viewBox="0 0 808 574" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M405.347 0.833737C425.21 0.833737 659.193 1.50707 719.793 17.6671C736.996 22.4082 752.647 31.593 765.175 44.2986C777.704 57.0043 786.668 72.7833 791.167 90.0504C808 154.017 808 287 808 287V288.347C808 302.824 806.99 424.024 791.167 483.614C786.72 500.943 777.779 516.792 765.247 529.56C752.715 542.328 737.036 551.564 719.793 556.334C660.54 572.494 435.31 573.167 406.693 573.504H400.97C372.353 573.504 147.123 572.494 88.2067 556.67C70.9228 551.871 55.2162 542.585 42.681 529.754C30.1457 516.923 21.2282 501.005 16.8333 483.614C2.69333 429.41 0.336667 325.38 0 295.08V278.247C0.336667 247.947 2.69333 143.917 16.8333 89.7137C21.384 72.5087 30.371 56.7994 42.8959 44.1563C55.4209 31.5132 71.0451 22.3791 88.2067 17.6671C148.807 1.1704 382.79 0.49707 402.653 0.49707L405.347 0.833737ZM321.18 165.8V407.527L532.607 287L321.18 166.137V165.8Z"
                             fill="white" />
                     </svg>
+                    </a>
 
                     <!-- Logo de facebook -->
                     <svg class="FooterLogo" width="646" height="646" viewBox="0 0 646 646" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -116,7 +125,6 @@ define("Footer_déconnecté", '<div class="FooterGlobal">
                             <div>retrouvez nous !</div>
                             <div>61 Rue Albert Camus, 68200 Mulhouse</div>
                         </div>
-                        <div class="FooterPartie2SousPartie2">Plan du site</div>
                     </div>
                 </div>
                 <div class="LienRapides">Liens rapides</div>
@@ -147,11 +155,13 @@ define("Footer_connecté", '<div class="FooterGlobal">
                 </div>
                 <div class="ParentFooterLogo">
                     <!-- Logo de youtube -->
+                    <a href="https://www.youtube.com/watch?v=0NhKJKOuFbo">
                     <svg class="FooterLogo" width="808" height="574" viewBox="0 0 808 574" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M405.347 0.833737C425.21 0.833737 659.193 1.50707 719.793 17.6671C736.996 22.4082 752.647 31.593 765.175 44.2986C777.704 57.0043 786.668 72.7833 791.167 90.0504C808 154.017 808 287 808 287V288.347C808 302.824 806.99 424.024 791.167 483.614C786.72 500.943 777.779 516.792 765.247 529.56C752.715 542.328 737.036 551.564 719.793 556.334C660.54 572.494 435.31 573.167 406.693 573.504H400.97C372.353 573.504 147.123 572.494 88.2067 556.67C70.9228 551.871 55.2162 542.585 42.681 529.754C30.1457 516.923 21.2282 501.005 16.8333 483.614C2.69333 429.41 0.336667 325.38 0 295.08V278.247C0.336667 247.947 2.69333 143.917 16.8333 89.7137C21.384 72.5087 30.371 56.7994 42.8959 44.1563C55.4209 31.5132 71.0451 22.3791 88.2067 17.6671C148.807 1.1704 382.79 0.49707 402.653 0.49707L405.347 0.833737ZM321.18 165.8V407.527L532.607 287L321.18 166.137V165.8Z"
                             fill="white" />
                     </svg>
+                    </a>
 
                     <!-- Logo de facebook -->
                     <svg class="FooterLogo" width="646" height="646" viewBox="0 0 646 646" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -198,7 +208,6 @@ define("Footer_connecté", '<div class="FooterGlobal">
                             <div>retrouvez nous !</div>
                             <div>61 Rue Albert Camus, 68200 Mulhouse</div>
                         </div>
-                        <div class="FooterPartie2SousPartie2">Plan du site</div>
                     </div>
                 </div>
                 <div class="LienRapides">Lien rapides</div>

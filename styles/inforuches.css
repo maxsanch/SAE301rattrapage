@@ -347,10 +347,9 @@ a{
     top: 50%;
     border: solid 10px white;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
     z-index: 1000000;
     transition: 0.4s;
-    display: none;
 }
 
 /* croix de fermeture */
@@ -384,7 +383,7 @@ a{
 /* boutons et icones du formulaire et de la carte */
 
 .formbouton{
-    background: #914D1E;
+    background: #B95E06;
     color: #fff;
     padding: 5px;
     padding-inline: 10px;
@@ -427,10 +426,14 @@ a{
 /* ouverture de la confirmation */
 .ouvert2{
     display: block;
-    animation: forwards apparaitre 0.4s;
+    animation: opa 0.4s forwards;
+}
+.carteouverture{
+    transform: translate(-50%, -50%) scale(1);
 }
 /* animation pour une aparition smooth */
-@keyframes apparaitre{
+
+@keyframes opa{
     from{
         opacity: 0;
     }
@@ -472,4 +475,20 @@ a{
 /* stats des ruches pour la dernière mesure */
 .informations_ruche{
     flex: none;
+}
+
+
+.centrenoruche{
+    text-align: center;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    color: #B95E06;
+    font-weight: bold;
+}
+
+/* image */
+
+.image_ruche>img{
+    max-height: 300px;
+    object-fit: content;
 }

@@ -10,6 +10,7 @@ $footer=Footer_déconnecté
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruches connectées - Accueil</title>
     <link rel="stylesheet" href="styles/styles_index_non_connecte.css">
+    <link rel="stylesheet" media="(max-width: 1200px" href="styles/Tablette.css">
     <link rel="stylesheet" media="(max-width: 620px)" href="styles/styles_commun_mobile.css">
 </head>
 

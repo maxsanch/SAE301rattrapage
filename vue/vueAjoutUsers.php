@@ -4,7 +4,7 @@
 $header = HEADER_admin;
 
 // Définition du footer pour les utilisateurs non connectés
-$footer = Footer_déconnecté;
+$footer = Footer_connecté;
 
 ?>
 
@@ -16,7 +16,8 @@ $footer = Footer_déconnecté;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajout de photo pour les utilisateurs</title>
     <link rel="stylesheet" href="../styles/ajoutphoto.css">
-    <link rel="stylesheet" media="(min-width: 620px)" href="../styles/styles_index_non_connecte.css">
+    <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
 </head>
 
 <body>
@@ -48,7 +49,7 @@ $footer = Footer_déconnecté;
                 <input type="hidden" name="MAX_FILE_SIZE" value="500000">
                 <!-- Label pour l'input de téléchargement de photo -->
                 <label>
-                    <span class="orange">Ajoutez </span> <span> Une photo.</span>
+                    <span class="orange">Ajoutez </span> <span> Une photo. (max 500ko)</span>
                     <!-- Champ pour sélectionner le fichier image (acceptant JPEG et PNG uniquement) -->
                     <input type="file" class="texte" name="photoUser" accept="image/jpeg, image/png" hidden>
                 </label>

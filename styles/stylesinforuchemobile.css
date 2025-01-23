@@ -75,3 +75,9 @@
 .croixfixed{
     width: 30px;
 }
+
+/* taille max qu'on enlève sur mobile */
+
+.image_ruche>img{
+    max-height: none;
+}

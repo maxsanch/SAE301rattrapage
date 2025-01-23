@@ -1,0 +1,16 @@
+.ruche_all_notes{
+    padding: 16px;
+}
+
+.gridnotesall{
+    display: flex;
+    /* grid-template-columns: 1fr 1fr; */
+    flex-flow: row wrap;
+    margin-top: 16px;
+    gap: 16px;
+}
+
+.formulairetest{
+    width: 95%;
+    margin: auto;
+}

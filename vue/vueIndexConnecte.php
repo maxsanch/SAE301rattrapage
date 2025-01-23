@@ -26,7 +26,7 @@ if (count($getruche)) {
             $i3 = $getruche[count($getruche) - 3]["ID_Ruches"];
             
             // Construction du contenu pour chaque ruche avec les informations disponibles
-            $contenu2 .= '<div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../img/TesRuches.png" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 1]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i->data[count($ruches->$i->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$getruche[count($getruche) - 1]["ID_Ruches"].'" class="MaRucheBouton">Consulter</a></div></div><div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../img/TesRuches.png" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 2]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i2->data[count($ruches->$i2->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$getruche[count($getruche) - 2]["ID_Ruches"].'" class="MaRucheBouton">Consulter</a></div></div><div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../img/TesRuches.png" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 3]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i3->data[count($ruches->$i3->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$getruche[count($getruche) - 3]["ID_Ruches"].'" class="MaRucheBouton">Consulter</a></div></div>';
+            $contenu2 .= '<div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" style="height: 250px; object-fit: cover;" src="../img/TesRuches.png" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 1]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i->data[count($ruches->$i->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$getruche[count($getruche) - 1]["ID_Ruches"].'" class="MaRucheBouton">Consulter</a></div></div><div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" style="height: 250px; object-fit: cover;" src="../img/TesRuches.png" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 2]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i2->data[count($ruches->$i2->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$getruche[count($getruche) - 2]["ID_Ruches"].'" class="MaRucheBouton">Consulter</a></div></div><div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" style="height: 250px; object-fit: cover;" src="../img/TesRuches.png" alt="Tes ruches"><div class="MaRucheTitre">' . $getruche[count($getruche) - 3]["nom"] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i3->data[count($ruches->$i3->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$getruche[count($getruche) - 3]["ID_Ruches"].'" class="MaRucheBouton">Consulter</a></div></div>';
         } else {
             // Si moins de 3 ruches, on affiche toutes les ruches disponibles
             foreach ($getruche as $r) {
@@ -45,7 +45,7 @@ if (count($getruche)) {
                     }
 
                     // Construction du contenu pour chaque ruche avec ses informations et sa température
-                    $contenu2 .= '<div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" src="../'.$phototest.'" alt="Tes ruches"><div class="MaRucheTitre">' . $r['nom'] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i->data[count($ruches->$i->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$r['ID_Ruches'].'" class="MaRucheBouton">Consulter</a></div></div>';
+                    $contenu2 .= '<div class="ContourRuche"><div class="UneRuche"><img class="ImageDeLaRuche" style="height: 250px; object-fit: cover;" src="../'.$phototest.'" alt="Tes ruches"><div class="MaRucheTitre">' . $r['nom'] . '</div><div class="InfoRuche">Pas encore prête</div><div class="InfoRuche">température : ' . $ruches->$i->data[count($ruches->$i->data) - 1]->temperature . ' °</div><a href="index.php?page=Ruches&jsruche=Ruche N°'.$r['ID_Ruches'].'" class="MaRucheBouton">Consulter</a></div></div>';
                 } else {
                     // Message si la ruche n'existe pas
                     $contenu2 .= 'ruche innexistante, veuillez la supprimer.';
@@ -71,7 +71,7 @@ if (count($getruche)) {
         
         if (isset($ruches->$i)) {
             // Création d'un marqueur pour chaque ruche valide sur la carte
-            $markers .= 'var marker'.$i.' = L.marker(['.$ruches->$i->gps[0].', '.$ruches->$i->gps[1].']).addTo(map);';
+            $markers .= 'var marker'.$i.' = L.marker(['.$ruches->$i->gps[0].', '.$ruches->$i->gps[1].']).addTo(map); marker'. $i .'.bindPopup("Ruche : '.$r['nom'].'");';
         } else {
             $markers .= "";
         }
@@ -96,6 +96,7 @@ if (count($getruche)) {
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
+    <link rel="stylesheet" media="(max-width: 1200px" href="../styles/Tablette.css">
     <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
 
 </head>

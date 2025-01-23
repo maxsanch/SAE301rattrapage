@@ -8,7 +8,7 @@ if ($user[0]['Statut'] == 'admin') {
 }
 
 // Déclare le footer pour les utilisateurs non connectés
-$footer = Footer_déconnecté;
+$footer = Footer_connecté;
 
 ?>
 
@@ -20,7 +20,8 @@ $footer = Footer_déconnecté;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information ruches</title>
     <link rel="stylesheet" href="../styles/ajoutphoto.css">
-    <link rel="stylesheet" media="(min-width: 620px)" href="../styles/styles_index_non_connecte.css">
+    <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
 </head>
 
 <body>
@@ -48,10 +49,10 @@ $footer = Footer_déconnecté;
             enctype="multipart/form-data">
             <div class="form_elt">
                 <!-- Limite la taille maximale de fichier téléchargé -->
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000000">
+                <input type="hidden" name="MAX_FILE_SIZE" value="500000">
                 <!-- Label pour l'input du fichier -->
                 <label>
-                    <span class="orange">Ajoutez </span> <span> Une photo.</span>
+                    <span class="orange">Ajoutez </span> <span> Une photo. (max 500ko)</span>
                     <!-- Champ de téléchargement de photo -->
                     <input type="file" class="texte" name="photoRuche" accept="image/jpeg, image/png" hidden>
                 </label>

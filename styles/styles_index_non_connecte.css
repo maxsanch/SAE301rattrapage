@@ -92,6 +92,27 @@ html {
     color: black;
 }
 
+.BarreSousHeader{
+    display: flex;
+    flex-direction: column;
+}
+
+.LaBarre{
+    background-color: #B95E06;
+    height: 8px;
+    width: 32px;
+    transform: translateY(-200%);
+    transition: 0.4s;
+}
+
+.LaBarre2{
+    background-color: #B95E06;
+    height: 8px;
+    width: 32px;
+    transform: translateY(-100%);
+    transition: 0.4s;
+}
+
 .Partie1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -568,10 +589,10 @@ h3 {
     padding-bottom: 64px;
 }
 
-.ParentPartie1 {
+/* .ParentPartie1 {
     padding-top: 32px;
     min-height: 100vh;
-}
+} */
 
 /* partie administreurs style */
 

@@ -35,8 +35,7 @@ if (count($getruche)) {
         $i = $r["ID_Ruches"];
         // mise en place des marker si des ruches sont disponibles
         if (isset($ruches->$i)) {
-
-            $markers .= 'var marker' . $i . ' = L.marker([' . $ruches->$i->gps[0] . ', ' . $ruches->$i->gps[1] . ']).addTo(map);';
+            $markers .= 'var marker' . $i . ' = L.marker([' . $ruches->$i->gps[0] . ', ' . $ruches->$i->gps[1] . ']).addTo(map); marker'. $i .'.bindPopup("Ruche : '.$r['nom'].'");';
         } else {
             $markers .= "";
         }
@@ -48,7 +47,7 @@ if (count($getruche)) {
             if (file_exists('img/imported/' . $r['ID_Ruches'] . '.jpg')) {
                 $phototest = 'img/imported/' . $r['ID_Ruches'] . '.jpg';
                 // Si l'image existe, l'affiche
-            } else if (file_exists('img/imported/' . $ligne['ID_Ruches'] . '.png')) {
+            } else if (file_exists('img/imported/' . $r['ID_Ruches'] . '.png')) {
                 $phototest = 'img/imported/' . $r['ID_Ruches'] . '.png';
             } else {
                 // Sinon, affiche une image par défaut
@@ -269,13 +268,13 @@ if (count($getruche)) {
 
         } else {
             // au cas ou une ruche est mal acceptée
-            $content .= "Nous avons sans le vouloir accepté une ruche qui n'existe pas, nous nous en excusons, pouvez vous supprimer cette dernière ou contacter un administrateur ?";
+            $content .= "<div class='centrenoruche'>Nous avons sans le vouloir accepté une ruche qui n'existe pas, nous nous en excusons, pouvez vous supprimer cette dernière ou contacter un administrateur ?</div>";
             $graphhtemp .= "";
             $graphhumid .= "";
         }
     }
 } else {
-    $content .= "Vous n'avez aucune ruche.";
+    $content .= "<div class='centrenoruche'>Vous n'avez aucune ruche.</div>";
 }
 
 
@@ -292,9 +291,9 @@ if (count($getruche)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information ruches</title>
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
-    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
     <link rel="stylesheet" href="../styles/inforuches.css">
     <link rel="stylesheet" media="(max-width: 620px)" href="../styles/stylesinforuchemobile.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.bubble.css" rel="stylesheet" />
 
@@ -678,6 +677,7 @@ if (count($getruche)) {
 
             function opencarte() {
                 document.querySelector('.fixed_carte').classList.add('ouvert2')
+                document.querySelector('.fixed_carte').classList.add('carteouverture')
                 document.querySelector('.cache_fond').classList.add('ouvert2')
             }
 
@@ -685,6 +685,7 @@ if (count($getruche)) {
             document.querySelector('.cache_fond').addEventListener('click', fermermap)
             function fermermap() {
                 document.querySelector('.confirmation').classList.remove('ouvert2')
+                document.querySelector('.fixed_carte').classList.remove('carteouverture')
                 document.querySelector('.fixed_carte').classList.remove('ouvert2')
                 document.querySelector('.cache_fond').classList.remove('ouvert2')
                 document.querySelector('.formulairetest').classList.remove('ouvert2')

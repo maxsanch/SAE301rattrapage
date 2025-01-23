@@ -8,7 +8,7 @@ if ($user[0]['Statut'] == 'admin') {
 }
 
 // Définition du pied de page (footer) pour un utilisateur déconnecté
-$footer = Footer_déconnecté;
+$footer = Footer_connecté;
 
 $contenu = '';
 
@@ -35,8 +35,9 @@ if (count($mesruches)) {
             $phototest = 'img/imported/no_image_ruche.png';
         }
         // Construction du contenu à afficher pour chaque ruche
-        $contenu .= '<div class="case"><a href="index.php?page=Photo_ruche&idRuche=' . $ligne['ID_Ruches'] . '" class="photo"><img src="../' . $phototest . '" alt=""></a><b>' . $ligne['nom'] . '</b><a class="bout" href="index.php?page=Ruches&jsruche=Ruche N°' . $ligne['ID_Ruches'] . '">Informations</a><a href="index.php?page=modif&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Modifier</a><a href="index.php?page=suppression&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Supprimer</a></div>';
+        $contenu .= '<div class="case"><a href="index.php?page=Photo_ruche&idRuche=' . $ligne['ID_Ruches'] . '" class="photo"><img src="../' . $phototest . '" alt="image de la ruche" style="height: 200px; object-fit: cover;"></a><b>' . $ligne['nom'] . '</b><a class="bout" href="index.php?page=Ruches&jsruche=Ruche N°' . $ligne['ID_Ruches'] . '">Informations</a><a href="index.php?page=modif&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Modifier</a><a href="#" id="ruche' . $ligne['ID_Ruches'] . '" class="bout suppressionruche">Supprimer</a></div>';
     }
+    // index.php?page=suppression&ruche=' . $ligne['ID_Ruches'] . '
 } else {
     // Affichage d'un message si aucune ruche n'est enregistrée
     $contenu .= "<div class='reponse'>Aucune ruche enregistrée.</div>";
@@ -54,8 +55,9 @@ if (count($mesruches)) {
     <title>Gestion ruches</title>
 
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
-    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
     <link rel="stylesheet" href="../styles/GestionRuches.css">
+    <link rel="stylesheet" media="(max-width: 1200px" href="../styles/Tablette.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -67,9 +69,19 @@ if (count($mesruches)) {
     <header>
         <?= $header ?>
     </header>
-
     <div class="cache_fond">
 
+    </div>
+    <div class='fixeddanslefixed'>
+        <p>Voulez vous vraiment supprimer cette ruche ?</p>
+        <div class='ledarondufixe'>
+            <a>
+                <div class='nonjesuppr'>Non</div>
+            </a>
+            <a href='#'>
+                <div class='ouijesuppr'>Oui</div>
+            </a>
+        </div>
     </div>
 
     <!-- Boîte de réception des demandes de ruche -->
@@ -96,11 +108,14 @@ if (count($mesruches)) {
                     <input type="text" name="nomruche">
                 </div>
                 <div class="ID_appareil">
-                    <div>ID de l'appareil</div>
+                    <div>ID de l'appareil (ce dernier vous à été transmis lors de l'achat de l'appareil)</div>
                     <input type="number" name="id_ruche">
                 </div>
             </div>
-            <?= $erreur1 ?>
+
+            <div class="erreurfull">
+                <?= $erreur1 ?>
+            </div>
             <button>Envoyer</button>
         </form>
         <div class="espace">
@@ -128,13 +143,11 @@ if (count($mesruches)) {
     </div>
     <!-- grid pour la mise a jours du profil de l'utilisateur -->
     <div class="grid_ajout_user">
-        <div class="photo">
-            <img src="../<?= $photo ?>" alt="photo de profile">
-        </div>
-
-        <!-- formulaires pour la photo de profile ou la modification des informations liées au compte -->
-         <!-- formulaire pour le changement de photo de profile -->
-        <div class="parentdoubleFormulaire">
+        <div class="photo" id="leftphoto">
+            <img src="../<?= $photo ?>" alt="photo de profile" style="height: 350px; object-fit: cover;">
+            <div class="erreurfull">
+                <?= $erreur2 ?>
+            </div>
             <div class="profile_picture">
                 <form method="post" class="photoprofil"
                     action="index.php?page=changeprofilepicture&prevpage=gestionruche&idUser=<?= $user[0]['Id_utilisateur'] ?>"
@@ -142,16 +155,21 @@ if (count($mesruches)) {
                     <h2>Photo de profile</h2>
                     <div class="form_elt">
                         <input type="hidden" name="MAX_FILE_SIZE" value="500000">
-                        <label class="file-upload">
-                            <span class="orange">Ajoutez</span><span> votre fichier ici</span>
-                            <input id="photoUser" type="file" name="photoUser" accept="image/jpeg, image/png" hidden>
+                        <label class="file-upload" id="lelabel">
+                            <span id="changertext" class="orange">Ajoutez</span><span id="autre"> votre fichier ici.
+                                (max 500ko)</span>
+                            <input id="fichiers" id="photoUser" type="file" name="photoUser"
+                                accept="image/jpeg, image/png" hidden>
                         </label>
                         <input type="submit" class="valid" name="ok" value="Valider">
                     </div>
-                    <?= $erreur2 ?>
                 </form>
             </div>
+        </div>
 
+        <!-- formulaires pour la photo de profile ou la modification des informations liées au compte -->
+        <!-- formulaire pour le changement de photo de profile -->
+        <div class="parentdoubleFormulaire">
             <!-- formuaire pour le changement d'informations -->
             <form action="<?= $_SERVER['PHP_SELF'] . '?page=modifprofil&idUser=' . $user[0]['Id_utilisateur'] ?>"
                 method="post">
@@ -182,8 +200,8 @@ if (count($mesruches)) {
                         </label>
 
                         <label>
-                            <p>Confirmez le mot de passe</p><input type="password" class="motdepasse" name="ConfirmationNewPassword"
-                                placeholder="confirmez votre mot de passe">
+                            <p>Confirmez le mot de passe</p><input type="password" class="motdepasse"
+                                name="ConfirmationNewPassword" placeholder="confirmez votre mot de passe">
                             <div class="oeil oeilferme">
                                 <img id="fermé" src="../img/oeilfermé.svg" alt="icone d'oeil">
                             </div>
@@ -193,14 +211,17 @@ if (count($mesruches)) {
                     <div class="validation">
                         <label>
                             <p>Pour enregistrer les modifications, vous devez entrer votre mot de passe</p><input
-                                type="password" name="ancienmdp" class="motdepasse" placeholder="entrez votre mot de passe">
+                                type="password" name="ancienmdp" class="motdepasse"
+                                placeholder="entrez votre mot de passe">
                             <div class="oeil oeilferme">
                                 <img id="fermé" src="../img/oeilfermé.svg" alt="icone d'oeil">
                             </div>
                         </label>
                     </div>
                 </div>
-                <?= $erreur3 ?>
+                <div class="erreurfull">
+                    <?= $erreur3 ?>
+                </div>
                 <button>Modifier</button>
             </form>
         </div>
@@ -216,19 +237,8 @@ if (count($mesruches)) {
         <?= $fonctionadmin ?>
         <?= $lenombre ?>
 
-        // supression des ruches animation
-        document.querySelectorAll('.case').forEach(e => {
-            e.querySelector('.bout:last-child').addEventListener('click', (event) => {
-                event.preventDefault()
-                e.classList.add('deletruche')
+        // utiliser fetch
 
-                setTimeout(removecase, 550)
-
-                function removecase() {
-                    window.location = e.querySelector('.bout:last-child').href
-                }
-            });
-        });
 
         // affichage ou non de ce qu'on ecrit dans le input du password
 
@@ -249,6 +259,43 @@ if (count($mesruches)) {
                 this.classList.toggle('oeilouvert')
             }
         })
+
+        document.querySelector('.ouijesuppr').addEventListener('click', (event) => {
+            event.preventDefault()
+
+            let splited = document.querySelector('.ouijesuppr').parentElement.href.split('ruche=')
+
+            document.querySelector('#ruche' + splited[splited.length - 1]).parentElement.classList.add('deletruche')
+
+            document.querySelector('.fixeddanslefixed').classList.remove('ouverturepopoup')
+            document.querySelector('.cache_fond').classList.remove('cache_plein')
+            
+            setTimeout(removecase, 550)
+
+            function removecase() {
+                window.location = document.querySelector('.ouijesuppr').parentElement.href
+            }
+        });
+
+        document.querySelectorAll('.suppressionruche').forEach(e => {
+            e.addEventListener('click', ouvrirconf)
+
+            let test = e.id.split('e')[1]
+
+            function ouvrirconf() {
+                document.querySelector('.cache_fond').classList.add('cache_plein')
+                document.querySelector('.fixeddanslefixed').classList.add('ouverturepopoup')
+                document.querySelector('.ouijesuppr').parentElement.href = 'index.php?page=suppression&ruche=' + test
+            }
+        })
+
+        document.querySelector('.nonjesuppr').addEventListener('click', enlever)
+
+        function enlever() {
+            document.querySelector('.fixeddanslefixed').classList.remove('ouverturepopoup')
+            document.querySelector('.cache_fond').classList.remove('cache_plein')
+        }
     </script>
 </body>
+
 </html>

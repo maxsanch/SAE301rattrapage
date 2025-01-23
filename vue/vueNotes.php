@@ -8,7 +8,7 @@ if ($utilisateur[0]['Statut'] == 'admin') {
     $header = HEADER_connecté;
 }
 
-$footer = Footer_déconnecté;
+$footer = Footer_connecté;
 $content = "";
 $choixruche = "";
 
@@ -69,7 +69,7 @@ if (count($getruche)) {
         </div>';
 
         } else {
-            $content .= "Nous avons sans le vouloir accepté une ruche qui n'existe pas, nous nous en excusons, pouvez vous supprimer cette dernière ou contacter un administrateur ?";
+            $content .= "<div class='centrenoruche'>Nous avons sans le vouloir accepté une ruche qui n'existe pas, nous nous en excusons, pouvez vous supprimer cette dernière ou contacter un administrateur ?</div>";
         }
     }
 } else {
@@ -88,6 +88,8 @@ if (count($getruche)) {
     <title>Document</title>
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
     <link rel="stylesheet" href="../styles/Note.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/MesNotesMobile.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.bubble.css" rel="stylesheet" />
 </head>

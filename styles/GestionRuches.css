@@ -25,7 +25,7 @@
     width: 80%;
     margin: auto;
     display: grid;
-    grid-template-columns: 5fr 7fr;
+    grid-template-columns: 3fr 7fr;
     gap: 20px;
     margin-bottom: 50px;
 }
@@ -188,7 +188,7 @@ input{
 
 .carte_ruche{
     display: flex;
-    align-items: center;
+    align-items: end;
 }
 
 .carte_ruche>img{
@@ -264,8 +264,7 @@ form{
 }
 .form_elt>label{
     border: #B95E06 dashed 0.3px;
-    padding: 20px;
-    padding-inline: 100px;
+    padding: 7px;
 }
 .orange{
     color: #B95E06;
@@ -273,4 +272,81 @@ form{
 
 .oeil{
     width: 40px;
+}
+
+
+
+.erreurfull{
+    padding-top: 5px;
+    font-weight: bold;
+    color: #B95E06;
+}
+
+#leftphoto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* quand l'utilisateur n'a aucune ruches */
+
+.reponse{
+    border: #B95E06 dashed 0.5px;
+    padding: 30px;
+    width: 100%;
+    font-weight: bold;
+    color: #B95E06;
+}
+
+.LaBarre2{
+    transform: translate(235%, -100%);
+}
+
+.LaBarre{
+    transform: translate(235%, -200%);
+}
+
+/* pop up "êtes vous sur de supprimer ?" */
+
+.fixeddanslefixed{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100004;
+    transform: translate(-50%, -50%);
+    background: #F7F3F0;
+    border: solid #D38932 1px;
+    padding: 20px;
+    border-radius: 20px;
+    display: none;
+}
+
+.ledarondufixe{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 50px;
+    z-index: 10003;
+}
+
+.ouijesuppr{
+    padding: 5px;
+    border-radius: 7px;
+    border: 1px solid #B95E06;
+    color: #B95E06;
+    padding-inline: 80px;
+
+}
+.nonjesuppr{
+    padding: 5px;
+    border-radius: 7px;
+    background: #B95E06;
+    color: white;
+    padding-inline: 80px;
+    cursor: pointer;
+}
+
+.ouverturepopoup{
+    display: block;
 }

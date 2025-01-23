@@ -7,7 +7,7 @@ if ($user[0]['Statut'] == 'admin') {
     $header = HEADER_connecté; // Sinon, on affiche l'en-tête pour un utilisateur connecté.
 }
 
-$footer = Footer_déconnecté; // Le pied de page par défaut est celui pour un utilisateur déconnecté.
+$footer = Footer_connecté; // Le pied de page par défaut est celui pour un utilisateur déconnecté.
 
 $contenu = ''; // Initialisation de la variable pour stocker le contenu dynamique des ruches.
 
@@ -43,8 +43,8 @@ if (count($mesruches)) {
 
     <!-- Inclusion des fichiers CSS pour la mise en page, selon la taille de l'écran. -->
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
-    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
     <link rel="stylesheet" href="../styles/GestionRuches.css">
+    <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
 </head>
 
 <body>
