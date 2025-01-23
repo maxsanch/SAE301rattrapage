@@ -350,3 +350,18 @@ form{
 .ouverturepopoup{
     display: block;
 }
+
+.flexatomique{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.supprcompte{
+    display: flex;
+    text-align: center;
+    align-items: end;
+    justify-content: center;
+    color: white;
+    background: #B95E06;
+}

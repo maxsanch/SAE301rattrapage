@@ -222,7 +222,10 @@ if (count($mesruches)) {
                 <div class="erreurfull">
                     <?= $erreur3 ?>
                 </div>
-                <button>Modifier</button>
+                <div class="flexatomique">
+                    <div class="supprcompte">Supprimer le compte</div><button>Modifier</button>
+                </div>
+
             </form>
         </div>
     </div>
@@ -269,7 +272,7 @@ if (count($mesruches)) {
 
             document.querySelector('.fixeddanslefixed').classList.remove('ouverturepopoup')
             document.querySelector('.cache_fond').classList.remove('cache_plein')
-            
+
             setTimeout(removecase, 550)
 
             function removecase() {

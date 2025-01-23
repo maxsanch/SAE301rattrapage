@@ -291,7 +291,7 @@ function ruches($message)
     // Récupération des ruches associées à l'utilisateur connecté, identifiées par son ID.
     $getruche = $ruche->getruches($utilisateur[0]['Id_utilisateur']);
 
-    // Chargement des données des ruches depuis un fichier JSON externe.
+    // Chargement des données des ruches depuis le JSON.
     $fichier = file_get_contents("js/data_ruche.json");
 
     // Décodage des données JSON en tableau PHP pour pouvoir les manipuler.
