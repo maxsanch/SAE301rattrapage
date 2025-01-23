@@ -56,7 +56,7 @@ if (count($mesruches)) {
 
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
     <link rel="stylesheet" href="../styles/GestionRuches.css">
-    <link rel="stylesheet" media="(max-width: 1200px" href="../styles/Tablette.css">
+    <link rel="stylesheet" media="(max-width: 1200px)" href="../styles/Tablette.css">
     <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"

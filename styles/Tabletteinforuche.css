@@ -1,0 +1,83 @@
+
+/* informations globales ruches */
+
+.ruche_informations{
+    display: block;
+}
+
+.flex_image_info{
+    display: block;
+}
+
+/* notes du site */
+
+.grid_notes{
+    grid-template-columns: 1fr;
+}
+
+.note{
+    grid-row: 1;
+}
+.void{
+    display: none;
+}
+
+.grid_placement_titre{
+    grid-template-columns: 1fr;
+}
+
+.grid_notes{
+    margin-bottom: 50px;
+}
+
+.g1{
+    margin-bottom: 50px;
+}
+
+/* filtre de recherches */
+
+
+.filtre{
+    display: block;
+}
+
+.menus_deroulant{
+    display: block;
+}
+
+/* menus déroulants */
+
+.absolute_deroulant{
+    z-index: 999;
+}
+
+#ruchesfiltre{
+    display: block;
+}
+
+
+/* carte du site */
+
+/* bouton ouverture de la carte */
+
+.iconcarte{
+    width: 40px;
+    right: 10px;
+    bottom: 10x;
+}
+
+/* carte */
+
+.fixed_carte{
+    width: 80%;
+}
+
+.croixfixed{
+    width: 30px;
+}
+
+/* taille max qu'on enlève sur mobile */
+
+.image_ruche>img{
+    max-height: none;
+}
