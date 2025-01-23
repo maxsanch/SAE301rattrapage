@@ -8,26 +8,25 @@
 /* notes du site */
 
 .grid_notes{
-    grid-template-columns: 1fr;
-}
-
-.note{
-    grid-row: 1;
-}
-.void{
-    display: none;
+    grid-template-columns: 1fr 1fr;
 }
 
 .grid_placement_titre{
     grid-template-columns: 1fr;
 }
 
-.grid_notes{
-    margin-bottom: 50px;
+.graphiques{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
-.g1{
-    margin-bottom: 50px;
+
+/* pour le formulaire */
+
+.formulairetest{
+    width: 300px;
 }
 
 /* filtre de recherches */
