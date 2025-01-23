@@ -88,6 +88,7 @@ if (count($getruche)) {
     <title>Document</title>
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
     <link rel="stylesheet" href="../styles/Note.css">
+    <link rel="stylesheet" media="(max-width: 1200px)" href="../styles/Tablette.css">
     <link rel="stylesheet" media="(max-width: 620px)" href="../styles/MesNotesMobile.css">
     <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
