@@ -184,6 +184,7 @@ $final = join(',',$tableau);
     <title>Gestion des utilisateurs</title>
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
     <link rel="stylesheet" href="../styles/GestionUtilisateur.css">
+    <link rel="stylesheet" media="(max-width: 1200px)" href="../styles/Tablette.css">
     <link rel="stylesheet" media="(max-width: 620px)" href="../styles/GestionUtilisateursmobile.css">
     <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
 </head>
