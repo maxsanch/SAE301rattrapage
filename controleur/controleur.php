@@ -579,7 +579,7 @@ function ajoutnote($ruches, $notecontent)
 
             if (isset($_GET['prevpage'])) {
                 if ($_GET['prevpage'] == 'ajouternote') {
-                    notes();
+                    header('Location: index.php?page=Notes');
                 } else {
                     ruches($message);
                 }
@@ -587,7 +587,6 @@ function ajoutnote($ruches, $notecontent)
                 ruches($message);
             }
         } else {
-
             // erreur
             $message = 'Une erreur est survenue';
             if (isset($_GET['prevpage'])) {

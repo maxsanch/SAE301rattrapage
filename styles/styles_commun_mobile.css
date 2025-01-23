@@ -1,5 +1,9 @@
 /* site général */
 
+body{
+    font-size: 14px;
+}
+
 img {
     width: 100%;
 }

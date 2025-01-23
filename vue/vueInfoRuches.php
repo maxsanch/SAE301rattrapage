@@ -35,7 +35,7 @@ if (count($getruche)) {
         $i = $r["ID_Ruches"];
         // mise en place des marker si des ruches sont disponibles
         if (isset($ruches->$i)) {
-            $markers .= 'var marker' . $i . ' = L.marker([' . $ruches->$i->gps[0] . ', ' . $ruches->$i->gps[1] . ']).addTo(map); marker'. $i .'.bindPopup("Ruche : '.$r['nom'].'");';
+            $markers .= 'var marker' . $i . ' = L.marker([' . $ruches->$i->gps[0] . ', ' . $ruches->$i->gps[1] . ']).addTo(map); marker' . $i . '.bindPopup("Ruche : ' . $r['nom'] . '");';
         } else {
             $markers .= "";
         }
@@ -293,6 +293,7 @@ if (count($getruche)) {
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
     <link rel="stylesheet" href="../styles/inforuches.css">
     <link rel="stylesheet" media="(max-width: 1200px)" href="../styles/Tablette.css">
+    <link rel="stylesheet" media="(max-width: 1200px)" href="../styles/Tabletteinforuche.css">
     <link rel="stylesheet" media="(max-width: 620px)" href="../styles/stylesinforuchemobile.css">
     <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
@@ -405,78 +406,78 @@ if (count($getruche)) {
                         <div class="choix">&lt; 280 bps</div>
                     </div>
                 </div>
-                <!-- div contenant les menus et leurs titre -->
-                <div class="menus_deroulant">
-                    <p>Température</p>
-                    <!-- le menu déroulant -->
-                    <div class="menu_deroulant">
-                        <div class="information" id="tpschoisi">
-                            Pas de filtre.
-                        </div>
-                        <div class="fleche">
-                            <img src="../img/icone_fleche_bas.svg" alt="fleche vers le bas">
-                        </div>
-                        <div class="absolute_deroulant" id="temps">
-                            <div class="choix">Pas de filtre.</div>
-                            <div class="choix">10 - 14°</div>
-                            <div class="choix">15 - 19 °</div>
-                            <div class="choix">20 - 24 °</div>
-                            <div class="choix">25 - 29 °</div>
-                            <div class="choix">30 - 34 °</div>
-                            <div class="choix">35 - 39 °</div>
-                            <div class="choix">40 - 44 °</div>
-                            <div class="choix">45 - 50 °</div>
-                        </div>
+            </div>
+            <!-- div contenant les menus et leurs titre -->
+            <div class="menus_deroulant">
+                <p>Température</p>
+                <!-- le menu déroulant -->
+                <div class="menu_deroulant">
+                    <div class="information" id="tpschoisi">
+                        Pas de filtre.
+                    </div>
+                    <div class="fleche">
+                        <img src="../img/icone_fleche_bas.svg" alt="fleche vers le bas">
+                    </div>
+                    <div class="absolute_deroulant" id="temps">
+                        <div class="choix">Pas de filtre.</div>
+                        <div class="choix">10 - 14°</div>
+                        <div class="choix">15 - 19 °</div>
+                        <div class="choix">20 - 24 °</div>
+                        <div class="choix">25 - 29 °</div>
+                        <div class="choix">30 - 34 °</div>
+                        <div class="choix">35 - 39 °</div>
+                        <div class="choix">40 - 44 °</div>
+                        <div class="choix">45 - 50 °</div>
                     </div>
                 </div>
-                <!-- div contenant les menus et leurs titre -->
-                <div class="menus_deroulant">
-                    <p>Poid du miel</p>
-                    <!-- le menu déroulant -->
-                    <div class="menu_deroulant">
-                        <div class="information" id="pdschoisi">
-                            Pas de filtre.
-                        </div>
-                        <div class="fleche">
-                            <img src="../img/icone_fleche_bas.svg" alt="fleche vers le bas">
-                        </div>
-                        <div class="absolute_deroulant" id="poid">
-                            <div class="choix">Pas de filtre.</div>
-                            <div class="choix">> 5 kg</div>
-                            <div class="choix">> 6 kg</div>
-                            <div class="choix">> 7 kg</div>
-                            <div class="choix">> 8 kg</div>
-                            <div class="choix">> 9 kg</div>
-                            <div class="choix">> 10 kg</div>
-                            <div class="choix">> 11 kg</div>
-                            <div class="choix">> 12 kg</div>
-                            <div class="choix">> 13 kg</div>
-                            <div class="choix">> 14 kg</div>
-                            <div class="choix">> 15 kg</div>
-                            <div class="choix">> 16 kg</div>
-                            <div class="choix">> 17 kg</div>
-                            <div class="choix">> 18 kg</div>
-                            <div class="choix">> 19 kg</div>
-                            <div class="choix">> 20 kg</div>
-                        </div>
+            </div>
+            <!-- div contenant les menus et leurs titre -->
+            <div class="menus_deroulant">
+                <p>Poid du miel</p>
+                <!-- le menu déroulant -->
+                <div class="menu_deroulant">
+                    <div class="information" id="pdschoisi">
+                        Pas de filtre.
                     </div>
+                    <div class="fleche">
+                        <img src="../img/icone_fleche_bas.svg" alt="fleche vers le bas">
+                    </div>
+                    <div class="absolute_deroulant" id="poid">
+                        <div class="choix">Pas de filtre.</div>
+                        <div class="choix">> 5 kg</div>
+                        <div class="choix">> 6 kg</div>
+                        <div class="choix">> 7 kg</div>
+                        <div class="choix">> 8 kg</div>
+                        <div class="choix">> 9 kg</div>
+                        <div class="choix">> 10 kg</div>
+                        <div class="choix">> 11 kg</div>
+                        <div class="choix">> 12 kg</div>
+                        <div class="choix">> 13 kg</div>
+                        <div class="choix">> 14 kg</div>
+                        <div class="choix">> 15 kg</div>
+                        <div class="choix">> 16 kg</div>
+                        <div class="choix">> 17 kg</div>
+                        <div class="choix">> 18 kg</div>
+                        <div class="choix">> 19 kg</div>
+                        <div class="choix">> 20 kg</div>
+                    </div>
+                </div>
 
-                </div>
-                <!-- div contenant les menus et leurs titre -->
-                <div class="menus_deroulant">
-                    <p id="ruchesfiltre">Ruche</p>
-                    <!-- le menu déroulant -->
-                    <div class="menu_deroulant">
-                        <div class="information" id="rchoisi">
-                            Pas de filtre.
-                        </div>
-                        <div class="fleche">
-                            <img src="../img/icone_fleche_bas.svg" alt="fleche vers le bas">
-                        </div>
-                        <div class="absolute_deroulant" id="ruche">
-                            <div class="choix">Pas de filtre.</div>
-                            <?= $choixruche ?>
-                        </div>
+            </div>
+            <!-- div contenant les menus et leurs titre -->
+            <div class="menus_deroulant">
+                <p id="ruchesfiltre">Ruche</p>
+                <!-- le menu déroulant -->
+                <div class="menu_deroulant">
+                    <div class="information" id="rchoisi">
+                        Pas de filtre.
+                    </div>
+                    <div class="fleche">
+                        <img src="../img/icone_fleche_bas.svg" alt="fleche vers le bas">
+                    </div>
+                    <div class="absolute_deroulant" id="ruche">
+                        <div class="choix">Pas de filtre.</div>
+                        <?= $choixruche ?>
                     </div>
                 </div>
             </div>
