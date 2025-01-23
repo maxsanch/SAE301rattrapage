@@ -156,6 +156,10 @@ header {
     display: none;
 }
 
+.LaBarre2{
+    display: none;
+}
+
 .MesRuches {
     display: flex;
     flex-flow: row wrap;
@@ -244,4 +248,24 @@ body {
     grid-column: span 2;
     width: auto;
     text-align: center;
+}
+
+.pop_up_fixed_info_users{
+    display: block;
+    grid-template-columns: 1.5fr 3.5fr;
+    width: 85%;
+    padding: 32px;
+}
+
+.photo_left{
+    display: none;
+}
+
+.back{
+    width: 90%;
+}
+
+.carte_ruche{
+    display: flex;
+    align-items: center;
 }
