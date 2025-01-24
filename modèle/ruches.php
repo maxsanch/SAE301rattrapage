@@ -237,4 +237,18 @@ class ruches extends database
         // Retourne les résultats
         return $rucheadmin;
     }
+
+    public function getgerant($id){
+        // Création d'un tableau de données avec l'ID de la tâche
+        $data = array($id);
+
+        // Requête SQL pour supprimer une entrée de la table "attente" où l'ID correspond
+        $req = 'SELECT prenom FROM utilisateurs INNER JOIN gérer ON gérer.Id_utilisateur = utilisateurs.Id_utilisateur WHERE ID_Ruches = ?';
+
+        // Exécution de la requête préparée
+        $user = $this->execReqPrep($req, $data);
+
+        // Retourne le résultat de l'exécution de la requête
+        return $user;
+    }
 }

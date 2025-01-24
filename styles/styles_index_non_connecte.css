@@ -716,6 +716,18 @@ h3 {
     transition: 0.4s;
 }
 
+.parentmess{
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #B95E06;
+    font-weight: bold;
+    box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.223);
+    position: sticky;
+    background: #F7F3F0;
+    bottom: 0;
+}
+
 .popupouverte {
     display: block;
 }

@@ -93,10 +93,23 @@ function demandesruches()
         // Si des demandes existent, on génère les blocs HTML correspondants.
         if (count($demandes)) {
             foreach ($demandes as $ligne) {
+                $testruche = $ruche->getgerant($ligne['ID_Ruches']);
+                $boucle = "";
+                if(count($testruche)){
+                    foreach($testruche as $lignes){
+                        $boucle .= $lignes['prenom']." ";
+                    }
+                    $variableruche = "<div class='id_entre'>Cette ruche appartient déjà à : ".$boucle."</div>";
+                }
+                else{
+                    $variableruche = '';
+                }
+
                 // Construction des éléments HTML pour chaque demande avec des liens d'acceptation et de refus.
                 $demandes_ruches .= '<div class="demande">
                     <div class="nom_user">' . $ligne['prenom_utilisateur'] . ' a envoyé une demande de validation de ruche.</div>
                     <div class="id_entre">ID entré par ' . $ligne['prenom_utilisateur'] . ' : ' . $ligne['ID_Ruches'] . '</div>
+                    '.$variableruche.'
                     <div class="boutons_Ajout_Ruche">
                         <a class="accept_ruche" href="index.php?page=accepter&IdRuche=' . $ligne['ID_Ruches'] . '&IdUtilisateur=' . $ligne['Id_utilisateur'] . '&NomRuche=' . $ligne['nom_ruche'] . '&idDemande=' . $ligne['ID_attente'] . '">Accepter</a>
                         <a class="refus_ruche" href="index.php?page=Refuser&idDemande=' . $ligne['ID_attente'] . '">Refuser</a>
@@ -512,7 +525,7 @@ function refuser($id)
 
     // message transmis
 
-    $message = 'La demande à bien été suprimée.';
+    $message = '<div class="opuped">La demande à bien été suprimée.</div>';
     $usersingle = "";
 
     // retour a la page des utilisateurs

@@ -139,13 +139,19 @@ if (!empty($usersingle)) {
     $ledexiemetrucquifaittoubuguer = "";
 }
 
+if ($message != "") {
+    $fonction = 'document.querySelector(".pop_up_admin_demande").classList.add("popupouverte"); 
+                document.querySelector(".cache_fond").classList.add("cache_plein")';
+} else {
+    $fonction = "";
+}
 
 // tableau pour le graphique
 $tableau = [];
-foreach($nombreparmois as $cle){
-    $tableau[] = $cle['nombreConnexion'].' ';
+foreach ($nombreparmois as $cle) {
+    $tableau[] = $cle['nombreConnexion'] . ' ';
 }
-$final = join(',',$tableau);
+$final = join(',', $tableau);
 ?>
 
 <!DOCTYPE html>
@@ -176,7 +182,11 @@ $final = join(',',$tableau);
             <h2>Boite de récéption</h2>
             <img id="croixboite" src="../img/svgcroixrefus.svg" alt="croix fermeture">
         </div>
+
         <?= $demandes_ruches ?>
+        <div class="parentmess">
+            <?= $message ?>
+        </div>
     </div>
     <main>
         <?= $contentuser ?>
@@ -211,16 +221,17 @@ $final = join(',',$tableau);
     <script src="../js/script_commun_header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        <?= $fonction ?>
         // enlever les pop ups
 
-        if(document.querySelector('#celuiuser') && document.querySelector('#croixuserchoose')){
+        if (document.querySelector('#celuiuser') && document.querySelector('#croixuserchoose')) {
             document.querySelector('#celuiuser').addEventListener('click', enleveruser)
             document.querySelector('#croixuserchoose').addEventListener('click', enleveruser)
         }
 
         // enlever les infos de l'utilisateur
 
-        function enleveruser(){
+        function enleveruser() {
             document.querySelector('#celuiuser').classList.add('enlever')
             document.querySelector('.pop_up_fixed_info_users').classList.add('enlever')
             document.querySelector('.fixeddanslefixed').classList.remove('ouverturepopoup');
@@ -258,7 +269,7 @@ $final = join(',',$tableau);
 
         function changer() {
             document.querySelector('.infos').innerHTML = "<form action=index.php?page=resetpassword&iduser=<?= $letrucquifaittoubuguer ?> method='post'><h2>Modifier le mot de passe de : <?= $ledexiemetrucquifaittoubuguer ?></h2><div class='mdpreset'><div class='casejaune'><input maxlength='50' class='enleverstpp' placeholder='Entrez le nouveau mot de passe' required type='password' name='mdp'></div><div><div class='grasuser'>Confirmez le mot de passe</div><div class='casejaune'><input maxlength='50' class='enleverstpp' required placeholder='Confirmer le mot de passe' type='password' name='confirmation'></div></div></div><button>Changer le mot de passe.</button></form>"
-        }
+        };
 
 
         <?= $fonctionadmin ?>
