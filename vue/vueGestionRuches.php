@@ -105,11 +105,11 @@ if (count($mesruches)) {
             <div class="ajout_ruches">
                 <div class="nom_ruche">
                     <div>Nom de la ruche</div>
-                    <input type="text" name="nomruche">
+                    <input maxlength="30" type="text" name="nomruche">
                 </div>
                 <div class="ID_appareil">
-                    <div>ID de l'appareil (ce dernier vous à été transmis lors de l'achat de l'appareil)</div>
-                    <input type="number" name="id_ruche">
+                    <div>ID de l'appareil (transmis lors de l'achat de l'appareil : ex: 00000X)</div>
+                    <input type="number" maxlength="30" name="id_ruche">
                 </div>
             </div>
 
