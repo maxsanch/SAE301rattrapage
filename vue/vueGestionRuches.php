@@ -84,6 +84,17 @@ if (count($mesruches)) {
         </div>
     </div>
 
+    <div class='fixeddanslefixed2'>
+        <p>Voulez vous vraiment supprimer votre compte ?</p>
+        <div class='ledarondufixe2'>
+            <a>
+                <div class='nonjesuppr2'>Non</div>
+            </a><a href='index.php?page=deletmyaccount'>
+                <div class='ouijesuppr2'>Oui</div>
+            </a>
+        </div>
+    </div>
+
     <!-- Boîte de réception des demandes de ruche -->
     <div class="pop_up_admin_demande">
         <div class="topinfo">
@@ -223,7 +234,7 @@ if (count($mesruches)) {
                     <?= $erreur3 ?>
                 </div>
                 <div class="flexatomique">
-                    <div class="supprcompte">Supprimer le compte</div><button>Modifier</button>
+                    <button class="supprcompte">Supprimer le compte</button><button>Modifier</button>
                 </div>
 
             </form>
@@ -240,8 +251,21 @@ if (count($mesruches)) {
         <?= $fonctionadmin ?>
         <?= $lenombre ?>
 
-        // utiliser fetch
+        // enlever les propriétées du bouton
 
+        document.querySelector('.cache_fond').addEventListener('click', ouioui)
+        
+        function ouioui(){
+            document.querySelector('.fixeddanslefixed2').classList.remove('cache_plein')
+            document.querySelector('.fixeddanslefixed').classList.remove('cache_plein')
+        }
+        document.querySelector('.supprcompte').addEventListener('click', suppressionconfirmation)
+
+        function suppressionconfirmation(event) {
+            event.preventDefault()
+            document.querySelector('.fixeddanslefixed2').classList.add('cache_plein')
+            document.querySelector('.cache_fond').classList.add('cache_plein')
+        }
 
         // affichage ou non de ce qu'on ecrit dans le input du password
 
@@ -296,6 +320,13 @@ if (count($mesruches)) {
 
         function enlever() {
             document.querySelector('.fixeddanslefixed').classList.remove('ouverturepopoup')
+            document.querySelector('.cache_fond').classList.remove('cache_plein')
+        }
+
+        document.querySelector('.nonjesuppr2').addEventListener('click', enlever)
+
+        function enlever() {
+            document.querySelector('.fixeddanslefixed2').classList.remove('cache_plein')
             document.querySelector('.cache_fond').classList.remove('cache_plein')
         }
     </script>

@@ -50,7 +50,10 @@ try {
             } else if ($_GET['page'] == 'ajoutRuche') {
                 // ajout d'une ruche dans la base de données
                 ajout($_POST['nomruche'], $_POST['id_ruche']);
-            } else if ($_GET['page'] == 'modifier') {
+            } else if($_GET['page'] == "deletmyaccount"){
+                deletmyaccount();
+            }
+            else if ($_GET['page'] == 'modifier') {
                 // modification d'une ruche dans la base de données
                 change($_POST['nomruche'], $_GET['ruche']);
             } else if ($_GET['page'] == 'suppression') {

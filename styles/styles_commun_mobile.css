@@ -128,3 +128,7 @@ img {
 .motdepasse{
     width: 100%;
 }
+
+.flexatomique{
+    grid-template-columns: 1fr;
+}
