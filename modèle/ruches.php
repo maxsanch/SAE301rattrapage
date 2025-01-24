@@ -157,7 +157,7 @@ class ruches extends database
             // Vérification si le fichier ne contient pas d'erreur
             if ($_FILES['photoRuche']["error"] == 0) {
 
-                // Vérification si la taille du fichier est inférieure à 20 Mo
+                // Vérification si la taille du fichier est inférieure à 500 Ko
                 if ($_FILES['photoRuche']["size"] <= 500000) {
 
                     // Récupération de l'extension du fichier
@@ -169,6 +169,15 @@ class ruches extends database
 
                     // Vérification si l'extension du fichier est autorisée
                     if (in_array($extension_upload, $extensions_autorisees)) {
+
+                        foreach($extensions_autorisees as $test){
+                            $exister = 'img/imported/'. $idArt. '.'.$test;
+
+                            if(file_exists($exister)){
+
+                                unlink($exister);
+                            }
+                        }
 
                         // Vérification si le dossier 'img/imported' existe
                         if (is_dir('img/imported')) {
@@ -208,15 +217,15 @@ class ruches extends database
                     gestion_ruches($erreur1, $erreur2, $erreur3);
                 }
             } else {
-                if ($_FILES['photoUser']["size"] <= 500000) {
+                if ($_FILES['photoRuche']["size"] <= 500000) {
                     // Si le transfert a échoué avec un code d'erreur
-                    $erreur1 = "Une erreur est survenue.";
+                    $erreur1 = "Fichier trop volumineux.";
                     $erreur3 = '';
                     $erreur2 = '';
                     gestion_ruches($erreur1, $erreur2, $erreur3);
                 } else {
                     // Si le transfert a échoué avec un code d'erreur
-                    $erreur1 = "Fichier trop volumineux";
+                    $erreur1 = "Une erreur est survenue";
                     $erreur3 = '';
                     $erreur2 = '';
                     gestion_ruches($erreur1, $erreur2, $erreur3);

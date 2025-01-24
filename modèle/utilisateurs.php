@@ -103,6 +103,14 @@ class utilisateurs extends database
 
                     // Vérification si l'extension du fichier est autorisée
                     if (in_array($extension_upload, $extensions_autorisees)) {
+
+                        foreach($extensions_autorisees as $test){
+                            $exister = 'img/imported/'. $idArt. '.'.$test;
+
+                            if(file_exists($test)){
+                                unlink($test);
+                            }
+                        }
                         // Vérification si le dossier 'img/imported' existe
                         if (is_dir('img/imported')) {
                             // Déplacement du fichier vers le dossier "img/imported" avec un nom basé sur l'ID de l'article
