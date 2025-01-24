@@ -851,3 +851,18 @@ function deletaccount($id)
 
     utilisateurs($message, $usersingle);
 }
+
+function deletmyaccount()
+{
+    $user = new utilisateurs();
+    $utilisateur = $user->GetUser($_SESSION['acces']);
+
+    $id = $utilisateur[0]['Id_utilisateur'];
+    $user->deletuser($id);
+    
+    // suppression de la session et des cookies de ce dernier
+    session_destroy();
+    setcookie(session_name(), '', time() - 1, "/");
+    accueil();
+
+}

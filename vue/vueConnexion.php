@@ -24,12 +24,12 @@
             <div class="epc">
                 <!-- Champ pour l'email -->
                 <label>
-                    <input type="email" name="email" required placeholder="Email">
+                    <input type="email" maxlength="50" name="email" required placeholder="Email">
                 </label>
                 
                 <!-- Champ pour le mot de passe avec l'option d'afficher ou de masquer le mot de passe -->
                 <label class="mdpconnex">
-                    <input type="password" name="MDP" class="motdepasse" required placeholder="Mot de passe">
+                    <input type="password" maxlength="50" name="MDP" class="motdepasse" required placeholder="Mot de passe">
                     <!-- Icône pour afficher/masquer le mot de passe -->
                     <div class="oeil oeilferme">
                         <img id="fermé" src="../img/oeilfermé.svg" alt="icone d'oeil">

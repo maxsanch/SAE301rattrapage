@@ -73,7 +73,7 @@ if (count($mesruches)) {
             <div class="ajout_ruches">
                 <div class="nom_ruche">
                     <div>Nom de la ruche</div>
-                    <input type="text" name="nomruche">
+                    <input  type="text" maxlength="30" name="nomruche">
                 </div>
             </div>
             <!-- Affichage des erreurs éventuelles lors de la modification. -->
