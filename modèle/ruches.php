@@ -37,7 +37,7 @@ class ruches extends database
     Entrée : $nom : Le nom de la ruche, $id : L'ID de la ruche
     *******************************************************/
     public function ajouter($nom, $id)
-    {   
+    {
         $data = array($id, $nom);
 
         $req = "INSERT INTO `ruches` (`ID_Ruches`, `nom`) VALUES (?, ?);"; // Requête SQL pour ajouter une ruche.
@@ -208,11 +208,19 @@ class ruches extends database
                     gestion_ruches($erreur1, $erreur2, $erreur3);
                 }
             } else {
-                // Si le transfert a échoué avec un code d'erreur
-                $erreur2 = "Echec du transfert avec le code d'erreur : " . $_FILES['photoRuche']['error'] . "";
-                $erreur3 = '';
-                $erreur1 = '';
-                gestion_ruches($erreur1, $erreur2, $erreur3);
+                if ($_FILES['photoUser']["size"] <= 500000) {
+                    // Si le transfert a échoué avec un code d'erreur
+                    $erreur1 = "Une erreur est survenue.";
+                    $erreur3 = '';
+                    $erreur2 = '';
+                    gestion_ruches($erreur1, $erreur2, $erreur3);
+                } else {
+                    // Si le transfert a échoué avec un code d'erreur
+                    $erreur1 = "Fichier trop volumineux";
+                    $erreur3 = '';
+                    $erreur2 = '';
+                    gestion_ruches($erreur1, $erreur2, $erreur3);
+                }
             }
         }
     }
