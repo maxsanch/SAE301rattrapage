@@ -139,34 +139,7 @@ if (!empty($usersingle)) {
     $ledexiemetrucquifaittoubuguer = "";
 }
 
-if ($message != "") {
-    // message si existant dans une pop up
-    $infoaffiche = '<div class="informationerreur">
-        <div class="topinfo">
-            <b>Information</b>
-            <img id="croixinfo" src="../img/svgcroixrefus.svg" alt="croix de refus">
-        </div>
-        <div class="messageuser">
-            '.$message.'
-        </div>
-    </div>
-    <div class="cachetjrla">
 
-    </div>';
-} else {
-    // sinon il est pas la
-    $infoaffiche = '<div class="informationerreur enlever">
-        <div class="topinfo">
-            <b>Information</b>
-            <img id="croixinfo" src="../img/svgcroixrefus.svg" alt="croix de refus">
-        </div>
-        <div class="messageuser">
-        </div>
-    </div>
-    <div class="cachetjrla enlever">
-
-    </div>';
-}
 // tableau pour le graphique
 $tableau = [];
 foreach($nombreparmois as $cle){
@@ -205,8 +178,6 @@ $final = join(',',$tableau);
         </div>
         <?= $demandes_ruches ?>
     </div>
-    <!-- pop up info -->
-    <?= $infoaffiche ?>
     <main>
         <?= $contentuser ?>
         <h2 class="Titre">Gestion des utilisateurs</h2>
@@ -241,14 +212,6 @@ $final = join(',',$tableau);
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         // enlever les pop ups
-        document.querySelector('#croixinfo').addEventListener('click', enlever)
-        document.querySelector(".cachetjrla").addEventListener('click', enlever)
-
-        function enlever(){
-            document.querySelector(".cachetjrla").classList.add('enlever')
-            document.querySelector('.informationerreur').classList.add('enlever')
-            
-        }
 
         if(document.querySelector('#celuiuser') && document.querySelector('#croixuserchoose')){
             document.querySelector('#celuiuser').addEventListener('click', enleveruser)

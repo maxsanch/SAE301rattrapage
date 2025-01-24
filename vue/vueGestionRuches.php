@@ -85,7 +85,7 @@ if (count($mesruches)) {
     </div>
 
     <div class='fixeddanslefixed2'>
-        <p>Voulez vous vraiment supprimer votre compte ?</p>
+        <p>Voulez vous vraiment <b class="alerte">supprimer</b> votre compte ?</p>
         <div class='ledarondufixe2'>
             <a>
                 <div class='nonjesuppr2'>Non</div>

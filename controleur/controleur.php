@@ -60,7 +60,7 @@ function accueil_connecté()
 
 function demandesruches()
 {
-    // Création d'une instance de la classe "utilisateurs" pour récupérer les informations sur l'utilisateur connecté.
+    // alelr vers la classe utilisateurs quand on est connectés
     $getUser = new utilisateurs();
     $utilisateur = $getUser->GetUser($_SESSION['acces']); // Appel à la méthode pour récupérer les données de l'utilisateur via la session.
 
@@ -533,21 +533,23 @@ function accepter($idruche, $iduser, $nomruche, $idattente)
 
         if (!empty($verifuser)) {
             // message transmis si ce dernier est déjà administrateur, et renvoie vers la page de gestion de utilisateurs 
-            $message = 'Cet utilisateur est déjà administrateur de la ruche n°' . $idruche . '.';
+            $message = '<div class="opuped">Cet utilisateur est déjà administrateur de la ruche n°' . $idruche . '.</div>';
+            $addruche->deletask($idattente);
             $usersingle = '';
             utilisateurs($message, $usersingle);
         } else {
             // ajout de l'utilisateur en tant qu'administrateur de la ruche concernée
             $addruche->gerant($iduser, $idruche);
             $addruche->deletask($idattente);
-            $message = "L'utilisateur est maintenant administrateur de la ruche.";
+            $message = "<div class='opuped'>L'utilisateur est maintenant administrateur de la ruche.</div>";
+            
             $usersingle = '';
             utilisateurs($message, $usersingle);
         }
     } else {
         // ajout de l'utilisateur a la ruche concernée
         $addruche->deletask($idattente);
-        $message = 'La ruche a bien été assignée.';
+        $message = '<div class="opuped">La ruche a bien été assignée.</div>';
         $addruche->ajouter($nomruche, $idruche);
         $addruche->gerant($iduser, $idruche);
         $usersingle = '';

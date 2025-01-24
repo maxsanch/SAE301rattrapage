@@ -395,3 +395,10 @@ form{
     gap: 25px;
 }
 
+/* bolder + alerte */
+
+
+.alerte{
+    color: #c71b1b;
+    font-family: Montserrat-black;
+}
