@@ -192,13 +192,6 @@ if (count($getruche)) {
         <?= $fonctionadmin ?>
         <?= $lenombre ?>
 
-        // let lapage = new URLSearchParams(location.search);
-        // let page = lapage.get('page');
-
-        // if(page == "ajoutNote" || page == "modifnote"){
-        //     window.location = "index.php?page=Notes"
-        // }
-        
         // modification du chemin du formulaire a l'ajout
         document.querySelectorAll('.boutonajout').forEach(e => {
 

@@ -3,7 +3,6 @@
 // Définition du header pour les administrateurs
 $header = HEADER_admin;
 
-// Définition du footer pour les utilisateurs non connectés
 $footer = Footer_connecté;
 
 ?>
@@ -17,7 +16,6 @@ $footer = Footer_connecté;
     <title>Ajout de photo pour les utilisateurs</title>
     <link rel="stylesheet" href="../styles/ajoutphoto.css">
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
-    <link rel="stylesheet" media="(max-width: 1200px)" href="../styles/autre.css">
     <link rel="stylesheet" media="(max-width: 1200px)" href="../styles/Tablette.css">
     <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
 </head>
@@ -67,7 +65,7 @@ $footer = Footer_connecté;
     </footer>
     <script src="../js/script_commun_header.js"></script>
     <script>
-        // Exécution de fonctions spécifiques à l'admin (et autres)
+        // Exécution de fonctions spécifiques à l'admin
         <?= $fonctionadmin ?>
         <?= $lenombre ?>
     </script>

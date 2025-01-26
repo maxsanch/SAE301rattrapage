@@ -2,12 +2,12 @@
 
 require_once "modèle/database.php"; // Inclusion du fichier contenant la classe "database" pour permettre l'héritage.
 
-class connexion extends database { // Définition de la classe "connexion" qui hérite de la classe "database".
+class connexion extends database { // classe "connexion" qui hérite de la classe "database".
     
-    // Méthode pour récupérer l'année depuis la table "annee".
+    // Méthode pour récupérer l'année .
     public function getannee(){
-        $req = "SELECT * from annee"; // Requête SQL pour sélectionner toutes les colonnes de la table "annee".
-        $annee = $this->execReq($req); // Exécution de la requête via une méthode héritée de "database".
+        $req = "SELECT * from annee";
+        $annee = $this->execReq($req);
 
         return $annee[0]['annee']; // Retourne la première ligne de la colonne "annee".
     }
@@ -51,7 +51,6 @@ class connexion extends database { // Définition de la classe "connexion" qui h
         return $user[0]['nombreConnexion']; // Retourne la première ligne de la colonne "nombreConnexion".
     }
 
-
     public function ajouter($nb, $mois){
 
         $data = array($nb, $mois);
@@ -62,7 +61,7 @@ class connexion extends database { // Définition de la classe "connexion" qui h
     }
 
     public function getallmois(){
-        // récupérer tout les mois poru ensuite les afficher
+        // récupérer tout les mois pour ensuite les afficher
         $req = "SELECT nombreConnexion from mois";
         $retour = $this->execReq($req);
 

@@ -41,7 +41,7 @@
                     <input type="email" maxlength="50" name="email" required placeholder="Email">
                 </label>
 
-                <!-- Champs pour les mots de passe avec icône d'œil pour afficher/masquer -->
+                <!-- Champs pour les mots de passe avec icône d'oeil pour afficher/masquer -->
                 <label class="mdpconnex">
                     <input maxlength="50" type="password" name="MDP" class="motdepasse" required placeholder="Mot de passe">
                     <!-- Icône pour afficher/masquer le mot de passe -->
@@ -88,14 +88,14 @@
                 if (this.querySelector('img').id == "fermé") {
                     // Changer le type de champ en texte pour afficher le mot de passe
                     e.parentElement.querySelector('.motdepasse').type = 'text'
-                    // Changer l'icône pour l'œil ouvert
+                    // Changer l'icône pour l'oeil ouvert
                     this.querySelector('img').id = 'ouvert'
                     this.querySelector('img').src = "../img/oeilouvert.svg";
                 }
                 else {
                     // Masquer le mot de passe en changeant le type du champ
                     e.parentElement.querySelector('.motdepasse').type = 'password'
-                    // Changer l'icône pour l'œil fermé
+                    // Changer l'icône pour l'oeil fermé
                     this.querySelector('img').id = 'fermé'
                     this.querySelector('img').src = "../img/oeilfermé.svg";
                 }

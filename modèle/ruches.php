@@ -61,7 +61,7 @@ class ruches extends database
 
     /*******************************************************
     Met à jour le nom d'une ruche et son ID
-    Entrée : $nom : Le nouveau nom de la ruche, $newidruche : Le nouvel ID de la ruche, $ancienid : L'ancien ID de la ruche
+    Entrée : $nom : Le nouveau nom de la ruche,, $ancienid : L'ancien ID de la ruche
     *******************************************************/
     public function update($nom, $ancienid)
     {
@@ -77,10 +77,10 @@ class ruches extends database
     *******************************************************/
     public function getruches($user)
     {
-        $data = array($user); // Prépare les données pour la requête SQL (ID de l'utilisateur).
-        $req = 'SELECT * FROM ruches INNER JOIN gérer ON gérer.ID_Ruches=ruches.ID_Ruches WHERE Id_utilisateur = ?'; // Requête SQL pour récupérer toutes les ruches gérées par l'utilisateur.
-        $user = $this->execReqPrep($req, $data); // Exécute la requête préparée et retourne les résultats.
-        return $user; // Retourne les ruches gérées.
+        $data = array($user); 
+        $req = 'SELECT * FROM ruches INNER JOIN gérer ON gérer.ID_Ruches=ruches.ID_Ruches WHERE Id_utilisateur = ?';
+        $user = $this->execReqPrep($req, $data);
+        return $user;
     }
 
     /*******************************************************
@@ -89,10 +89,10 @@ class ruches extends database
     *******************************************************/
     public function supprimer($id)
     {
-        $data = array($id); // Prépare les données pour la requête SQL (ID de la ruche à supprimer).
-        $req = 'DELETE FROM ruches WHERE `ruches`.`ID_Ruches` = ?'; // Requête SQL pour supprimer une ruche.
-        $user = $this->execReqPrep($req, $data); // Exécute la requête préparée.
-        return $user; // Retourne le résultat de la suppression (si nécessaire).
+        $data = array($id); 
+        $req = 'DELETE FROM ruches WHERE `ruches`.`ID_Ruches` = ?'; 
+        $user = $this->execReqPrep($req, $data);
+        return $user;
     }
 
     /*******************************************************
@@ -102,10 +102,10 @@ class ruches extends database
     *******************************************************/
     public function deletuser($id)
     {
-        $data = array($id); // Prépare les données pour la requête SQL (ID de la ruche).
-        $req = 'DELETE FROM gérer WHERE `gérer`.`ID_Ruches` = ?'; // Requête SQL pour supprimer un utilisateur de la gestion d'une ruche.
-        $user = $this->execReqPrep($req, $data); // Exécute la requête préparée.
-        return $user; // Retourne le résultat de la suppression.
+        $data = array($id);
+        $req = 'DELETE FROM gérer WHERE `gérer`.`ID_Ruches` = ?'; 
+        $user = $this->execReqPrep($req, $data);
+        return $user;
     }
 
     /*******************************************************
@@ -114,22 +114,20 @@ class ruches extends database
     *******************************************************/
     public function fileattente($id_user, $id_ruche, $nom_ruche, $prenom_user)
     {
-
         $data = array($id_user, $id_ruche, $nom_ruche, $prenom_user);
-        $req = "INSERT INTO `attente` (`ID_attente`, `Id_utilisateur`, `ID_Ruches`, `nom_ruche`, `prenom_utilisateur`) VALUES (NULL, ?, ?, ?, ?);"; // Requête SQL pour ajouter une demande d'attente.
-        $this->execReqPrep($req, $data); // Exécute la requête.
+        $req = "INSERT INTO `attente` (`ID_attente`, `Id_utilisateur`, `ID_Ruches`, `nom_ruche`, `prenom_utilisateur`) VALUES (NULL, ?, ?, ?, ?);";
+        $this->execReqPrep($req, $data); 
     }
 
     /*******************************************************
     Récupère toutes les demandes d'attente
-    Entrée : Aucun
     Retour : array : Tableau des demandes d'attente
     *******************************************************/
     public function getdemandes()
     {
-        $req = "SELECT * FROM attente"; // Requête SQL pour récupérer toutes les demandes d'attente.
-        $demande = $this->execReq($req); // Exécute la requête.
-        return $demande; // Retourne les demandes d'attente.
+        $req = "SELECT * FROM attente";
+        $demande = $this->execReq($req); 
+        return $demande;
     }
 
     // Fonction pour supprimer une tâche en fonction de son ID

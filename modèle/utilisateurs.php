@@ -71,7 +71,6 @@ class utilisateurs extends database
         // Exécution de la requête
         $users = $this->execReq($req);
 
-        // Retourne les utilisateurs trouvés
         return $users;
     }
 

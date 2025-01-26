@@ -7,7 +7,6 @@ if ($user[0]['Statut'] == 'admin') {
     $header = HEADER_connecté;  // Sinon, affiche le header pour utilisateur connecté
 }
 
-// Déclare le footer pour les utilisateurs non connectés
 $footer = Footer_connecté;
 
 ?>
@@ -21,7 +20,6 @@ $footer = Footer_connecté;
     <title>Information ruches</title>
     <link rel="stylesheet" href="../styles/ajoutphoto.css">
     <link rel="stylesheet" href="../styles/styles_index_non_connecte.css">
-    <link rel="stylesheet" media="(max-width: 1200px)" href="../styles/autre.css">
     <link rel="stylesheet" media="(max-width: 1200px)" href="../styles/Tablette.css">
     <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
 </head>
@@ -52,20 +50,18 @@ $footer = Footer_connecté;
             <div class="form_elt">
                 <!-- Limite la taille maximale de fichier téléchargé -->
                 <input type="hidden" name="MAX_FILE_SIZE" value="500000">
-                <!-- Label pour l'input du fichier -->
                 <label>
                     <span class="orange">Ajoutez </span> <span> Une photo. (max 500ko)</span>
                     <!-- Champ de téléchargement de photo -->
                     <input type="file" class="texte" name="photoRuche" accept="image/jpeg, image/png" hidden>
                 </label>
             </div>
-            <!-- Bouton de soumission du formulaire -->
+            <!--Bouton-->
             <input class="boutbout" type="submit" class="valid" name="ok" value="Valider">
         </form>
     </main>
 
     <footer>
-        <!-- Affiche le footer en fonction du statut de l'utilisateur -->
         <?= $footer ?>
     </footer>
     <script src="../js/script_commun_header.js"></script>

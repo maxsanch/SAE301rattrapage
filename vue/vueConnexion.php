@@ -36,7 +36,7 @@
                     </div>
                 </label>
                 
-                <!-- Bouton pour soumettre le formulaire de connexion -->
+                <!-- Bouton -->
                 <button>Me connecter</button>
                 
                 <!-- Affichage des erreurs, si présentes -->

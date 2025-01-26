@@ -24,10 +24,10 @@ function accueil()
 // réinitialisation ou ajout d'un nombre dans la base de données en fonction de la connexion, le premier de l'an, la première connexion reinitialsie les connextion afin d'être en accord avec le graphique du tableau de bord de la page gestion utilisateurs
 function testetresetannée()
 {
-    $connexion = new connexion(); // Création d'une instance de la classe "connexion".
+    $connexion = new connexion(); // Accès à la classe "connexion".
     $currentyear = $connexion->getannee(); // Récupération de l'année actuelle depuis la base de données.
 
-    // Vérifie si l'année actuelle en base est différente de l'année actuelle du système.
+    // Vérifie si l'année actuelle en base est différente de l'année actuelle.
     if ($currentyear != date('Y')) {
         $ajouterun = $currentyear + 1; // Incrémente l'année.
         $connexion->maj($ajouterun); // Met à jour l'année dans la base de données.
@@ -44,31 +44,31 @@ function testetresetannée()
 // Fonction pour afficher la page d'accueil après connexion.
 function accueil_connecté()
 {
-    $getuser = new utilisateurs(); // Création d'une instance de la classe "utilisateurs".
+    $getuser = new utilisateurs(); // Accès à la classe "utilisateurs".
     $utilisateur = $getuser->GetUser($_SESSION['acces']); // Récupère les informations de l'utilisateur connecté via la session.
 
-    $ruche = new ruches(); // Création d'une instance de la classe "ruches".
+    $ruche = new ruches(); // Accès à la classe "ruches".
     $getruche = $ruche->getruches($utilisateur[0]['Id_utilisateur']); // Récupère les ruches associées à l'utilisateur.
 
-    $fichier = file_get_contents("js/data_ruche.json"); // Lecture du fichier JSON contenant les données des ruches.
-    $ruches = json_decode($fichier); // Décodage du fichier JSON pour le rendre exploitable en PHP.
+    $fichier = file_get_contents("js/data_ruche.json"); // Récupérer le fichier JSON contenant les données des ruches.
+    $ruches = json_decode($fichier); // Décodage
 
-    require "vue/vueIndexConnecte.php"; // Inclut la vue pour afficher la page d'accueil connectée.
+    require "vue/vueIndexConnecte.php";
 }
 
 // fonction permettant l'affichage des demandes de ruches pour l'administrateur afin de faciliter sa mise en place dans toute les pages
 
 function demandesruches()
 {
-    // alelr vers la classe utilisateurs quand on est connectés
+    // aller vers la classe utilisateurs quand on est connectés
     $getUser = new utilisateurs();
-    $utilisateur = $getUser->GetUser($_SESSION['acces']); // Appel à la méthode pour récupérer les données de l'utilisateur via la session.
+    $utilisateur = $getUser->GetUser($_SESSION['acces']);
 
     // Vérification si l'utilisateur a le statut "admin".
     if ($utilisateur[0]['Statut'] == 'admin') {
-        // Création d'une instance de la classe "ruches" pour récupérer les demandes de ruches.
+        // Accès à la classe "ruches" pour récupérer les demandes de ruches.
         $ruche = new ruches();
-        $demandes = $ruche->getdemandes(); // Appel à la méthode pour récupérer les demandes de validation des ruches.
+        $demandes = $ruche->getdemandes();
 
         // Initialisation de la variable pour contenir le HTML des demandes.
         $demandes_ruches = "";
@@ -90,7 +90,7 @@ function demandesruches()
             document.querySelector('.pop_up_admin_demande').classList.remove('popupouverte')
         }";
 
-        // Si des demandes existent, on génère les blocs HTML correspondants.
+        // Si des demandes existent, on génère le HTML correspondant.
         if (count($demandes)) {
             foreach ($demandes as $ligne) {
                 $testruche = $ruche->getgerant($ligne['ID_Ruches']);
@@ -105,7 +105,7 @@ function demandesruches()
                     $variableruche = '';
                 }
 
-                // Construction des éléments HTML pour chaque demande avec des liens d'acceptation et de refus.
+                // Construction des éléments HTML pour chaque demande.
                 $demandes_ruches .= '<div class="demande">
                     <div class="nom_user">' . $ligne['prenom_utilisateur'] . ' a envoyé une demande de validation de ruche.</div>
                     <div class="id_entre">ID entré par ' . $ligne['prenom_utilisateur'] . ' : ' . $ligne['ID_Ruches'] . '</div>
@@ -116,18 +116,18 @@ function demandesruches()
                     </div>
                 </div>';
             }
-            // Script pour mettre à jour le nombre de demandes affichées dans l'interface.
+            // Script pour mettre à jour le nombre de demandes.
             $lenombre = "document.querySelector('.letxt').innerHTML = '" . count($demandes) . "'";
         } else {
-            // Si aucune demande n'existe, afficher un message et retirer l'élément indicateur.
+            // Si aucune demande n'existe, afficher un message et retirer le point rouge.
             $demandes_ruches = "<div class='informationdemande'>Aucune demande n'a été transmise.</div>";
             $lenombre = "document.querySelector('.ptsrouge').remove();";
         }
     } else {
         // Si l'utilisateur n'est pas administrateur, afficher un message d'erreur.
         $demandes_ruches = "<div class='informationdemande'>Vous ne devriez pas avoir accès à ce type d'informations.</div>";
-        $lenombre = ''; // Pas de mise à jour d'indicateur.
-        $fonctionadmin = ''; // Pas de script JavaScript pour les actions d'administration.
+        $lenombre = ''; 
+        $fonctionadmin = ''; 
     }
 
     // Retourne les parties nécessaires : HTML des demandes, script JavaScript pour le nombre et les actions.
@@ -137,31 +137,30 @@ function demandesruches()
 
 function accueil_admin()
 {
-    // Création d'une instance de la classe "utilisateurs" pour interagir avec les données des utilisateurs.
+    // Accès à la classe utilisateurs.
     $getUser = new utilisateurs();
 
-    // Récupération de la liste des utilisateurs administrateurs via la méthode "GetUserAdmin".
+    // Récupération de la liste des utilisateurs.
     $GetAllUser = $getUser->GetUserAdmin();
 
-    // Récupération des informations de l'utilisateur actuellement connecté via la session.
+    // Récupération des informations de l'utilisateur connecté via la session.
     $utilisateur = $getUser->GetUser($_SESSION['acces']);
 
-    // Création d'une instance de la classe "ruches" pour interagir avec les ruches.
+    // Accès à la classe "ruches".
     $ruche = new ruches();
 
     // Récupération des ruches associées à l'utilisateur connecté.
     $getruche = $ruche->getruches($utilisateur[0]['Id_utilisateur']);
 
-    // Lecture d'un fichier JSON contenant des données supplémentaires sur les ruches.
-    $fichier = file_get_contents("js/data_ruche.json"); // Lecture du contenu du fichier JSON.
-    $ruches = json_decode($fichier); // Décodage du JSON en un objet PHP.
+    // Lecture d'un fichier JSON.
+    $fichier = file_get_contents("js/data_ruche.json"); 
+    $ruches = json_decode($fichier);
 
-    // Appel de la fonction "demandesruches" pour gérer les demandes de ruches.
+    // Appel de la fonction "demandesruches".
     $demandes_ruches = demandesruches()[0];
     $lenombre = demandesruches()[1];
     $fonctionadmin = demandesruches()[2];
 
-    // Inclusion de la vue "vueIndexConnecteAdmin" pour afficher l'interface administrateur.
     require "vue/vueIndexConnecteAdmin.php";
 }
 
@@ -195,13 +194,13 @@ function quitter()
     accueil();
 }
 
-// fonction pour connecter un compte déjà existant 
+// fonction pour connecter un compte déjà existant
 function login($nom, $mdp)
 {
-    // Création d'une instance de la classe "utilisateurs" pour interagir avec les utilisateurs.
+    // Accès à la classe utilisateurs.
     $nom_user = new utilisateurs();
 
-    // Récupération des informations de l'utilisateur à partir de son nom ou email.
+    // Récupération des informations de l'utilisateur à partir de son mail.
     $user = $nom_user->GetUser($nom);
 
     // Vérification si un utilisateur correspondant existe.
@@ -217,31 +216,31 @@ function login($nom, $mdp)
             // Vérification du statut de l'utilisateur pour rediriger vers la page appropriée.
             if ($user[0]['Statut'] == 'admin') {
                 // Si l'utilisateur est administrateur :
-                testetresetannée(); // Vérification ou réinitialisation de l'année.
+                testetresetannée(); 
                 accueil_admin(); // Appel de la fonction pour afficher la page d'accueil administrateur.
             } else {
                 // Si l'utilisateur n'est pas administrateur :
-                testetresetannée(); // Vérification ou réinitialisation de l'année.
+                testetresetannée();
                 accueil_connecté(); // Appel de la fonction pour afficher la page d'accueil utilisateur connecté.
             }
         } else {
             // Si le mot de passe est incorrect, afficher un message d'erreur.
             $erreur = '<b>mot de passe incorrecte.</b>';
-            connexion($erreur); // Rediriger vers la page de connexion avec le message d'erreur.
+            connexion($erreur);
         }
     } else {
-        // Si aucun utilisateur ne correspond au nom ou email, afficher un message d'erreur.
+        // Si aucun utilisateur ne correspond au mail, afficher un message d'erreur.
         $erreur = '<b>Identifiant invalide</b>';
-        connexion($erreur); // Rediriger vers la page de connexion avec le message d'erreur.
+        connexion($erreur);
     }
 }
 
-// fonction poru enregistrer un comtpe dans la bdd puis le connecter
+// fonction pour enregistrer un comtpe dans la bdd puis le connecter
 
 function signin($prenom, $nom, $email, $mdp, $mdp2)
 {
 
-    // Nouvelle instance de la classe "utilisateurs" pour effectuer l'inscription.
+    // Appel à la classe utiliasteurs.
     $insc = new utilisateurs();
 
     // Vérification si un utilisateur avec le même email existe déjà dans la base de données.
@@ -249,26 +248,22 @@ function signin($prenom, $nom, $email, $mdp, $mdp2)
 
     // Si aucun utilisateur avec cet email n'est trouvé, on peut continuer l'inscription.
     if (empty($user)) {
-        // Vérification si tous les champs requis sont remplis.
         if (!empty($prenom) && !empty($nom) && !empty($email) && !empty($mdp) && !empty($mdp2)) {
             // Vérification si les deux mots de passe saisis sont identiques.
             if ($mdp == $mdp2) {
-                // Hashage du mot de passe pour sécuriser son stockage en base de données.
+                // Hashage du mot de passe.
                 $mdpgood = password_hash($mdp, PASSWORD_DEFAULT);
 
-                // Appel de la méthode "inscrire" pour insérer les informations dans la base de données.
+                // Appel de la méthode inscrire.
                 $insc->inscrire($prenom, $nom, $email, $mdpgood);
 
                 // Récupération des informations de l'utilisateur nouvellement inscrit.
                 $user = $insc->GetUser($email);
 
-                // Enregistrement de l'email de l'utilisateur dans la session pour gérer son authentification.
+                // Enregistrement de l'email de l'utilisateur dans la session.
                 $_SESSION['acces'] = $user[0]['Mail'];
 
-                // Appel de la fonction "testetresetannée" (vérification ou réinitialisation des données liées à l'année).
                 testetresetannée();
-
-                // Redirection vers la page d'accueil pour un utilisateur connecté.
                 accueil_connecté();
 
             } else {
@@ -292,13 +287,13 @@ function signin($prenom, $nom, $email, $mdp, $mdp2)
 // affichage de la page des ruches
 function ruches($message)
 {
-    // Création d'une instance de la classe "utilisateurs" pour interagir avec les données des utilisateurs.
+    // Accès à la classe utilisateurs.
     $getuser = new utilisateurs();
 
-    // Récupération des informations de l'utilisateur actuellement connecté via son email stocké dans la session.
+    // Récupération des informations de l'utilisateur via la session.
     $utilisateur = $getuser->GetUser($_SESSION['acces']);
 
-    // Création d'une instance de la classe "ruches" pour interagir avec les données des ruches.
+    // Accès à la classe ruches.
     $ruche = new ruches();
 
     // Récupération des ruches associées à l'utilisateur connecté, identifiées par son ID.
@@ -312,15 +307,10 @@ function ruches($message)
 
     // Gestion des demandes de ruches pour un utilisateur administrateur.
 
-    // Appel à la fonction `demandesruches` pour récupérer :
-    // - Le contenu HTML des demandes.
-    // - Le nombre de demandes.
-    // - Le code JavaScript pour gérer les demandes en tant qu'administrateur.
     $demandes_ruches = demandesruches()[0];
     $lenombre = demandesruches()[1];
     $fonctionadmin = demandesruches()[2];
 
-    // Inclusion du fichier de vue "vueInfoRuches.php" pour afficher les informations sur les ruches.
     require "vue/vueInfoRuches.php";
 }
 
@@ -343,7 +333,7 @@ function gestion_ruches($erreur1, $erreur2, $erreur3)
 }
 
 
-// fonction poru modifier les informations d'une ruche, un utilisateur ne peux pas modifier l'id d'une ruche pour des raisons de sécurité
+// fonction pour modifier les informations d'une ruche, un utilisateur ne peux pas modifier l'id d'une ruche pour des raisons de sécurité
 function modification_ruches($erreur)
 {
     $ruches = new ruches();
@@ -394,7 +384,7 @@ function ajout($nom, $id)
     // verfication de la présente de données dans user
     if (!empty($user)) {
         if (!empty($nom) && !empty($id)) {
-            // ajotu a la file d'attente
+            // ajout à la file d'attente
             $addruche->fileattente($user[0]['Id_utilisateur'], $id, $nom, $user[0]['Prenom']);
             $erreur2 = '';
             $erreur3 = '';

@@ -500,8 +500,9 @@ if (count($getruche)) {
             const ajout = url.get('page');
             const suppression = url.get('idnote')
 
+            // pour ajouter une note
+
             if (ajout == 'ajoutNote' && suppression != null) {
-                console.log('test');
                 document.querySelector('.confirmation').classList.add('ouvert2')
                 document.querySelector('.cache_fond').classList.add('ouvert2')
             }
@@ -531,6 +532,8 @@ if (count($getruche)) {
                 });
             }
 
+            // les graphiques chart js
+
             <?= $graphhumid ?>
 
             <?= $graphhtemp ?>
@@ -552,6 +555,8 @@ if (count($getruche)) {
                 border: 'none',
             });
 
+            // la carte
+
             <?= $mapcenter ?>
 
 
@@ -572,6 +577,8 @@ if (count($getruche)) {
                 }
             });
 
+
+            // pour les menus du filtre
             if (document.querySelector('.groupe') != '') {
 
                 document.querySelectorAll('#bps>.choix').forEach(e => {
@@ -708,6 +715,7 @@ if (count($getruche)) {
                 }
             })
 
+            // pour modifier ou supprimer une note
             document.querySelectorAll('.bouton_note').forEach(element => {
 
                 element.addEventListener('click', delet)
@@ -729,6 +737,8 @@ if (count($getruche)) {
                     parent.querySelector('#note' + element.id + '').classList.remove('disabled')
                 }
             });
+
+            // modifier une note
 
             document.querySelectorAll('.modifier').forEach(e => {
                 e.addEventListener('click', changer)
