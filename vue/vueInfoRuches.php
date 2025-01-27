@@ -370,6 +370,17 @@ if (count($getruche)) {
         </form>
     </div>
 
+    <div class='fixeddanslefixed'>
+        <p>Voulez vous vraiment supprimer cette note ?</p>
+        <div class='ledarondufixe'>
+            <a>
+                <div class='nonjesuppr'>Non</div>
+            </a>
+            <a href='#'>
+                <div class='ouijesuppr'>Oui</div>
+            </a>
+        </div>
+    </div>
 
     <!-- div globale qui entoure tout le titre -->
     <div class="haut_titre_soustitre">
@@ -490,6 +501,7 @@ if (count($getruche)) {
             <?= $footer ?>
         </footer>
         <script src="../js/script_commun_header.js"></script>
+        <script src="../js/commun_confirm_pop_up.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
         <script>
@@ -693,6 +705,7 @@ if (count($getruche)) {
             document.querySelector('.croixfixed').addEventListener('click', fermermap)
             document.querySelector('.cache_fond').addEventListener('click', fermermap)
             function fermermap() {
+                document.querySelector('.fixeddanslefixed').classList.remove('ouverturepopoup')
                 document.querySelector('.confirmation').classList.remove('ouvert2')
                 document.querySelector('.fixed_carte').classList.remove('carteouverture')
                 document.querySelector('.fixed_carte').classList.remove('ouvert2')
@@ -752,6 +765,19 @@ if (count($getruche)) {
                     document.querySelector('.formulairetest>form').action = "index.php?page=modifnote&jsruche=null";
                     document.querySelector('#numeroruche').value = splited
                     document.querySelector('#editor>.ql-editor').innerHTML = document.querySelector('#contenu' + splited).innerHTML
+                }
+            })
+
+            document.querySelectorAll('.supprimer').forEach(e => {
+                e.addEventListener('click', ouvrirconf)
+
+                let test = e.href
+
+                function ouvrirconf(event) {
+                    event.preventDefault();
+                    document.querySelector('.cache_fond').classList.add('ouvert2')
+                    document.querySelector('.fixeddanslefixed').classList.add('ouverturepopoup')
+                    document.querySelector('.ouijesuppr').parentElement.href = test
                 }
             })
 

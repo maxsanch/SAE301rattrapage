@@ -246,10 +246,12 @@ if (count($mesruches)) {
         <?= $footer ?>
     </footer>
     <script src="../js/script_commun_header.js"></script>
+    <script src="../js/commun_confirm_pop_up.js"></script>
     <script>
         // affichages de fonctions poru ouvrir la pop up des mails admin
         <?= $fonctionadmin ?>
         <?= $lenombre ?>
+
 
         // enlever les propriétées du bouton
 
@@ -257,7 +259,8 @@ if (count($mesruches)) {
         
         function ouioui(){
             document.querySelector('.fixeddanslefixed2').classList.remove('cache_plein')
-            document.querySelector('.fixeddanslefixed').classList.remove('cache_plein')
+            document.querySelector('.fixeddanslefixed').classList.remove('ouverturepopoup')
+            document.querySelector('.cache_fond').classList.remove('cache_plein')
         }
         document.querySelector('.supprcompte').addEventListener('click', suppressionconfirmation)
 
@@ -316,19 +319,14 @@ if (count($mesruches)) {
             }
         })
 
-        document.querySelector('.nonjesuppr').addEventListener('click', enlever)
+        document.querySelector('.nonjesuppr2').addEventListener('click', enlever2)
 
-        function enlever() {
-            document.querySelector('.fixeddanslefixed').classList.remove('ouverturepopoup')
-            document.querySelector('.cache_fond').classList.remove('cache_plein')
-        }
-
-        document.querySelector('.nonjesuppr2').addEventListener('click', enlever)
-
-        function enlever() {
+        function enlever2() {
             document.querySelector('.fixeddanslefixed2').classList.remove('cache_plein')
             document.querySelector('.cache_fond').classList.remove('cache_plein')
         }
+
+
     </script>
 </body>
 

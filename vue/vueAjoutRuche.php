@@ -25,7 +25,6 @@ $footer = Footer_connecté;
 </head>
 
 <body>
-
     <header>
         <!-- Affiche le header en fonction du statut de l'utilisateur -->
         <?= $header ?>

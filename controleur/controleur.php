@@ -95,13 +95,12 @@ function demandesruches()
             foreach ($demandes as $ligne) {
                 $testruche = $ruche->getgerant($ligne['ID_Ruches']);
                 $boucle = "";
-                if(count($testruche)){
-                    foreach($testruche as $lignes){
-                        $boucle .= $lignes['prenom']." ";
+                if (count($testruche)) {
+                    foreach ($testruche as $lignes) {
+                        $boucle .= $lignes['prenom'] . " ";
                     }
-                    $variableruche = "<div class='id_entre'>Cette ruche appartient déjà à : ".$boucle."</div>";
-                }
-                else{
+                    $variableruche = "<div class='id_entre'>Cette ruche appartient déjà à : " . $boucle . "</div>";
+                } else {
                     $variableruche = '';
                 }
 
@@ -109,7 +108,7 @@ function demandesruches()
                 $demandes_ruches .= '<div class="demande">
                     <div class="nom_user">' . $ligne['prenom_utilisateur'] . ' a envoyé une demande de validation de ruche.</div>
                     <div class="id_entre">ID entré par ' . $ligne['prenom_utilisateur'] . ' : ' . $ligne['ID_Ruches'] . '</div>
-                    '.$variableruche.'
+                    ' . $variableruche . '
                     <div class="boutons_Ajout_Ruche">
                         <a class="accept_ruche" href="index.php?page=accepter&IdRuche=' . $ligne['ID_Ruches'] . '&IdUtilisateur=' . $ligne['Id_utilisateur'] . '&NomRuche=' . $ligne['nom_ruche'] . '&idDemande=' . $ligne['ID_attente'] . '">Accepter</a>
                         <a class="refus_ruche" href="index.php?page=Refuser&idDemande=' . $ligne['ID_attente'] . '">Refuser</a>
@@ -126,8 +125,8 @@ function demandesruches()
     } else {
         // Si l'utilisateur n'est pas administrateur, afficher un message d'erreur.
         $demandes_ruches = "<div class='informationdemande'>Vous ne devriez pas avoir accès à ce type d'informations.</div>";
-        $lenombre = ''; 
-        $fonctionadmin = ''; 
+        $lenombre = '';
+        $fonctionadmin = '';
     }
 
     // Retourne les parties nécessaires : HTML des demandes, script JavaScript pour le nombre et les actions.
@@ -153,7 +152,7 @@ function accueil_admin()
     $getruche = $ruche->getruches($utilisateur[0]['Id_utilisateur']);
 
     // Lecture d'un fichier JSON.
-    $fichier = file_get_contents("js/data_ruche.json"); 
+    $fichier = file_get_contents("js/data_ruche.json");
     $ruches = json_decode($fichier);
 
     // Appel de la fonction "demandesruches".
@@ -216,7 +215,7 @@ function login($nom, $mdp)
             // Vérification du statut de l'utilisateur pour rediriger vers la page appropriée.
             if ($user[0]['Statut'] == 'admin') {
                 // Si l'utilisateur est administrateur :
-                testetresetannée(); 
+                testetresetannée();
                 accueil_admin(); // Appel de la fonction pour afficher la page d'accueil administrateur.
             } else {
                 // Si l'utilisateur n'est pas administrateur :
@@ -381,8 +380,12 @@ function ajout($nom, $id)
     $checkuser = new utilisateurs();
     $addruche = new ruches();
     $user = $checkuser->GetUser($_SESSION['acces']);
+
     // verfication de la présente de données dans user
     if (!empty($user)) {
+
+        $checkdemandes = $addruche->checkdemandes($id, $user[0]['Prenom']['Id_utilisateur']);
+
         if (!empty($nom) && !empty($id)) {
             // ajout à la file d'attente
             $addruche->fileattente($user[0]['Id_utilisateur'], $id, $nom, $user[0]['Prenom']);
@@ -545,7 +548,7 @@ function accepter($idruche, $iduser, $nomruche, $idattente)
             $addruche->gerant($iduser, $idruche);
             $addruche->deletask($idattente);
             $message = "<div class='opuped'>L'utilisateur est maintenant administrateur de la ruche.</div>";
-            
+
             $usersingle = '';
             utilisateurs($message, $usersingle);
         }
@@ -864,7 +867,7 @@ function deletmyaccount()
 
     $id = $utilisateur[0]['Id_utilisateur'];
     $user->deletuser($id);
-    
+
     // suppression de la session et des cookies de ce dernier
     session_destroy();
     setcookie(session_name(), '', time() - 1, "/");

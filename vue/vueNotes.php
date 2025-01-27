@@ -104,6 +104,17 @@ if (count($getruche)) {
     <div class="cache_fond">
 
     </div>
+    <div class='fixeddanslefixed'>
+        <p>Voulez vous vraiment supprimer cette note ?</p>
+        <div class='ledarondufixe'>
+            <a>
+                <div class='nonjesuppr'>Non</div>
+            </a>
+            <a href='#'>
+                <div class='ouijesuppr'>Oui</div>
+            </a>
+        </div>
+    </div>
     <!-- formulaire pour l'ajout de notes ou la modification de notes -->
     <div class="formulairetest">
         <form action="<?= $_SERVER['PHP_SELF'] . '?page=ajoutNote&jsruche=null' ?>" method="post">
@@ -188,6 +199,7 @@ if (count($getruche)) {
 
     <script src="../js/script_commun_header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+    <script src="../js/commun_confirm_pop_up.js"></script>
     <script>
         <?= $fonctionadmin ?>
         <?= $lenombre ?>
@@ -210,7 +222,8 @@ if (count($getruche)) {
         document.querySelector('.exit').addEventListener('click', enleverform)
 
 
-        function enleverform(){
+        function enleverform() {
+            document.querySelector('.fixeddanslefixed').classList.remove('ouverturepopoup')
             document.querySelector('.cache_fond').classList.remove('ouvert2')
             document.querySelector('.formulairetest').classList.remove('ouvert2')
         }
@@ -264,7 +277,7 @@ if (count($getruche)) {
                     }
                     else {
                         if (e.innerHTML == 'Pas de filtre.') {
-                            document.querySelectorAll('.ruche_all_notes').forEach(reset =>{
+                            document.querySelectorAll('.ruche_all_notes').forEach(reset => {
                                 reset.classList.remove('disparu4')
                             })
                         }
@@ -275,6 +288,19 @@ if (count($getruche)) {
                 });
             }
         });
+
+        document.querySelectorAll('.supprimernote').forEach(e => {
+            e.addEventListener('click', ouvrirconf)
+
+            let test = e.href
+
+            function ouvrirconf(event) {
+                event.preventDefault();
+                document.querySelector('.cache_fond').classList.add('ouvert2')
+                document.querySelector('.fixeddanslefixed').classList.add('ouverturepopoup')
+                document.querySelector('.ouijesuppr').parentElement.href = test
+            }
+        })
     </script>
 </body>
 
