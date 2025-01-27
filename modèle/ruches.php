@@ -130,6 +130,21 @@ class ruches extends database
         return $demande;
     }
 
+    /*******************************************************
+    Récupère La demande d'un utilisateur précis (vérification)
+    Retour : array : Tableau des demandes d'attente
+    *******************************************************/
+
+    public function checkdemandes($id, $iduser){
+        $data = array($iduser, $id);
+
+        $req = "SELECT * FROM attente WHERE Id_utilisateur=? AND ID_Ruches =?; "; // Requête SQL pour associer un utilisateur à une ruche.
+
+        $test = $this->execReqPrep($req, $data); // Exécute la requête.
+
+        return $test;
+    }
+
     // Fonction pour supprimer une tâche en fonction de son ID
     public function deletask($id)
     {
