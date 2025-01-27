@@ -383,23 +383,28 @@ function ajout($nom, $id)
 
     // verfication de la présente de données dans user
     if (!empty($user)) {
-
-        $checkdemandes = $addruche->checkdemandes($id, $user[0]['Prenom']['Id_utilisateur']);
-
-        if (!empty($nom) && !empty($id)) {
-            // ajout à la file d'attente
-            $addruche->fileattente($user[0]['Id_utilisateur'], $id, $nom, $user[0]['Prenom']);
+        $checkdemandes = $addruche->checkdemandes($id, $user[0]['Id_utilisateur']);
+        if (!empty($checkdemandes)) {
             $erreur2 = '';
             $erreur3 = '';
-            $erreur1 = 'Votre demande à bien été envoyée';
+            $erreur1 = 'Une ruche à déjà été demandée avec ce compte.';
             gestion_ruches($erreur1, $erreur2, $erreur3);
-
         } else {
-            // echec
-            $erreur1 = 'veuillez remplir les champs obligatoires';
-            $erreur2 = '';
-            $erreur3 = '';
-            gestion_ruches($erreur1, $erreur2, $erreur3);
+            if (!empty($nom) && !empty($id)) {
+                // ajout à la file d'attente
+                $addruche->fileattente($user[0]['Id_utilisateur'], $id, $nom, $user[0]['Prenom']);
+                $erreur2 = '';
+                $erreur3 = '';
+                $erreur1 = 'Votre demande à bien été envoyée';
+                gestion_ruches($erreur1, $erreur2, $erreur3);
+
+            } else {
+                // echec
+                $erreur1 = 'veuillez remplir les champs obligatoires';
+                $erreur2 = '';
+                $erreur3 = '';
+                gestion_ruches($erreur1, $erreur2, $erreur3);
+            }
         }
     } else {
         $erreur1 = 'inscription échouée';

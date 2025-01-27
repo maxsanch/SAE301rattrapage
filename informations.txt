@@ -1,0 +1,7 @@
+Vous pouvez accéder à un compte administrateur grâce à l'adresse :
+ - prof.admin@gmail.com
+
+et le mot de passe : 
+ - admin
+
+vous pourrez créer un comtpe afin d'avoir le rôle connecté.
