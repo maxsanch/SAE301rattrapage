@@ -1,8 +1,10 @@
+/* Mise en forme de la page d'accueil */
 .Partie1Image {
     padding-left: 0%;
     margin: auto;
 }
 
+/* Nouveau header du site */
 .BoutonHeader {
     padding: 8px;
     border-radius: 4px;
@@ -66,6 +68,7 @@ header {
     transform: scaleY(1);
 }
 
+/* Mise en forme de la partie 1 de la page d'accueil */
 .Partie1 {
     display: grid;
     grid-template-columns: 1fr;
@@ -91,6 +94,7 @@ header {
     width: 60%;
 }
 
+/* Taille de toutes les parties de la page d'accueil */
 .ParentPartie2 {
     padding-top: 32px;
     padding-bottom: 32px;
@@ -148,6 +152,7 @@ header {
     justify-content: space-between;
 }
 
+/* On enlève ce qui apparait pas en version tablette et mobile */
 .ptsrouge {
     display: none;
 }
@@ -167,6 +172,7 @@ header {
     justify-content: space-around;
 }
 
+/* Mise en forme des photos de la partie 3 de la page d'accueil */
 .Partie3 {
     min-height: 200px;
     grid-template-columns: repeat(3, 1fr);
@@ -202,6 +208,7 @@ header {
     grid-row: 2 / span 1;
 }
 
+/* Remise en page du formulaire de la page gestion des ruches */
 .grid_ajout_ruche>form {
     width: 100%;
 }
@@ -228,12 +235,12 @@ body {
     margin: 0;
 }
 
+/* Page gestion des ruches pour changer de photo de profile */
 .photo>img{
     max-width: 300px;
 }
 
 #leftphoto{
-    flex-direction: row;
     align-items: center;
     gap: 8px;
 }
@@ -244,12 +251,14 @@ body {
     padding: 16px 32px;
 }
 
+/* Les notes d'une ruche */
 .reponse{
     grid-column: span 2;
     width: auto;
     text-align: center;
 }
 
+/* Voir les information d'un utilisateur */
 .pop_up_fixed_info_users{
     display: block;
     grid-template-columns: 1.5fr 3.5fr;
@@ -265,6 +274,7 @@ body {
     width: 90%;
 }
 
+/* Voir ses ruches sur la carte */
 .carte_ruche{
     display: flex;
     align-items: center;

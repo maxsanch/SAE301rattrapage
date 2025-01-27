@@ -1,15 +1,17 @@
+/* infos pour chaque notes */
 .ruche_all_notes{
     padding: 16px;
 }
 
+/* grid de toute les notes par ruches */
 .gridnotesall{
     display: flex;
-    /* grid-template-columns: 1fr 1fr; */
     flex-flow: row wrap;
     margin-top: 16px;
     gap: 16px;
 }
 
+/* formulaire des notes et éditeur */
 .formulairetest{
     width: 95%;
     margin: auto;

@@ -36,6 +36,7 @@ header {
 }
 
 /* images et liens généraux du site */
+
 img {
     width: 100%;
 }
@@ -70,11 +71,11 @@ html {
 }
 
 .mail {
-    /* display: flex; */
     width: 50px;
 }
 
 /* boutons du header */
+
 .BoutonHeader2 {
     color: #212121;
 }
@@ -101,6 +102,8 @@ html {
     flex-direction: column;
 }
 
+/* La barre qui bouge sous le header */
+
 .LaBarre {
     background-color: #B95E06;
     height: 8px;
@@ -117,6 +120,8 @@ html {
     transform: translateY(-100%);
     transition: 0.4s;
 }
+
+/* La partie avec le titre du site et tout ce qui est en haut de la page */
 
 .Partie1 {
     display: grid;
@@ -186,7 +191,8 @@ html {
     justify-content: center;
 }
 
-/* partie 2 du site */
+/* partie 2 du site qui explique ce qu'est le projet ruche connecté */
+
 .ParentPartie2 {
     background-color: #FAF0E3;
     padding-top: 64px;
@@ -210,12 +216,8 @@ html {
     padding-right: 5%;
 }
 
-/* .Partie2Texte {
-    padding-left: 5%;
-} */
-
-
 /* partie 3 des informations de la page d'accueil : styles des images */
+
 .Partie3 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -224,6 +226,11 @@ html {
     width: 80%;
     margin: auto;
     gap: 8px;
+}
+
+.ParentPartie3 {
+    padding-top: 64px;
+    padding-bottom: 64px;
 }
 
 .Partie3Image1 {
@@ -289,6 +296,7 @@ html {
 
 
 /* styles du footer du site */
+
 footer {
     background-color: #2D170E;
     color: white;
@@ -422,6 +430,8 @@ h3 {
     width: 100%;
 }
 
+/* Partie avec les ruches de la page d'accueil, là où l'utilisateur en voit maximum 3 */
+
 .ParentPartie4 {
     background-color: #FAF0E3;
     padding-bottom: 64px;
@@ -482,12 +492,14 @@ h3 {
     margin: auto;
 }
 
-
 /* style de l'affichage des ruches de l'utilsiateur */
+
+/* Photo de profile de la ruche */
 .ImageDeLaRuche {
     border-radius: 8px 8px 0px 0px;
 }
 
+/* Nom de la ruche */
 .MaRucheTitre {
     font-weight: bolder;
     padding-left: 4px;
@@ -514,6 +526,11 @@ h3 {
     margin: auto;
 }
 
+.ParentPartie5 {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
 .Partie5Titre {
     color: #212121;
     margin-top: 0px;
@@ -527,7 +544,7 @@ h3 {
     height: 400px;
 }
 
-/* infos variées ruches connectées */
+/* Partie visible uniquement par les admins, endroit où il peut gérer les utilisateurs sur la page d'accueil */
 
 .ParentPartie6 {
     background-color: #FAF0E3;
@@ -541,7 +558,8 @@ h3 {
 }
 
 
-/* décoration générale */
+/* décoration générale du site avec des abeilles et des traits */
+
 .AbeilleDeco1 {
     width: 1.7%;
     position: fixed;
@@ -549,7 +567,6 @@ h3 {
     left: 52%;
     transform: rotate(-45deg);
     z-index: -1;
-    animation: infinite 64s Voler linear;
 }
 
 .AbeilleDeco2 {
@@ -570,80 +587,6 @@ h3 {
     z-index: -1;
 }
 
-@keyframes Voler {
-    0%{
-        transform: rotate(0deg);
-        top: 110%;
-        left: 50%;
-    }
-    1%{
-        transform: rotate(-25deg);
-    }
-    10% {
-        top: 90%;
-        left: 43%;
-    }
-    11% {
-        transform: rotate(16deg);
-    }
-    20% {
-        top: 78%;
-        left: 52%;
-    }
-    27%{
-        /* Rien, elle attend */
-    }
-    28% {
-        transform: rotate(-4deg);
-    }
-    35% {
-        top: 61%;
-        left: 48%;
-    }
-    36% {
-        transform: rotate(-6deg);
-    }
-    45% {
-        top: 52%;
-        left: 42%;
-    }
-    56% {
-        transform: rotate(5deg);
-    }
-    65% {
-        top: 42%;
-        left: 50%;
-    }
-    69%{
-        /* Elle attend encore */
-    }
-    70% {
-        transform: rotate(-1deg);
-    }
-    79% {
-        top: 34%;
-        left: 47%;
-    }
-    80% {
-        transform: rotate(3deg);
-    }
-    89% {
-        top: 29%;
-        left: 51%;
-    }
-    90%{
-        transform: rotate(-9deg);
-    }
-    91%{
-        top: 17%;
-        left: 54%;
-    }
-    100% {
-        top: -10%;
-        left: 50%;
-    }
-}
-
 .SVG1 {
     position: fixed;
     transform: rotate(8deg);
@@ -659,25 +602,10 @@ h3 {
     top: 0%;
     z-index: -1;
 }
-
-.ParentPartie3 {
-    padding-top: 64px;
-    padding-bottom: 64px;
-}
-
-.ParentPartie5 {
-    padding-top: 64px;
-    padding-bottom: 64px;
-}
-
-/* .ParentPartie1 {
-    padding-top: 32px;
-    min-height: 100vh;
-} */
-
 /* partie administreurs style */
 
 /* cache foncé au cas ou il y a un pop up informatif */
+
 .cache_fond {
     position: fixed;
     background: rgba(0, 0, 0, 0.697);
@@ -698,6 +626,7 @@ h3 {
 
 
 /* pop up demandes de ruches */
+
 .pop_up_admin_demande {
     position: fixed;
     background: #F7F3F0;
@@ -734,6 +663,7 @@ h3 {
 
 
 /* interieur de la fenetre de pup up */
+
 .topinfo {
     display: flex;
     justify-content: space-between;
@@ -748,6 +678,7 @@ h3 {
 }
 
 /* demandes de ruches */
+
 .demande {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -800,6 +731,7 @@ h3 {
 
 
 /* mail admin */
+
 .mail {
     position: relative;
 }
@@ -921,7 +853,6 @@ h3 {
 }
 
 /* bolder + alerte */
-
 
 .alerte{
     color: #c71b1b;

@@ -1,3 +1,4 @@
+/*icone pour les inscriptions et les ruches */
 .Element{
     text-align: center;
 }
@@ -6,6 +7,7 @@
     width: 100%;
 }
 
+/* Remise en page de l'encadré */
 .informations_and_icones{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -13,10 +15,12 @@
     gap: 8px;
 }
 
+/* Pour pas que le texte prenne trop de place dans la mise en page */
 .texte_info{
     line-height: 70%;
 }
 
+/* La pop up qui apparait si on veut les informations d'un utilisateur */
 .pop_up_fixed_info_users{
     display: flex;
     grid-template-columns: 1.5fr 3.5fr;

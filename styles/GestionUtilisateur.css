@@ -322,6 +322,7 @@ input{
     transform: translate(1095%, -200%);
 }
 
+/* Supprimer un utilisateur */
 .fixeddanslefixed{
     position: fixed;
     top: 50%;

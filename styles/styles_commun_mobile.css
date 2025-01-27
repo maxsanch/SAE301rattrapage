@@ -19,6 +19,7 @@ img {
     font-size: 16px;
 }
 
+/* Partie 1 qui présente le site */
 .Partie1Bouton {
     display: flex;
     gap: 8px;
@@ -83,19 +84,18 @@ img {
     border-radius: 8px;
 }
 
-
-/* header du site */
-
-
+/* Pop up des admin */
 .pop_up_admin_demande {
     width: 80%;
     margin: auto;
 }
 
+/* Carte des ruches */
 .carte_ruche {
     display: none;
 }
 
+/* Mise en page du formulaire de la page gestion des ruches */
 .nom_ruche>label {
     flex-direction: column;
     align-items: start;
@@ -106,6 +106,7 @@ img {
     margin-left: 0px;
 }
 
+/* Mise en page du formulaire en bas de la page gestion des ruches */
 .mdp>label {
     flex-direction: column;
     align-items: start;
