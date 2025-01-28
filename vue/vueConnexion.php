@@ -51,29 +51,7 @@
             </div>
         </form>
     </div>
-    <script src="../js/script_commun_header.js"></script>
-    <script>
-        // Fonction pour afficher ou masquer le mot de passe
-        document.querySelector('.oeil').addEventListener('click', show)
-        
-        function show(){
-            // Vérifie si l'icône d'œil est fermée ou ouverte pour changer le type de champ mot de passe
-            if(this.querySelector('img').id == "fermé"){
-                document.querySelector('.motdepasse').type='text'  // Change le type en texte pour afficher le mot de passe
-                this.querySelector('img').id= 'ouvert'
-                this.querySelector('img').src= "../img/oeilouvert.svg";  // Change l'icône en œil ouvert
-            }
-            else{
-                document.querySelector('.motdepasse').type='password'  // Rechange le type en mot de passe pour masquer
-                this.querySelector('img').id= 'fermé'
-                this.querySelector('img').src= "../img/oeilfermé.svg";  // Change l'icône en œil fermé
-            }
-            
-            // Bascule les classes pour appliquer les styles correspondants à l'œil ouvert/fermé
-            this.classList.toggle('oeilferme')
-            this.classList.toggle('oeilouvert')
-        }
-    </script>
+    <script src="../js/oeil.js"></script>
 </body>
 
 </html>

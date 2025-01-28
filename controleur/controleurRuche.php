@@ -175,8 +175,8 @@ function demandesruches()
             document.querySelector('.pop_up_admin_demande').classList.add('popupouverte')
         }
 
-        document.querySelector('.cache_fond').addEventListener('click', fermerfenetre)
-        document.querySelector('#croixboite').addEventListener('click', fermerfenetre)
+        document.querySelector('.cache_fond').addEventListener('click', fermerfenetre);
+        document.querySelector('#croixboite').addEventListener('click', fermerfenetre);
 
         function fermerfenetre() {
             document.querySelector('.cache_fond').classList.remove('cache_plein')
@@ -209,7 +209,7 @@ function demandesruches()
                 </div>';
             }
             // Script pour mettre à jour le nombre de demandes.
-            $lenombre = "document.querySelector('.letxt').innerHTML = '" . count($demandes) . "'";
+            $lenombre = "document.querySelector('.letxt').innerHTML = '" . count($demandes) . "';";
         } else {
             // Si aucune demande n'existe, afficher un message et retirer le point rouge.
             $demandes_ruches = "<div class='informationdemande'>Aucune demande n'a été transmise.</div>";
