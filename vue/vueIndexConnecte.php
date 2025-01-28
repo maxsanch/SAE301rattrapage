@@ -236,14 +236,12 @@ if (count($getruche)) {
     <script src="../js/script_commun_header.js"></script>
     <script>
         <?= $mapcenter ?>
-
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-
+    </script>
+    <script src="../js/carte.js"></script>
+    <script>
         <?= $markers ?>
     </script>
+
 </body>
 
 </html>

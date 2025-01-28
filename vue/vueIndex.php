@@ -127,5 +127,4 @@ $footer=Footer_déconnecté
         <?= $footer ?>
     </footer>
 </body>
-
 </html>
