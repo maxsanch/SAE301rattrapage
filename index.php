@@ -6,6 +6,10 @@ session_start();
 
 require 'config/config.php';
 require "controleur/controleur.php";
+require "controleur/controleurRuche.php";
+require "controleur/controleurConnexions.php";
+require "controleur/controleurNotes.php";
+require "controleur/controleurutilisateurs.php";
 
 // appel de la fonction accueil dans le controlleur qui permet d'afficher les différentes pages
 

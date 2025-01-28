@@ -226,7 +226,13 @@ define("Footer_connecté", '<div class="FooterGlobal">
 
 // informations de connextion à la base de données pour faciliter les modifications lors de la mise en ligne du site
 
-define("DBHOST", "iutmmmisql03.uha.fr");
-define("DBNAME", "e2301554");
-define("DBUSER", "e2301554");
-define("DBPWD", "171679");
+// define("DBHOST", "iutmmmisql03.uha.fr");
+// define("DBNAME", "e2301554");
+// define("DBUSER", "e2301554");
+// define("DBPWD", "171679");
+
+
+define("DBHOST", "localhost");
+define("DBNAME", "rucheconnectes");
+define("DBUSER", "root");
+define("DBPWD", "");
