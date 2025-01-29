@@ -858,3 +858,10 @@ h3 {
     color: #c71b1b;
     font-family: Montserrat-bold;
 }
+
+.rep{
+    margin: 50px;
+    padding: 60px;
+    border: dashed 1px #B95E06;
+    color: #B95E06;
+}

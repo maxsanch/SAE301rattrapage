@@ -1,8 +1,8 @@
 <?php
 
 // Définition du footer pour un utilisateur connecté
-$header = HEADER_connecté;
-$footer = Footer_connecté;
+$header = HEADER_Déconnecté;
+$footer = Footer_déconnecté;
 
 ?>
 
@@ -17,9 +17,15 @@ $footer = Footer_connecté;
     <link rel="stylesheet" media="(max-width: 620px)" href="../styles/styles_commun_mobile.css">
 </head>
 <body>
+    <header>
+        <?= $header ?>
+    </header>
     <div>
         <div>Une Erreur est survenue</div>
         <?= $message ?>
     </div>
+    <footer>
+        <?= $footer ?>
+    </footer>
 </body>
 </html>
