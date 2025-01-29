@@ -862,6 +862,8 @@ h3 {
 .rep{
     margin: 50px;
     padding: 60px;
+    margin-top: 300px;
+    margin-bottom: 300px;
     border: dashed 1px #B95E06;
     color: #B95E06;
 }

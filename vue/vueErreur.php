@@ -20,7 +20,7 @@ $footer = Footer_déconnecté;
     <header>
         <?= $header ?>
     </header>
-    <div>
+    <div class="rep">
         <div>Une Erreur est survenue</div>
         <?= $message ?>
     </div>
