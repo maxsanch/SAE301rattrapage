@@ -73,7 +73,7 @@ if (count($getruche)) {
         }
     }
 } else {
-    $content .= "Vous n'avez aucune ruche.";
+    $content .= "<div class='centrenoruche'>Vous n'avez aucune ruche.</div>";
 }
 
 
@@ -175,7 +175,7 @@ if (count($getruche)) {
             <div class="choixruche">
                 <p>Choisissez une ruche</p>
                 <div class="deroulantruche">
-                    <p id="rchoisi">Ruche N° 1</p>
+                    <p id="rchoisi">Pas de filtres</p>
                     <div class="iconefleche">
                         <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.75 7.125L9.5 11.875L14.25 7.125" stroke="white" stroke-width="1.6"
