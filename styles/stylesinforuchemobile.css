@@ -46,3 +46,9 @@ canvas{
 .graphiques{
     display: block;
 }
+
+/* pour le formulaire */
+
+.formulairetest{
+    width: 300px;
+}
