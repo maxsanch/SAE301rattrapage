@@ -221,7 +221,7 @@ function deletaccount($id)
     // suppresion de l'utilisateur
     $user->deletuser($id);
     $user->deletbrother($id);
-    $message = "L'utilisateur à bien été supprimé";
+    $message = "L'utilisateur à bien été supprimé.";
     $usersingle = '';
 
     utilisateurs($message, $usersingle);
