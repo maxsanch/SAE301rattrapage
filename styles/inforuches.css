@@ -479,9 +479,10 @@ a{
 
 
 .centrenoruche{
-    text-align: center;
-    padding-top: 250px;
-    padding-bottom: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
     color: #B95E06;
     font-weight: bold;
 }

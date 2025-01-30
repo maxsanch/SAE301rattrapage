@@ -80,7 +80,7 @@ $footer=Footer_déconnecté
                     <img src="img/GEII.jpg" alt="Les GEII qui ont fait la ruches connectées">
                 </div>
                 <div class="Partie2Texte">
-                    <h2 class="Partie2Titre">Qu'est ce que le projet ruches connectées</h2>
+                    <h2 class="Partie2Titre">Qu'est-ce que le projet ruches connectées ?</h2>
                     <div>
                         <p><b>Réalisé par les GEII</b>, le projet ruches connectées a d’abord été un projet de fin de
                             semestre.
@@ -96,9 +96,9 @@ $footer=Footer_déconnecté
                         <p>voici les mesures prises par l’appareil : </p>
                         <ul>
                             <li>Fréquence de battement des ailes</li>
-                            <li>température interieur de a ruche</li>
+                            <li>température intérieur de a ruche</li>
                             <li>poids du miel</li>
-                            <li>température exterieur</li>
+                            <li>température extérieur</li>
                             <li>Humidité dans la ruche</li>
                         </ul>
                         <p>Ce site permet aux apiculteurs de <b>savoir si le miel dans leurs ruches est prêt ou non à

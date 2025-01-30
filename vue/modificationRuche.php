@@ -24,7 +24,7 @@ if (count($mesruches)) {
             $phototest = 'img/imported/no_image_ruche.png';
         }
         // Construction du contenu à afficher pour chaque ruche
-        $contenu .= '<div class="case"><a href="index.php?page=Photo_ruche&idRuche=' . $ligne['ID_Ruches'] . '" class="photo"><img src="../' . $phototest . '" alt=""></a><b>' . $ligne['nom'] . '</b><a class="bout" href="index.php?page=Ruches&jsruche=Ruche N°' . $ligne['ID_Ruches'] . '">Informations</a><a href="index.php?page=modif&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Modifier</a><a href="index.php?page=suppression&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Supprimer</a></div>';
+        $contenu .= '<div class="case"><a href="index.php?page=Photo_ruche&idRuche=' . $ligne['ID_Ruches'] . '" class="photo"><img src="../' . $phototest . '" alt=""></a><b>' . $ligne['nom'] . '</b><a class="bout" href="index.php?page=Ruches&jsruche=Ruche N°' . $ligne['ID_Ruches'] . '">Informations</a><a href="index.php?page=modif&ruche=' . $ligne['ID_Ruches'] . '" class="bout">Modifier</a><a href="index.php?page=suppression&ruche=' . $ligne['ID_Ruches'] . '" class="bout suppressionruche">Supprimer</a></div>';
     }
 } else {
     // Si aucune ruche n'est enregistrée, un message est affiché.
@@ -61,6 +61,21 @@ if (count($mesruches)) {
         <?= $demandes_ruches ?>
     </div>
 
+    <div class="cache_fond">
+
+    </div>
+    <div class='fixeddanslefixed'>
+        <p>Voulez vous vraiment supprimer cette ruche ?</p>
+        <div class='ledarondufixe'>
+            <a>
+                <div class='nonjesuppr'>Non</div>
+            </a>
+            <a href='#'>
+                <div class='ouijesuppr'>Oui</div>
+            </a>
+        </div>
+    </div>
+
     <div class="titre_top_centre">
         <h1 class="titre_normal">Modification de la ruche n°<?= $_GET['ruche'] ?></h1>
     </div>
@@ -71,7 +86,7 @@ if (count($mesruches)) {
             <div class="ajout_ruches">
                 <div class="nom_ruche">
                     <div>Nom de la ruche</div>
-                    <input  type="text" maxlength="30" name="nomruche">
+                    <input type="text" maxlength="30" name="nomruche">
                 </div>
             </div>
             <!-- Affichage des erreurs éventuelles lors de la modification. -->
@@ -107,9 +122,18 @@ if (count($mesruches)) {
         <!-- Affichage du pied de page dynamique. -->
         <?= $footer ?>
     </footer>
-    
+
     <script src="../js/script_commun_header.js"></script>
+    <script src="../js/commun_confirm_pop_up.js"></script>
     <script>
+        // enlever les propriétées du bouton
+
+        document.querySelector('.cache_fond').addEventListener('click', ouioui)
+
+        function ouioui() {
+            document.querySelector('.fixeddanslefixed').classList.remove('ouverturepopoup')
+            document.querySelector('.cache_fond').classList.remove('cache_plein')
+        }
         // Fonction JavaScript pour gérer des actions spécifiques sur les demandes d'administration et les éléments interactifs.
 
         <?= $fonctionadmin ?> // Inclut les fonctions administratives si l'utilisateur est admin.
@@ -140,6 +164,35 @@ if (count($mesruches)) {
                 });
             });
         });
+
+        document.querySelector('.ouijesuppr').addEventListener('click', (event) => {
+            event.preventDefault()
+
+            let splited = document.querySelector('.ouijesuppr').parentElement.href.split('ruche=')
+
+            document.querySelector('#ruche' + splited[splited.length - 1]).parentElement.classList.add('deletruche')
+
+            document.querySelector('.fixeddanslefixed').classList.remove('ouverturepopoup')
+            document.querySelector('.cache_fond').classList.remove('cache_plein')
+
+            setTimeout(removecase, 550)
+
+            function removecase() {
+                window.location = document.querySelector('.ouijesuppr').parentElement.href
+            }
+        });
+
+        document.querySelectorAll('.suppressionruche').forEach(e => {
+            e.addEventListener('click', ouvrirconf)
+
+            let test = e.id.split('e')[1]
+
+            function ouvrirconf() {
+                document.querySelector('.cache_fond').classList.add('cache_plein')
+                document.querySelector('.fixeddanslefixed').classList.add('ouverturepopoup')
+                document.querySelector('.ouijesuppr').parentElement.href = 'index.php?page=suppression&ruche=' + test
+            }
+        })
     </script>
 </body>
 

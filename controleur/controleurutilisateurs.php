@@ -146,7 +146,9 @@ function deletmyaccount()
     $utilisateur = $user->GetUser($_SESSION['acces']);
 
     $id = $utilisateur[0]['Id_utilisateur'];
+
     $user->deletuser($id);
+    $user->deletbrother($id);
 
     // suppression de la session et des cookies de ce dernier
     session_destroy();

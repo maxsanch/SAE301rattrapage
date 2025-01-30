@@ -248,4 +248,12 @@ class utilisateurs extends database
         // Retourne le résultat de la suppression
         return $user;
     }
+
+    public function deletbrother($id)
+    {
+        $data = array($id);
+        $req = 'DELETE FROM gérer WHERE `gérer`.`Id_utilisateur` = ?'; 
+        $user = $this->execReqPrep($req, $data);
+        return $user;
+    }
 }
