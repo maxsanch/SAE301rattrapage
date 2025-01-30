@@ -493,54 +493,54 @@ if (count($getruche)) {
                 </div>
             </div>
         </div>
-        <div class="groupe">
-            <?= $content ?>
-        </div>
+    </div>
+    <div class="groupe">
+        <?= $content ?>
+    </div>
+    <footer>
+        <?= $footer ?>
+    </footer>
+    <script src="../js/script_commun_header.js"></script>
+    <script src="../js/commun_confirm_pop_up.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+    <script src="../js/inforuches.js">
+    </script>
+    <script>
+        // les graphiques chart js
 
-        <footer>
-            <?= $footer ?>
-        </footer>
-        <script src="../js/script_commun_header.js"></script>
-        <script src="../js/commun_confirm_pop_up.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
-        <script src="../js/inforuches.js">
-        </script>
-        <script>
-            // les graphiques chart js
+        <?= $graphhumid ?>
 
-            <?= $graphhumid ?>
+        <?= $graphhtemp ?>
 
-            <?= $graphhtemp ?>
+        document.querySelectorAll('.recup').forEach(e => {
+            e.innerHTML = e.innerHTML.split('0')[0] + " " + e.innerHTML.split('0')[e.innerHTML.split('0').length - 1]
+        })
 
-            document.querySelectorAll('.recup').forEach(e => {
-                e.innerHTML = e.innerHTML.split('0')[0] + " " + e.innerHTML.split('0')[e.innerHTML.split('0').length - 1]
-            })
-
-            setInterval(actualiser, 1000);
+        setInterval(actualiser, 1000);
 
 
-            function actualiser() {
-                let carote = document.querySelector('#editor>.ql-editor').innerHTML
-                document.querySelector('.inclusion').value = carote
-            }
+        function actualiser() {
+            let carote = document.querySelector('#editor>.ql-editor').innerHTML
+            document.querySelector('.inclusion').value = carote
+        }
 
-            const quill = new Quill('#editor', {
-                theme: 'snow',
-                border: 'none',
-            });
+        const quill = new Quill('#editor', {
+            theme: 'snow',
+            border: 'none',
+        });
 
-            // la carte
+        // la carte
 
-            <?= $mapcenter ?>
+        <?= $mapcenter ?>
 
-        </script>
-        <script src="carte.js"></script>
-        <script>
-            <?= $markers ?>
-            <?= $fonctionadmin ?>
-            <?= $lenombre ?>
-        </script>
+    </script>
+    <script src="carte.js"></script>
+    <script>
+        <?= $markers ?>
+        <?= $fonctionadmin ?>
+        <?= $lenombre ?>
+    </script>
 </body>
 
 </html>

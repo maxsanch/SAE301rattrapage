@@ -501,3 +501,7 @@ a{
 .LaBarre{
     transform: translate(1920%, -220%);
 }
+
+.groupe{
+    min-height: 75vh;
+}
