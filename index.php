@@ -21,7 +21,6 @@ try {
         // regarder si le paramètre page est présent dans l'URL
         if (isset($_GET['page'])) {
             // regarder avec différents if else quels sont les paramètres transmis, en focntion du paramètre, afficher la bonne page
-
             if ($_GET['page'] == "Ruches") {
                 // appel de la fonction ruches pour afficher la page des ruches
                 $message = '';

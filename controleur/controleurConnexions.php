@@ -63,7 +63,6 @@ function inscription($erreur)
 
 function signin($prenom, $nom, $email, $mdp, $mdp2)
 {
-
     // Appel à la classe utiliasteurs.
     $insc = new utilisateurs();
 
