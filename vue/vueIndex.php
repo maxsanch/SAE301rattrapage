@@ -122,7 +122,6 @@ $footer=Footer_déconnecté
     </main>
 
     <!-- footer du site -->
-
     <footer>
         <?= $footer ?>
     </footer>

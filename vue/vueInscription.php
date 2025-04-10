@@ -67,7 +67,6 @@
             <button>Créer mon compte</button>
 
             <hr>
-
             <!-- Lien vers la page de connexion si l'utilisateur a déjà un compte -->
             <div class="inscription">
                 <div>Vous avez déjà un compte ? <a href="index.php?page=Connexion"><span>Connectez-vous</span></a></div>

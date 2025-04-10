@@ -113,7 +113,6 @@ function checkstatut()
     return $user;
 }
 
-
 // affichage de la page d'ajout des utilisateurs
 
 function utilisateurs($message, $usersingle)

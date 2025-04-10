@@ -94,7 +94,6 @@ if (count($mesruches)) {
             </a>
         </div>
     </div>
-
     <!-- Boîte de réception des demandes de ruche -->
     <div class="pop_up_admin_demande">
         <div class="topinfo">

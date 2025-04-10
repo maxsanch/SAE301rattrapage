@@ -17,7 +17,7 @@
         <div class="photo">
             <!-- Contenu d'image ici (possiblement vide ou dynamique) -->
         </div>
-        
+
         <!-- Formulaire de connexion -->
         <form action="<?= $_SERVER['PHP_SELF'] . '?page=login' ?>" method="post">
             <div class="connectez">Connectez-vous</div>
@@ -26,26 +26,27 @@
                 <label>
                     <input type="email" maxlength="50" name="email" required placeholder="Email">
                 </label>
-                
+
                 <!-- Champ pour le mot de passe avec l'option d'afficher ou de masquer le mot de passe -->
                 <label class="mdpconnex">
-                    <input type="password" maxlength="50" name="MDP" class="motdepasse" required placeholder="Mot de passe">
+                    <input type="password" maxlength="50" name="MDP" class="motdepasse" required
+                        placeholder="Mot de passe">
                     <!-- Icône pour afficher/masquer le mot de passe -->
                     <div class="oeil oeilferme">
                         <img id="fermé" src="../img/oeilfermé.svg" alt="icone d'oeil">
                     </div>
                 </label>
-                
                 <!-- Bouton -->
                 <button>Me connecter</button>
-                
+
                 <!-- Affichage des erreurs, si présentes -->
                 <?= $erreur ?>
                 <hr>
-                
+
                 <!-- Lien vers la page d'inscription pour les nouveaux utilisateurs -->
                 <div class="inscription">
-                    <div>Vous n'avez pas de compte ? <a href="index.php?page=Inscription"><span>Inscrivez-vous</span></a>
+                    <div>Vous n'avez pas de compte ? <a
+                            href="index.php?page=Inscription"><span>Inscrivez-vous</span></a>
                     </div>
                 </div>
             </div>

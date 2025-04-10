@@ -11,7 +11,6 @@ class connexion extends database { // classe "connexion" qui hérite de la class
 
         return $annee[0]['annee']; // Retourne la première ligne de la colonne "annee".
     }
-
     // Méthode pour mettre à jour l'année dans la table "annee".
     public function maj($ajout){
 

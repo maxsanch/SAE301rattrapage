@@ -20,7 +20,6 @@ function AjoutPhotoUser()
     require "vue/vueAjoutUsers.php";
 }
 // enregistrement de la photo vers la bdd
-
 function EnregPhotoUser($idUser)
 {
     $ruches = new utilisateurs();

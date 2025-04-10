@@ -46,7 +46,6 @@ function login($nom, $mdp)
         connexion($erreur);
     }
 }
-
 // affichage de la page de connexion
 function connexion($erreur)
 {

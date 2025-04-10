@@ -60,7 +60,6 @@ if (count($mesruches)) {
         <!-- Affichage des demandes de ruches administratives -->
         <?= $demandes_ruches ?>
     </div>
-
     <div class="cache_fond">
 
     </div>

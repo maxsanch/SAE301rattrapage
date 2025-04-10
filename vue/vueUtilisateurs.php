@@ -23,7 +23,6 @@ if (count($GetAllUser)) {
 } else
     $contenu .= "<div class='reponse'>Aucun Utilisateur n'est enregistré</div>";
 
-
 if (!empty($usersingle)) {
     // informations mises en variables
     $nom = $usersingle[0]['Nom'] . " " . $usersingle[0]['Prenom'];

@@ -29,7 +29,6 @@ $footer = Footer_connecté;
         <!-- Affiche le header en fonction du statut de l'utilisateur -->
         <?= $header ?>
     </header>
-
     <div class="cache_fond">
         <!-- Section de fond caché, probablement pour un effet visuel -->
     </div>

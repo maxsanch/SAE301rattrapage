@@ -334,9 +334,7 @@ if (count($getruche)) {
             </div>
         </div>
     </main>
-
     <!-- footer du site -->
-
     <footer>
         <?= $footer ?>
     </footer>

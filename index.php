@@ -12,7 +12,6 @@ require "controleur/controleurNotes.php";
 require "controleur/controleurutilisateurs.php";
 
 // appel de la fonction accueil dans le controlleur qui permet d'afficher les différentes pages
-
 // vérifier si il n'y a pas d'erreurs
 
 try {

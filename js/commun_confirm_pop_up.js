@@ -7,4 +7,3 @@ function enlever() {
     document.querySelector('.cache_fond').classList.remove('cache_plein')
     document.querySelector('.cache_fond').classList.remove('ouvert2')
 }
-

@@ -58,7 +58,6 @@ $footer = Footer_connecté;
             <input class="boutbout" type="submit" class="valid" name="ok" value="Valider">
         </form>
     </main>
-
     <footer>
         <!-- Affiche le footer pour les utilisateurs non connectés -->
         <?= $footer ?>

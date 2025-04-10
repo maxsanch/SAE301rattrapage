@@ -473,7 +473,6 @@ if (count($getruche)) {
                         <div class="choix">> 20 kg</div>
                     </div>
                 </div>
-
             </div>
             <!-- div contenant les menus et leurs titre -->
             <div class="menus_deroulant">

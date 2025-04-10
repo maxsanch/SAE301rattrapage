@@ -37,7 +37,6 @@ function DeplacerBarreHeader1() {
 function DeplacerBarreHeader2() {
     document.querySelector(".LaBarre").style = "transform: translate(235%, -200%);";
 }
-
 function DeplacerBarreHeader3() {
     document.querySelector(".LaBarre").style = "transform: translate(785%, -200%);";
 }
